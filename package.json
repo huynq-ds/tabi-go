@@ -1,0 +1,16 @@
+{
+  "name": "tabigo-multi-landing",
+  "version": "1.0.0",
+  "private": true,
+  "description": "5 Multi-Concept Landing Pages for Tabi Go eSIM App (APP3M-847)",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 3334 --host",
+    "serve": "npx serve -l 3334 .",
+    "start": "npx serve -l 3334 ."
+  },
+  "devDependencies": {
+    "vite": "^6.0.0"
+  },
+  "author": "3M Team"
+}

@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="vi" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tabi Go — 5 Concept Landing Page Showcase & A/B Testing Portal</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./assets/images/tabigo_favicon.png" />
+  <link rel="apple-touch-icon" href="./assets/images/tabigo_logo.png" />
+  
+  <!-- SEO & Social -->
+  <meta name="description" content="Tabi Go Multi-Concept Portal Hub. Trình diễn và so sánh trực quan 5 giao diện Landing Page độc bản lấy cảm hứng từ Trifa, Firsty, Saily, BetterRoaming và Airalo." />
+  <meta property="og:title" content="Tabi Go — 5 Concept Landing Page Showcase Portal" />
+  <meta property="og:description" content="Trình diễn A/B Testing 5 bố cục Landing Page đẳng cấp thế giới cho ứng dụng Tabi Go eSIM." />
+  <meta property="og:image" content="./assets/images/tabigo_og_banner.png" />
+  
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              navy: '#00478F',
+              blue: '#007CE8',
+              cyan: '#00C8FF',
+              orange: '#FF9500',
+              dark: '#0B0F19',
+              card: '#131927',
+              border: 'rgba(255, 255, 255, 0.1)',
+            }
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-[#080B13] text-slate-100 font-sans antialiased selection:bg-brand-blue selection:text-white min-h-screen flex flex-col justify-between">
+
+  <!-- ==================================================== -->
+  <!-- HEADER & PORTAL HUB HERO                             -->
+  <!-- ==================================================== -->
+  <header class="border-b border-white/10 bg-brand-dark/80 backdrop-blur-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <div class="flex items-center gap-3">
+        <img src="./assets/images/tabigo_logo.png" alt="Tabi Go Logo" class="h-9 w-auto" />
+        <div>
+          <span class="text-lg font-black tracking-wider text-white">Tabi<span class="text-brand-cyan">Go</span></span>
+          <span class="ml-2 text-[10px] font-bold bg-brand-cyan/15 text-brand-cyan border border-brand-cyan/30 px-2 py-0.5 rounded-full uppercase tracking-widest">
+            A/B TEST PORTAL
+          </span>
+        </div>
+      </div>
+
+      <div class="hidden sm:flex items-center gap-2">
+        <span class="text-xs text-slate-400 font-mono">APP3M-847 • 5 VIBES LIVE</span>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="py-12 md:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      
+      <!-- Intro Section -->
+      <div class="text-center max-w-3xl mx-auto space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/15 text-xs font-mono text-brand-cyan">
+          🚀 5 WORLD-CLASS DESIGN CONCEPTS
+        </div>
+        <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
+          Tabi Go Landing Page <br />
+          <span class="bg-gradient-to-r from-brand-cyan via-sky-400 to-brand-orange bg-clip-text text-transparent">
+            Multi-Concept Showcase
+          </span>
+        </h1>
+        <p class="text-sm sm:text-base text-slate-400 leading-relaxed">
+          Mỗi concept được thiết kế độc bản với triết lý thẩm mỹ, bảng màu và tương tác người dùng riêng biệt dựa trên các trang eSIM hàng đầu thế giới (Trifa, Firsty, Saily, BetterRoaming, Airalo).
+        </p>
+
+        <!-- Quick Switcher Bar -->
+        <div class="pt-4 flex flex-wrap items-center justify-center gap-2">
+          <a href="./concept-1-trifa.html" class="px-3.5 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-xs font-semibold text-slate-200 hover:text-white border border-white/10 transition-all">
+            1. Trifa Vibe (Friendly)
+          </a>
+          <a href="./concept-2-firsty.html" class="px-3.5 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-xs font-semibold text-slate-200 hover:text-white border border-white/10 transition-all">
+            2. Firsty Vibe (Cyber Bento)
+          </a>
+          <a href="./concept-3-saily.html" class="px-3.5 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-xs font-semibold text-slate-200 hover:text-white border border-white/10 transition-all">
+            3. Saily Vibe (Security & Search)
+          </a>
+          <a href="./concept-4-betterroaming.html" class="px-3.5 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-xs font-semibold text-slate-200 hover:text-white border border-white/10 transition-all">
+            4. BetterRoaming (Apple Min.)
+          </a>
+          <a href="./concept-5-airalo.html" class="px-3.5 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-xs font-semibold text-slate-200 hover:text-white border border-white/10 transition-all">
+            5. Airalo Vibe (Marketplace)
+          </a>
+        </div>
+      </div>
+
+      <!-- ============================================== -->
+      <!-- 5 CONCEPT CARDS GRID                           -->
+      <!-- ============================================== -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- CARD 1: TRIFA VIBE -->
+        <div class="bg-brand-card rounded-3xl border border-white/10 overflow-hidden flex flex-col justify-between hover:border-brand-cyan/50 hover:shadow-[0_0_30px_rgba(0,200,255,0.15)] transition-all group">
+          <div class="p-6 sm:p-7 space-y-4">
+            
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono font-bold text-sky-400 uppercase tracking-wider">CONCEPT 01</span>
+              <span class="text-[10px] font-semibold bg-white/10 text-slate-300 px-2.5 py-0.5 rounded-full">Ref: trifa.co</span>
+            </div>
+
+            <div>
+              <h2 class="text-xl font-bold text-white group-hover:text-brand-cyan transition-colors">Japan Friendly & Travel Onboarding</h2>
+              <p class="text-xs text-slate-400 mt-1">An tâm, nhẹ nhàng, thân thiện như sổ tay du lịch Nhật Bản.</p>
+            </div>
+
+            <!-- Color Palette preview -->
+            <div class="flex items-center gap-2 pt-1">
+              <span class="text-[10px] font-mono text-slate-500">Palette:</span>
+              <div class="w-4 h-4 rounded-full bg-[#F0F9FF] border border-slate-600" title="Trắng kem"></div>
+              <div class="w-4 h-4 rounded-full bg-[#00A8FF]" title="Xanh Sky"></div>
+              <div class="w-4 h-4 rounded-full bg-[#FF9500]" title="Cam ấm"></div>
+            </div>
+
+            <!-- Highlights -->
+            <ul class="text-xs text-slate-400 space-y-1.5 border-t border-white/10 pt-4">
+              <li>• <strong>Hero:</strong> Split 60/40 sáng dịu + travel stickers hoạt hình</li>
+              <li>• <strong>Section độc quyền:</strong> Postcard Destinations Grid</li>
+              <li>• <strong>Tương tác chính:</strong> Dropdown kiểm tra dòng máy thân thiện</li>
+              <li>• <strong>Đối tượng:</strong> Khách gia đình, phụ nữ, người mới đi lần đầu</li>
+            </ul>
+
+          </div>
+
+          <div class="p-6 pt-0">
+            <a href="./concept-1-trifa.html" class="block w-full py-3 rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 text-white font-bold text-center text-xs uppercase tracking-wider hover:from-sky-400 hover:to-blue-500 transition-all shadow-md">
+              Xem Demo Concept 1 (Trifa) →
+            </a>
+          </div>
+        </div>
+
+        <!-- CARD 2: FIRSTY VIBE -->
+        <div class="bg-brand-card rounded-3xl border border-white/10 overflow-hidden flex flex-col justify-between hover:border-brand-cyan/50 hover:shadow-[0_0_30px_rgba(0,200,255,0.15)] transition-all group">
+          <div class="p-6 sm:p-7 space-y-4">
+            
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono font-bold text-brand-cyan uppercase tracking-wider">CONCEPT 02</span>
+              <span class="text-[10px] font-semibold bg-white/10 text-slate-300 px-2.5 py-0.5 rounded-full">Ref: firsty.app</span>
+            </div>
+
+            <div>
+              <h2 class="text-xl font-bold text-white group-hover:text-brand-cyan transition-colors">3D Cyber Glow & Floating Bento Grid</h2>
+              <p class="text-xs text-slate-400 mt-1">Vũ trụ kết nối viễn thông tương lai, nền tối thẳm và Bento phát quang.</p>
+            </div>
+
+            <!-- Color Palette preview -->
+            <div class="flex items-center gap-2 pt-1">
+              <span class="text-[10px] font-mono text-slate-500">Palette:</span>
+              <div class="w-4 h-4 rounded-full bg-[#07090E] border border-slate-600" title="Đen vũ trụ"></div>
+              <div class="w-4 h-4 rounded-full bg-[#00C8FF]" title="Cyan Neon"></div>
+              <div class="w-4 h-4 rounded-full bg-[#FF9500]" title="Orange Neon"></div>
+            </div>
+
+            <!-- Highlights -->
+            <ul class="text-xs text-slate-400 space-y-1.5 border-t border-white/10 pt-4">
+              <li>• <strong>Hero:</strong> Quả địa cầu quỹ đạo CSS + iPhone 3D nghiêng</li>
+              <li>• <strong>Section độc quyền:</strong> Cyber Bento Grid 4 ô bất đối xứng</li>
+              <li>• <strong>Tương tác chính:</strong> HUD Radar Scanner đọc User-Agent thật</li>
+              <li>• <strong>Đối tượng:</strong> Gen-Z, dân công nghệ, Digital Nomads</li>
+            </ul>
+
+          </div>
+
+          <div class="p-6 pt-0">
+            <a href="./concept-2-firsty.html" class="block w-full py-3 rounded-xl bg-gradient-to-r from-brand-cyan to-blue-600 text-black font-black text-center text-xs uppercase tracking-wider hover:from-cyan-300 hover:to-blue-400 transition-all shadow-[0_0_20px_rgba(0,200,255,0.3)]">
+              Xem Demo Concept 2 (Firsty) →
+            </a>
+          </div>
+        </div>
+
+        <!-- CARD 3: SAILY VIBE -->
+        <div class="bg-brand-card rounded-3xl border border-white/10 overflow-hidden flex flex-col justify-between hover:border-brand-cyan/50 hover:shadow-[0_0_30px_rgba(0,200,255,0.15)] transition-all group">
+          <div class="p-6 sm:p-7 space-y-4">
+            
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono font-bold text-teal-400 uppercase tracking-wider">CONCEPT 03</span>
+              <span class="text-[10px] font-semibold bg-white/10 text-slate-300 px-2.5 py-0.5 rounded-full">Ref: saily.com</span>
+            </div>
+
+            <div>
+              <h2 class="text-xl font-bold text-white group-hover:text-teal-400 transition-colors">High-Trust Security & Instant Search Hero</h2>
+              <p class="text-xs text-slate-400 mt-1">An toàn dữ liệu, chống rủi ro Wifi công cộng, tra cứu giá ngay Hero.</p>
+            </div>
+
+            <!-- Color Palette preview -->
+            <div class="flex items-center gap-2 pt-1">
+              <span class="text-[10px] font-mono text-slate-500">Palette:</span>
+              <div class="w-4 h-4 rounded-full bg-[#002B59]" title="Navy Đậm"></div>
+              <div class="w-4 h-4 rounded-full bg-[#00D4AA]" title="Teal An Toàn"></div>
+              <div class="w-4 h-4 rounded-full bg-white" title="Trắng"></div>
+            </div>
+
+            <!-- Highlights -->
+            <ul class="text-xs text-slate-400 space-y-1.5 border-t border-white/10 pt-4">
+              <li>• <strong>Hero:</strong> Thanh tìm kiếm inline + live dropdown kết quả</li>
+              <li>• <strong>Section độc quyền:</strong> Marquee nhà mạng + Bảng so sánh 3 cột</li>
+              <li>• <strong>Tương tác chính:</strong> Autocomplete filter tìm nước tức thì</li>
+              <li>• <strong>Đối tượng:</strong> Khách doanh nghiệp, người sợ lộ dữ liệu OTP</li>
+            </ul>
+
+          </div>
+
+          <div class="p-6 pt-0">
+            <a href="./concept-3-saily.html" class="block w-full py-3 rounded-xl bg-gradient-to-r from-teal-400 to-emerald-500 text-slate-900 font-extrabold text-center text-xs uppercase tracking-wider hover:from-teal-300 hover:to-emerald-400 transition-all shadow-md">
+              Xem Demo Concept 3 (Saily) →
+            </a>
+          </div>
+        </div>
+
+        <!-- CARD 4: BETTERROAMING VIBE -->
+        <div class="bg-brand-card rounded-3xl border border-white/10 overflow-hidden flex flex-col justify-between hover:border-brand-cyan/50 hover:shadow-[0_0_30px_rgba(0,200,255,0.15)] transition-all group">
+          <div class="p-6 sm:p-7 space-y-4">
+            
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono font-bold text-blue-400 uppercase tracking-wider">CONCEPT 04</span>
+              <span class="text-[10px] font-semibold bg-white/10 text-slate-300 px-2.5 py-0.5 rounded-full">Ref: betterroaming.com</span>
+            </div>
+
+            <div>
+              <h2 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">Apple Minimalist & Savings Calculator</h2>
+              <p class="text-xs text-slate-400 mt-1">Tối giản chuẩn Apple, nhiều khoảng thở, tập trung vào bài toán tiết kiệm.</p>
+            </div>
+
+            <!-- Color Palette preview -->
+            <div class="flex items-center gap-2 pt-1">
+              <span class="text-[10px] font-mono text-slate-500">Palette:</span>
+              <div class="w-4 h-4 rounded-full bg-white" title="Trắng Apple"></div>
+              <div class="w-4 h-4 rounded-full bg-[#F5F5F7]" title="Xám Apple"></div>
+              <div class="w-4 h-4 rounded-full bg-[#0071E3]" title="Xanh Apple"></div>
+            </div>
+
+            <!-- Highlights -->
+            <ul class="text-xs text-slate-400 space-y-1.5 border-t border-white/10 pt-4">
+              <li>• <strong>Hero:</strong> Editorial full-width chữ lớn 72px mỏng thanh lịch</li>
+              <li>• <strong>Section độc quyền:</strong> Interactive Savings Calculator</li>
+              <li>• <strong>Tương tác chính:</strong> Animate số tiết kiệm nhảy mượt qua JS</li>
+              <li>• <strong>Đối tượng:</strong> Doanh nhân, khách hàng cao cấp yêu thích Apple</li>
+            </ul>
+
+          </div>
+
+          <div class="p-6 pt-0">
+            <a href="./concept-4-betterroaming.html" class="block w-full py-3 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold text-center text-xs uppercase tracking-wider hover:from-blue-500 hover:to-indigo-500 transition-all shadow-md">
+              Xem Demo Concept 4 (BetterRoaming) →
+            </a>
+          </div>
+        </div>
+
+        <!-- CARD 5: AIRALO VIBE -->
+        <div class="bg-brand-card rounded-3xl border border-white/10 overflow-hidden flex flex-col justify-between hover:border-brand-cyan/50 hover:shadow-[0_0_30px_rgba(0,200,255,0.15)] transition-all group">
+          <div class="p-6 sm:p-7 space-y-4">
+            
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono font-bold text-amber-400 uppercase tracking-wider">CONCEPT 05</span>
+              <span class="text-[10px] font-semibold bg-white/10 text-slate-300 px-2.5 py-0.5 rounded-full">Ref: airalo.com</span>
+            </div>
+
+            <div>
+              <h2 class="text-xl font-bold text-white group-hover:text-amber-400 transition-colors">E-Commerce Destination Marketplace</h2>
+              <p class="text-xs text-slate-400 mt-1">Sàn thương mại điện tử trực quan, tra cứu và mua nhanh không rườm rà.</p>
+            </div>
+
+            <!-- Color Palette preview -->
+            <div class="flex items-center gap-2 pt-1">
+              <span class="text-[10px] font-mono text-slate-500">Palette:</span>
+              <div class="w-4 h-4 rounded-full bg-[#FFFFFF]" title="Trắng"></div>
+              <div class="w-4 h-4 rounded-full bg-[#00478F]" title="Navy Tabi"></div>
+              <div class="w-4 h-4 rounded-full bg-[#007CE8]" title="Xanh TMĐT"></div>
+            </div>
+
+            <!-- Highlights -->
+            <ul class="text-xs text-slate-400 space-y-1.5 border-t border-white/10 pt-4">
+              <li>• <strong>Hero:</strong> Thanh tìm kiếm trung tâm to bản + thẻ gợi ý nhanh</li>
+              <li>• <strong>Section độc quyền:</strong> Sàn 3 Tab (Quốc gia / Khu vực / Toàn cầu)</li>
+              <li>• <strong>Tương tác chính:</strong> Switch tab mượt + Modal chi tiết gói</li>
+              <li>• <strong>Đối tượng:</strong> Khách cần mua gấp, người thường xuyên đi lại</li>
+            </ul>
+
+          </div>
+
+          <div class="p-6 pt-0">
+            <a href="./concept-5-airalo.html" class="block w-full py-3 rounded-xl bg-gradient-to-r from-amber-500 to-orange-600 text-white font-bold text-center text-xs uppercase tracking-wider hover:from-amber-400 hover:to-orange-500 transition-all shadow-md">
+              Xem Demo Concept 5 (Airalo) →
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ============================================== -->
+      <!-- A/B TESTING MATRIX TABLE                       -->
+      <!-- ============================================== -->
+      <div class="bg-brand-card rounded-3xl border border-white/10 p-6 sm:p-8 space-y-6">
+        <div>
+          <span class="text-xs font-mono font-bold text-brand-cyan uppercase tracking-wider">A/B TEST MATRIX</span>
+          <h3 class="text-xl sm:text-2xl font-black text-white mt-1">Bảng So Sánh Chi Tiết 5 Phương Án Bố Cục</h3>
+          <p class="text-xs sm:text-sm text-slate-400 mt-1">Đối chiếu nhanh các yếu tố cốt lõi để chọn phương án tối ưu theo từng chiến dịch Marketing.</p>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs border-collapse">
+            <thead>
+              <tr class="border-b border-white/10 text-slate-400 font-mono uppercase">
+                <th class="py-3 px-4">Tiêu Chí</th>
+                <th class="py-3 px-4 text-sky-400">1. Trifa</th>
+                <th class="py-3 px-4 text-brand-cyan">2. Firsty</th>
+                <th class="py-3 px-4 text-teal-400">3. Saily</th>
+                <th class="py-3 px-4 text-blue-400">4. BetterRoaming</th>
+                <th class="py-3 px-4 text-amber-400">5. Airalo</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-white/5 text-slate-300">
+              <tr>
+                <td class="py-3 px-4 font-bold text-white">Màu nền chủ đạo</td>
+                <td class="py-3 px-4">Trắng kem #F0F9FF</td>
+                <td class="py-3 px-4">Đen vũ trụ #07090E</td>
+                <td class="py-3 px-4">Navy đậm #002B59 → Trắng</td>
+                <td class="py-3 px-4">Trắng #FFFFFF + Xám Apple</td>
+                <td class="py-3 px-4">Trắng TMĐT #F7F8FA</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-bold text-white">Yếu tố Hero</td>
+                <td class="py-3 px-4">Mockup + sticker du lịch</td>
+                <td class="py-3 px-4">Địa cầu 3D CSS + iPhone lơ lửng</td>
+                <td class="py-3 px-4">Ô Search inline + Trustpilot</td>
+                <td class="py-3 px-4">iPhone Titanium + Headline 72px</td>
+                <td class="py-3 px-4">Thanh search khổng lồ trung tâm</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-bold text-white">Section độc quyền</td>
+                <td class="py-3 px-4">Postcard Destinations Grid</td>
+                <td class="py-3 px-4">Cyber Bento Grid + HUD Radar</td>
+                <td class="py-3 px-4">Marquee nhà mạng + Bảng 3 cột</td>
+                <td class="py-3 px-4">Savings Calculator + Specs Sheet</td>
+                <td class="py-3 px-4">3-Tab Marketplace Phân Vùng</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-bold text-white">Tương tác JS chính</td>
+                <td class="py-3 px-4">Dropdown check máy</td>
+                <td class="py-3 px-4">HUD User-Agent Scanner</td>
+                <td class="py-3 px-4">Search inline render popup</td>
+                <td class="py-3 px-4">Savings Calculator ticker</td>
+                <td class="py-3 px-4">Tab switcher + Modal chi tiết</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-bold text-white">Cảm xúc tạo ra</td>
+                <td class="py-3 px-4">An tâm, nhẹ nhàng</td>
+                <td class="py-3 px-4">Công nghệ đỉnh cao</td>
+                <td class="py-3 px-4">Tin cậy, an toàn</td>
+                <td class="py-3 px-4">Sang trọng, đẳng cấp</td>
+                <td class="py-3 px-4">Thực dụng, tiện lợi</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-bold text-white">Kênh Ads hiệu quả</td>
+                <td class="py-3 px-4">TikTok / Facebook</td>
+                <td class="py-3 px-4">Instagram / KOC Tech</td>
+                <td class="py-3 px-4">Google Search / B2B</td>
+                <td class="py-3 px-4">LinkedIn / Display Ads</td>
+                <td class="py-3 px-4">Google Search "esim..."</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/10 py-8 text-center text-xs text-slate-500 font-mono">
+    <div class="max-w-7xl mx-auto px-4">
+      <p>APP3M-847 — Tabi Go Multi-Concept Landing Pages • Hệ sinh thái Công nghệ 3M</p>
+      <p class="mt-1">Tất cả 5 concept chạy độc lập không phụ thuộc backend.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,709 @@
+<!doctype html>
+<html lang="vi" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tabi Go — Internet Du Lịch An Toàn, Tốc Độ Cao (Saily Vibe)</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./assets/images/tabigo_favicon.png" />
+  <link rel="apple-touch-icon" href="./assets/images/tabigo_logo.png" />
+  
+  <!-- SEO & Social -->
+  <meta name="description" content="Tabi Go Saily Vibe - Kết nối eSIM du lịch an toàn, bảo mật dữ liệu tuyệt đối trước rủi ro wifi công cộng. Tìm kiếm gói cước tức thì tại 150+ quốc gia." />
+  <meta property="og:title" content="Tabi Go — Internet Du Lịch An Toàn (Saily Vibe)" />
+  <meta property="og:description" content="eSIM du lịch tốc độ cao, mã hóa kết nối bảo vệ tài khoản ngân hàng. Giá từ 49k/ngày." />
+  <meta property="og:image" content="./assets/images/tabigo_og_banner.png" />
+  
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            saily: {
+              navy: '#002B59',
+              navyDeep: '#001A38',
+              navyLight: '#00478F',
+              teal: '#00D4AA',
+              tealLight: '#E6FAF6',
+              blue: '#00A8FF',
+              dark: '#0F172A',
+              muted: '#64748B',
+              bgLight: '#F8FAFC',
+              border: '#E2E8F0',
+            }
+          },
+          animation: {
+            'marquee': 'marqueeScroll 25s linear infinite',
+            'shield-pulse': 'shieldPulse 3s ease-in-out infinite',
+          },
+          keyframes: {
+            marqueeScroll: {
+              '0%': { transform: 'translateX(0%)' },
+              '100%': { transform: 'translateX(-50%)' }
+            },
+            shieldPulse: {
+              '0%, 100%': { transform: 'scale(1)', opacity: '0.9' },
+              '50%': { transform: 'scale(1.05)', opacity: '1' }
+            }
+          }
+        }
+      }
+    };
+  </script>
+  
+  <style>
+    @media (prefers-reduced-motion: reduce) {
+      *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+    
+    .marquee-container:hover .marquee-content {
+      animation-play-state: paused;
+    }
+  </style>
+</head>
+<body class="bg-white text-saily-dark font-sans antialiased selection:bg-saily-teal selection:text-saily-navy">
+
+  <!-- ==================================================== -->
+  <!-- 1. NAVBAR CHUYÊN NGHIỆP (NAVY & WHITE)               -->
+  <!-- ==================================================== -->
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-saily-navy/95 backdrop-blur-md border-b border-white/10 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#hero" class="flex items-center gap-3 group">
+        <div class="p-1 rounded-xl bg-white/10 border border-white/20">
+          <img src="./assets/images/tabigo_logo.png" alt="Tabi Go Logo" class="h-8 w-auto object-contain" />
+        </div>
+        <div class="flex flex-col">
+          <span class="text-xl font-extrabold tracking-tight text-white flex items-center gap-1">
+            Tabi<span class="text-saily-teal">Go</span>
+            <span class="text-[9px] font-bold bg-saily-teal/20 text-saily-teal px-1.5 py-0.5 rounded ml-1 tracking-wider uppercase">TRUST</span>
+          </span>
+          <span class="text-[10px] text-slate-300 font-medium">Bảo mật viễn thông du lịch</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-300">
+        <a href="#search-section" class="hover:text-saily-teal transition-colors">Tra Cứu Gói</a>
+        <a href="#carriers" class="hover:text-saily-teal transition-colors">Đối Tác Mạng</a>
+        <a href="#so-sanh" class="hover:text-saily-teal transition-colors">So Sánh An Toàn</a>
+        <a href="#security" class="hover:text-saily-teal transition-colors">Mã Hóa 256-Bit</a>
+        <a href="#faq" class="hover:text-saily-teal transition-colors">Hỗ Trợ Pháp Lý</a>
+      </nav>
+
+      <!-- CTA & Switcher -->
+      <div class="hidden sm:flex items-center gap-4">
+        <a href="./index.html" class="text-xs font-semibold px-3 py-1.5 rounded-lg text-slate-300 hover:text-white border border-white/10 hover:border-white/30 transition-all">
+          ← Hub 5 Concept
+        </a>
+        <span class="text-xs font-mono text-slate-400">🌐 VI | EN</span>
+        <a href="#download" class="inline-flex items-center gap-2 border-2 border-saily-teal text-saily-teal hover:bg-saily-teal hover:text-saily-navy font-bold text-xs uppercase tracking-wider px-5 py-2.5 rounded-xl transition-all shadow-sm">
+          <span>⬇ Tải App Tabi Go</span>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger -->
+      <button id="mobile-menu-btn" type="button" aria-label="Mở Menu" class="md:hidden p-2 rounded-xl text-slate-300 hover:text-white bg-white/5 border border-white/10">
+        <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+        <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden bg-saily-navyDeep border-b border-white/10 px-6 py-6 space-y-4 shadow-2xl">
+      <a href="#search-section" class="block text-sm font-semibold text-slate-300 hover:text-saily-teal py-2 border-b border-white/5 nav-mobile-link">Tìm Kiếm Gói Cước</a>
+      <a href="#carriers" class="block text-sm font-semibold text-slate-300 hover:text-saily-teal py-2 border-b border-white/5 nav-mobile-link">Đối Tác Nhà Mạng</a>
+      <a href="#so-sanh" class="block text-sm font-semibold text-slate-300 hover:text-saily-teal py-2 border-b border-white/5 nav-mobile-link">Bảng So Sánh An Toàn</a>
+      <a href="#security" class="block text-sm font-semibold text-slate-300 hover:text-saily-teal py-2 border-b border-white/5 nav-mobile-link">Chuẩn Mã Hóa AES-256</a>
+      <a href="#faq" class="block text-sm font-semibold text-slate-300 hover:text-saily-teal py-2 border-b border-white/5 nav-mobile-link">Câu Hỏi Thường Gặp</a>
+      <div class="pt-2 flex flex-col gap-3">
+        <a href="#download" class="w-full text-center bg-saily-teal text-saily-navy font-bold py-3 rounded-xl text-xs uppercase tracking-wider nav-mobile-link">
+          Tải App Tabi Go Ngay
+        </a>
+        <a href="./index.html" class="w-full text-center text-xs font-semibold text-slate-400 hover:text-white py-2">
+          ← Xem 4 Concept Khác
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==================================================== -->
+    <!-- 2. HERO: HIGH-TRUST SECURITY & INLINE SEARCH HERO    -->
+    <!-- ==================================================== -->
+    <section id="hero" class="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-gradient-to-b from-saily-navy via-saily-navyLight to-slate-900 text-white overflow-hidden">
+      <!-- Glow ambient background -->
+      <div class="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-saily-teal/15 blur-[120px] pointer-events-none -z-10"></div>
+      
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <!-- Cột Trái: Thông điệp & Ô Search Inline (60%) -->
+          <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+            
+            <!-- Trustpilot / Reviews Badge -->
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md shadow-sm">
+              <div class="flex text-amber-400 text-xs">★★★★★</div>
+              <span class="text-xs font-bold text-white">4.9/5 • 12,000+ Đánh Giá Tin Cậy</span>
+            </div>
+
+            <!-- Headline -->
+            <h1 class="text-3xl sm:text-4xl lg:text-[52px] font-extrabold tracking-tight leading-[1.15]">
+              Internet Du Lịch An Toàn – <br />
+              <span class="text-saily-teal">Tốc Độ Cao, Không Lo Rò Rỉ</span> <br />
+              Dữ Liệu Wifi Công Cộng!
+            </h1>
+
+            <p class="text-base sm:text-lg text-slate-300 max-w-xl mx-auto lg:mx-0 font-normal leading-relaxed">
+              Bảo vệ tài khoản ngân hàng và thông tin cá nhân của bạn khi xuất ngoại. Kết nối 5G bản địa độc lập được mã hóa bảo mật tại <strong>150+ quốc gia</strong> với chi phí chỉ từ <strong>49.000đ/ngày</strong>.
+            </p>
+
+            <!-- ============================================== -->
+            <!-- HERO INLINE SEARCH TOOL                       -->
+            <!-- ============================================== -->
+            <div id="search-section" class="p-4 sm:p-5 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl space-y-3">
+              <label for="hero-search-input" class="block text-xs font-bold uppercase tracking-wider text-saily-teal">
+                🔍 Tra cứu điểm đến & xem giá gói cước tức thì:
+              </label>
+              
+              <div class="relative">
+                <input id="hero-search-input" type="text" placeholder="Nhập tên quốc gia (Nhật Bản, Hàn Quốc, Mỹ, Pháp...)" class="w-full bg-white text-saily-dark px-4 py-3.5 pr-10 rounded-xl text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-saily-teal shadow-inner" />
+                <div class="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Quick Click Pills -->
+              <div class="flex flex-wrap items-center gap-2 pt-1 text-xs">
+                <span class="text-slate-400 text-[11px]">Gợi ý nhanh:</span>
+                <button type="button" class="search-tag px-2.5 py-1 rounded-lg bg-white/15 hover:bg-white/25 text-white font-medium transition-colors" data-country="Nhật Bản">🇯🇵 Nhật Bản</button>
+                <button type="button" class="search-tag px-2.5 py-1 rounded-lg bg-white/15 hover:bg-white/25 text-white font-medium transition-colors" data-country="Hàn Quốc">🇰🇷 Hàn Quốc</button>
+                <button type="button" class="search-tag px-2.5 py-1 rounded-lg bg-white/15 hover:bg-white/25 text-white font-medium transition-colors" data-country="Hoa Kỳ">🇺🇸 Hoa Kỳ</button>
+                <button type="button" class="search-tag px-2.5 py-1 rounded-lg bg-white/15 hover:bg-white/25 text-white font-medium transition-colors" data-country="Châu Âu">🇪🇺 Châu Âu</button>
+                <button type="button" class="search-tag px-2.5 py-1 rounded-lg bg-white/15 hover:bg-white/25 text-white font-medium transition-colors" data-country="Thái Lan">🇹🇭 Thái Lan</button>
+              </div>
+
+              <!-- Live Dropdown Result Card -->
+              <div id="search-result-card" class="hidden mt-3 p-4 rounded-xl bg-saily-navyDeep border border-saily-teal/40 text-left transition-all">
+                <div class="flex items-center justify-between pb-2 border-b border-white/10">
+                  <div class="flex items-center gap-2">
+                    <span id="result-flag" class="text-2xl">🇯🇵</span>
+                    <div>
+                      <h4 id="result-country" class="text-sm font-bold text-white">eSIM Nhật Bản</h4>
+                      <p id="result-network" class="text-[11px] text-saily-teal font-semibold">Đối tác: SoftBank 5G Tier-1</p>
+                    </div>
+                  </div>
+                  <div class="text-right">
+                    <div id="result-price" class="text-base font-extrabold text-saily-teal">99,000đ<span class="text-xs font-normal text-slate-400">/ngày</span></div>
+                    <span class="text-[10px] text-emerald-400">⚡ Instant 60s eSIM</span>
+                  </div>
+                </div>
+                <div class="pt-3 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
+                  <span id="result-desc" class="text-slate-300 text-[11px]">• Không giới hạn data 5G • Giữ SIM VN nhận OTP</span>
+                  <a href="#download" class="w-full sm:w-auto px-4 py-2 bg-saily-teal text-saily-navy font-bold rounded-lg text-center hover:bg-teal-300 transition-colors shrink-0">
+                    Xem Chi Tiết Trong App →
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Download Badges -->
+            <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+              <a href="#download" class="inline-flex items-center gap-2 bg-white text-saily-dark px-5 py-3 rounded-xl font-bold text-xs uppercase tracking-wider hover:bg-slate-100 transition-all shadow-md">
+                <span>🍏 App Store</span>
+              </a>
+              <a href="#download" class="inline-flex items-center gap-2 bg-white/10 text-white border border-white/20 px-5 py-3 rounded-xl font-bold text-xs uppercase tracking-wider hover:bg-white/20 transition-all">
+                <span>🤖 Google Play</span>
+              </a>
+              <span class="text-xs text-slate-400">Mã voucher <strong class="text-saily-teal font-mono">TABIGO10</strong> giảm 10%</span>
+            </div>
+
+          </div>
+
+          <!-- Cột Phải: Phone Mockup & Glowing Shield Badge (40%) -->
+          <div class="lg:col-span-5 relative flex justify-center">
+            <div class="relative w-[280px] sm:w-[320px]">
+              
+              <!-- Glow back of phone -->
+              <div class="absolute inset-0 bg-saily-teal/20 blur-3xl rounded-[40px] -z-10"></div>
+              
+              <img src="./assets/images/tabigo_phone_screen.png" alt="Tabi Go Security App" class="w-full h-auto drop-shadow-2xl rounded-[40px] border border-white/10" onerror="this.src='./assets/images/tabigo_phone_transparent.png'" />
+              
+              <!-- Floating Shield Badge -->
+              <div class="absolute -left-6 top-20 bg-saily-navyDeep/95 backdrop-blur-md p-4 rounded-2xl border border-saily-teal/50 shadow-xl animate-shield-pulse flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-saily-teal/20 flex items-center justify-center text-saily-teal text-2xl">
+                  🛡️
+                </div>
+                <div class="text-left font-sans">
+                  <div class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">ENCRYPTED DATA</div>
+                  <div class="text-xs font-black text-white">Mã Hóa 256-Bit AES</div>
+                </div>
+              </div>
+
+              <!-- Floating Money Back Badge -->
+              <div class="absolute -right-6 bottom-20 bg-saily-navyDeep/95 backdrop-blur-md p-3.5 rounded-2xl border border-emerald-500/50 shadow-xl flex items-center gap-3">
+                <div class="w-9 h-9 rounded-xl bg-emerald-500/20 flex items-center justify-center text-emerald-400 text-xl font-bold">
+                  💯
+                </div>
+                <div class="text-left font-sans">
+                  <div class="text-[10px] text-slate-400 font-bold uppercase">MONEY BACK</div>
+                  <div class="text-xs font-black text-emerald-400">Hoàn Tiền 100%</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================== -->
+    <!-- 3. MARQUEE: LOGO NHÀ MẠNG TIER-1 TOÀN CẦU           -->
+    <!-- ==================================================== -->
+    <section id="carriers" class="py-8 bg-slate-900 border-y border-white/10 overflow-hidden marquee-container">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-4 text-center">
+        <p class="text-xs font-mono uppercase tracking-widest text-slate-400">
+          Kết nối trực tiếp qua các nhà mạng viễn thông Tier-1 thế giới
+        </p>
+      </div>
+
+      <div class="relative w-full flex overflow-x-hidden">
+        <div class="flex items-center gap-12 whitespace-nowrap animate-marquee marquee-content text-slate-400 font-bold text-sm sm:text-base tracking-wider uppercase">
+          <span class="flex items-center gap-2 hover:text-white transition-colors">🇯🇵 SoftBank 5G</span>
+          <span class="flex items-center gap-2 hover:text-white transition-colors">🇰🇷 SK Telecom</span>
+          <span class="flex items-center gap-2 hover:text-white transition-colors">🇹🇭 AIS Thailand</span>
+          <span class="flex items-center gap-2 hover:text-white transition-colors">🇸🇬 Singtel</span>
+          <span class="flex items-center gap-2 hover:text-white transition-colors">🇺🇸 T-Mobile USA</span>
+          <span class="flex items-center gap-2 hover:text-white transition-colors">🇺🇸 AT&T</span>
+          <span class="flex items-center gap-2 hover:text-white transition-colors">🇪🇺 Vodafone Europe</span>
+          <span class="flex items-center gap-2 hover:text-white transition-colors">🇫🇷 Orange France</span>
+          <span class="flex items-center gap-2 hover:text-white transition-colors">🇯🇵 NTT Docomo</span>
+          <span class="flex items-center gap-2 hover:text-white transition-colors">🇹🇼 Chunghwa Telecom</span>
+          
+          <!-- Duplicate for seamless infinite loop -->
+          <span class="flex items-center gap-2 hover:text-white transition-colors">🇯🇵 SoftBank 5G</span>
+          <span class="flex items-center gap-2 hover:text-white transition-colors">🇰🇷 SK Telecom</span>
+          <span class="flex items-center gap-2 hover:text-white transition-colors">🇹🇭 AIS Thailand</span>
+          <span class="flex items-center gap-2 hover:text-white transition-colors">🇸🇬 Singtel</span>
+          <span class="flex items-center gap-2 hover:text-white transition-colors">🇺🇸 T-Mobile USA</span>
+          <span class="flex items-center gap-2 hover:text-white transition-colors">🇺🇸 AT&T</span>
+          <span class="flex items-center gap-2 hover:text-white transition-colors">🇪🇺 Vodafone Europe</span>
+          <span class="flex items-center gap-2 hover:text-white transition-colors">🇫🇷 Orange France</span>
+          <span class="flex items-center gap-2 hover:text-white transition-colors">🇯🇵 NTT Docomo</span>
+          <span class="flex items-center gap-2 hover:text-white transition-colors">🇹🇼 Chunghwa Telecom</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================== -->
+    <!-- 4. BẢNG SO SÁNH 3 CỘT: AN TOÀN & CHI PHÍ            -->
+    <!-- ==================================================== -->
+    <section id="so-sanh" class="py-20 bg-saily-bgLight">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-14">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-saily-teal/15 text-saily-navy text-xs font-bold uppercase tracking-wider mb-3">
+            BẢNG ĐỐI CHIẾU THỰC TẾ
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-saily-dark tracking-tight">
+            Vì Sao Wifi Công Cộng Luôn Là Cạm Bẫy?
+          </h2>
+          <p class="mt-3 text-base text-saily-muted">
+            Xem ngay bảng so sánh giữa các phương thức kết nối mạng khi ra nước ngoài.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-3xl border border-saily-border shadow-xl overflow-hidden">
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr class="border-b border-saily-border bg-slate-50 text-xs uppercase font-extrabold tracking-wider text-slate-500">
+                  <th class="p-5 sm:p-6 w-2/5">Tiêu Chí Đánh Giá</th>
+                  <th class="p-5 sm:p-6 w-1/5 text-center text-slate-400">Wifi Sân Bay / Quán</th>
+                  <th class="p-5 sm:p-6 w-1/5 text-center text-slate-400">Roaming Nhà Mạng</th>
+                  <th class="p-5 sm:p-6 w-1/5 text-center bg-saily-tealLight text-saily-navy border-l border-r border-saily-teal/30">
+                    Tabi Go eSIM ✅
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="text-sm divide-y divide-saily-border">
+                
+                <tr>
+                  <td class="p-5 sm:p-6 font-semibold text-saily-dark">
+                    Độ an toàn & Mã hóa dữ liệu
+                    <div class="text-xs text-saily-muted font-normal mt-0.5">Phòng chống hacker đánh cắp tài khoản ngân hàng</div>
+                  </td>
+                  <td class="p-5 sm:p-6 text-center text-rose-500 font-bold">❌ Dễ bị tấn công MITM</td>
+                  <td class="p-5 sm:p-6 text-center text-amber-600 font-semibold">⚠️ Mức trung bình</td>
+                  <td class="p-5 sm:p-6 text-center bg-saily-tealLight font-extrabold text-emerald-700 border-l border-r border-saily-teal/30">
+                    ✅ Mã hóa 256-bit AES
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-5 sm:p-6 font-semibold text-saily-dark">
+                    Tốc độ & Ổn định đường truyền
+                    <div class="text-xs text-saily-muted font-normal mt-0.5">Xem bản đồ chỉ đường, gọi video gia đình</div>
+                  </td>
+                  <td class="p-5 sm:p-6 text-center text-slate-500">Chập chờn, nghẽn mạng</td>
+                  <td class="p-5 sm:p-6 text-center text-slate-500">Bị bóp băng thông 3G</td>
+                  <td class="p-5 sm:p-6 text-center bg-saily-tealLight font-extrabold text-emerald-700 border-l border-r border-saily-teal/30">
+                    ✅ 5G Tốc độ cao bản địa
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-5 sm:p-6 font-semibold text-saily-dark">
+                    Chi phí trung bình mỗi ngày
+                    <div class="text-xs text-saily-muted font-normal mt-0.5">Tiết kiệm ngân sách du lịch</div>
+                  </td>
+                  <td class="p-5 sm:p-6 text-center text-slate-500">Miễn phí nhưng rủi ro cao</td>
+                  <td class="p-5 sm:p-6 text-center text-rose-600 font-bold">250.000đ – 500.000đ</td>
+                  <td class="p-5 sm:p-6 text-center bg-saily-tealLight font-extrabold text-saily-navy border-l border-r border-saily-teal/30">
+                    ✅ Chỉ từ 49.000đ/ngày
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-5 sm:p-6 font-semibold text-saily-dark">
+                    Giữ số SIM Việt Nam nhận OTP
+                    <div class="text-xs text-saily-muted font-normal mt-0.5">Xác thực giao dịch ngân hàng & thẻ tín dụng</div>
+                  </td>
+                  <td class="p-5 sm:p-6 text-center text-slate-500">Tùy thuộc máy</td>
+                  <td class="p-5 sm:p-6 text-center text-emerald-600 font-bold">✅ Giữ số</td>
+                  <td class="p-5 sm:p-6 text-center bg-saily-tealLight font-extrabold text-emerald-700 border-l border-r border-saily-teal/30">
+                    ✅ Giữ trọn số nhận OTP
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="p-5 sm:p-6 font-semibold text-saily-dark">
+                    Thời gian kích hoạt
+                    <div class="text-xs text-saily-muted font-normal mt-0.5">Thao tác trước hoặc sau chuyến bay</div>
+                  </td>
+                  <td class="p-5 sm:p-6 text-center text-slate-500">Phải đăng nhập portal rắc rối</td>
+                  <td class="p-5 sm:p-6 text-center text-slate-500">Nhắn tin đăng ký phức tạp</td>
+                  <td class="p-5 sm:p-6 text-center bg-saily-tealLight font-extrabold text-emerald-700 border-l border-r border-saily-teal/30">
+                    ✅ 1-Tap 60s trên App
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================================================== -->
+    <!-- 5. TÍNH NĂNG BẢO MẬT & QUẢN LÝ DỮ LIỆU              -->
+    <!-- ==================================================== -->
+    <section id="security" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-saily-tealLight text-saily-navy text-xs font-bold uppercase tracking-wider mb-3">
+            HẠ TẦNG AN TOÀN
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-saily-dark tracking-tight">
+            4 Lớp Bảo Vệ Chuyến Đi Của Bạn
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          
+          <div class="p-6 rounded-2xl bg-saily-bgLight border border-saily-border hover:border-saily-teal transition-colors">
+            <div class="w-12 h-12 rounded-xl bg-saily-tealLight text-saily-navy flex items-center justify-center text-2xl font-bold mb-4">
+              🔐
+            </div>
+            <h3 class="text-base font-bold text-saily-dark mb-2">Mã Hóa Kết Nối Mạng</h3>
+            <p class="text-xs text-saily-muted leading-relaxed">
+              Dữ liệu di động truyền trực tiếp qua mạng vô tuyến độc lập, không đi qua máy chủ trung gian không rõ nguồn gốc.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-saily-bgLight border border-saily-border hover:border-saily-teal transition-colors">
+            <div class="w-12 h-12 rounded-xl bg-saily-tealLight text-saily-navy flex items-center justify-center text-2xl font-bold mb-4">
+              📊
+            </div>
+            <h3 class="text-base font-bold text-saily-dark mb-2">Kiểm Soát Data Trực Quan</h3>
+            <p class="text-xs text-saily-muted leading-relaxed">
+              Theo dõi chính xác dung lượng còn lại và thời hạn sử dụng ngay trên màn hình chính của ứng dụng Tabi Go.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-saily-bgLight border border-saily-border hover:border-saily-teal transition-colors">
+            <div class="w-12 h-12 rounded-xl bg-saily-tealLight text-saily-navy flex items-center justify-center text-2xl font-bold mb-4">
+              ⚡
+            </div>
+            <h3 class="text-base font-bold text-saily-dark mb-2">Nạp Thêm Data 1-Click</h3>
+            <p class="text-xs text-saily-muted leading-relaxed">
+              Hết dung lượng giữa chừng? Chỉ cần bấm nạp thêm trực tiếp, gói mới tự động nối tiếp mà không cần cài lại eSIM.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-saily-bgLight border border-saily-border hover:border-saily-teal transition-colors">
+            <div class="w-12 h-12 rounded-xl bg-saily-tealLight text-saily-navy flex items-center justify-center text-2xl font-bold mb-4">
+              💬
+            </div>
+            <h3 class="text-base font-bold text-saily-dark mb-2">CSKH Tiếng Việt 24/7</h3>
+            <p class="text-xs text-saily-muted leading-relaxed">
+              Đội ngũ kỹ thuật viên người Việt sẵn sàng giải đáp và hỗ trợ cấu hình máy trong suốt hành trình của bạn.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================================================== -->
+    <!-- 6. FINAL CTA & CAM KẾT HOÀN TIỀN                    -->
+    <!-- ==================================================== -->
+    <section id="download" class="py-20 bg-saily-navy text-white text-center relative overflow-hidden">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-6">
+        
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-saily-teal text-xs font-bold uppercase tracking-wider">
+          💯 100% RISK-FREE GUARANTEE
+        </div>
+
+        <h2 class="text-3xl sm:text-5xl font-black tracking-tight">
+          Cam Kết Hoàn Tiền 100% Trong 24H
+        </h2>
+
+        <p class="text-slate-300 text-base max-w-xl mx-auto">
+          Nếu eSIM không thể kết nối do lỗi hệ thống, chúng tôi cam kết hoàn lại toàn bộ số tiền bạn đã thanh toán. Nhập ngay mã <span class="text-saily-teal font-mono font-bold">TABIGO10</span> để giảm 10% đơn đầu tiên!
+        </p>
+
+        <!-- Download Buttons -->
+        <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="#" class="w-full sm:w-auto px-8 py-4 bg-saily-teal text-saily-navy font-black text-xs uppercase tracking-wider rounded-xl hover:bg-teal-300 transition-all shadow-lg">
+            🍏 Tải Trên App Store (iOS)
+          </a>
+          <a href="#" class="w-full sm:w-auto px-8 py-4 bg-white/10 text-white border border-white/20 font-black text-xs uppercase tracking-wider rounded-xl hover:bg-white/20 transition-all">
+            🤖 Tải Trên Google Play (Android)
+          </a>
+        </div>
+
+        <div class="pt-6 flex flex-wrap items-center justify-center gap-6 text-xs text-slate-400">
+          <span>🔒 Bảo mật chuẩn PCI-DSS</span>
+          <span>⚡ Kích hoạt trong 60 giây</span>
+          <span>🛡️ Hỗ trợ 24/7 trực tiếp</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================================================== -->
+    <!-- 7. FAQ BẢO MẬT & PHÁP LÝ                            -->
+    <!-- ==================================================== -->
+    <section id="faq" class="py-20 bg-white">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center mb-12">
+          <h2 class="text-2xl sm:text-3xl font-bold text-saily-dark">Câu Hỏi Thường Gặp Về An Toàn & Bảo Mật</h2>
+        </div>
+
+        <div class="space-y-4" id="faq-saily">
+          
+          <div class="border border-saily-border rounded-xl p-5 bg-saily-bgLight faq-saily-item">
+            <button type="button" class="w-full text-left font-bold text-sm text-saily-dark flex justify-between items-center faq-trigger">
+              <span>Tại sao dùng eSIM an toàn hơn kết nối Wifi tại sân bay hay khách sạn?</span>
+              <span class="text-saily-navy font-bold text-lg faq-icon">+</span>
+            </button>
+            <div class="mt-3 text-xs text-saily-muted leading-relaxed hidden faq-content">
+              Các mạng Wifi công cộng tại sân bay và quán cafe thường không được mã hóa hoặc dùng chung mật khẩu. Kẻ xấu có thể triển khai các điểm Wifi giả mạo (Evil Twin) để đánh cắp cookie đăng nhập, mật khẩu mạng xã hội hoặc số thẻ ngân hàng của bạn. Khi sử dụng eSIM, toàn bộ lưu lượng dữ liệu đi qua mạng di động 5G được mã hóa phần cứng theo tiêu chuẩn viễn thông quốc tế.
+            </div>
+          </div>
+
+          <div class="border border-saily-border rounded-xl p-5 bg-saily-bgLight faq-saily-item">
+            <button type="button" class="w-full text-left font-bold text-sm text-saily-dark flex justify-between items-center faq-trigger">
+              <span>SIM gốc Việt Nam của tôi có bị tính cước roaming khi bật eSIM không?</span>
+              <span class="text-saily-navy font-bold text-lg faq-icon">+</span>
+            </button>
+            <div class="mt-3 text-xs text-saily-muted leading-relaxed hidden faq-content">
+              Không! Trong mục Cài đặt di động trên điện thoại, bạn chỉ cần chọn "Dữ liệu di động" là thẻ Tabi Go eSIM, và tắt "Chuyển vùng dữ liệu" của thẻ SIM Việt Nam. Như vậy, SIM Việt Nam của bạn chỉ ở trạng thái nhận tin nhắn OTP miễn phí mà không phát sinh bất kỳ cước dữ liệu nào.
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================================================== -->
+  <!-- 8. FOOTER CHUYÊN NGHIỆP                              -->
+  <!-- ==================================================== -->
+  <footer class="bg-saily-navyDeep text-slate-400 py-12 border-t border-white/10 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col sm:flex-row items-center justify-between pb-8 border-b border-white/10 gap-4">
+        <div class="flex items-center gap-3">
+          <span class="text-white font-extrabold text-base">Tabi<span class="text-saily-teal">Go</span></span>
+          <span class="text-[11px] text-slate-400">© 2025 3M Ecosystem. All rights reserved.</span>
+        </div>
+        <div class="flex items-center gap-6">
+          <a href="#hero" class="hover:text-white">Lên Đầu Trang ↑</a>
+          <a href="./index.html" class="text-saily-teal hover:underline font-bold">← Hub 5 Concept Live</a>
+        </div>
+      </div>
+
+      <div class="pt-6 text-center text-[11px] text-slate-500">
+        Concept 3: Saily Vibe (High-Trust Security & Instant Search Hero)
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==================================================== -->
+  <!-- JAVASCRIPT LOGIC                                     -->
+  <!-- ==================================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Mobile Menu
+      const mobileBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const iconOpen = document.getElementById('menu-icon-open');
+      const iconClose = document.getElementById('menu-icon-close');
+      const mobileLinks = document.querySelectorAll('.nav-mobile-link');
+
+      if (mobileBtn && mobileMenu) {
+        mobileBtn.addEventListener('click', () => {
+          const isClosed = mobileMenu.classList.contains('hidden');
+          if (isClosed) {
+            mobileMenu.classList.remove('hidden');
+            iconOpen.classList.add('hidden');
+            iconClose.classList.remove('hidden');
+          } else {
+            mobileMenu.classList.add('hidden');
+            iconOpen.classList.remove('hidden');
+            iconClose.classList.add('hidden');
+          }
+        });
+
+        mobileLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            iconOpen.classList.remove('hidden');
+            iconClose.classList.add('hidden');
+          });
+        });
+      }
+
+      // 2. Interactive Instant Search in Hero
+      const searchInput = document.getElementById('hero-search-input');
+      const resultCard = document.getElementById('search-result-card');
+      const resCountry = document.getElementById('result-country');
+      const resFlag = document.getElementById('result-flag');
+      const resNetwork = document.getElementById('result-network');
+      const resPrice = document.getElementById('result-price');
+      const resDesc = document.getElementById('result-desc');
+      const tags = document.querySelectorAll('.search-tag');
+
+      const mockDestinations = [
+        { key: 'nhật bản', name: 'eSIM Nhật Bản', flag: '🇯🇵', network: 'SoftBank 5G / Docomo', price: '99,000đ/ngày', desc: '• Tốc độ 5G không bóp băng thông • Giữ SIM VN nhận OTP ngân hàng' },
+        { key: 'hàn quốc', name: 'eSIM Hàn Quốc', flag: '🇰🇷', network: 'SK Telecom 5G', price: '79,000đ/ngày', desc: '• Mạng di động số 1 Seoul & Busan • Hỗ trợ phát wifi Hotspot' },
+        { key: 'hoa kỳ', name: 'eSIM Hoa Kỳ (Mỹ)', flag: '🇺🇸', network: 'T-Mobile 5G Ultra', price: '129,000đ/ngày', desc: '• Phủ sóng toàn nước Mỹ • Không cần xác minh passport' },
+        { key: 'mỹ', name: 'eSIM Hoa Kỳ (Mỹ)', flag: '🇺🇸', network: 'T-Mobile 5G Ultra', price: '129,000đ/ngày', desc: '• Phủ sóng toàn nước Mỹ • Không cần xác minh passport' },
+        { key: 'châu âu', name: 'eSIM Châu Âu (33 Nước)', flag: '🇪🇺', network: 'Vodafone / Orange', price: '119,000đ/ngày', desc: '• 1 SIM xuyên biên giới Pháp, Ý, Đức... • Kích hoạt 60 giây' },
+        { key: 'thái lan', name: 'eSIM Thái Lan', flag: '🇹🇭', network: 'AIS 5G High-Speed', price: '49,000đ/ngày', desc: '• Tặng kèm số nghe gọi tại Thái Lan • Miễn phí data TikTok' },
+        { key: 'singapore', name: 'eSIM Singapore', flag: '🇸🇬', network: 'Singtel 5G', price: '59,000đ/ngày', desc: '• Tốc độ kết nối ổn định nhất đảo quốc • Kích hoạt tức thì' },
+      ];
+
+      function performSearch(query) {
+        const q = query.trim().toLowerCase();
+        if (!q || !resultCard) {
+          resultCard?.classList.add('hidden');
+          return;
+        }
+
+        const match = mockDestinations.find(d => d.key.includes(q) || d.name.toLowerCase().includes(q));
+        if (match) {
+          resCountry.textContent = match.name;
+          resFlag.textContent = match.flag;
+          resNetwork.textContent = `Đối tác: ${match.network}`;
+          resPrice.innerHTML = `${match.price.split('/')[0]}<span class="text-xs font-normal text-slate-400">/ngày</span>`;
+          resDesc.textContent = match.desc;
+          resultCard.classList.remove('hidden');
+        } else {
+          resCountry.textContent = `eSIM ${query}`;
+          resFlag.textContent = '🌐';
+          resNetwork.textContent = 'Đối tác: Mạng Quốc Tế Tier-1';
+          resPrice.innerHTML = `Từ 69,000đ<span class="text-xs font-normal text-slate-400">/ngày</span>`;
+          resDesc.textContent = '• Kích hoạt tự động 1-Tap • Hỗ trợ kỹ thuật tiếng Việt 24/7';
+          resultCard.classList.remove('hidden');
+        }
+      }
+
+      searchInput?.addEventListener('input', (e) => {
+        performSearch(e.target.value);
+      });
+
+      tags.forEach(tag => {
+        tag.addEventListener('click', () => {
+          const country = tag.getAttribute('data-country');
+          if (country && searchInput) {
+            searchInput.value = country;
+            performSearch(country);
+          }
+        });
+      });
+
+      // 3. FAQ Accordion Saily
+      const faqItems = document.querySelectorAll('.faq-saily-item');
+      faqItems.forEach(item => {
+        const trigger = item.querySelector('.faq-trigger');
+        const content = item.querySelector('.faq-content');
+        const icon = item.querySelector('.faq-icon');
+
+        trigger?.addEventListener('click', () => {
+          const isOpen = !content?.classList.contains('hidden');
+          faqItems.forEach(other => {
+            if (other !== item) {
+              other.querySelector('.faq-content')?.classList.add('hidden');
+              const otherIcon = other.querySelector('.faq-icon');
+              if (otherIcon) otherIcon.textContent = '+';
+            }
+          });
+
+          if (isOpen) {
+            content?.classList.add('hidden');
+            if (icon) icon.textContent = '+';
+          } else {
+            content?.classList.remove('hidden');
+            if (icon) icon.textContent = '−';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

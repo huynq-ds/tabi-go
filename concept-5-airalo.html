@@ -1,0 +1,994 @@
+<!doctype html>
+<html lang="vi" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tabi Go — Sàn Thương Mại Điện Tử eSIM Du Lịch Quốc Tế (Airalo Vibe)</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./assets/images/tabigo_favicon.png" />
+  <link rel="apple-touch-icon" href="./assets/images/tabigo_logo.png" />
+  
+  <!-- SEO & Social -->
+  <meta name="description" content="Tabi Go Airalo Vibe - Sàn thương mại điện tử eSIM du lịch số 1. Mua và kích hoạt tức thì gói cước quốc gia, khu vực và toàn cầu tại 150+ quốc gia với giá gốc." />
+  <meta property="og:title" content="Tabi Go — Sàn eSIM Du Lịch 150+ Nước (Airalo Vibe)" />
+  <meta property="og:description" content="Tìm kiếm điểm đến và kích hoạt eSIM chỉ trong 1 phút. Giá gốc từ 49k/ngày." />
+  <meta property="og:image" content="./assets/images/tabigo_og_banner.png" />
+  
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            airalo: {
+              navy: '#00478F',
+              blue: '#007CE8',
+              blueHover: '#0065BD',
+              bgLight: '#F7F8FA',
+              dark: '#111827',
+              muted: '#6B7280',
+              border: '#E5E7EB',
+              sale: '#EF4444',
+              success: '#10B981',
+            }
+          }
+        }
+      }
+    };
+  </script>
+  
+  <style>
+    @media (prefers-reduced-motion: reduce) {
+      *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+    
+    .destination-card {
+      transition: all 0.25s ease-out;
+    }
+    .destination-card:hover {
+      transform: translateY(-4px);
+      border-color: #007CE8;
+      box-shadow: 0 10px 25px -5px rgba(0, 124, 232, 0.15);
+    }
+  </style>
+</head>
+<body class="bg-white text-airalo-dark font-sans antialiased selection:bg-airalo-blue selection:text-white">
+
+  <!-- ==================================================== -->
+  <!-- 1. NAVBAR SÀN THƯƠNG MẠI                             -->
+  <!-- ==================================================== -->
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-md border-b border-airalo-border shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#hero" class="flex items-center gap-3 group">
+        <img src="./assets/images/tabigo_logo.png" alt="Tabi Go Logo" class="h-9 w-auto object-contain" />
+        <div class="flex flex-col">
+          <span class="text-xl font-extrabold tracking-tight text-airalo-navy flex items-center gap-1">
+            Tabi<span class="text-airalo-blue">Go</span>
+            <span class="text-[9px] font-bold bg-blue-50 text-airalo-blue px-2 py-0.5 rounded-full ml-1">STORE</span>
+          </span>
+          <span class="text-[10px] text-airalo-muted font-medium">Sàn eSIM du lịch quốc tế</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav & Categories -->
+      <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold text-airalo-muted">
+        <a href="#marketplace" class="hover:text-airalo-blue transition-colors text-airalo-dark">Sàn Gói Cước</a>
+        <a href="#marketplace" onclick="switchMarketTab('local')" class="hover:text-airalo-blue transition-colors">Quốc Gia</a>
+        <a href="#marketplace" onclick="switchMarketTab('regional')" class="hover:text-airalo-blue transition-colors">Gói Khu Vực</a>
+        <a href="#marketplace" onclick="switchMarketTab('global')" class="hover:text-airalo-blue transition-colors">eSIM Toàn Cầu</a>
+        <a href="#benefits" class="hover:text-airalo-blue transition-colors">Ưu Điểm</a>
+        <a href="#faq" class="hover:text-airalo-blue transition-colors">Hỗ Trợ</a>
+      </nav>
+
+      <!-- Right Utility Actions -->
+      <div class="hidden sm:flex items-center gap-4">
+        <a href="./index.html" class="text-xs font-semibold px-3 py-2 rounded-lg text-airalo-muted hover:text-airalo-blue hover:bg-slate-50 transition-all">
+          ← Hub 5 Concept
+        </a>
+        <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 text-xs font-semibold text-airalo-dark">
+          <span>🇻🇳</span> VND (đ)
+        </div>
+        <a href="#download" class="inline-flex items-center gap-2 bg-airalo-blue hover:bg-airalo-blueHover text-white font-bold text-xs uppercase tracking-wider px-5 py-2.5 rounded-full transition-all shadow-md shadow-blue-500/20">
+          <span>Tải App Giảm 10%</span>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger -->
+      <button id="mobile-menu-btn" type="button" aria-label="Mở Menu" class="lg:hidden p-2 rounded-xl text-airalo-muted hover:text-airalo-dark hover:bg-slate-100">
+        <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+        <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-airalo-border px-6 py-6 space-y-4 shadow-xl">
+      <a href="#marketplace" class="block text-sm font-semibold text-airalo-dark py-2 border-b border-slate-100 nav-mobile-link">Sàn Gói Cước Điểm Đến</a>
+      <a href="#marketplace" onclick="switchMarketTab('local')" class="block text-sm font-semibold text-airalo-muted py-2 border-b border-slate-100 nav-mobile-link">eSIM Theo Quốc Gia</a>
+      <a href="#marketplace" onclick="switchMarketTab('regional')" class="block text-sm font-semibold text-airalo-muted py-2 border-b border-slate-100 nav-mobile-link">eSIM Khu Vực (Châu Á, EU...)</a>
+      <a href="#marketplace" onclick="switchMarketTab('global')" class="block text-sm font-semibold text-airalo-muted py-2 border-b border-slate-100 nav-mobile-link">eSIM Toàn Cầu (130+ Nước)</a>
+      <a href="#faq" class="block text-sm font-semibold text-airalo-muted py-2 border-b border-slate-100 nav-mobile-link">Hỏi Đáp Thường Gặp</a>
+      <div class="pt-2 flex flex-col gap-3">
+        <a href="#download" class="w-full text-center bg-airalo-blue text-white font-bold py-3 rounded-full text-xs uppercase tracking-wider nav-mobile-link">
+          Tải App Tabi Go Nhận 10%
+        </a>
+        <a href="./index.html" class="w-full text-center text-xs font-semibold text-airalo-muted py-2">
+          ← Xem 4 Concept Khác tại Portal Hub
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==================================================== -->
+    <!-- 2. HERO: SEARCH-CENTRIC (TRỌNG TÂM THANH TÌM KIẾM)  -->
+    <!-- ==================================================== -->
+    <section id="hero" class="pt-32 pb-16 md:pt-40 md:pb-24 bg-gradient-to-b from-blue-50/70 via-airalo-bgLight to-white text-center">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+        
+        <!-- Category Badge -->
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-airalo-blue text-xs font-bold uppercase tracking-wider shadow-sm">
+          <span>⚡ Mua Trực Tuyến & Kích Hoạt Tức Thì</span>
+        </div>
+
+        <!-- Headline -->
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-airalo-dark tracking-tight leading-tight">
+          Bạn Sắp Bay Đi Đâu?
+        </h1>
+
+        <p class="text-base sm:text-lg text-airalo-muted max-w-xl mx-auto">
+          eSIM giá gốc từ nhà mạng cho 150+ quốc gia. Chọn điểm đến, mua trong 30 giây và kích hoạt không cần tháo SIM.
+        </p>
+
+        <!-- Big Search Bar -->
+        <div class="max-w-2xl mx-auto pt-4 relative">
+          <div class="p-2 sm:p-2.5 rounded-2xl bg-white border-2 border-slate-200 shadow-xl focus-within:border-airalo-blue transition-colors flex items-center gap-3">
+            <span class="pl-3 text-xl text-airalo-muted">🔍</span>
+            <input id="market-search" type="text" placeholder="Nhập tên quốc gia hoặc điểm đến (ví dụ: Nhật Bản, Hàn Quốc, Mỹ...)" class="w-full text-sm sm:text-base font-semibold text-airalo-dark placeholder-slate-400 focus:outline-none bg-transparent" />
+            <button id="search-action-btn" type="button" class="shrink-0 px-5 sm:px-6 py-3 rounded-xl bg-airalo-blue hover:bg-airalo-blueHover text-white text-xs sm:text-sm font-bold transition-all shadow-md">
+              Tìm Ngay
+            </button>
+          </div>
+
+          <!-- Popular Search Tags -->
+          <div class="flex flex-wrap items-center justify-center gap-2 pt-4 text-xs">
+            <span class="text-airalo-muted font-medium">Tìm nhiều nhất:</span>
+            <button type="button" class="quick-tag px-3 py-1 rounded-full bg-white border border-slate-200 text-airalo-dark font-medium hover:border-airalo-blue hover:text-airalo-blue transition-all" data-name="Nhật Bản">🇯🇵 Nhật Bản</button>
+            <button type="button" class="quick-tag px-3 py-1 rounded-full bg-white border border-slate-200 text-airalo-dark font-medium hover:border-airalo-blue hover:text-airalo-blue transition-all" data-name="Hàn Quốc">🇰🇷 Hàn Quốc</button>
+            <button type="button" class="quick-tag px-3 py-1 rounded-full bg-white border border-slate-200 text-airalo-dark font-medium hover:border-airalo-blue hover:text-airalo-blue transition-all" data-name="Thái Lan">🇹🇭 Thái Lan</button>
+            <button type="button" class="quick-tag px-3 py-1 rounded-full bg-white border border-slate-200 text-airalo-dark font-medium hover:border-airalo-blue hover:text-airalo-blue transition-all" data-name="Châu Âu">🇪🇺 Châu Âu</button>
+            <button type="button" class="quick-tag px-3 py-1 rounded-full bg-white border border-slate-200 text-airalo-dark font-medium hover:border-airalo-blue hover:text-airalo-blue transition-all" data-name="Hoa Kỳ">🇺🇸 Hoa Kỳ</button>
+            <button type="button" class="quick-tag px-3 py-1 rounded-full bg-white border border-slate-200 text-airalo-dark font-medium hover:border-airalo-blue hover:text-airalo-blue transition-all" data-name="Singapore">🇸🇬 Singapore</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================================================== -->
+    <!-- 3. SÀN GÓI CƯỚC 3 TAB PHÂN VÙNG (MARKETPLACE)        -->
+    <!-- ==================================================== -->
+    <section id="marketplace" class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Tab Navigation Buttons -->
+        <div class="flex justify-center mb-12">
+          <div class="inline-flex p-1.5 rounded-2xl bg-slate-100 border border-slate-200">
+            <button id="tab-btn-local" type="button" class="market-tab-btn px-6 py-3 rounded-xl font-bold text-xs sm:text-sm tracking-wide bg-white text-airalo-blue shadow-sm transition-all" onclick="switchMarketTab('local')">
+              📍 Quốc Gia Riêng Lẻ
+            </button>
+            <button id="tab-btn-regional" type="button" class="market-tab-btn px-6 py-3 rounded-xl font-semibold text-xs sm:text-sm tracking-wide text-airalo-muted hover:text-airalo-dark transition-all" onclick="switchMarketTab('regional')">
+              🗺️ Gói Khu Vực (Châu Á, EU...)
+            </button>
+            <button id="tab-btn-global" type="button" class="market-tab-btn px-6 py-3 rounded-xl font-semibold text-xs sm:text-sm tracking-wide text-airalo-muted hover:text-airalo-dark transition-all" onclick="switchMarketTab('global')">
+              🌐 eSIM Toàn Cầu (130+ Nước)
+            </button>
+          </div>
+        </div>
+
+        <!-- ============================================== -->
+        <!-- TAB 1: QUỐC GIA RIÊNG LẺ (DEFAULT)            -->
+        <!-- ============================================== -->
+        <div id="tab-content-local" class="market-panel grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <!-- Card 1: Nhật Bản -->
+          <div class="destination-card bg-white p-5 rounded-3xl border border-airalo-border shadow-sm flex flex-col justify-between" data-search-target="nhật bản japan tokyo">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-3xl">🇯🇵</span>
+                <span class="text-[10px] font-bold bg-emerald-50 text-emerald-600 border border-emerald-200 px-2.5 py-0.5 rounded-full">
+                  ⚡ 5G Instant
+                </span>
+              </div>
+              <h3 class="text-base font-bold text-airalo-dark">Nhật Bản (Japan)</h3>
+              <p class="text-xs text-airalo-muted mt-0.5">Nhà mạng: SoftBank / Docomo</p>
+              
+              <div class="mt-4 pt-3 border-t border-slate-100 space-y-1 text-xs text-slate-600">
+                <div class="flex justify-between">
+                  <span>Dung lượng:</span>
+                  <span class="font-semibold text-airalo-dark">1GB/ngày - Unlimited</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Thời hạn:</span>
+                  <span class="font-semibold text-airalo-dark">3 - 30 Ngày</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-3 border-t border-slate-100 flex items-center justify-between">
+              <div>
+                <span class="text-[10px] text-airalo-muted block">Giá chỉ từ</span>
+                <span class="text-base font-extrabold text-airalo-navy">99,000đ<span class="text-[10px] font-normal text-slate-400">/ngày</span></span>
+              </div>
+              <button type="button" class="open-modal-btn px-4 py-2 rounded-xl bg-airalo-blue text-white text-xs font-bold hover:bg-airalo-blueHover transition-colors" data-country="Nhật Bản" data-price="99,000đ" data-carrier="SoftBank 5G">
+                Xem Gói →
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 2: Hàn Quốc -->
+          <div class="destination-card bg-white p-5 rounded-3xl border border-airalo-border shadow-sm flex flex-col justify-between" data-search-target="hàn quốc korea seoul">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-3xl">🇰🇷</span>
+                <span class="text-[10px] font-bold bg-emerald-50 text-emerald-600 border border-emerald-200 px-2.5 py-0.5 rounded-full">
+                  ⚡ 5G Instant
+                </span>
+              </div>
+              <h3 class="text-base font-bold text-airalo-dark">Hàn Quốc (South Korea)</h3>
+              <p class="text-xs text-airalo-muted mt-0.5">Nhà mạng: SK Telecom</p>
+              
+              <div class="mt-4 pt-3 border-t border-slate-100 space-y-1 text-xs text-slate-600">
+                <div class="flex justify-between">
+                  <span>Dung lượng:</span>
+                  <span class="font-semibold text-airalo-dark">Tốc độ cao 5G</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Thời hạn:</span>
+                  <span class="font-semibold text-airalo-dark">3 - 30 Ngày</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-3 border-t border-slate-100 flex items-center justify-between">
+              <div>
+                <span class="text-[10px] text-airalo-muted block">Giá chỉ từ</span>
+                <span class="text-base font-extrabold text-airalo-navy">79,000đ<span class="text-[10px] font-normal text-slate-400">/ngày</span></span>
+              </div>
+              <button type="button" class="open-modal-btn px-4 py-2 rounded-xl bg-airalo-blue text-white text-xs font-bold hover:bg-airalo-blueHover transition-colors" data-country="Hàn Quốc" data-price="79,000đ" data-carrier="SK Telecom">
+                Xem Gói →
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 3: Thái Lan -->
+          <div class="destination-card bg-white p-5 rounded-3xl border border-airalo-border shadow-sm flex flex-col justify-between" data-search-target="thái lan thailand bangkok">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-3xl">🇹🇭</span>
+                <span class="text-[10px] font-bold bg-rose-50 text-rose-600 border border-rose-200 px-2.5 py-0.5 rounded-full">
+                  🔥 Bán Chạy
+                </span>
+              </div>
+              <h3 class="text-base font-bold text-airalo-dark">Thái Lan (Thailand)</h3>
+              <p class="text-xs text-airalo-muted mt-0.5">Nhà mạng: AIS / TrueMove</p>
+              
+              <div class="mt-4 pt-3 border-t border-slate-100 space-y-1 text-xs text-slate-600">
+                <div class="flex justify-between">
+                  <span>Đặc quyền:</span>
+                  <span class="font-semibold text-emerald-600">Free Data TikTok</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Thời hạn:</span>
+                  <span class="font-semibold text-airalo-dark">5 - 15 Ngày</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-3 border-t border-slate-100 flex items-center justify-between">
+              <div>
+                <span class="text-[10px] text-airalo-muted block">Giá chỉ từ</span>
+                <span class="text-base font-extrabold text-airalo-navy">49,000đ<span class="text-[10px] font-normal text-slate-400">/ngày</span></span>
+              </div>
+              <button type="button" class="open-modal-btn px-4 py-2 rounded-xl bg-airalo-blue text-white text-xs font-bold hover:bg-airalo-blueHover transition-colors" data-country="Thái Lan" data-price="49,000đ" data-carrier="AIS Thailand">
+                Xem Gói →
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 4: Singapore -->
+          <div class="destination-card bg-white p-5 rounded-3xl border border-airalo-border shadow-sm flex flex-col justify-between" data-search-target="singapore sing">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-3xl">🇸🇬</span>
+                <span class="text-[10px] font-bold bg-emerald-50 text-emerald-600 border border-emerald-200 px-2.5 py-0.5 rounded-full">
+                  ⚡ 5G Instant
+                </span>
+              </div>
+              <h3 class="text-base font-bold text-airalo-dark">Singapore</h3>
+              <p class="text-xs text-airalo-muted mt-0.5">Nhà mạng: Singtel 5G</p>
+              
+              <div class="mt-4 pt-3 border-t border-slate-100 space-y-1 text-xs text-slate-600">
+                <div class="flex justify-between">
+                  <span>Dung lượng:</span>
+                  <span class="font-semibold text-airalo-dark">500MB - Không giới hạn</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Thời hạn:</span>
+                  <span class="font-semibold text-airalo-dark">3 - 30 Ngày</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-3 border-t border-slate-100 flex items-center justify-between">
+              <div>
+                <span class="text-[10px] text-airalo-muted block">Giá chỉ từ</span>
+                <span class="text-base font-extrabold text-airalo-navy">59,000đ<span class="text-[10px] font-normal text-slate-400">/ngày</span></span>
+              </div>
+              <button type="button" class="open-modal-btn px-4 py-2 rounded-xl bg-airalo-blue text-white text-xs font-bold hover:bg-airalo-blueHover transition-colors" data-country="Singapore" data-price="59,000đ" data-carrier="Singtel 5G">
+                Xem Gói →
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 5: Hoa Kỳ (Mỹ) -->
+          <div class="destination-card bg-white p-5 rounded-3xl border border-airalo-border shadow-sm flex flex-col justify-between" data-search-target="hoa kỳ mỹ usa america">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-3xl">🇺🇸</span>
+                <span class="text-[10px] font-bold bg-emerald-50 text-emerald-600 border border-emerald-200 px-2.5 py-0.5 rounded-full">
+                  ⚡ 5G Instant
+                </span>
+              </div>
+              <h3 class="text-base font-bold text-airalo-dark">Hoa Kỳ (Mỹ)</h3>
+              <p class="text-xs text-airalo-muted mt-0.5">Nhà mạng: T-Mobile / AT&T</p>
+              
+              <div class="mt-4 pt-3 border-t border-slate-100 space-y-1 text-xs text-slate-600">
+                <div class="flex justify-between">
+                  <span>Dung lượng:</span>
+                  <span class="font-semibold text-airalo-dark">1GB - 20GB Data</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Thời hạn:</span>
+                  <span class="font-semibold text-airalo-dark">7 - 30 Ngày</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-3 border-t border-slate-100 flex items-center justify-between">
+              <div>
+                <span class="text-[10px] text-airalo-muted block">Giá chỉ từ</span>
+                <span class="text-base font-extrabold text-airalo-navy">129,000đ<span class="text-[10px] font-normal text-slate-400">/ngày</span></span>
+              </div>
+              <button type="button" class="open-modal-btn px-4 py-2 rounded-xl bg-airalo-blue text-white text-xs font-bold hover:bg-airalo-blueHover transition-colors" data-country="Hoa Kỳ" data-price="129,000đ" data-carrier="T-Mobile 5G">
+                Xem Gói →
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 6: Đài Loan -->
+          <div class="destination-card bg-white p-5 rounded-3xl border border-airalo-border shadow-sm flex flex-col justify-between" data-search-target="đài loan taiwan taipei">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-3xl">🇹🇼</span>
+                <span class="text-[10px] font-bold bg-emerald-50 text-emerald-600 border border-emerald-200 px-2.5 py-0.5 rounded-full">
+                  ⚡ 5G Instant
+                </span>
+              </div>
+              <h3 class="text-base font-bold text-airalo-dark">Đài Loan (Taiwan)</h3>
+              <p class="text-xs text-airalo-muted mt-0.5">Nhà mạng: Chunghwa Telecom</p>
+              
+              <div class="mt-4 pt-3 border-t border-slate-100 space-y-1 text-xs text-slate-600">
+                <div class="flex justify-between">
+                  <span>Dung lượng:</span>
+                  <span class="font-semibold text-airalo-dark">Data không giới hạn</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Thời hạn:</span>
+                  <span class="font-semibold text-airalo-dark">3 - 15 Ngày</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-3 border-t border-slate-100 flex items-center justify-between">
+              <div>
+                <span class="text-[10px] text-airalo-muted block">Giá chỉ từ</span>
+                <span class="text-base font-extrabold text-airalo-navy">69,000đ<span class="text-[10px] font-normal text-slate-400">/ngày</span></span>
+              </div>
+              <button type="button" class="open-modal-btn px-4 py-2 rounded-xl bg-airalo-blue text-white text-xs font-bold hover:bg-airalo-blueHover transition-colors" data-country="Đài Loan" data-price="69,000đ" data-carrier="Chunghwa">
+                Xem Gói →
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 7: Úc (Australia) -->
+          <div class="destination-card bg-white p-5 rounded-3xl border border-airalo-border shadow-sm flex flex-col justify-between" data-search-target="úc australia sydney melbourne">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-3xl">🇦🇺</span>
+                <span class="text-[10px] font-bold bg-emerald-50 text-emerald-600 border border-emerald-200 px-2.5 py-0.5 rounded-full">
+                  ⚡ 5G Instant
+                </span>
+              </div>
+              <h3 class="text-base font-bold text-airalo-dark">Úc (Australia)</h3>
+              <p class="text-xs text-airalo-muted mt-0.5">Nhà mạng: Telstra / Optus</p>
+              
+              <div class="mt-4 pt-3 border-t border-slate-100 space-y-1 text-xs text-slate-600">
+                <div class="flex justify-between">
+                  <span>Dung lượng:</span>
+                  <span class="font-semibold text-airalo-dark">1GB - 15GB 5G</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Thời hạn:</span>
+                  <span class="font-semibold text-airalo-dark">7 - 30 Ngày</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-3 border-t border-slate-100 flex items-center justify-between">
+              <div>
+                <span class="text-[10px] text-airalo-muted block">Giá chỉ từ</span>
+                <span class="text-base font-extrabold text-airalo-navy">119,000đ<span class="text-[10px] font-normal text-slate-400">/ngày</span></span>
+              </div>
+              <button type="button" class="open-modal-btn px-4 py-2 rounded-xl bg-airalo-blue text-white text-xs font-bold hover:bg-airalo-blueHover transition-colors" data-country="Úc" data-price="119,000đ" data-carrier="Telstra 5G">
+                Xem Gói →
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 8: Trung Quốc -->
+          <div class="destination-card bg-white p-5 rounded-3xl border border-airalo-border shadow-sm flex flex-col justify-between" data-search-target="trung quốc china beijing thượng hải">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-3xl">🇨🇳</span>
+                <span class="text-[10px] font-bold bg-blue-50 text-airalo-blue border border-blue-200 px-2.5 py-0.5 rounded-full">
+                  🛡️ Vượt Firewall
+                </span>
+              </div>
+              <h3 class="text-base font-bold text-airalo-dark">Trung Quốc (China)</h3>
+              <p class="text-xs text-airalo-muted mt-0.5">Dùng FB, Zalo, Google thoải mái</p>
+              
+              <div class="mt-4 pt-3 border-t border-slate-100 space-y-1 text-xs text-slate-600">
+                <div class="flex justify-between">
+                  <span>Đặc quyền:</span>
+                  <span class="font-semibold text-emerald-600">Không cần VPN</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Thời hạn:</span>
+                  <span class="font-semibold text-airalo-dark">3 - 15 Ngày</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-3 border-t border-slate-100 flex items-center justify-between">
+              <div>
+                <span class="text-[10px] text-airalo-muted block">Giá chỉ từ</span>
+                <span class="text-base font-extrabold text-airalo-navy">89,000đ<span class="text-[10px] font-normal text-slate-400">/ngày</span></span>
+              </div>
+              <button type="button" class="open-modal-btn px-4 py-2 rounded-xl bg-airalo-blue text-white text-xs font-bold hover:bg-airalo-blueHover transition-colors" data-country="Trung Quốc" data-price="89,000đ" data-carrier="China Mobile">
+                Xem Gói →
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ============================================== -->
+        <!-- TAB 2: GÓI KHU VỰC (REGIONAL)                  -->
+        <!-- ============================================== -->
+        <div id="tab-content-regional" class="market-panel hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <!-- Regional 1: Châu Âu 33 Nước -->
+          <div class="destination-card bg-white p-6 rounded-3xl border border-airalo-border shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-3xl">🇪🇺</span>
+                <span class="text-xs font-bold bg-blue-50 text-airalo-blue px-3 py-1 rounded-full">33 Quốc Gia</span>
+              </div>
+              <h3 class="text-lg font-bold text-airalo-dark">Eurolink — Châu Âu 33 Nước</h3>
+              <p class="text-xs text-airalo-muted mt-1">Pháp, Đức, Ý, Tây Ban Nha, Thụy Sĩ, Hà Lan, v.v.</p>
+              
+              <ul class="mt-4 pt-3 border-t border-slate-100 space-y-1.5 text-xs text-slate-600">
+                <li>• 1 eSIM duy nhất, không đổi SIM khi qua biên giới</li>
+                <li>• Tự động chọn mạng Vodafone, Orange, O2</li>
+                <li>• Các gói: 1GB, 3GB, 5GB, 10GB, 20GB (7-30 ngày)</li>
+              </ul>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+              <div>
+                <span class="text-xs text-airalo-muted block">Giá chỉ từ</span>
+                <span class="text-lg font-extrabold text-airalo-navy">119,000đ</span>
+              </div>
+              <button type="button" class="open-modal-btn px-5 py-2.5 rounded-xl bg-airalo-blue text-white text-xs font-bold hover:bg-airalo-blueHover transition-colors" data-country="Châu Âu (33 Nước)" data-price="119,000đ" data-carrier="Vodafone / Orange">
+                Xem Gói Khu Vực →
+              </button>
+            </div>
+          </div>
+
+          <!-- Regional 2: Châu Á 14 Nước -->
+          <div class="destination-card bg-white p-6 rounded-3xl border border-airalo-border shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-3xl">🌏</span>
+                <span class="text-xs font-bold bg-blue-50 text-airalo-blue px-3 py-1 rounded-full">14 Quốc Gia</span>
+              </div>
+              <h3 class="text-lg font-bold text-airalo-dark">Asialink — Châu Á 14 Nước</h3>
+              <p class="text-xs text-airalo-muted mt-1">Nhật, Hàn, Thái, Sing, Mã, Đài Loan, v.v.</p>
+              
+              <ul class="mt-4 pt-3 border-t border-slate-100 space-y-1.5 text-xs text-slate-600">
+                <li>• Thích hợp cho chuyến du lịch liên tuyến châu Á</li>
+                <li>• Băng thông 5G tốc độ tối đa</li>
+                <li>• Kích hoạt 1 chạm trong ứng dụng Tabi Go</li>
+              </ul>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+              <div>
+                <span class="text-xs text-airalo-muted block">Giá chỉ từ</span>
+                <span class="text-lg font-extrabold text-airalo-navy">139,000đ</span>
+              </div>
+              <button type="button" class="open-modal-btn px-5 py-2.5 rounded-xl bg-airalo-blue text-white text-xs font-bold hover:bg-airalo-blueHover transition-colors" data-country="Châu Á (14 Nước)" data-price="139,000đ" data-carrier="SoftBank / SKT / AIS">
+                Xem Gói Khu Vực →
+              </button>
+            </div>
+          </div>
+
+          <!-- Regional 3: Bắc Mỹ -->
+          <div class="destination-card bg-white p-6 rounded-3xl border border-airalo-border shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-3xl">🌎</span>
+                <span class="text-xs font-bold bg-blue-50 text-airalo-blue px-3 py-1 rounded-full">Mỹ, Canada & Mexico</span>
+              </div>
+              <h3 class="text-lg font-bold text-airalo-dark">North America Link</h3>
+              <p class="text-xs text-airalo-muted mt-1">Di chuyển tự do giữa Hoa Kỳ, Canada và Mexico</p>
+              
+              <ul class="mt-4 pt-3 border-t border-slate-100 space-y-1.5 text-xs text-slate-600">
+                <li>• Phủ sóng toàn bộ 50 bang của Hoa Kỳ</li>
+                <li>• Tốc độ 5G mạnh mẽ từ T-Mobile và Rogers</li>
+                <li>• Giữ SIM Việt Nam nhận tin nhắn OTP</li>
+              </ul>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+              <div>
+                <span class="text-xs text-airalo-muted block">Giá chỉ từ</span>
+                <span class="text-lg font-extrabold text-airalo-navy">169,000đ</span>
+              </div>
+              <button type="button" class="open-modal-btn px-5 py-2.5 rounded-xl bg-airalo-blue text-white text-xs font-bold hover:bg-airalo-blueHover transition-colors" data-country="Bắc Mỹ (Mỹ/Canada/Mexico)" data-price="169,000đ" data-carrier="T-Mobile / Rogers">
+                Xem Gói Khu Vực →
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ============================================== -->
+        <!-- TAB 3: ESIM TOÀN CẦU (GLOBAL)                 -->
+        <!-- ============================================== -->
+        <div id="tab-content-global" class="market-panel hidden max-w-3xl mx-auto">
+          
+          <div class="bg-gradient-to-r from-airalo-navy to-slate-900 text-white p-8 rounded-3xl shadow-xl flex flex-col md:flex-row items-center justify-between gap-8">
+            <div class="space-y-4 text-center md:text-left">
+              <span class="text-xs font-mono font-bold bg-airalo-blue px-3 py-1 rounded-full uppercase tracking-wider">
+                🌐 Discover Global eSIM
+              </span>
+              <h3 class="text-2xl sm:text-3xl font-extrabold">1 eSIM Duy Nhất Cho 130+ Nước</h3>
+              <p class="text-sm text-slate-300 max-w-md">
+                Dành cho doanh nhân, tiếp viên hàng không, người du lịch bụi vòng quanh thế giới. Cài một lần, bay đến đâu có mạng đến đó!
+              </p>
+              <div class="flex flex-wrap gap-2 text-xs font-semibold">
+                <span class="bg-white/10 px-2.5 py-1 rounded-lg">✓ Hạn dùng 365 ngày</span>
+                <span class="bg-white/10 px-2.5 py-1 rounded-lg">✓ Nạp thêm data bất kỳ lúc nào</span>
+              </div>
+            </div>
+
+            <div class="bg-white text-airalo-dark p-6 rounded-2xl shadow-lg w-full md:w-64 text-center shrink-0">
+              <div class="text-xs text-airalo-muted font-bold uppercase">Gói khởi điểm</div>
+              <div class="text-2xl font-black text-airalo-navy mt-1">290,000đ</div>
+              <div class="text-xs text-slate-500 mt-1">1GB / 7 Ngày / 130+ Nước</div>
+              <button type="button" class="open-modal-btn w-full mt-4 py-2.5 bg-airalo-blue hover:bg-airalo-blueHover text-white font-bold text-xs rounded-xl transition-colors" data-country="Toàn Cầu (Global 130+ Nước)" data-price="290,000đ" data-carrier="Liên Minh GSMA 130+ Nước">
+                Khám Phá Chi Tiết →
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================================================== -->
+    <!-- 4. TIỆN ÍCH CỐT LÕI (UTILITY ICONS)                  -->
+    <!-- ==================================================== -->
+    <section id="benefits" class="py-16 bg-airalo-bgLight border-y border-airalo-border">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          
+          <div class="p-6 bg-white rounded-2xl border border-airalo-border shadow-sm">
+            <div class="text-3xl mb-3">⚡</div>
+            <h4 class="text-sm font-bold text-airalo-dark">Kích Hoạt 1 Phút</h4>
+            <p class="text-xs text-airalo-muted mt-1">Nhận profile eSIM tức thì qua App</p>
+          </div>
+
+          <div class="p-6 bg-white rounded-2xl border border-airalo-border shadow-sm">
+            <div class="text-3xl mb-3">💰</div>
+            <h4 class="text-sm font-bold text-airalo-dark">Giá Gốc Nhà Mạng</h4>
+            <p class="text-xs text-airalo-muted mt-1">Tiết kiệm 80% so với cước roaming</p>
+          </div>
+
+          <div class="p-6 bg-white rounded-2xl border border-airalo-border shadow-sm">
+            <div class="text-3xl mb-3">📶</div>
+            <h4 class="text-sm font-bold text-airalo-dark">Data 5G Ổn Định</h4>
+            <p class="text-xs text-airalo-muted mt-1">Mạng Tier-1 SoftBank, SKT, AIS</p>
+          </div>
+
+          <div class="p-6 bg-white rounded-2xl border border-airalo-border shadow-sm">
+            <div class="text-3xl mb-3">💬</div>
+            <h4 class="text-sm font-bold text-airalo-dark">Hỗ Trợ 24/7 Tiếng Việt</h4>
+            <p class="text-xs text-airalo-muted mt-1">Luôn có mặt khi bạn cần ở nước ngoài</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================================================== -->
+    <!-- 5. HOW IT WORKS (3 BƯỚC ĐƠN GIẢN)                   -->
+    <!-- ==================================================== -->
+    <section class="py-20 bg-white">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-airalo-dark">Quy Trình Mua Sắm Trong 3 Bước</h2>
+        <p class="text-sm text-airalo-muted mt-2">Dễ dàng, nhanh chóng và bảo mật 100%.</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+          
+          <div class="space-y-3">
+            <div class="w-12 h-12 mx-auto rounded-full bg-blue-50 text-airalo-blue font-black text-base flex items-center justify-center">
+              1
+            </div>
+            <h3 class="text-base font-bold text-airalo-dark">Chọn Nước & Gói Data</h3>
+            <p class="text-xs text-airalo-muted">Tìm kiếm điểm đến của bạn và chọn gói ngày hoặc dung lượng phù hợp nhất.</p>
+          </div>
+
+          <div class="space-y-3">
+            <div class="w-12 h-12 mx-auto rounded-full bg-blue-50 text-airalo-blue font-black text-base flex items-center justify-center">
+              2
+            </div>
+            <h3 class="text-base font-bold text-airalo-dark">Cài Đặt Lên Điện Thoại</h3>
+            <p class="text-xs text-airalo-muted">Bấm cài đặt trực tiếp trong App hoặc quét mã QR gửi về email của bạn trong 30 giây.</p>
+          </div>
+
+          <div class="space-y-3">
+            <div class="w-12 h-12 mx-auto rounded-full bg-blue-50 text-airalo-blue font-black text-base flex items-center justify-center">
+              3
+            </div>
+            <h3 class="text-base font-bold text-airalo-dark">Bật Dữ Liệu Khi Đến Nơi</h3>
+            <p class="text-xs text-airalo-muted">Khi hạ cánh sân bay, bật chuyển vùng dữ liệu cho thẻ eSIM và lướt mạng thả ga.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================================================== -->
+    <!-- 6. APP DOWNLOAD BANNER VỚI QR CODE                  -->
+    <!-- ==================================================== -->
+    <section id="download" class="py-20 bg-gradient-to-r from-airalo-navy via-slate-900 to-airalo-navy text-white text-center relative overflow-hidden">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-6">
+        
+        <span class="inline-block text-xs font-mono font-bold bg-amber-400 text-slate-900 px-3 py-1 rounded-full uppercase tracking-wider">
+          VOUCHER 10% DUY NHẤT HÔM NAY
+        </span>
+
+        <h2 class="text-3xl sm:text-5xl font-black tracking-tight">
+          Cài App Để Mua Nhanh Hơn
+        </h2>
+
+        <p class="text-slate-300 text-sm sm:text-base max-w-xl mx-auto">
+          Nhập mã <strong class="text-amber-400 font-mono font-bold">TABIGO10</strong> để được giảm ngay 10% tại giỏ hàng. Quét mã QR bằng điện thoại để tải app:
+        </p>
+
+        <!-- QR Box -->
+        <div class="inline-block p-4 rounded-3xl bg-white/10 backdrop-blur-md border border-white/20">
+          <div class="w-40 h-40 mx-auto bg-white rounded-2xl p-2 flex items-center justify-center">
+            <svg class="w-full h-full text-airalo-dark" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M2 2h8v8H2V2zm2 2v4h4V4H4zm10-2h8v8h-8V2zm2 2v4h4V4h-4zM2 14h8v8H2v-8zm2 2v4h4v-4H4zm14 3h2v3h-2v-3zm-4-5h3v2h-3v-2zm3 2h3v2h-3v-2zm2-2h3v2h-3v-2zm-5 5h2v2h-2v-2zm-2-2h2v2h-2v-2zm2-3h2v2h-2v-2zm-4 5h2v2h-2v-2z"/>
+            </svg>
+          </div>
+          <div class="text-[11px] font-semibold text-slate-300 mt-2">Quét bằng camera máy ảnh</div>
+        </div>
+
+        <div class="flex justify-center gap-4 pt-2">
+          <a href="#" class="px-6 py-3 rounded-full bg-white text-airalo-dark font-bold text-xs uppercase tracking-wider hover:bg-slate-100 transition-colors">
+            🍏 App Store (iOS)
+          </a>
+          <a href="#" class="px-6 py-3 rounded-full bg-white/15 text-white border border-white/20 font-bold text-xs uppercase tracking-wider hover:bg-white/25 transition-colors">
+            🤖 Google Play
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================================================== -->
+    <!-- 7. FAQ SÀN THƯƠNG MẠI                                -->
+    <!-- ==================================================== -->
+    <section id="faq" class="py-20 bg-white">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-airalo-dark text-center mb-12">
+          Câu Hỏi Về Mua Sắm & Thanh Toán
+        </h2>
+
+        <div class="space-y-4" id="faq-market">
+          
+          <div class="border border-airalo-border rounded-2xl p-5 bg-airalo-bgLight faq-market-item">
+            <button type="button" class="w-full text-left font-bold text-sm text-airalo-dark flex justify-between items-center faq-trigger">
+              <span>Tôi có thể thanh toán bằng phương thức nào tại Tabi Go?</span>
+              <span class="text-airalo-blue font-bold text-lg faq-icon">+</span>
+            </button>
+            <div class="mt-3 text-xs text-airalo-muted leading-relaxed hidden faq-content">
+              Tabi Go hỗ trợ đa dạng phương thức thanh toán phổ biến tại Việt Nam: Chuyển khoản ngân hàng VietQR tức thì, thẻ ATM nội địa, thẻ tín dụng Visa / MasterCard / JCB và ví điện tử MoMo / ZaloPay.
+            </div>
+          </div>
+
+          <div class="border border-airalo-border rounded-2xl p-5 bg-airalo-bgLight faq-market-item">
+            <button type="button" class="w-full text-left font-bold text-sm text-airalo-dark flex justify-between items-center faq-trigger">
+              <span>Sau khi thanh toán bao lâu thì tôi nhận được eSIM?</span>
+              <span class="text-airalo-blue font-bold text-lg faq-icon">+</span>
+            </button>
+            <div class="mt-3 text-xs text-airalo-muted leading-relaxed hidden faq-content">
+              Ngay sau khi giao dịch thành công (thông thường dưới 30 giây), eSIM sẽ tự động xuất hiện trong mục "SIM của tôi" trên App Tabi Go, đồng thời một bản sao mã QR cùng hướng dẫn chi tiết sẽ được gửi về địa chỉ email của bạn.
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================================================== -->
+  <!-- MODAL XEM CHI TIẾT GÓI CƯỚC                         -->
+  <!-- ==================================================== -->
+  <div id="plan-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl relative space-y-4">
+      <button id="close-modal-btn" type="button" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 p-1">
+        ✕
+      </button>
+
+      <div>
+        <span class="text-[10px] font-bold uppercase tracking-wider text-airalo-blue bg-blue-50 px-2.5 py-0.5 rounded-full">Chi Tiết Gói Cước</span>
+        <h3 id="modal-title" class="text-xl font-bold text-airalo-dark mt-2">eSIM Nhật Bản</h3>
+        <p id="modal-network" class="text-xs text-airalo-muted">Nhà mạng đối tác: SoftBank 5G</p>
+      </div>
+
+      <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100 space-y-2 text-xs">
+        <div class="flex justify-between font-semibold">
+          <span>Gói Tiêu Biểu:</span>
+          <span class="text-airalo-navy">5GB Tốc Độ Cao 5G</span>
+        </div>
+        <div class="flex justify-between">
+          <span>Thời hạn:</span>
+          <span>7 Ngày</span>
+        </div>
+        <div class="flex justify-between">
+          <span>Chia sẻ Hotspot:</span>
+          <span class="text-emerald-600 font-bold">Hỗ trợ đầy đủ</span>
+        </div>
+        <div class="flex justify-between text-base font-extrabold text-airalo-navy pt-2 border-t border-slate-200">
+          <span>Giá ưu đãi:</span>
+          <span id="modal-price" class="text-airalo-blue">99,000đ</span>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <a href="#download" class="block w-full py-3 rounded-xl bg-airalo-blue hover:bg-airalo-blueHover text-white font-bold text-xs uppercase tracking-wider transition-colors">
+          Mở App Để Kích Hoạt Ngay
+        </a>
+        <div class="text-[10px] text-slate-400 mt-2">Áp dụng mã <strong>TABIGO10</strong> để giảm thêm 10%</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================================================== -->
+  <!-- 8. FOOTER SÀN THƯƠNG MẠI                             -->
+  <!-- ==================================================== -->
+  <footer class="bg-slate-900 text-slate-400 py-12 text-xs border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      
+      <div class="flex flex-col sm:flex-row items-center justify-between pb-8 border-b border-slate-800 gap-4">
+        <div class="flex items-center gap-3">
+          <span class="text-white font-black text-lg">Tabi<span class="text-airalo-blue">Go</span></span>
+          <span class="text-slate-500">| Sàn Thương Mại Điện Tử eSIM (3M Ecosystem)</span>
+        </div>
+        <div class="flex items-center gap-6">
+          <a href="./index.html" class="text-airalo-blue hover:underline font-bold">← Hub 5 Concept Live</a>
+          <a href="#hero" class="hover:text-white">Về Đầu Trang ↑</a>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-500 gap-2">
+        <div>© 2025 Tabi Go Marketplace. All rights reserved.</div>
+        <div>Concept 5: Airalo Vibe (E-Commerce Destination Marketplace)</div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==================================================== -->
+  <!-- JAVASCRIPT LOGIC                                     -->
+  <!-- ==================================================== -->
+  <script>
+    // Global tab switch function
+    function switchMarketTab(tabName) {
+      const tabs = ['local', 'regional', 'global'];
+      tabs.forEach(t => {
+        const btn = document.getElementById(`tab-btn-${t}`);
+        const panel = document.getElementById(`tab-content-${t}`);
+        if (t === tabName) {
+          btn?.classList.replace('bg-transparent', 'bg-white');
+          btn?.classList.replace('text-airalo-muted', 'text-airalo-blue');
+          btn?.classList.add('shadow-sm', 'font-bold');
+          panel?.classList.remove('hidden');
+        } else {
+          btn?.classList.replace('bg-white', 'bg-transparent');
+          btn?.classList.replace('text-airalo-blue', 'text-airalo-muted');
+          btn?.classList.remove('shadow-sm', 'font-bold');
+          panel?.classList.add('hidden');
+        }
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Mobile Menu
+      const mobileBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const iconOpen = document.getElementById('menu-icon-open');
+      const iconClose = document.getElementById('menu-icon-close');
+      const mobileLinks = document.querySelectorAll('.nav-mobile-link');
+
+      if (mobileBtn && mobileMenu) {
+        mobileBtn.addEventListener('click', () => {
+          const isClosed = mobileMenu.classList.contains('hidden');
+          if (isClosed) {
+            mobileMenu.classList.remove('hidden');
+            iconOpen.classList.add('hidden');
+            iconClose.classList.remove('hidden');
+          } else {
+            mobileMenu.classList.add('hidden');
+            iconOpen.classList.remove('hidden');
+            iconClose.classList.add('hidden');
+          }
+        });
+
+        mobileLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            iconOpen.classList.remove('hidden');
+            iconClose.classList.add('hidden');
+          });
+        });
+      }
+
+      // 2. Marketplace Live Search Filter
+      const searchInput = document.getElementById('market-search');
+      const cards = document.querySelectorAll('.destination-card');
+
+      function filterCards(query) {
+        const q = query.trim().toLowerCase();
+        cards.forEach(card => {
+          const target = card.getAttribute('data-search-target') || '';
+          if (!q || target.includes(q)) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      }
+
+      searchInput?.addEventListener('input', (e) => {
+        filterCards(e.target.value);
+      });
+
+      // Quick tags click
+      const quickTags = document.querySelectorAll('.quick-tag');
+      quickTags.forEach(tag => {
+        tag.addEventListener('click', () => {
+          const name = tag.getAttribute('data-name');
+          if (name && searchInput) {
+            searchInput.value = name;
+            filterCards(name);
+            document.getElementById('marketplace')?.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+
+      // 3. Plan Modal Logic
+      const modal = document.getElementById('plan-modal');
+      const modalClose = document.getElementById('close-modal-btn');
+      const modalTitle = document.getElementById('modal-title');
+      const modalNetwork = document.getElementById('modal-network');
+      const modalPrice = document.getElementById('modal-price');
+      const openModalBtns = document.querySelectorAll('.open-modal-btn');
+
+      openModalBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const country = btn.getAttribute('data-country') || 'Gói cước';
+          const price = btn.getAttribute('data-price') || '99,000đ';
+          const carrier = btn.getAttribute('data-carrier') || 'Mạng Quốc Tế Tier-1';
+
+          if (modalTitle) modalTitle.textContent = `eSIM ${country}`;
+          if (modalNetwork) modalNetwork.textContent = `Nhà mạng đối tác: ${carrier}`;
+          if (modalPrice) modalPrice.textContent = price;
+
+          modal?.classList.remove('hidden');
+        });
+      });
+
+      modalClose?.addEventListener('click', () => {
+        modal?.classList.add('hidden');
+      });
+
+      modal?.addEventListener('click', (e) => {
+        if (e.target === modal) modal.classList.add('hidden');
+      });
+
+      // 4. FAQ Accordion
+      const faqItems = document.querySelectorAll('.faq-market-item');
+      faqItems.forEach(item => {
+        const trigger = item.querySelector('.faq-trigger');
+        const content = item.querySelector('.faq-content');
+        const icon = item.querySelector('.faq-icon');
+
+        trigger?.addEventListener('click', () => {
+          const isOpen = !content?.classList.contains('hidden');
+          faqItems.forEach(other => {
+            if (other !== item) {
+              other.querySelector('.faq-content')?.classList.add('hidden');
+              const oIcon = other.querySelector('.faq-icon');
+              if (oIcon) oIcon.textContent = '+';
+            }
+          });
+
+          if (isOpen) {
+            content?.classList.add('hidden');
+            if (icon) icon.textContent = '+';
+          } else {
+            content?.classList.remove('hidden');
+            if (icon) icon.textContent = '−';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
