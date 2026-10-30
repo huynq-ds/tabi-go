@@ -1,8 +1,8 @@
 {
-  "name": "tabigo-multi-landing",
+  "name": "tabi-go",
   "version": "1.0.0",
   "private": true,
-  "description": "5 Multi-Concept Landing Pages for Tabi Go eSIM App (APP3M-847)",
+  "description": "Tabi Go eSIM Landing Page",
   "type": "module",
   "scripts": {
     "dev": "vite --port 3334 --host",
