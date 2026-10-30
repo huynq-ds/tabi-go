@@ -3,12 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tabi Go – eSIM Du Lịch Quốc Tế 5G | Kết Nối 200+ Quốc Gia</title>
-  <meta name="description" content="Mua eSIM du lịch quốc tế kết nối tức thì tại hơn 200+ quốc gia từ Tabi Go. Không tháo SIM vật lý, nhận data 5G trong 1 phút, hỗ trợ tiếng Việt 24/7." />
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="./assets/images/tabigo_favicon.png" />
-  <link rel="apple-touch-icon" href="./assets/images/tabigo_logo.png" />
+  <title>TabiGo — eSIM du lịch quốc tế, chạm là có Internet toàn cầu</title>
+
+  <!-- Favicon & App Icons (chuẩn Retina SVG từ tabi-go-showcase) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%2300C8FF'/%3E%3Cstop offset='50%25' stop-color='%2300A8FF'/%3E%3Cstop offset='100%25' stop-color='%230066CC'/%3E%3C/linearGradient%3E%3ClinearGradient id='orbit' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%23FFFFFF' stop-opacity='0.95'/%3E%3Cstop offset='100%25' stop-color='%23FFFFFF' stop-opacity='0.3'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23bg)'/%3E%3Ccircle cx='32' cy='32' r='19' fill='%230080FF' opacity='0.4'/%3E%3Ccircle cx='32' cy='32' r='18' fill='none' stroke='%23FFFFFF' stroke-width='2.5' opacity='0.9'/%3E%3Cellipse cx='32' cy='32' rx='9' ry='18' fill='none' stroke='%23FFFFFF' stroke-width='1.8' opacity='0.75'/%3E%3Cline x1='14' y1='32' x2='50' y2='32' stroke='%23FFFFFF' stroke-width='1.8' opacity='0.75'/%3E%3Cellipse cx='32' cy='32' rx='26' ry='9' fill='none' stroke='url(%23orbit)' stroke-width='2.2' transform='rotate(-30 32 32)'/%3E%3Ccircle cx='51' cy='21' r='3.5' fill='%23FFAA00'/%3E%3Ccircle cx='51' cy='21' r='1.5' fill='%23FFEAA7'/%3E%3C/svg%3E" />
+  <link rel="icon" type="image/png" sizes="48x48" href="./assets/images/tabigo_favicon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="./assets/images/tabigo_logo.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/tabigo_logo.png" />
+  <link rel="shortcut icon" href="./assets/images/tabigo_favicon.png" />
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="TabiGo - Ứng dụng eSIM du lịch quốc tế, chạm là có Internet toàn cầu tại 200+ quốc gia. Kích hoạt siêu tốc trong 1 phút, không lo tháo SIM, hỗ trợ tiếng Việt 24/7." />
+  <meta name="keywords" content="TabiGo, Tabi Go, eSIM du lịch, mua eSIM quốc tế, eSIM Nhật Bản, eSIM Hàn Quốc, eSIM Châu Âu, SIM du lịch giá rẻ, 3M, eSIM 3M" />
+  <meta name="author" content="TabiGo - 3M Ecosystem" />
+  <meta name="theme-color" content="#00478F" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="TabiGo" />
+  <meta property="og:title" content="TabiGo — eSIM du lịch, chạm là có Internet toàn cầu" />
+  <meta property="og:description" content="Ứng dụng mua eSIM & SIM du lịch giá gốc cho 200+ quốc gia. Kích hoạt tức thì 1-tap, không tháo SIM, bảo hiểm kết nối 24/7." />
+  <meta property="og:image" content="./assets/images/tabigo_og_banner.png" />
 
   <!-- Google Fonts: Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,24 +34,33 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg-page: #FAF8F5;
+      /* Exact Airalo Almond Cream Background */
+      --bg-page: #F5EFE6;
       --bg-card: #FFFFFF;
-      --orange: #FF6E30;
-      --orange-hover: #F25A1B;
+      --orange: #F26322;
+      --orange-hover: #E05415;
       --green-banner: #48B080;
       --cyan-banner: #78CFE5;
       --blue-slider: #0055FF;
+      --tabi-navy: #00478F;
+      --tabi-sky: #00A8FF;
+      --tabi-orange: #FF9500;
       --text-main: #111827;
       --text-muted: #4B5563;
       --text-light: #9CA3AF;
-      --border: #E8E4DD;
+      --border: #E8E2D8;
       --border-card: #E5E7EB;
       --radius-sm: 8px;
       --radius-md: 14px;
       --radius-lg: 20px;
-      --radius-xl: 28px;
+      --radius-xl: 26px;
       --radius-pill: 9999px;
-      --max-w: 1160px;
+      --max-w: 1140px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 130px;
     }
 
     body {
@@ -49,9 +73,9 @@
       position: relative;
     }
 
-    /* Floating Pastel Background Confetti */
-    .bg-confetti-container {
-      position: fixed;
+    /* Full Page Ambient Airalo Background Shapes (Pastel geometric art) */
+    .page-backdrop-decorations {
+      position: absolute;
       top: 0;
       left: 0;
       width: 100%;
@@ -60,15 +84,180 @@
       z-index: 0;
       overflow: hidden;
     }
-    .confetti {
+
+    /* Top / Hero Section Shapes */
+    .shape-hero-peach-circle {
       position: absolute;
-      opacity: 0.55;
+      top: 120px;
+      left: 3%;
+      width: 140px;
+      height: 140px;
+      background: #FFE2D5;
+      border-radius: 50%;
+      opacity: 0.65;
     }
-    .c-diamond-teal { width: 22px; height: 22px; background: #C5EDE7; transform: rotate(45deg); border-radius: 4px; }
-    .c-rect-peach { width: 18px; height: 32px; background: #FFDCCB; transform: rotate(25deg); border-radius: 4px; }
-    .c-rect-yellow { width: 26px; height: 14px; background: #FCE8AA; transform: rotate(-30deg); border-radius: 3px; }
-    .c-circle-peach { width: 50px; height: 50px; background: #FDE8DE; border-radius: 50%; opacity: 0.6; }
-    .c-circle-teal { width: 64px; height: 64px; background: #D6F2ED; border-radius: 50%; opacity: 0.45; }
+    .shape-hero-yellow-pill {
+      position: absolute;
+      top: 95px;
+      right: 18%;
+      width: 90px;
+      height: 48px;
+      background: #FCE8AA;
+      border-radius: 20px;
+      transform: rotate(-22deg);
+      opacity: 0.7;
+    }
+    .shape-hero-teal-diamond {
+      position: absolute;
+      top: 280px;
+      right: 7%;
+      width: 52px;
+      height: 52px;
+      background: #C8EFEA;
+      transform: rotate(45deg);
+      border-radius: 10px;
+      opacity: 0.7;
+    }
+    .shape-hero-peach-diamond {
+      position: absolute;
+      top: 340px;
+      left: 5%;
+      width: 44px;
+      height: 44px;
+      background: #FFD8C7;
+      transform: rotate(45deg);
+      border-radius: 8px;
+      opacity: 0.6;
+    }
+
+    /* Middle Sections Shapes (Why Tabi Go, Marketplace, FAQ) */
+    .shape-mid-mint-circle {
+      position: absolute;
+      top: 1100px;
+      left: 2%;
+      width: 130px;
+      height: 130px;
+      background: #D5F0E4;
+      border-radius: 50%;
+      opacity: 0.6;
+    }
+    .shape-mid-yellow-pill {
+      position: absolute;
+      top: 1240px;
+      right: 3%;
+      width: 85px;
+      height: 44px;
+      background: #FDE8AA;
+      border-radius: 20px;
+      transform: rotate(20deg);
+      opacity: 0.65;
+    }
+    .shape-mid-cyan-diamond {
+      position: absolute;
+      top: 1800px;
+      right: 6%;
+      width: 50px;
+      height: 50px;
+      background: #CDEEF5;
+      transform: rotate(45deg);
+      border-radius: 10px;
+      opacity: 0.7;
+    }
+    .shape-mid-peach-circle {
+      position: absolute;
+      top: 2100px;
+      left: 3%;
+      width: 120px;
+      height: 120px;
+      background: #FFE3D6;
+      border-radius: 50%;
+      opacity: 0.65;
+    }
+
+    /* Lower Section Shapes (App Banner & Footer - Exact Match to User Sample Images 2 & 3) */
+    .shape-banner-yellow-blob {
+      position: absolute;
+      top: 3050px;
+      left: 4%;
+      width: 85px;
+      height: 135px;
+      background: #FDEFD9;
+      border-radius: 45px;
+      transform: rotate(-15deg);
+      opacity: 0.85;
+    }
+    .shape-banner-peach-diamond {
+      position: absolute;
+      top: 3220px;
+      left: 2%;
+      width: 50px;
+      height: 50px;
+      background: #FCDBC9;
+      transform: rotate(45deg);
+      border-radius: 10px;
+      opacity: 0.75;
+    }
+    .shape-banner-mint-circle {
+      position: absolute;
+      top: 3180px;
+      right: 4%;
+      width: 110px;
+      height: 110px;
+      background: #D5F0E4;
+      border-radius: 50%;
+      opacity: 0.7;
+    }
+    .shape-banner-cyan-bean {
+      position: absolute;
+      top: 3440px;
+      left: 47%;
+      width: 75px;
+      height: 150px;
+      background: #D2EEF6;
+      border-radius: 38px;
+      transform: rotate(10deg);
+      opacity: 0.7;
+    }
+    .shape-footer-peach-circle-left {
+      position: absolute;
+      top: 3480px;
+      left: 3%;
+      width: 130px;
+      height: 130px;
+      background: #FCDBC9;
+      border-radius: 50%;
+      opacity: 0.7;
+    }
+    .shape-footer-mint-semicircle-left {
+      position: absolute;
+      top: 3640px;
+      left: -30px;
+      width: 120px;
+      height: 120px;
+      background: #D5F0E4;
+      border-radius: 50%;
+      opacity: 0.6;
+    }
+    .shape-footer-peach-circle-right {
+      position: absolute;
+      top: 3510px;
+      right: 4%;
+      width: 130px;
+      height: 130px;
+      background: #FCDBC9;
+      border-radius: 50%;
+      opacity: 0.7;
+    }
+    .shape-footer-mint-blob-right {
+      position: absolute;
+      top: 3680px;
+      right: 3%;
+      width: 100px;
+      height: 100px;
+      background: #D5F0E4;
+      border-radius: 50%;
+      opacity: 0.6;
+    }
 
     /* Layout Wrapper */
     .site-wrapper {
@@ -86,220 +275,598 @@
       margin: 0 auto;
     }
 
-    /* ── HEADER (2-row Airalo layout) ── */
+    /* ==================================================== */
+    /* 1. HEADER (AIRALO CLEAN 2-ROW + OFFICIAL SVG LOGO)   */
+    /* ==================================================== */
     header {
       width: 100%;
-      background: rgba(250, 248, 245, 0.96);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(232, 228, 221, 0.7);
+      background: rgba(245, 239, 230, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       position: sticky;
       top: 0;
       z-index: 100;
+      border-bottom: 1px solid rgba(232, 226, 216, 0.6);
+      transition: background 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
     }
-    /* Row 1: Logo + Actions */
+    header.scrolled {
+      background: rgba(245, 239, 230, 0.97);
+      border-bottom: 1px solid #E2DDD5;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    }
     .header-row1 {
       max-width: var(--max-w);
       margin: 0 auto;
-      padding: 10px 24px 0;
+      padding: 14px 24px 8px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
+      transition: padding 0.2s ease;
     }
-    /* Row 2: Nav */
+    header.scrolled .header-row1 {
+      padding: 10px 24px;
+    }
     .header-row2 {
       max-width: var(--max-w);
       margin: 0 auto;
-      padding: 0 24px;
+      padding: 0 24px 12px;
       display: flex;
       align-items: center;
       justify-content: center;
+      transition: max-height 0.28s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.22s ease, padding 0.28s ease;
+      max-height: 60px;
+      opacity: 1;
+      overflow: hidden;
+    }
+    header.scrolled .header-row2 {
+      max-height: 0;
+      opacity: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+      pointer-events: none;
     }
 
-    /* Logo: Vector SVG icon + wordmark combo (like Airalo) */
+
+    /* SVG BRAND LOGO TabiGo (Airalo-Style Clean Horizontal) */
     .brand-logo {
       display: flex;
       align-items: center;
       gap: 10px;
       text-decoration: none;
       flex-shrink: 0;
+      transition: opacity 0.15s;
     }
-    .brand-logo-svg {
-      width: 36px;
-      height: 36px;
-      border-radius: 9px;
-      flex-shrink: 0;
-      box-shadow: 0 2px 8px rgba(0, 102, 255, 0.22);
-      transition: transform 0.2s ease;
+    .brand-logo:hover {
+      opacity: 0.9;
     }
-    .brand-logo:hover .brand-logo-svg {
-      transform: scale(1.05);
-    }
-    .brand-logo-text {
-      font-size: 20px;
-      font-weight: 800;
-      color: #0B2545;
-      letter-spacing: -0.4px;
-      white-space: nowrap;
-    }
-    .brand-logo-text span {
-      color: #00A3E0;
-    }
-
-    .nav-menu {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      list-style: none;
-      padding: 6px 0 8px;
-    }
-    .nav-menu a {
-      font-size: 13.5px;
-      font-weight: 600;
-      color: #374151;
-      text-decoration: none;
-      padding: 4px 12px;
-      border-radius: var(--radius-pill);
-      transition: color 0.15s ease, background 0.15s ease;
-      white-space: nowrap;
-    }
-    .nav-menu a:hover {
-      color: var(--orange);
-      background: rgba(255, 110, 48, 0.06);
-    }
-    .header-actions {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      flex-shrink: 0;
-    }
-    .lang-globe-btn {
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      border: 1px solid var(--border-card);
-      background: transparent;
+    .brand-icon-box {
+      width: 32px;
+      height: 32px;
+      position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
-      cursor: pointer;
-      color: #374151;
-      transition: all 0.15s;
+      flex-shrink: 0;
     }
-    .lang-globe-btn:hover { border-color: #9CA3AF; color: #111827; }
-    .currency-pill {
+    .brand-icon-box svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    .brand-text-row {
+      display: flex;
+      align-items: center;
+      font-size: 21px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      line-height: 1;
+    }
+    .brand-tabi {
+      color: #111827;
+    }
+    .brand-go {
+      color: var(--orange);
+      position: relative;
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      font-size: 13px;
-      font-weight: 600;
-      color: #4B5563;
-      background: transparent;
-      padding: 5px 12px;
-      border-radius: var(--radius-pill);
-      border: 1px solid var(--border-card);
-      cursor: pointer;
-      transition: border-color 0.15s;
     }
-    .currency-pill:hover { border-color: #9CA3AF; }
+    .brand-plane-accent {
+      width: 14px;
+      height: 14px;
+      margin-left: 2px;
+      color: var(--orange);
+      transform: rotate(-10deg);
+      display: inline-block;
+    }
+
+    /* Right Header Controls (Exact Airalo style with thin vertical divider) */
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .header-icon-btn {
+      background: transparent;
+      border: none;
+      padding: 6px;
+      color: #111827;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: background 0.15s;
+    }
+    .header-icon-btn:hover {
+      background: rgba(0, 0, 0, 0.05);
+    }
+    .header-currency-btn {
+      background: transparent;
+      border: none;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: #111827;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 6px 8px;
+      border-radius: 8px;
+      transition: background 0.15s;
+    }
+    .header-currency-btn:hover {
+      background: rgba(0, 0, 0, 0.05);
+    }
+    .header-divider-v {
+      width: 1px;
+      height: 18px;
+      background: #D1D5DB;
+    }
     .btn-header-cta {
       background: var(--orange);
       color: #FFFFFF;
       font-weight: 700;
       font-size: 13.5px;
-      padding: 8px 18px;
+      padding: 9px 20px;
       border-radius: var(--radius-pill);
       text-decoration: none;
-      border: none;
       cursor: pointer;
-      transition: background 0.18s;
-      box-shadow: 0 2px 8px rgba(255, 110, 48, 0.28);
+      transition: background 0.18s, transform 0.15s;
       white-space: nowrap;
     }
     .btn-header-cta:hover {
       background: var(--orange-hover);
+      transform: translateY(-1px);
     }
 
-    /* ── SEARCH BAR: full-width centered like Airalo ── */
-    .search-bar-section {
-      width: 100%;
-      background: rgba(250, 248, 245, 0.96);
-      border-bottom: 1px solid rgba(232, 228, 221, 0.7);
-      padding: 12px 24px 14px;
+    /* Nav Menu Links (Exact Airalo style: bold prominent clean text) */
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .nav-menu a {
+      font-size: 15px;
+      font-weight: 700;
+      color: #18181B;
+      text-decoration: none;
+      padding: 6px 0;
       position: relative;
+      letter-spacing: -0.2px;
+      transition: color 0.15s ease;
     }
-    .search-bar-inner {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      gap: 12px;
+    .nav-menu a:hover {
+      color: var(--orange);
     }
-    .search-bar-box {
+    .nav-menu a.active {
+      color: var(--orange);
+      font-weight: 800;
+    }
+    .nav-menu a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 2.5px;
+      background: var(--orange);
+      border-radius: 2px;
+    }
+
+    /* Scrolled Compact Search Bar (Exact Match to Airalo Sample Image 3) */
+    .header-scrolled-search {
       flex: 1;
+      max-width: 480px;
+      margin: 0 20px;
+      position: relative;
+      opacity: 0;
+      transform: translateY(-6px) scale(0.98);
+      pointer-events: none;
+      transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      display: none;
+    }
+    header.scrolled .header-scrolled-search {
+      display: flex;
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      pointer-events: auto;
+    }
+    .header-search-pill {
+      width: 100%;
+      height: 42px;
       background: #FFFFFF;
-      border: 1.5px solid var(--border-card);
+      border: 1.2px solid #D5CEBF;
       border-radius: var(--radius-pill);
-      padding: 10px 18px;
       display: flex;
       align-items: center;
+      padding: 0 14px;
       gap: 10px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
       transition: border-color 0.2s, box-shadow 0.2s;
     }
-    .search-bar-box:focus-within {
-      border-color: #D1D5DB;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    .header-search-pill:hover,
+    .header-search-pill:focus-within {
+      border-color: #A39B8B;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
     }
-    .search-bar-box svg {
+    .header-search-icon {
+      width: 16px;
+      height: 16px;
+      color: #6B7280;
+      flex-shrink: 0;
+    }
+    #headerSearchInput {
+      flex: 1;
+      background: transparent;
+      border: none;
+      outline: none;
+      font-size: 14px;
+      font-weight: 500;
+      color: #111827;
+      font-family: inherit;
+      padding: 0;
+    }
+    #headerSearchInput::placeholder {
+      color: #6B7280;
+      font-weight: 450;
+    }
+    .header-search-divider {
+      width: 1px;
+      height: 18px;
+      background: #E5E7EB;
+      flex-shrink: 0;
+    }
+    .header-search-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #374151;
+      cursor: pointer;
+      user-select: none;
+      padding-left: 2px;
+      white-space: nowrap;
+      transition: color 0.15s;
+    }
+    .header-search-badge:hover {
+      color: #111827;
+    }
+    .header-search-dropdown {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid #E2DDD5;
+      border-radius: 16px;
+      padding: 14px 16px;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-6px);
+      transition: all 0.2s ease;
+      z-index: 1000;
+    }
+    .header-search-dropdown.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .header-search-group-title {
+      font-size: 11.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #6B7280;
+      margin-bottom: 10px;
+    }
+    .header-search-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .header-search-tag {
+      background: #F4EFE6;
+      border: 1px solid #E5DFD5;
+      padding: 6px 12px;
+      border-radius: var(--radius-pill);
+      font-size: 13px;
+      font-weight: 600;
+      color: #18181B;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .header-search-tag:hover {
+      background: var(--orange);
+      border-color: var(--orange);
+      color: #FFFFFF;
+      transform: translateY(-1px);
+    }
+
+    /* ==================================================== */
+    /* SCROLLED HEADER MENU BUTTON & AIRALO-STYLE DROPDOWN  */
+    /* (EXACT 1:1 REPLICATION OF USER REFERENCE SCREENSHOT) */
+    /* ==================================================== */
+    .menu-divider {
+      display: none;
+      width: 1px;
+      height: 20px;
+      background: #D8D2C5;
+      margin: 0 4px;
+    }
+    .header-menu-wrap {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+    }
+    .btn-header-menu {
+      display: none;
+      align-items: center;
+      gap: 7px;
+      background: transparent;
+      border: none;
+      padding: 6px 4px;
+      font-size: 15px;
+      font-weight: 700;
+      color: #000000;
+      cursor: pointer;
+      transition: color 0.15s ease, opacity 0.15s ease;
+      white-space: nowrap;
+      user-select: none;
+    }
+    .btn-header-menu:hover {
+      opacity: 0.75;
+    }
+    .btn-header-menu .menu-icon-close {
+      display: none;
+    }
+    .btn-header-menu .menu-icon-hamburger {
+      display: block;
+    }
+    .btn-header-menu.active .menu-icon-hamburger {
+      display: none;
+    }
+    .btn-header-menu.active .menu-icon-close {
+      display: block;
+    }
+    header.scrolled .menu-divider {
+      display: block;
+    }
+    header.scrolled .btn-header-menu {
+      display: inline-flex;
+    }
+    @media (max-width: 1024px) {
+      .menu-divider, .btn-header-menu {
+        display: inline-flex !important;
+      }
+      .header-scrolled-search {
+        display: none !important;
+      }
+    }
+
+    /* Floating Navigation Dropdown (Airalo Exact Match) */
+    .header-nav-dropdown {
+      position: absolute;
+      top: calc(100% + 14px);
+      right: 0;
+      min-width: 290px;
+      width: max-content;
+      max-width: 350px;
+      background: #FFFFFF;
+      border-radius: 28px 4px 28px 28px;
+      padding: 34px 30px 22px 30px;
+      filter: drop-shadow(0 20px 48px rgba(0, 0, 0, 0.14)) drop-shadow(0 4px 12px rgba(0, 0, 0, 0.04));
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-8px) scale(0.98);
+      transform-origin: top right;
+      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 1000;
+      box-sizing: border-box;
+    }
+    .header-nav-dropdown.open {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0) scale(1);
+    }
+    .dropdown-beak {
+      position: absolute;
+      top: -15px;
+      right: 0;
+      width: 32px;
+      height: 16px;
+      pointer-events: none;
+    }
+    .dropdown-menu-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+    .dropdown-link {
+      font-size: 16.5px;
+      font-weight: 800;
+      color: #000000;
+      text-decoration: none;
+      letter-spacing: -0.2px;
+      display: inline-block;
+      width: fit-content;
+      line-height: 1.35;
+      transition: opacity 0.15s ease, color 0.15s ease;
+      cursor: pointer;
+    }
+    .dropdown-link:hover {
+      opacity: 0.65;
+    }
+    .dropdown-link.active {
+      text-decoration: underline;
+      text-underline-offset: 5px;
+      text-decoration-thickness: 2.2px;
+      text-decoration-color: #000000;
+      color: #000000;
+      font-weight: 800;
+    }
+    .dropdown-divider-h {
+      width: 100%;
+      height: 1px;
+      background: #E5E7EB;
+      margin: 26px 0 16px 0;
+    }
+    .dropdown-footer-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .dropdown-footer-btn {
+      background: none;
+      border: none;
+      padding: 4px;
+      margin: 0;
+      color: #000000;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.15s, opacity 0.15s;
+    }
+    .dropdown-footer-btn:hover {
+      transform: scale(1.15);
+      opacity: 0.75;
+    }
+    .dropdown-footer-divider {
+      width: 1px;
+      height: 20px;
+      background: #D1D5DB;
+    }
+
+    /* ==================================================== */
+    /* 2. AIRALO SEARCH BAR (EXACT MATCH TO AIRALO IMAGE 2) */
+    /* ==================================================== */
+    .search-divider-row {
+      width: 100%;
+      max-width: var(--max-w);
+      padding: 24px 24px 20px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      margin: 0 auto;
+    }
+    .search-side-line {
+      flex: 1;
+      height: 1px;
+      background: #DED7CB;
+    }
+    .search-pill-container {
+      width: 100%;
+      max-width: 880px;
+      margin: 0 20px;
+      position: relative;
+    }
+    .search-bar-box {
+      background: #FFFFFF;
+      border: 1px solid #D8D2C6;
+      border-radius: var(--radius-pill);
+      height: 52px;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+      transition: all 0.2s;
+    }
+    .search-bar-box:focus-within {
+      border-color: #B0A99E;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+    }
+    .search-bar-box svg.search-icon {
       width: 18px;
       height: 18px;
-      color: #9CA3AF;
+      color: #4B5563;
       flex-shrink: 0;
     }
     .search-bar-input {
       flex: 1;
       border: none;
       outline: none;
-      font-size: 14.5px;
+      font-size: 15px;
       font-weight: 500;
       color: var(--text-main);
       font-family: inherit;
       background: transparent;
     }
     .search-bar-input::placeholder {
-      color: #9CA3AF;
-      font-weight: 400;
+      color: #4B5563;
+      font-weight: 500;
+    }
+    .search-location-divider {
+      width: 1px;
+      height: 24px;
+      background: #E5E7EB;
+      flex-shrink: 0;
+      margin: 0 4px;
     }
     .search-location-tag {
       display: inline-flex;
       align-items: center;
-      gap: 4px;
-      font-size: 12.5px;
+      gap: 6px;
+      font-size: 14px;
       font-weight: 600;
-      color: #374151;
-      background: #F3F4F6;
-      padding: 5px 12px;
+      color: #111827;
+      padding: 6px 12px;
       border-radius: var(--radius-pill);
-      border: 1px solid #E5E7EB;
       cursor: pointer;
-      white-space: nowrap;
+      flex-shrink: 0;
+      transition: background 0.15s;
+    }
+    .search-location-tag:hover {
+      background: #F3F4F6;
     }
     .search-location-tag svg {
       width: 12px;
       height: 12px;
-      color: #6B7280;
     }
+
+    /* Live Search Dropdown */
     .search-results-dropdown {
       position: absolute;
-      top: calc(100% + 4px);
-      left: 24px;
-      right: 24px;
+      top: calc(100% + 8px);
+      left: 0;
+      right: 0;
       background: #FFFFFF;
-      border-radius: 18px;
       border: 1px solid var(--border-card);
-      box-shadow: 0 16px 36px rgba(0,0,0,0.1);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
       max-height: 320px;
       overflow-y: auto;
       display: none;
@@ -326,32 +893,34 @@
       align-items: center;
       gap: 12px;
       font-weight: 600;
-      font-size: 14.5px;
+      font-size: 14px;
     }
     .search-item-price {
-      font-size: 13.5px;
+      font-size: 13px;
       font-weight: 700;
       color: var(--orange);
     }
 
-    /* ── HERO BANNER & SLIDER WITH ANIMATED LOTTIE SVGs ── */
+    /* ==================================================== */
+    /* 3. HERO SECTION (EXACT TYPOGRAPHY & RATIO TO IMAGE 2) */
+    /* ==================================================== */
     .hero-section {
       width: 100%;
-      padding: 44px 0 20px;
+      padding: 16px 0 20px;
+      position: relative;
     }
     .hero-slider-wrap {
       position: relative;
       width: 100%;
-      min-height: 360px;
-      overflow: hidden;
+      min-height: 380px;
     }
     .hero-slide {
       display: none;
       opacity: 0;
-      transition: opacity 0.4s ease;
+      transition: opacity 0.35s ease;
       align-items: center;
       justify-content: space-between;
-      gap: 40px;
+      gap: 36px;
     }
     .hero-slide.active {
       display: flex;
@@ -359,7 +928,7 @@
     }
     .hero-illustration {
       flex: 1.1;
-      max-width: 480px;
+      max-width: 470px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -367,181 +936,248 @@
     .hero-illustration img {
       width: 100%;
       height: auto;
-      max-height: 340px;
+      max-height: 350px;
       object-fit: contain;
-      filter: drop-shadow(0 10px 20px rgba(0,0,0,0.04));
     }
     .hero-content {
       flex: 1.2;
       text-align: left;
+      position: relative;
     }
+    /* Exact Airalo Headline styling */
     .hero-h1 {
-      font-size: 38px;
+      font-size: 42px;
       font-weight: 800;
-      line-height: 1.22;
+      line-height: 1.15;
       color: #111827;
-      letter-spacing: -0.8px;
+      letter-spacing: -1.2px;
       margin-bottom: 16px;
     }
     .hero-sub {
-      font-size: 15.5px;
+      font-size: 14.5px;
+      font-weight: 500;
       color: #4B5563;
       line-height: 1.6;
-      margin-bottom: 24px;
-      max-width: 520px;
+      margin-bottom: 26px;
+      max-width: 480px;
     }
     .btn-hero-primary {
       display: inline-block;
       background: var(--orange);
       color: #FFFFFF;
       font-weight: 700;
-      font-size: 15px;
-      padding: 14px 32px;
+      font-size: 14px;
+      padding: 12px 28px;
       border-radius: var(--radius-pill);
       text-decoration: none;
-      box-shadow: 0 4px 14px rgba(255, 110, 48, 0.35);
-      transition: transform 0.15s, background 0.15s;
+      transition: background 0.15s, transform 0.15s;
     }
     .btn-hero-primary:hover {
       background: var(--orange-hover);
       transform: translateY(-1px);
     }
-    
-    /* ── PIXEL-PERFECT SLIDER BAR – exact Airalo screenshot match ── */
+
+    /* ==================================================== */
+    /* 4. PIXEL-PERFECT SLIDER INDICATOR (EXACT TO IMAGE 2) */
+    /* ==================================================== */
     .carousel-nav-container {
       display: flex;
       justify-content: center;
       align-items: center;
       gap: 12px;
-      margin: 32px 0 20px;
+      margin: 28px auto 26px;
+      width: 100%;
+      max-width: 680px;
+      position: relative;
+      z-index: 2;
     }
     .carousel-arrow-btn {
-      width: 36px;
-      height: 36px;
+      width: 32px;
+      height: 32px;
       border-radius: 50%;
       background: #FFFFFF;
-      border: 1px solid #E5E7EB;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+      border: 1px solid #E2DDD5;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      transition: all 0.18s;
+      color: #111827;
+      transition: all 0.15s;
       outline: none;
-      color: #6B7280;
       flex-shrink: 0;
+      padding: 0;
     }
     .carousel-arrow-btn:hover {
-      border-color: #D1D5DB;
-      color: #111827;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border-color: #9CA3AF;
+      transform: scale(1.05);
     }
     .carousel-arrow-btn svg {
       width: 14px;
       height: 14px;
+      stroke: #111827;
+      stroke-width: 2;
     }
-    /* Pill container – white rounded pill wrapping all segments (Image 2 Replica) */
+    /* Outer long, slender white capsule spanning across */
     .carousel-track {
-      display: inline-flex;
+      flex: 1;
+      display: flex;
       align-items: center;
       gap: 8px;
       background: #FFFFFF;
-      border: 1px solid #E5E7EB;
-      border-radius: 9999px;
-      padding: 4px 6px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
-    }
-    /* Inactive segment: rounded silver pill */
-    .carousel-segment {
-      width: 105px;
-      height: 12px;
-      border-radius: 9999px;
-      background: #E2E8F0;
-      position: relative;
-      cursor: pointer;
-      transition: all 0.25s ease;
-      display: flex;
-      align-items: center;
+      border: 1px solid #E2DDD5;
+      border-radius: var(--radius-pill);
+      padding: 0 8px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+      height: 18px;
       box-sizing: border-box;
+    }
+    /* Inactive segment: thin hairline gray line */
+    .carousel-segment {
+      flex: 1;
+      height: 2.5px;
+      border-radius: var(--radius-pill);
+      background: #D8D3CA;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      box-sizing: border-box;
+      transition: background 0.2s;
     }
     .carousel-segment:hover {
-      background: #CBD5E1;
+      background: #BCB6AC;
     }
-    /* Active segment: 20px height, white bg + electric blue border */
+    /* Active segment retains identical height and clean style - NO BLUE BORDER */
     .carousel-segment.active {
-      height: 20px;
-      border-radius: 9999px;
-      border: 2px solid #0055FF;
-      background: #FFFFFF;
-      padding: 2px;
-      box-sizing: border-box;
+      background: #D8D3CA;
     }
-    /* Fill bar inside active pill */
+    /* Smooth hairline black progress line */
     .carousel-segment-fill {
       position: absolute;
-      top: 0;
       left: 0;
+      top: 0;
       height: 100%;
       width: 0%;
-      background: transparent;
-      border-radius: 9999px;
+      border-radius: var(--radius-pill);
+      background: #111827;
     }
     .carousel-segment.active .carousel-segment-fill {
-      position: relative;
-      background: #111827;
-      border-radius: 9999px;
-      height: 100%;
-      animation: fillPill 6s linear forwards;
+      animation: fillSegment 6s linear forwards;
     }
-    @keyframes fillPill {
+    @keyframes fillSegment {
       0%   { width: 0%; }
       100% { width: 100%; }
     }
 
-    /* 3 Filter Dropdowns Row */
-    .filter-dropdowns-row {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      margin-bottom: 48px;
-      flex-wrap: wrap;
+    /* ==================================================== */
+    /* 3 NAVIGATION JUMP CARDS (EXACT MATCH TO AIRALO IMAGE 2) */
+    /* ==================================================== */
+    .hero-quick-nav-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 820px;
+      margin: 0 auto 56px;
     }
-    .filter-dropdown-btn {
+    .hero-quick-nav-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-quick-card {
       background: #FFFFFF;
-      border: 1px solid var(--border-card);
-      border-radius: var(--radius-pill);
-      padding: 10px 22px;
-      font-size: 13.5px;
-      font-weight: 600;
-      color: #374151;
+      border: 1.5px solid transparent;
+      border-radius: 14px;
+      padding: 0 20px;
+      height: 54px;
       display: flex;
       align-items: center;
-      gap: 8px;
+      justify-content: space-between;
+      text-decoration: none;
+      color: #111827;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      transition: all 0.2s ease;
       cursor: pointer;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-      transition: all 0.15s;
     }
-    .filter-dropdown-btn:hover {
-      border-color: var(--orange);
-      color: var(--orange);
+    .hero-quick-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+      border-color: rgba(242, 99, 34, 0.4);
+    }
+    .hero-quick-card.active {
+      border-color: #F26322;
+      box-shadow: 0 2px 10px rgba(242, 99, 34, 0.12);
+    }
+    .quick-card-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #111827;
+      letter-spacing: -0.2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .quick-card-arrow {
+      width: 16px;
+      height: 16px;
+      color: #111827;
+      flex-shrink: 0;
+      margin-left: 8px;
+      transition: transform 0.2s ease;
+    }
+    .hero-quick-card:hover .quick-card-arrow {
+      transform: translateY(2px);
+    }
+    .hero-quick-card.active .quick-card-arrow {
+      color: #F26322;
     }
 
-    /* ── CYAN BANNER: "VÌ SAO HÀNG TRIỆU TÍN ĐỒ DU LỊCH LỰA CHỌN TABI GO?" ── */
+    /* Floating Background Motifs centered behind slider and cards */
+    .hero-motif-green-diamond {
+      position: absolute;
+      top: -42px;
+      left: 50%;
+      transform: translateX(-50%) rotate(45deg);
+      width: 78px;
+      height: 78px;
+      background: #CFE4D8;
+      border-radius: 14px;
+      opacity: 0.9;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .hero-motif-yellow-swatch {
+      position: absolute;
+      top: -16px;
+      right: 14px;
+      width: 66px;
+      height: 100px;
+      background: #F8D882;
+      border-radius: 26px;
+      transform: rotate(16deg);
+      opacity: 0.9;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* ==================================================== */
+    /* 5. CYAN BANNER ("VÌ SAO CHỌN TABI GO?")              */
+    /* ==================================================== */
     .why-cyan-banner {
       background-color: var(--cyan-banner);
       border-radius: var(--radius-xl);
-      padding: 44px 36px 40px;
+      padding: 44px 40px 38px;
       position: relative;
       overflow: hidden;
-      margin-bottom: 64px;
-      box-shadow: 0 10px 30px rgba(120, 207, 229, 0.28);
+      margin-bottom: 56px;
     }
     .why-cyan-banner h2 {
       text-align: center;
-      font-size: 28px;
+      font-size: 26px;
       font-weight: 800;
       color: #0F172A;
-      margin-bottom: 34px;
+      margin-bottom: 32px;
       letter-spacing: -0.5px;
     }
     .why-features-grid {
@@ -558,22 +1194,26 @@
       text-align: center;
     }
     .why-feature-icon-circle {
-      width: 68px;
-      height: 68px;
+      width: 62px;
+      height: 62px;
       background: #FFFFFF;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 16px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      margin-bottom: 14px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
       color: #0F172A;
     }
+    .why-feature-icon-circle svg {
+      width: 28px;
+      height: 28px;
+    }
     .why-feature-title {
-      font-size: 14.5px;
+      font-size: 14px;
       font-weight: 700;
       color: #0F172A;
-      margin-bottom: 6px;
+      margin-bottom: 5px;
       line-height: 1.35;
     }
     .why-feature-desc {
@@ -581,50 +1221,44 @@
       color: #1E293B;
       line-height: 1.45;
     }
-    .cyan-side-deco-left {
+    .cyan-deco-left {
       position: absolute;
-      left: 0;
+      left: -10px;
+      bottom: 0;
+      width: 130px;
+      height: 160px;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.9;
+    }
+    .cyan-deco-right {
+      position: absolute;
+      right: -10px;
       bottom: 0;
       width: 140px;
       height: 170px;
       pointer-events: none;
       z-index: 1;
-    }
-    .cyan-side-deco-left img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-    .cyan-side-deco-right {
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      width: 150px;
-      height: 180px;
-      pointer-events: none;
-      z-index: 1;
-    }
-    .cyan-side-deco-right img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
+      opacity: 0.9;
     }
 
-    /* ── HOW IT WORKS & VIDEO SECTION ── */
+    /* ==================================================== */
+    /* 6. HOW IT WORKS & VIDEO SECTION                      */
+    /* ==================================================== */
     .how-section {
-      margin-bottom: 64px;
+      margin-bottom: 56px;
       text-align: center;
     }
     .how-tabs {
       display: inline-flex;
       align-items: center;
       gap: 32px;
-      border-bottom: 2px solid #E5E7EB;
+      border-bottom: 2px solid #DED7CB;
       padding-bottom: 8px;
-      margin-bottom: 36px;
+      margin-bottom: 32px;
     }
     .how-tab {
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 700;
       color: #6B7280;
       background: none;
@@ -649,39 +1283,34 @@
     }
     .video-card-preview {
       max-width: 680px;
-      margin: 0 auto 36px;
+      margin: 0 auto 28px;
       background: #FFFFFF;
-      border-radius: 22px;
+      border-radius: 20px;
       overflow: hidden;
       border: 1px solid var(--border-card);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      box-shadow: 0 4px 18px rgba(0,0,0,0.06);
       cursor: pointer;
       position: relative;
       transition: transform 0.2s, box-shadow 0.2s;
     }
     .video-card-preview:hover {
       transform: translateY(-2px);
-      box-shadow: 0 14px 32px rgba(0,0,0,0.1);
+      box-shadow: 0 8px 26px rgba(0,0,0,0.1);
     }
     .video-thumbnail-wrap {
       width: 100%;
+      height: 360px;
       position: relative;
-      background: #E8F7F0;
-    }
-    .video-thumbnail-wrap img {
-      width: 100%;
-      height: auto;
-      display: block;
+      background: linear-gradient(135deg, #E6F4EA 0%, #D1E7DD 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .video-play-btn {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 64px;
-      height: 44px;
+      width: 68px;
+      height: 48px;
       background: #FF0000;
-      border-radius: 12px;
+      border-radius: 14px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -690,43 +1319,48 @@
       transition: transform 0.15s;
     }
     .video-card-preview:hover .video-play-btn {
-      transform: translate(-50%, -50%) scale(1.1);
+      transform: scale(1.08);
     }
     .video-play-triangle {
       width: 0;
       height: 0;
       border-style: solid;
-      border-width: 9px 0 9px 16px;
+      border-width: 10px 0 10px 17px;
       border-color: transparent transparent transparent #FFFFFF;
       margin-left: 3px;
     }
+    .video-sub-family-art {
+      max-width: 380px;
+      margin: 0 auto;
+      display: block;
+    }
 
-    /* ── SIGNATURE GREEN DESTINATION MARKETPLACE CONTAINER ── */
+    /* ==================================================== */
+    /* 7. SIGNATURE EMERALD GREEN DESTINATION MARKETPLACE   */
+    /* ==================================================== */
     .green-destination-section {
       width: 100%;
-      margin-bottom: 64px;
+      margin-bottom: 56px;
     }
     .green-container {
       background-color: var(--green-banner);
       border-radius: var(--radius-xl);
-      padding: 36px 36px 44px;
+      padding: 34px 34px 38px;
       color: #FFFFFF;
-      box-shadow: 0 12px 36px rgba(72, 176, 128, 0.28);
     }
     .green-tabs-header {
       display: flex;
       align-items: center;
       gap: 8px;
-      margin-bottom: 28px;
-      flex-wrap: wrap;
+      margin-bottom: 24px;
     }
     .green-tab-pill {
-      background: rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.2);
       border: 1px solid rgba(255, 255, 255, 0.25);
       color: #FFFFFF;
-      font-size: 14px;
+      font-size: 13.5px;
       font-weight: 700;
-      padding: 8px 22px;
+      padding: 7px 20px;
       border-radius: var(--radius-pill);
       cursor: pointer;
       transition: all 0.15s;
@@ -740,7 +1374,7 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
-      margin-bottom: 24px;
+      margin-bottom: 22px;
     }
     .green-header-title h3 {
       font-size: 24px;
@@ -751,7 +1385,7 @@
     .green-header-title p {
       font-size: 13.5px;
       color: rgba(255, 255, 255, 0.9);
-      margin-top: 4px;
+      margin-top: 3px;
     }
     .green-view-all-btn {
       background: #FFFFFF;
@@ -761,71 +1395,102 @@
       padding: 7px 16px;
       border-radius: var(--radius-pill);
       text-decoration: none;
-      transition: opacity 0.15s;
+      transition: background 0.15s;
       white-space: nowrap;
     }
     .green-view-all-btn:hover {
-      opacity: 0.9;
+      background: #F3F4F6;
     }
 
-    /* 3-Column Country Grid */
-    .country-cards-grid {
+    /* 3-Column Country Pill Cards (Airalo Clean Grid) */
+    .green-cards-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
+      gap: 12px;
     }
-    .country-card {
+    .country-white-pill {
       background: #FFFFFF;
-      border-radius: 14px;
-      padding: 14px 18px;
+      border-radius: 12px;
+      padding: 12px 16px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      color: var(--text-main);
+      text-decoration: none;
+      color: #111827;
       cursor: pointer;
       transition: transform 0.15s, box-shadow 0.15s;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
-      user-select: none;
     }
-    .country-card:hover {
+    .country-white-pill:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     }
-    .country-left {
+    .country-pill-left {
       display: flex;
       align-items: center;
       gap: 12px;
     }
-    .country-flag {
-      font-size: 24px;
+    .country-flag-emoji {
+      font-size: 22px;
       line-height: 1;
     }
-    .country-name {
-      font-size: 15px;
+    .country-pill-name {
+      font-size: 14px;
       font-weight: 700;
       color: #111827;
     }
-    .country-price {
-      font-size: 13.5px;
-      font-weight: 800;
-      color: #111827;
+    .country-pill-price {
+      font-size: 13px;
+      font-weight: 700;
+      color: #4B5563;
+      white-space: nowrap;
     }
 
-    /* ── FAQ & 24/7 SUPPORT SECTION ── */
-    .faq-support-section {
+    /* ==================================================== */
+    /* 8. FAQ & SUPPORT SECTION (EXACT MATCH TO AIRALO IMAGE 4) */
+    /* ==================================================== */
+    .faq-section,
+    #faq {
       width: 100%;
-      margin-bottom: 64px;
+      margin-bottom: 88px !important;
+      position: relative;
+    }
+    .faq-section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+    .faq-title {
+      font-size: 32px;
+      font-weight: 800;
+      color: #111827;
+      letter-spacing: -0.6px;
+      margin: 0;
+    }
+    .btn-help-center {
+      background: #FFFFFF;
+      border: 1px solid #D8D2C6;
+      border-radius: var(--radius-pill);
+      padding: 9px 20px;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #111827;
+      text-decoration: none;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+      transition: all 0.15s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-help-center:hover {
+      border-color: #9CA3AF;
+      transform: translateY(-1px);
     }
     .faq-support-grid {
       display: grid;
-      grid-template-columns: 1.35fr 1fr;
+      grid-template-columns: 1.25fr 1fr;
       gap: 32px;
-    }
-    .faq-left h3 {
-      font-size: 24px;
-      font-weight: 800;
-      margin-bottom: 20px;
-      color: #111827;
+      align-items: stretch;
     }
     .faq-list {
       display: flex;
@@ -834,105 +1499,122 @@
     }
     .faq-item {
       background: #FFFFFF;
-      border-radius: 14px;
-      border: 1px solid var(--border-card);
+      border: 1px solid #E5E7EB;
+      border-radius: 16px;
       overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
       transition: border-color 0.15s;
     }
     .faq-question {
-      padding: 16px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 14.5px;
+      padding: 18px 24px;
+      font-size: 15px;
       font-weight: 700;
-      color: #1F2937;
+      color: #111827;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       cursor: pointer;
+      user-select: none;
+      gap: 16px;
     }
     .faq-question svg {
-      width: 16px;
-      height: 16px;
-      color: #6B7280;
+      width: 15px;
+      height: 15px;
       transition: transform 0.2s;
+      color: #111827;
+      stroke-width: 2.2;
+      flex-shrink: 0;
     }
-    .faq-item.open .faq-question svg {
+    .faq-item.active .faq-question svg {
       transform: rotate(180deg);
     }
     .faq-answer {
       display: none;
-      padding: 0 20px 16px;
-      font-size: 13.5px;
+      padding: 0 24px 20px;
+      font-size: 14px;
       color: #4B5563;
-      line-height: 1.6;
+      line-height: 1.65;
+      border-top: 1px solid #F3F4F6;
+      margin-top: 0;
+      padding-top: 16px;
     }
-    .faq-item.open .faq-answer {
+    .faq-item.active .faq-answer {
       display: block;
     }
 
-    /* Right Support Box with Native Animated Lottie SVG */
+    /* Support Card on Right (Exact Match to Image 4) */
     .support-card {
       background: #FFFFFF;
+      border: 1px solid #E5E7EB;
       border-radius: 20px;
-      border: 1px solid var(--border-card);
-      padding: 30px;
+      padding: 34px 32px 0 32px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      min-height: 380px;
+    }
+    .support-card-left {
       position: relative;
-      overflow: hidden;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.04);
+      z-index: 2;
+      max-width: 290px;
     }
-    .support-badge {
-      display: inline-block;
-      font-size: 11.5px;
-      font-weight: 700;
-      color: var(--green-banner);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 8px;
+    .support-sub-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: #64748B;
+      margin-bottom: 12px;
+      letter-spacing: -0.2px;
     }
-    .support-card h4 {
-      font-size: 20px;
+    .support-main-title {
+      font-size: 22px;
       font-weight: 800;
       color: #111827;
       line-height: 1.35;
-      margin-bottom: 12px;
+      margin-bottom: 28px;
+      letter-spacing: -0.4px;
     }
-    .support-card p {
-      font-size: 13.5px;
-      color: #4B5563;
-      line-height: 1.5;
-      margin-bottom: 20px;
+    .support-links-group {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
     }
-    .btn-chat-now {
-      display: inline-block;
-      background: #111827;
-      color: #FFFFFF;
-      font-size: 13.5px;
+    .support-text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14.5px;
       font-weight: 700;
-      padding: 10px 22px;
-      border-radius: var(--radius-pill);
+      color: #111827;
       text-decoration: none;
-      width: fit-content;
-      transition: background 0.15s;
+      transition: color 0.15s, transform 0.15s;
     }
-    .btn-chat-now:hover {
-      background: #000000;
+    .support-text-link:hover {
+      color: var(--orange);
+      transform: translateX(3px);
+    }
+    .support-text-link svg {
+      width: 16px;
+      height: 16px;
+      stroke-width: 2.2;
     }
     .support-agent-illus {
-      width: 170px;
-      margin-left: auto;
-      margin-top: 10px;
-    }
-    .support-agent-illus img {
-      width: 100%;
-      height: auto;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      max-height: 250px;
+      width: auto;
+      pointer-events: none;
+      z-index: 1;
     }
 
-    /* ── BLOG SECTION ("KẾT NỐI, KHÁM PHÁ CÙNG TABI GO") ── */
+    /* ==================================================== */
+    /* 9. TRAVEL BLOG / GUIDES SECTION                      */
+    /* ==================================================== */
     .blog-section {
-      width: 100%;
-      margin-bottom: 64px;
+      margin-bottom: 88px !important;
     }
     .blog-header {
       display: flex;
@@ -940,25 +1622,10 @@
       align-items: center;
       margin-bottom: 24px;
     }
-    .blog-header h3 {
+    .blog-header h2 {
       font-size: 24px;
       font-weight: 800;
       color: #111827;
-    }
-    .blog-view-all {
-      font-size: 13px;
-      font-weight: 700;
-      color: #111827;
-      text-decoration: none;
-      border: 1px solid #D1D5DB;
-      padding: 6px 14px;
-      border-radius: var(--radius-pill);
-      transition: all 0.15s;
-    }
-    .blog-view-all:hover {
-      border-color: #111827;
-      background: #111827;
-      color: #FFFFFF;
     }
     .blog-grid {
       display: grid;
@@ -970,580 +1637,791 @@
       border-radius: 16px;
       overflow: hidden;
       border: 1px solid var(--border-card);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-      cursor: pointer;
-      transition: transform 0.18s, box-shadow 0.18s;
-      display: flex;
-      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
     .blog-card:hover {
       transform: translateY(-3px);
-      box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
     }
-    .blog-img-box {
+    .blog-img-wrap {
       width: 100%;
-      height: 170px;
-      background: #F3F4F6;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      height: 180px;
+      background: #E5E7EB;
       overflow: hidden;
       position: relative;
     }
-    .blog-img-box img {
+    .blog-img-wrap img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      transition: transform 0.3s;
+    }
+    .blog-card:hover .blog-img-wrap img {
+      transform: scale(1.05);
     }
     .blog-content {
-      padding: 16px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      padding: 16px 18px 20px;
+    }
+    .blog-category-tag {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--orange);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
     }
     .blog-title {
-      font-size: 14.5px;
+      font-size: 15px;
       font-weight: 700;
       color: #111827;
       line-height: 1.4;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
-    .blog-meta {
-      font-size: 12px;
-      font-weight: 600;
-      color: #6B7280;
+    .blog-read-link {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--orange);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
     }
 
-    /* ── B2B / PARTNER SECTION ("CỔNG ĐỐI TÁC TABI GO") ── */
-    .b2b-section {
-      width: 100%;
-      margin-bottom: 64px;
-    }
-    .b2b-container {
+    /* ==================================================== */
+    /* 10. B2B PARTNER BANNER & APP DOWNLOAD BANNER         */
+    /* ==================================================== */
+    .b2b-partner-banner {
       background: #FFFFFF;
-      border-radius: var(--radius-xl);
       border: 1px solid var(--border-card);
-      padding: 40px 48px;
+      border-radius: var(--radius-xl);
+      padding: 36px 44px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 36px;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.03);
+      gap: 40px;
+      margin-bottom: 40px;
     }
-    .b2b-text {
-      flex: 1.4;
+    .b2b-content {
+      flex: 1.2;
     }
-    .b2b-text h3 {
-      font-size: 26px;
+    .b2b-content h3 {
+      font-size: 24px;
       font-weight: 800;
       color: #111827;
-      margin-bottom: 14px;
-      letter-spacing: -0.4px;
+      margin-bottom: 12px;
     }
-    .b2b-text p {
-      font-size: 14.5px;
+    .b2b-content p {
+      font-size: 14px;
       color: #4B5563;
       line-height: 1.6;
       margin-bottom: 20px;
-      max-width: 580px;
     }
-    .b2b-link {
-      font-size: 14px;
+    .btn-b2b {
+      background: #111827;
+      color: #FFFFFF;
+      font-size: 13.5px;
       font-weight: 700;
-      color: var(--orange);
+      padding: 10px 22px;
+      border-radius: var(--radius-pill);
       text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
+      display: inline-block;
+      transition: background 0.15s;
     }
-    .b2b-link:hover {
-      text-decoration: underline;
+    .btn-b2b:hover {
+      background: #374151;
     }
-    .b2b-illustration {
-      flex: 1;
-      max-width: 280px;
+    .b2b-art-wrap {
+      flex: 0.9;
       display: flex;
       justify-content: center;
     }
-    .b2b-illustration img {
-      width: 100%;
+    .b2b-art-wrap img {
+      max-width: 240px;
       height: auto;
-      object-fit: contain;
     }
 
-    /* ── APP DOWNLOAD BANNER (CYAN CONTAINER WITH ANIMATED CHARACTERS) ── */
-    .app-banner-section {
-      width: 100%;
-      margin-bottom: 72px;
-    }
-    .app-banner-card {
-      background: var(--cyan-banner);
-      border-radius: var(--radius-xl);
-      padding: 44px 48px;
+    /* App Banner (Exact Match to Airalo Sample Image 2) */
+    .app-download-banner {
+      background: #73C9DD;
+      border-radius: 36px;
+      padding: 56px 64px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 36px;
+      gap: 60px;
+      margin-bottom: 72px;
       position: relative;
       overflow: hidden;
-      box-shadow: 0 12px 36px rgba(120, 207, 229, 0.28);
     }
-    .app-banner-left {
-      max-width: 260px;
+    .app-phone-preview-wrap {
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 2;
     }
-    .app-banner-left img {
-      width: 100%;
-      height: auto;
-      object-fit: contain;
+    .app-phone-mockup-img {
+      max-height: 310px;
+      width: auto;
+      display: block;
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      filter: drop-shadow(0 20px 32px rgba(15, 23, 42, 0.22));
+      transition: transform 0.3s ease;
     }
-    .app-banner-right {
+    .app-phone-mockup-img:hover {
+      transform: translateY(-4px) scale(1.02);
+    }
+    .app-banner-content {
       flex: 1;
-      text-align: left;
-    }
-    .app-banner-right h3 {
-      font-size: 28px;
-      font-weight: 800;
+      max-width: 540px;
       color: #0F172A;
-      margin-bottom: 12px;
-      letter-spacing: -0.5px;
+      z-index: 2;
     }
-    .app-banner-right p {
-      font-size: 14.5px;
+    .app-banner-content h3 {
+      font-size: 38px;
+      font-weight: 800;
+      color: #0B192C;
+      letter-spacing: -1px;
+      line-height: 1.18;
+      margin-bottom: 16px;
+    }
+    .app-banner-content p {
+      font-size: 15.5px;
       color: #1E293B;
-      line-height: 1.5;
-      margin-bottom: 24px;
-      max-width: 520px;
+      line-height: 1.55;
+      margin-bottom: 28px;
+      max-width: 460px;
     }
-    .app-rating-badges {
+    .app-badges-row {
       display: flex;
-      align-items: center;
-      gap: 24px;
+      align-items: flex-start;
+      gap: 20px;
       flex-wrap: wrap;
     }
-    .rating-badge {
-      background: #FFFFFF;
-      padding: 10px 18px;
-      border-radius: 12px;
+    .app-store-pill-card {
       display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      text-align: center;
     }
-    .rating-badge-store {
-      font-size: 13.5px;
+    .app-badge-btn-pill {
+      background: #FFFFFF;
+      border: 1.2px solid #52525B;
+      color: #000000;
+      padding: 9px 24px 9px 18px;
+      height: 52px;
+      border-radius: var(--radius-pill);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 15px;
       font-weight: 700;
-      color: #111827;
+      letter-spacing: -0.2px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      transition: all 0.2s ease;
     }
-    .rating-stars {
-      font-size: 12px;
-      color: #F59E0B;
+    .app-badge-btn-pill:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+      border-color: #000000;
+    }
+    .app-badge-btn-pill .store-app-icon {
+      width: 26px;
+      height: 26px;
+      flex-shrink: 0;
+      display: block;
+    }
+    .app-badge-btn-pill span {
+      white-space: nowrap;
+      color: #000000;
+      font-weight: 700;
+    }
+    .app-rating-row {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 10px;
+    }
+    .app-rating-label {
+      font-size: 13px;
+      font-weight: 500;
+      color: #0F172A;
+      margin-bottom: 2px;
+    }
+    .app-rating-score {
+      font-size: 28px;
       font-weight: 800;
+      color: #000000;
+      line-height: 1.1;
+      margin-bottom: 4px;
+      letter-spacing: -0.5px;
+    }
+    .app-rating-stars {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      justify-content: center;
+    }
+    .rating-star {
+      width: 16px;
+      height: 16px;
+      display: block;
     }
 
-    /* ── FOOTER & GIANT STYLIZED BRAND ART LOGO ── */
+    /* ==================================================== */
+    /* 11. FOOTER (EXACT MATCH TO AIRALO SAMPLES 2 & 3)     */
+    /* ==================================================== */
     footer {
       width: 100%;
-      background: #FAF8F5;
-      border-top: 1px solid var(--border);
-      padding: 60px 0 30px;
+      background: transparent;
+      padding: 0 24px 48px;
       position: relative;
+      z-index: 2;
+    }
+    .footer-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
     }
     .footer-columns-grid {
       display: grid;
-      grid-template-columns: repeat(6, 1fr);
+      grid-template-columns: repeat(7, 1fr);
       gap: 24px;
-      margin-bottom: 48px;
+      margin-bottom: 56px;
     }
     .footer-col h5 {
       font-size: 13.5px;
       font-weight: 700;
       color: #111827;
       margin-bottom: 16px;
-      text-transform: capitalize;
+      letter-spacing: -0.2px;
     }
     .footer-col ul {
       list-style: none;
       display: flex;
       flex-direction: column;
       gap: 10px;
+      padding: 0;
+      margin: 0;
     }
-    .footer-col ul a {
+    .footer-col a {
+      font-size: 13px;
+      color: #4B5563;
+      text-decoration: none;
+      transition: color 0.15s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .footer-col a:hover {
+      color: var(--orange);
+    }
+    .footer-social-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .footer-social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       font-size: 13px;
       color: #4B5563;
       text-decoration: none;
       transition: color 0.15s;
     }
-    .footer-col ul a:hover {
-      color: var(--orange);
+    .footer-social-link:hover {
+      color: #111827;
     }
-    .footer-big-logo-wrap {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      margin: 40px 0 20px;
-    }
-    .footer-big-logo-wrap img {
-      max-width: 540px;
-      width: 100%;
-      height: auto;
-    }
-    .footer-tabigo-tagline {
-      margin-top: 8px;
-      font-size: 14px;
-      font-weight: 700;
-      color: #374151;
-      letter-spacing: 0.5px;
-    }
-    .footer-bottom-bar {
-      text-align: center;
-      font-size: 12px;
-      color: #9CA3AF;
-      border-top: 1px solid #EAE7E0;
-      padding-top: 24px;
-      margin-top: 20px;
+    .footer-social-link svg {
+      width: 15px;
+      height: 15px;
+      flex-shrink: 0;
     }
 
-    /* ── MODAL: ESIM PACKAGE DETAILS ── */
-    .modal-overlay {
+    /* Giant Brand Artwork Row (Sample Image 3) */
+    .footer-artwork-wrap {
+      width: 100%;
+      max-width: 980px;
+      margin: 0 auto 36px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .footer-artwork-wrap img {
+      width: 100%;
+      max-height: 240px;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* Bottom Copyright & Legal row (Centered, minimalist) */
+    .footer-bottom-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 12px;
+      color: #6B7280;
+      flex-wrap: wrap;
+      gap: 18px;
+      text-align: center;
+      border-top: none;
+      padding-top: 0;
+    }
+    .footer-copyright {
+      font-size: 12px;
+      font-weight: 500;
+      color: #6B7280;
+    }
+    .footer-legal-links {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .footer-legal-links a {
+      color: #6B7280;
+      text-decoration: none;
+      font-size: 12px;
+      transition: color 0.15s;
+    }
+    .footer-legal-links a:hover {
+      color: #111827;
+    }
+
+    /* Modal Popup for Country Packages */
+    .country-modal-overlay {
       position: fixed;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(15, 23, 42, 0.6);
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.45);
       backdrop-filter: blur(4px);
-      z-index: 999;
+      z-index: 200;
       display: none;
       align-items: center;
       justify-content: center;
       padding: 20px;
     }
-    .modal-overlay.active {
+    .country-modal-overlay.active {
       display: flex;
     }
-    .modal-card {
+    .country-modal-card {
       background: #FFFFFF;
-      border-radius: 24px;
-      max-width: 600px;
+      border-radius: 20px;
       width: 100%;
-      padding: 32px;
-      box-shadow: 0 24px 60px rgba(0,0,0,0.25);
-      position: relative;
-      animation: modalPop 0.25s ease-out;
+      max-width: 520px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      animation: modalFadeIn 0.2s ease-out;
     }
-    @keyframes modalPop {
+    @keyframes modalFadeIn {
       from { opacity: 0; transform: scale(0.95); }
       to { opacity: 1; transform: scale(1); }
     }
-    .modal-close-btn {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      border: 1px solid var(--border-card);
-      background: #FFFFFF;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      font-size: 16px;
-      color: #6B7280;
-    }
-    .modal-header-country {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 24px;
-    }
-    .modal-flag {
-      font-size: 38px;
-    }
-    .modal-country-name {
-      font-size: 22px;
-      font-weight: 800;
-      color: #111827;
-    }
-    .modal-country-operator {
-      font-size: 13px;
-      color: #6B7280;
-    }
-    .package-options-list {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-bottom: 24px;
-      max-height: 280px;
-      overflow-y: auto;
-    }
-    .package-option-item {
-      border: 1.5px solid var(--border-card);
-      border-radius: 14px;
-      padding: 14px 18px;
+    .modal-header {
+      padding: 20px 24px;
+      border-bottom: 1px solid #E5E7EB;
       display: flex;
       align-items: center;
       justify-content: space-between;
+    }
+    .modal-header h3 {
+      font-size: 18px;
+      font-weight: 800;
+      color: #111827;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .modal-close-btn {
+      background: none;
+      border: none;
+      font-size: 24px;
+      color: #9CA3AF;
       cursor: pointer;
-      transition: all 0.15s;
+      line-height: 1;
     }
-    .package-option-item:hover, .package-option-item.selected {
+    .modal-body {
+      padding: 20px 24px;
+      max-height: 400px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .package-option-item {
+      border: 1px solid #E5E7EB;
+      border-radius: 12px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: border-color 0.15s;
+    }
+    .package-option-item:hover {
       border-color: var(--orange);
-      background: #FFF8F5;
     }
-    .package-info-left {
-      font-weight: 700;
+    .pkg-info-left strong {
       font-size: 15px;
       color: #111827;
+      display: block;
     }
-    .package-info-sub {
+    .pkg-info-left span {
       font-size: 12.5px;
       color: #6B7280;
-      font-weight: 500;
     }
-    .package-price-right {
-      font-size: 16px;
+    .pkg-action-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .pkg-price {
+      font-size: 15px;
       font-weight: 800;
       color: var(--orange);
     }
-    .modal-btn-buy {
-      width: 100%;
+    .btn-buy-pkg {
       background: var(--orange);
       color: #FFFFFF;
-      font-size: 15px;
+      font-size: 12.5px;
       font-weight: 700;
-      padding: 14px;
+      padding: 6px 14px;
       border-radius: var(--radius-pill);
+      text-decoration: none;
       border: none;
       cursor: pointer;
-      text-align: center;
-      transition: background 0.15s;
-      box-shadow: 0 4px 14px rgba(255, 110, 48, 0.35);
-    }
-    .modal-btn-buy:hover {
-      background: var(--orange-hover);
     }
 
-    /* Responsive adjustments */
-    @media (max-width: 960px) {
-      .header-row2 { display: none; }
-      .hero-slide { flex-direction: column-reverse; text-align: center; }
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero-slide { flex-direction: column-reverse; text-align: center; gap: 20px; }
       .hero-content { text-align: center; }
       .hero-sub { margin-left: auto; margin-right: auto; }
-      .why-features-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
-      .country-cards-grid { grid-template-columns: repeat(2, 1fr); }
+      .why-features-grid { grid-template-columns: repeat(2, 1fr); }
+      .green-cards-grid { grid-template-columns: repeat(2, 1fr); }
       .faq-support-grid { grid-template-columns: 1fr; }
-      .blog-grid { grid-template-columns: repeat(2, 1fr); }
-      .footer-columns-grid { grid-template-columns: repeat(3, 1fr); gap: 32px; }
-      .b2b-container { flex-direction: column; text-align: center; }
-      .b2b-text p { margin-left: auto; margin-right: auto; }
-      .app-banner-card { flex-direction: column; text-align: center; }
-      .app-banner-right { text-align: center; }
-      .app-rating-badges { justify-content: center; }
+      .blog-grid { grid-template-columns: 1fr; }
+      .footer-columns-grid { grid-template-columns: 1fr 1fr; }
+      .b2b-partner-banner, .app-download-banner { flex-direction: column; text-align: center; }
     }
     @media (max-width: 640px) {
-      .country-cards-grid { grid-template-columns: 1fr; }
-      .blog-grid { grid-template-columns: 1fr; }
-      .footer-columns-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero-quick-nav-row { grid-template-columns: 1fr; gap: 10px; }
+      .hero-quick-card { height: 50px; padding: 0 16px; }
+      .hero-motif-green-diamond { width: 56px; height: 56px; top: -28px; }
+      .hero-motif-yellow-swatch { display: none; }
+      .green-cards-grid { grid-template-columns: 1fr; }
+      .header-row2 { overflow-x: auto; justify-content: flex-start; gap: 16px; }
       .why-features-grid { grid-template-columns: 1fr; }
-      .hero-h1 { font-size: 28px; }
-      .carousel-segment { width: 68px; }
-      .brand-logo-text { font-size: 16px; }
-      .search-bar-section { padding: 10px 16px 12px; }
+      .footer-columns-grid { grid-template-columns: 1fr; gap: 28px; }
+      .footer-top-row { flex-direction: column; align-items: flex-start; gap: 20px; }
+      .footer-bottom-row { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .support-card { padding: 28px 20px 220px 20px; min-height: auto; }
+      .support-agent-illus { max-height: 200px; }
+      .faq-section-header { flex-direction: column; align-items: flex-start; gap: 14px; }
     }
   </style>
 </head>
+
 <body>
 
-  <!-- Floating Confetti Elements -->
-  <div class="bg-confetti-container">
-    <div class="confetti c-rect-peach" style="top: 8%; left: 6%;"></div>
-    <div class="confetti c-diamond-teal" style="top: 14%; right: 8%;"></div>
-    <div class="confetti c-rect-yellow" style="top: 26%; left: 10%;"></div>
-    <div class="confetti c-circle-peach" style="top: 32%; right: 4%;"></div>
-    <div class="confetti c-diamond-teal" style="top: 48%; left: 4%;"></div>
-    <div class="confetti c-circle-teal" style="top: 54%; right: 7%;"></div>
-    <div class="confetti c-rect-peach" style="top: 68%; left: 5%;"></div>
-    <div class="confetti c-rect-yellow" style="top: 76%; right: 8%;"></div>
-    <div class="confetti c-circle-peach" style="top: 86%; left: 8%;"></div>
+  <!-- Full Page Ambient Airalo-Style Background Shapes -->
+  <div class="page-backdrop-decorations">
+    <!-- Top / Hero Area -->
+    <div class="shape-hero-peach-circle"></div>
+    <div class="shape-hero-yellow-pill"></div>
+    <div class="shape-hero-teal-diamond"></div>
+    <div class="shape-hero-peach-diamond"></div>
+    <!-- Mid Area (Why Tabi Go, Marketplace, FAQ) -->
+    <div class="shape-mid-mint-circle"></div>
+    <div class="shape-mid-yellow-pill"></div>
+    <div class="shape-mid-cyan-diamond"></div>
+    <div class="shape-mid-peach-circle"></div>
+    <!-- App Banner & Footer Area (Exact Match to User Sample Images 2 & 3) -->
+    <div class="shape-banner-yellow-blob"></div>
+    <div class="shape-banner-peach-diamond"></div>
+    <div class="shape-banner-mint-circle"></div>
+    <div class="shape-banner-cyan-bean"></div>
+    <div class="shape-footer-peach-circle-left"></div>
+    <div class="shape-footer-mint-semicircle-left"></div>
+    <div class="shape-footer-peach-circle-right"></div>
+    <div class="shape-footer-mint-blob-right"></div>
   </div>
 
   <div class="site-wrapper">
-    <!-- ── HEADER: 2-row Airalo layout ── -->
+
+    <!-- ==================================================== -->
+    <!-- 1. HEADER (OFFICIAL SVG TABIGO LOGO + AIRALO CONTROLS) -->
+    <!-- ==================================================== -->
     <header>
-      <!-- Row 1: Logo + Actions -->
+      <!-- Row 1: Brand Logo + Actions (Exact Airalo layout) -->
       <div class="header-row1">
-        <!-- Logo: Vector SVG Brand Icon + Wordmark TabiGo -->
-        <a href="#hero" class="brand-logo" title="Tabi Go – eSIM Du Lịch">
-          <svg class="brand-logo-svg" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="36" height="36" rx="9" fill="url(#tabigo_hdr_bg)"/>
-            <circle cx="18" cy="18" r="9.5" fill="url(#tabigo_hdr_globe)"/>
-            <path d="M14 12C15.5 12 16.5 13.5 16 15C15.5 16.5 14 17 12 16.5C10.5 16 10 14 11.5 13C12.5 12.2 13 12 14 12Z" fill="#E0F2FE" fill-opacity="0.9"/>
-            <path d="M19 14C20.5 14.5 21.5 16 21 18C20.5 19.5 18 20 17 21C16.5 21.5 15.5 22 15 21C14 19 15 17 16.5 16C17.5 15.2 18 14.2 19 14Z" fill="#E0F2FE" fill-opacity="0.9"/>
-            <ellipse cx="18" cy="18" rx="12.5" ry="5.5" transform="rotate(-25 18 18)" stroke="#FFFFFF" stroke-width="1.3" stroke-dasharray="2 1.5" stroke-opacity="0.9"/>
-            <path d="M23.5 23C24.5 22 25 21 25 19.8" stroke="#FFFFFF" stroke-width="1.4" stroke-linecap="round" stroke-opacity="0.95"/>
-            <path d="M26 24.5C27.5 23 28.2 21.5 28.2 19.8" stroke="#FFFFFF" stroke-width="1.4" stroke-linecap="round" stroke-opacity="0.8"/>
-            <path d="M28 7.5L19 11.5L22.5 14.5L28 7.5Z" fill="#FFB800"/>
-            <path d="M28 7.5L22.5 14.5L25 17.5L28 7.5Z" fill="#FF9500"/>
-            <path d="M22.5 14.5L21.5 17L23.5 15.5L22.5 14.5Z" fill="#E67E00"/>
-            <defs>
-              <linearGradient id="tabigo_hdr_bg" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
-                <stop stop-color="#00C2FF"/>
-                <stop offset="1" stop-color="#0066FF"/>
-              </linearGradient>
-              <linearGradient id="tabigo_hdr_globe" x1="8" y1="8" x2="28" y2="28" gradientUnits="userSpaceOnUse">
-                <stop stop-color="#38BDF8"/>
-                <stop offset="1" stop-color="#0284C7"/>
-              </linearGradient>
-            </defs>
-          </svg>
-          <span class="brand-logo-text">Tabi<span>Go</span></span>
+        <!-- Sleek TabiGo Vector Logo (Clean horizontal format) -->
+        <a href="#hero" class="brand-logo" title="TabiGo - eSIM Du Lịch Toàn Cầu">
+          <div class="brand-icon-box">
+            <svg viewBox="0 0 100 100" fill="none">
+              <circle cx="50" cy="50" r="32" fill="url(#navGlobeGrad)" />
+              <defs>
+                <radialGradient id="navGlobeGrad" cx="38%" cy="35%" r="65%">
+                  <stop offset="0%" stop-color="#E1F7FF" />
+                  <stop offset="45%" stop-color="#38BDF8" />
+                  <stop offset="100%" stop-color="#0284C7" />
+                </radialGradient>
+                <linearGradient id="navPlaneGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#FFAE00" />
+                  <stop offset="100%" stop-color="#FF6B00" />
+                </linearGradient>
+              </defs>
+              <!-- Continents -->
+              <path d="M42 32c3-2 8-1 10 2 2 3 0 7-3 8-4 1-5 4-4 7s4 5 7 4 5-3 8-1c3 2 4 6 2 8-2 2-7 1-9-1-3-2-6-1-8 2-2 3-5 5-8 4-4-2-6-7-4-11 1-3 0-6-2-8-2-2-1-6 2-7 3-1 7-2 9-3z" fill="#FFFFFF" fill-opacity="0.85" />
+              <path d="M55 58c3 1 6 4 5 7s-4 4-6 3-3-3-2-5c0-2 1-4 3-5z" fill="#FFFFFF" fill-opacity="0.85" />
+              <!-- Orbit Lines -->
+              <ellipse cx="50" cy="50" rx="42" ry="17" stroke="#00A3E0" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="5 3" transform="rotate(-28 50 50)" />
+              <!-- Orange Origami Plane -->
+              <g transform="translate(62, 17) rotate(22)">
+                <polygon points="12,0 0,16 6,10 12,0" fill="url(#navPlaneGrad)" />
+                <polygon points="12,0 6,10 16,8 12,0" fill="#FFAA00" />
+                <polygon points="6,10 7,16 9,12 6,10" fill="#E65100" />
+              </g>
+              <!-- Wifi Wave Arcs -->
+              <path d="M68 64 A 20 20 0 0 1 81 77" stroke="#00A3E0" stroke-width="2.8" stroke-linecap="round" />
+              <path d="M73 60 A 26 26 0 0 1 88 75" stroke="#00A3E0" stroke-width="2.8" stroke-linecap="round" />
+            </svg>
+          </div>
+          <div class="brand-text-row">
+            <span class="brand-tabi">Tabi</span><span class="brand-go">Go<svg class="brand-plane-accent" viewBox="0 0 24 24" fill="currentColor"><path d="m21.426 2.574-19 9a1 1 0 0 0 .044 1.832l6.877 2.457 2.457 6.877a1 1 0 0 0 1.832.044l9-19a1 1 0 0 0-1.21-1.21z"/></svg></span>
+          </div>
         </a>
 
-        <!-- Right actions -->
+        <!-- Center Scrolled Search Bar (Exact Match to Airalo Sample Image 3) -->
+        <div class="header-scrolled-search" id="headerScrolledSearch">
+          <div class="header-search-pill" id="headerSearchPill">
+            <svg class="header-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="headerSearchInput" placeholder="Bạn cần eSIM ở đâu?" autocomplete="off" />
+            <div class="header-search-divider"></div>
+            <div class="header-search-badge" id="headerSearchBadge" title="Chọn quốc gia hoặc khu vực">
+              <span>Quốc gia</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </div>
+          </div>
+          <!-- Quick search popup dropdown -->
+          <div class="header-search-dropdown" id="headerSearchDropdown">
+            <div class="header-search-group-title">Điểm đến phổ biến</div>
+            <div class="header-search-tags">
+              <button type="button" class="header-search-tag" data-dest="Nhật Bản">🇯🇵 Nhật Bản</button>
+              <button type="button" class="header-search-tag" data-dest="Hàn Quốc">🇰🇷 Hàn Quốc</button>
+              <button type="button" class="header-search-tag" data-dest="Thái Lan">🇹🇭 Thái Lan</button>
+              <button type="button" class="header-search-tag" data-dest="Singapore">🇸🇬 Singapore</button>
+              <button type="button" class="header-search-tag" data-dest="Hoa Kỳ">🇺🇸 Hoa Kỳ</button>
+              <button type="button" class="header-search-tag" data-dest="Châu Âu">🇪🇺 Châu Âu</button>
+              <button type="button" class="header-search-tag" data-dest="Trung Quốc">🇨🇳 Trung Quốc</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Controls (Matching Airalo format with divider) -->
         <div class="header-actions">
-          <!-- Globe language -->
-          <button class="lang-globe-btn" aria-label="Ngôn ngữ">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <button class="header-icon-btn" aria-label="Ngôn ngữ" title="Tiếng Việt">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="10"/>
               <line x1="2" y1="12" x2="22" y2="12"/>
               <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
             </svg>
           </button>
-          <!-- Currency -->
-          <div class="currency-pill">
+          <div class="header-divider-v"></div>
+          <button class="header-currency-btn" title="Đơn vị tiền tệ">
             <span>₫ VND</span>
-            <span style="font-size: 14px; line-height:1;">🇻🇳</span>
+            <span style="font-size: 13px;">🇻🇳</span>
+          </button>
+          <div class="header-divider-v"></div>
+          <a href="#destinations" class="btn-header-cta">Khám phá eSIM</a>
+          <div class="header-divider-v menu-divider" id="headerMenuDivider"></div>
+          <div class="header-menu-wrap">
+            <button class="btn-header-menu" id="headerMenuBtn" aria-label="Menu điều hướng" title="Mở danh mục điều hướng">
+              <span>Menu</span>
+              <svg class="menu-icon-hamburger" width="16" height="12" viewBox="0 0 16 12" fill="none">
+                <path d="M1 1.5H15M1 6H15M1 10.5H15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              <svg class="menu-icon-close" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path d="M1 1L13 13M1 13L13 1" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+              </svg>
+            </button>
+
+            <!-- Floating Navigation Dropdown (Airalo Exact Match to User Reference Screenshot) -->
+            <div class="header-nav-dropdown" id="headerNavDropdown">
+              <!-- Curved beak pointing up to Menu ✕ -->
+              <svg class="dropdown-beak" viewBox="0 0 32 16" fill="#FFFFFF" preserveAspectRatio="none">
+                <path d="M0,16 C16,16 32,8 32,0 L32,16 Z"/>
+              </svg>
+
+              <ul class="dropdown-menu-list">
+                <li><a href="#hero" class="dropdown-link active">Trang chủ</a></li>
+                <li><a href="#destinations" class="dropdown-link">Cửa hàng eSIM</a></li>
+                <li><a href="#how-it-works" class="dropdown-link">Cách thức hoạt động của Tabi Go</a></li>
+                <li><a href="#why-tabigo" class="dropdown-link">Giới thiệu về Tabi Go</a></li>
+                <li><a href="#blog" class="dropdown-link">Tạp chí</a></li>
+                <li><a href="#faq" class="dropdown-link">Trợ giúp</a></li>
+              </ul>
+
+              <div class="dropdown-divider-h"></div>
+
+              <div class="dropdown-footer-row">
+                <button class="dropdown-footer-btn" id="dropdownCurrencyBtn" title="Đơn vị tiền tệ (₫ VND)" aria-label="Tiền tệ">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="6" width="20" height="12" rx="2.5"/>
+                    <circle cx="12" cy="12" r="2.5"/>
+                    <path d="M6 12h.01M18 12h.01"/>
+                  </svg>
+                </button>
+                <div class="dropdown-footer-divider"></div>
+                <button class="dropdown-footer-btn" id="dropdownLangBtn" title="Ngôn ngữ (Tiếng Việt)" aria-label="Ngôn ngữ">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="2" y1="12" x2="22" y2="12"/>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
           </div>
-          <!-- CTA -->
-          <a href="#marketplace" class="btn-header-cta">Khám phá eSIM</a>
         </div>
       </div>
 
-      <!-- Row 2: Nav links centered -->
+      <!-- Row 2: Centered Nav Links (Clean, No underline) -->
       <div class="header-row2">
         <ul class="nav-menu">
           <li><a href="#hero">Trang chủ</a></li>
-          <li><a href="#marketplace">Cửa hàng eSIM</a></li>
-          <li><a href="#about">Cách hoạt động</a></li>
-          <li><a href="#about">Giới thiệu Tabi Go</a></li>
+          <li><a href="#destinations">Cửa hàng eSIM</a></li>
+          <li><a href="#how-it-works">Cách thức hoạt động của Tabi Go</a></li>
+          <li><a href="#why-tabigo">Giới thiệu về Tabi Go</a></li>
           <li><a href="#blog">Tạp chí</a></li>
           <li><a href="#faq">Trợ giúp</a></li>
         </ul>
       </div>
     </header>
 
-    <!-- ── SEARCH BAR: full-width sticky section like Airalo ── -->
-    <div class="search-bar-section">
-      <div class="search-bar-inner">
+    <!-- ==================================================== -->
+    <!-- 2. AIRALO-STYLE SEARCH BAR (EXACT MATCH TO IMAGE 2) -->
+    <!-- ==================================================== -->
+    <div class="search-divider-row">
+      <div class="search-side-line"></div>
+      <div class="search-pill-container">
         <div class="search-bar-box">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="11" cy="11" r="8"></circle>
             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
           </svg>
           <input type="text" id="searchInput" class="search-bar-input" placeholder="Bạn cần eSIM ở đâu?" autocomplete="off" />
+          <div class="search-location-divider"></div>
           <div class="search-location-tag">
             <span>Địa điểm</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
           </div>
         </div>
-      </div>
 
-      <!-- Live Search Autocomplete Dropdown -->
-      <div class="search-results-dropdown" id="searchDropdown">
-        <div class="search-item" onclick="openCountryModal('Việt Nam', '🇻🇳', 'Viettel / Vinaphone 5G', '99.000đ')">
-          <div class="search-item-left"><span>🇻🇳</span> <span>Việt Nam</span></div>
-          <div class="search-item-price">Từ 99.000đ</div>
-        </div>
-        <div class="search-item" onclick="openCountryModal('Nhật Bản', '🇯🇵', 'SoftBank / KDDI 5G', '135.000đ')">
-          <div class="search-item-left"><span>🇯🇵</span> <span>Nhật Bản</span></div>
-          <div class="search-item-price">Từ 135.000đ</div>
-        </div>
-        <div class="search-item" onclick="openCountryModal('Hàn Quốc', '🇰🇷', 'SK Telecom 5G', '130.000đ')">
-          <div class="search-item-left"><span>🇰🇷</span> <span>Hàn Quốc</span></div>
-          <div class="search-item-price">Từ 130.000đ</div>
-        </div>
-        <div class="search-item" onclick="openCountryModal('Thái Lan', '🇹🇭', 'AIS / TrueMove 5G', '115.000đ')">
-          <div class="search-item-left"><span>🇹🇭</span> <span>Thái Lan</span></div>
-          <div class="search-item-price">Từ 115.000đ</div>
-        </div>
-        <div class="search-item" onclick="openCountryModal('Singapore', '🇸🇬', 'Singtel 5G', '125.000đ')">
-          <div class="search-item-left"><span>🇸🇬</span> <span>Singapore</span></div>
-          <div class="search-item-price">Từ 125.000đ</div>
-        </div>
-        <div class="search-item" onclick="openCountryModal('Hoa Kỳ', '🇺🇸', 'T-Mobile / AT&T 5G', '180.000đ')">
-          <div class="search-item-left"><span>🇺🇸</span> <span>Hoa Kỳ</span></div>
-          <div class="search-item-price">Từ 180.000đ</div>
-        </div>
-        <div class="search-item" onclick="openCountryModal('Pháp', '🇫🇷', 'Orange / SFR 5G', '125.000đ')">
-          <div class="search-item-left"><span>🇫🇷</span> <span>Pháp</span></div>
-          <div class="search-item-price">Từ 125.000đ</div>
-        </div>
-        <div class="search-item" onclick="openCountryModal('Châu Âu (39 nước)', '🇪🇺', 'Eurolink Tier-1', '190.000đ')">
-          <div class="search-item-left"><span>🇪🇺</span> <span>Châu Âu (39 nước)</span></div>
-          <div class="search-item-price">Từ 190.000đ</div>
+        <!-- Live Search Autocomplete Dropdown -->
+        <div class="search-results-dropdown" id="searchDropdown">
+          <div class="search-item" onclick="openCountryModal('Việt Nam', '🇻🇳', '99.000đ')">
+            <div class="search-item-left"><span>🇻🇳</span> <span>Việt Nam</span></div>
+            <div class="search-item-price">Từ 99.000đ</div>
+          </div>
+          <div class="search-item" onclick="openCountryModal('Nhật Bản', '🇯🇵', '135.000đ')">
+            <div class="search-item-left"><span>🇯🇵</span> <span>Nhật Bản</span></div>
+            <div class="search-item-price">Từ 135.000đ</div>
+          </div>
+          <div class="search-item" onclick="openCountryModal('Hàn Quốc', '🇰🇷', '130.000đ')">
+            <div class="search-item-left"><span>🇰🇷</span> <span>Hàn Quốc</span></div>
+            <div class="search-item-price">Từ 130.000đ</div>
+          </div>
+          <div class="search-item" onclick="openCountryModal('Thái Lan', '🇹🇭', '115.000đ')">
+            <div class="search-item-left"><span>🇹🇭</span> <span>Thái Lan</span></div>
+            <div class="search-item-price">Từ 115.000đ</div>
+          </div>
+          <div class="search-item" onclick="openCountryModal('Singapore', '🇸🇬', '125.000đ')">
+            <div class="search-item-left"><span>🇸🇬</span> <span>Singapore</span></div>
+            <div class="search-item-price">Từ 125.000đ</div>
+          </div>
+          <div class="search-item" onclick="openCountryModal('Hoa Kỳ', '🇺🇸', '180.000đ')">
+            <div class="search-item-left"><span>🇺🇸</span> <span>Hoa Kỳ</span></div>
+            <div class="search-item-price">Từ 180.000đ</div>
+          </div>
+          <div class="search-item" onclick="openCountryModal('Châu Âu (39 nước)', '🇪🇺', '190.000đ')">
+            <div class="search-item-left"><span>🇪🇺</span> <span>Châu Âu (39 nước)</span></div>
+            <div class="search-item-price">Từ 190.000đ</div>
+          </div>
         </div>
       </div>
+      <div class="search-side-line"></div>
     </div>
 
-    <!-- ── HERO BANNER & SLIDER WITH ANIMATED LOTTIE SVGs ── -->
+    <!-- ==================================================== -->
+    <!-- 3. HERO SLIDER (EXACT 3 SLIDES AIRALO WITH LOTTIE)   -->
+    <!-- ==================================================== -->
     <section class="hero-section section-wrap" id="hero">
       <div class="hero-slider-wrap" id="heroSlider">
         
-        <!-- Slide 1: Cảm nhận sự tự do của dữ liệu không giới hạn -->
+        <!-- Slide 0: Cảm nhận sự tự do của dữ liệu không giới hạn (hero-slide-1.svg: 2 bạn selfie & music) -->
         <div class="hero-slide active" data-slide="0">
           <div class="hero-illustration">
             <img src="./assets/images/lottie/hero-slide-1.svg" alt="Cảm nhận sự tự do cùng Tabi Go" />
           </div>
           <div class="hero-content">
-            <h1 class="hero-h1">Cảm nhận sự tự do của dữ liệu không giới hạn cùng Tabi Go</h1>
+            <h1 class="hero-h1">Cảm nhận sự tự do của<br />dữ liệu không giới hạn</h1>
             <p class="hero-sub">
-              Hãy cứ xem video đó, nghe bài hát đó, tải ứng dụng đó — nhận dữ liệu eSIM tốc độ cao không giới hạn để có kết nối thông suốt mọi nẻo đường.
+              Hãy cứ xem video đó, nghe bài hát đó, tải ứng dụng đó — nhận dữ liệu<br />không giới hạn để có kết nối không gián đoạn.
             </p>
-            <a href="#marketplace" class="btn-hero-primary">Khám phá gói không giới hạn</a>
+            <a href="#destinations" class="btn-hero-primary">Về các gói không giới hạn</a>
           </div>
         </div>
 
-        <!-- Slide 2: Giới thiệu bạn bè. Nhận ngay 100.000đ Tabi Xu. -->
+        <!-- Slide 1: Giới thiệu bạn bè. Kiếm Tabi Xu (hero-slide-2.svg: 3 bạn khoác vai) -->
         <div class="hero-slide" data-slide="1">
           <div class="hero-illustration">
             <img src="./assets/images/lottie/hero-slide-2.svg" alt="Giới thiệu bạn bè nhận Tabi Xu" />
           </div>
           <div class="hero-content">
-            <h1 class="hero-h1">Giới thiệu bạn bè. Nhận ngay 100.000đ Tabi Xu.</h1>
+            <h1 class="hero-h1">Giới thiệu bạn bè.<br />Nhận ngay 100.000đ Tabi Xu.</h1>
             <p class="hero-sub">
-              Nhận ngay 100.000đ Tabi Xu cho mỗi lượt bạn bè mua eSIM thành công qua mã giới thiệu — bạn bè của bạn cũng sẽ được giảm ngay 10% đơn hàng đầu tiên.
+              Nhận ngay 100.000đ Tabi Xu cho mỗi lượt môi giới có mua hàng<br />— bạn bè của bạn cũng sẽ được nhận ưu đãi 10%.
             </p>
-            <a href="#marketplace" class="btn-hero-primary">Giới thiệu bạn bè ngay</a>
+            <a href="#destinations" class="btn-hero-primary">Giới thiệu bạn bè ngay</a>
           </div>
         </div>
 
-        <!-- Slide 3: Tích lũy điểm thưởng Tabi Go -->
+        <!-- Slide 2: Tích lũy điểm thưởng Tabi Go (hero-slide-3.svg: 3 bạn high-five) -->
         <div class="hero-slide" data-slide="2">
           <div class="hero-illustration">
-            <img src="./assets/images/lottie/hero-slide-3.svg" alt="Tích lũy điểm thưởng Tabi Go mỗi chuyến đi" />
+            <img src="./assets/images/lottie/hero-slide-3.svg" alt="Tích lũy điểm thưởng Tabi Go" />
           </div>
           <div class="hero-content">
-            <h1 class="hero-h1">Tích lũy điểm thưởng Tabi Go mỗi chuyến đi</h1>
+            <h1 class="hero-h1">Tích lũy điểm thưởng<br />Tabi Go mỗi chuyến đi</h1>
             <p class="hero-sub">
-              Nhận hoàn tiền tự động tới 10% Tabi Xu cho mỗi lần kích hoạt hoặc nạp data eSIM. Bạn đi du lịch càng nhiều, chi phí kết nối càng tiết kiệm!
+              Nhận hoàn tiền lên tới 10%, tự động. Bạn đi càng nhiều càng tiết kiệm!<br />Đổi Tabi Xu lấy dữ liệu cho những chuyến đi kế tiếp.
             </p>
-            <a href="#marketplace" class="btn-hero-primary">Khám phá các gói cước</a>
+            <a href="#destinations" class="btn-hero-primary">Xem các cấp độ thành viên</a>
           </div>
         </div>
 
       </div>
 
-      <!-- ── SLIDER BAR: Pixel-perfect replica from user screenshot (media_1793270746461.png) ── -->
+      <!-- ── PIXEL-PERFECT SLIDER INDICATOR (EXACT MATCH TO IMAGE 2) ── -->
       <div class="carousel-nav-container">
         <button class="carousel-arrow-btn" onclick="prevHeroSlide()" aria-label="Slide trước">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M15 18l-6-6 6-6"/>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
           </svg>
         </button>
         <div class="carousel-track">
@@ -1558,879 +2436,1034 @@
           </div>
         </div>
         <button class="carousel-arrow-btn" onclick="nextHeroSlide()" aria-label="Slide tiếp theo">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M9 18l6-6-6-6"/>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
           </svg>
         </button>
       </div>
 
-      <!-- 3 Filter Dropdowns Row -->
-      <div class="filter-dropdowns-row">
-        <button class="filter-dropdown-btn" onclick="scrollToSection('marketplace')">
-          <span>Lựa chọn theo quốc gia</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <button class="filter-dropdown-btn" onclick="switchGreenTab('regional')">
-          <span>Khu vực</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <button class="filter-dropdown-btn" onclick="switchGreenTab('global')">
-          <span>Gói toàn cầu</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
+      <!-- ── 3 HERO NAVIGATION JUMP CARDS (EXACT MATCH TO AIRALO IMAGE 2) ── -->
+      <div class="hero-quick-nav-wrapper">
+        <!-- Floating Pastel Motifs positioned behind the slider & cards -->
+        <div class="hero-motif-green-diamond" aria-hidden="true"></div>
+        <div class="hero-motif-yellow-swatch" aria-hidden="true"></div>
+
+        <div class="hero-quick-nav-row">
+          <a href="#how-it-works" class="hero-quick-card" onclick="setActiveQuickCard(this)">
+            <span class="quick-card-title">Cách thức hoạt động của Tabi Go</span>
+            <svg class="quick-card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <polyline points="19 12 12 19 5 12"></polyline>
+            </svg>
+          </a>
+
+          <a href="#destinations" class="hero-quick-card active" onclick="setActiveQuickCard(this)">
+            <span class="quick-card-title">Điểm đến</span>
+            <svg class="quick-card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <polyline points="19 12 12 19 5 12"></polyline>
+            </svg>
+          </a>
+
+          <a href="#b2b-partner" class="hero-quick-card" onclick="setActiveQuickCard(this)">
+            <span class="quick-card-title">Giải pháp doanh nghiệp</span>
+            <svg class="quick-card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <polyline points="19 12 12 19 5 12"></polyline>
+            </svg>
+          </a>
+        </div>
       </div>
     </section>
 
-    <!-- ── CYAN BANNER: "VÌ SAO HÀNG TRIỆU TÍN ĐỒ DU LỊCH LỰA CHỌN TABI GO?" ── -->
-    <section class="section-wrap">
+    <!-- ==================================================== -->
+    <!-- 4. CYAN BANNER ("VÌ SAO HÀNG TRIỆU TÍN ĐỒ DU LỊCH...") -->
+    <!-- ==================================================== -->
+    <section class="section-wrap" id="why-tabigo">
       <div class="why-cyan-banner">
-        <h2>Vì sao hàng triệu tín đồ du lịch lựa chọn Tabi Go?</h2>
-        
+        <h2>Vì sao hơn 30 triệu người dùng lựa chọn Tabi Go?</h2>
         <div class="why-features-grid">
           <div class="why-feature-item">
             <div class="why-feature-icon-circle">
-              <!-- Network Signal Icon -->
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
-                <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
-                <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
-                <line x1="12" y1="20" x2="12.01" y2="20"></line>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
               </svg>
             </div>
-            <div class="why-feature-title">Kết nối tức thì khi hạ cánh</div>
-            <div class="why-feature-desc">Không còn cảnh xếp hàng mua SIM rườm rà tại sân bay quốc tế</div>
+            <div class="why-feature-title">Kết nối tức thì</div>
+            <div class="why-feature-desc">Nhận eSIM kết nối mạng ngay khi máy bay vừa chạm đường băng.</div>
           </div>
-
           <div class="why-feature-item">
             <div class="why-feature-icon-circle">
-              <!-- Headset Support Icon -->
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
-                <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8M12 6v2M12 16v2"/>
               </svg>
             </div>
-            <div class="why-feature-title">Hỗ trợ tiếng Việt 24/7/365</div>
-            <div class="why-feature-desc">Đội ngũ kỹ thuật viên người Việt luôn sẵn sàng giải đáp tận tâm</div>
+            <div class="why-feature-title">Không phí chuyển vùng</div>
+            <div class="why-feature-desc">Tiết kiệm tới 85% so với cước Data Roaming quốc tế truyền thống.</div>
           </div>
-
           <div class="why-feature-item">
             <div class="why-feature-icon-circle">
-              <!-- Phone / Dual SIM Icon -->
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
-                <line x1="12" y1="18" x2="12.01" y2="18"></line>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+                <line x1="12" y1="18" x2="12.01" y2="18"/>
               </svg>
             </div>
-            <div class="why-feature-title">Duy trì số điện thoại gốc</div>
-            <div class="why-feature-desc">Nhận SMS ngân hàng, mã OTP và cuộc gọi công việc bình thường</div>
+            <div class="why-feature-title">Giữ SIM chính nhận OTP</div>
+            <div class="why-feature-desc">Không cần tháo SIM vật lý, nhận mã xác thực ngân hàng xuyên suốt.</div>
           </div>
-
           <div class="why-feature-item">
             <div class="why-feature-icon-circle">
-              <!-- Price Tag / Transparency Icon -->
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
-                <line x1="7" y1="7" x2="7.01" y2="7"></line>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
               </svg>
             </div>
-            <div class="why-feature-title">Giá minh bạch, không phí ẩn</div>
-            <div class="why-feature-desc">Tiết kiệm tới 80% so với Roaming, kiểm soát dung lượng real-time</div>
+            <div class="why-feature-title">Hỗ trợ tiếng Việt 24/7</div>
+            <div class="why-feature-desc">Đội ngũ kỹ thuật túc trực 24/7/365 giải đáp mọi thắc mắc ngay lập tức.</div>
           </div>
         </div>
 
-        <!-- Native Animated Figures on Cyan Banner -->
-        <div class="cyan-side-deco-left">
-          <img src="./assets/images/lottie/usp-left.svg" alt="Traveler enjoying freedom" />
-        </div>
-        <div class="cyan-side-deco-right">
-          <img src="./assets/images/lottie/usp-right.svg" alt="Travelers celebrating" />
-        </div>
+        <img class="cyan-deco-left" src="./assets/images/lottie/usp-left.svg" alt="Decoration" />
+        <img class="cyan-deco-right" src="./assets/images/lottie/usp-right.svg" alt="Decoration" />
       </div>
     </section>
 
-    <!-- ── HOW IT WORKS / VIDEO SECTION (WITH ANIMATED CHARACTERS) ── -->
-    <section class="how-section section-wrap" id="about">
+    <!-- ==================================================== -->
+    <!-- 5. HOW IT WORKS & VIDEO SECTION                      -->
+    <!-- ==================================================== -->
+    <section class="how-section section-wrap" id="how-it-works">
       <div class="how-tabs">
-        <button class="how-tab active" onclick="switchHowTab(this, 'work')">Cách thức hoạt động</button>
-        <button class="how-tab" onclick="switchHowTab(this, 'learn')">Tìm hiểu cùng Tabi Go</button>
+        <button class="how-tab active">Cách thức hoạt động</button>
+        <button class="how-tab">Tìm hiểu cùng Tabi Go</button>
       </div>
 
-      <div class="video-card-preview" onclick="alert('Đang mở video hướng dẫn: Tabi Go eSIM là gì và cách kích hoạt nhanh chóng trong 60 giây!')">
+      <div class="video-card-preview" onclick="alert('Video hướng dẫn cài đặt eSIM Tabi Go trong 60 giây')">
         <div class="video-thumbnail-wrap">
-          <img src="./assets/images/lottie/our-mission.svg" alt="Cách thức hoạt động của Tabi Go eSIM" />
-          <!-- Play button -->
+          <img src="./assets/images/lottie/our-mission.svg" alt="Learn with Tabi Go" style="width:100%; height:100%; object-fit:contain; opacity:0.85;" />
           <div class="video-play-btn">
             <div class="video-play-triangle"></div>
           </div>
         </div>
       </div>
+
+      <img class="video-sub-family-art" src="./assets/images/lottie/ready-connected.svg" alt="Tabi Go Ready Connected" />
     </section>
 
-    <!-- ── SIGNATURE GREEN DESTINATION MARKETPLACE CONTAINER ── -->
-    <section class="green-destination-section section-wrap" id="marketplace">
+    <!-- ==================================================== -->
+    <!-- 6. SIGNATURE EMERALD GREEN DESTINATION MARKETPLACE   -->
+    <!-- ==================================================== -->
+    <section class="green-destination-section section-wrap" id="destinations">
       <div class="green-container">
-        <!-- Top Tabs -->
+        <!-- Tabs Header -->
         <div class="green-tabs-header">
-          <button class="green-tab-pill active" onclick="switchGreenTab('popular')">🌐 Phổ biến</button>
-          <button class="green-tab-pill" onclick="switchGreenTab('local')">📍 Địa phương</button>
-          <button class="green-tab-pill" onclick="switchGreenTab('regional')">🗺️ Khu vực</button>
-          <button class="green-tab-pill" onclick="switchGreenTab('global')">🌍 Toàn cầu</button>
+          <button class="green-tab-pill active" onclick="switchGreenTab('local')">eSIM Phổ biến</button>
+          <button class="green-tab-pill" onclick="switchGreenTab('regional')">eSIM Khu vực</button>
+          <button class="green-tab-pill" onclick="switchGreenTab('global')">Toàn cầu</button>
         </div>
 
+        <!-- Title Row -->
         <div class="green-header-row">
           <div class="green-header-title">
-            <h3 id="greenCategoryTitle">Chọn eSIM Tabi Go cho các địa điểm phổ biến</h3>
-            <p>Khám phá danh sách các gói cước eSIM du lịch tốc độ cao được ưa chuộng nhất hiện nay</p>
+            <h3>Chọn eSIM cho các địa điểm phổ biến</h3>
+            <p>Dữ liệu tốc độ cao tại điểm đến yêu thích của bạn — Kích hoạt tức thì trong 60 giây</p>
           </div>
-          <a href="javascript:void(0)" class="green-view-all-btn" onclick="showAllCountriesModal()">Xem tất cả 200+ quốc gia →</a>
+          <a href="#destinations" class="green-view-all-btn">Xem tất cả 200+ quốc gia →</a>
         </div>
 
-        <!-- 3-Column Country Grid (12 Popular Countries) -->
-        <div class="country-cards-grid" id="countryCardsGrid">
-          <!-- Card 1 -->
-          <div class="country-card" onclick="openCountryModal('Việt Nam', '🇻🇳', 'Viettel / Vinaphone 5G', '99.000đ')">
-            <div class="country-left">
-              <span class="country-flag">🇻🇳</span>
-              <span class="country-name">Việt Nam</span>
+        <!-- 3-Column Grid of Clean White Pill Cards (Airalo Style) -->
+        <div class="green-cards-grid" id="greenCardsGrid">
+          <div class="country-white-pill" onclick="openCountryModal('Việt Nam', '🇻🇳', '99.000đ')">
+            <div class="country-pill-left">
+              <span class="country-flag-emoji">🇻🇳</span>
+              <span class="country-pill-name">Việt Nam</span>
             </div>
-            <span class="country-price">99.000đ</span>
+            <span class="country-pill-price">Từ 99.000đ</span>
           </div>
-
-          <!-- Card 2 -->
-          <div class="country-card" onclick="openCountryModal('Thái Lan', '🇹🇭', 'AIS / TrueMove 5G', '115.000đ')">
-            <div class="country-left">
-              <span class="country-flag">🇹🇭</span>
-              <span class="country-name">Thái Lan</span>
+          <div class="country-white-pill" onclick="openCountryModal('Thái Lan', '🇹🇭', '115.000đ')">
+            <div class="country-pill-left">
+              <span class="country-flag-emoji">🇹🇭</span>
+              <span class="country-pill-name">Thái Lan</span>
             </div>
-            <span class="country-price">115.000đ</span>
+            <span class="country-pill-price">Từ 115.000đ</span>
           </div>
-
-          <!-- Card 3 -->
-          <div class="country-card" onclick="openCountryModal('Malaysia', '🇲🇾', 'CelcomDigi 5G', '120.000đ')">
-            <div class="country-left">
-              <span class="country-flag">🇲🇾</span>
-              <span class="country-name">Malaysia</span>
+          <div class="country-white-pill" onclick="openCountryModal('Nhật Bản', '🇯🇵', '135.000đ')">
+            <div class="country-pill-left">
+              <span class="country-flag-emoji">🇯🇵</span>
+              <span class="country-pill-name">Nhật Bản</span>
             </div>
-            <span class="country-price">120.000đ</span>
+            <span class="country-pill-price">Từ 135.000đ</span>
           </div>
-
-          <!-- Card 4 -->
-          <div class="country-card" onclick="openCountryModal('Nhật Bản', '🇯🇵', 'SoftBank / KDDI 5G', '135.000đ')">
-            <div class="country-left">
-              <span class="country-flag">🇯🇵</span>
-              <span class="country-name">Nhật Bản</span>
+          <div class="country-white-pill" onclick="openCountryModal('Singapore', '🇸🇬', '125.000đ')">
+            <div class="country-pill-left">
+              <span class="country-flag-emoji">🇸🇬</span>
+              <span class="country-pill-name">Singapore</span>
             </div>
-            <span class="country-price">135.000đ</span>
+            <span class="country-pill-price">Từ 125.000đ</span>
           </div>
-
-          <!-- Card 5 -->
-          <div class="country-card" onclick="openCountryModal('Singapore', '🇸🇬', 'Singtel 5G', '125.000đ')">
-            <div class="country-left">
-              <span class="country-flag">🇸🇬</span>
-              <span class="country-name">Singapore</span>
+          <div class="country-white-pill" onclick="openCountryModal('Hàn Quốc', '🇰🇷', '130.000đ')">
+            <div class="country-pill-left">
+              <span class="country-flag-emoji">🇰🇷</span>
+              <span class="country-pill-name">Hàn Quốc</span>
             </div>
-            <span class="country-price">125.000đ</span>
+            <span class="country-pill-price">Từ 130.000đ</span>
           </div>
-
-          <!-- Card 6 -->
-          <div class="country-card" onclick="openCountryModal('Hàn Quốc', '🇰🇷', 'SK Telecom 5G', '130.000đ')">
-            <div class="country-left">
-              <span class="country-flag">🇰🇷</span>
-              <span class="country-name">Hàn Quốc</span>
+          <div class="country-white-pill" onclick="openCountryModal('Hoa Kỳ', '🇺🇸', '180.000đ')">
+            <div class="country-pill-left">
+              <span class="country-flag-emoji">🇺🇸</span>
+              <span class="country-pill-name">Hoa Kỳ</span>
             </div>
-            <span class="country-price">130.000đ</span>
+            <span class="country-pill-price">Từ 180.000đ</span>
           </div>
-
-          <!-- Card 7 -->
-          <div class="country-card" onclick="openCountryModal('Úc', '🇦🇺', 'Optus / Telstra 5G', '160.000đ')">
-            <div class="country-left">
-              <span class="country-flag">🇦🇺</span>
-              <span class="country-name">Úc</span>
+          <div class="country-white-pill" onclick="openCountryModal('Châu Âu (39 nước)', '🇪🇺', '190.000đ')">
+            <div class="country-pill-left">
+              <span class="country-flag-emoji">🇪🇺</span>
+              <span class="country-pill-name">Châu Âu</span>
             </div>
-            <span class="country-price">160.000đ</span>
+            <span class="country-pill-price">Từ 190.000đ</span>
           </div>
-
-          <!-- Card 8 -->
-          <div class="country-card" onclick="openCountryModal('Indonesia', '🇮🇩', 'Telkomsel 4G/5G', '110.000đ')">
-            <div class="country-left">
-              <span class="country-flag">🇮🇩</span>
-              <span class="country-name">Indonesia</span>
+          <div class="country-white-pill" onclick="openCountryModal('Pháp', '🇫🇷', '125.000đ')">
+            <div class="country-pill-left">
+              <span class="country-flag-emoji">🇫🇷</span>
+              <span class="country-pill-name">Pháp</span>
             </div>
-            <span class="country-price">110.000đ</span>
+            <span class="country-pill-price">Từ 125.000đ</span>
           </div>
-
-          <!-- Card 9 -->
-          <div class="country-card" onclick="openCountryModal('Hồng Kông', '🇭🇰', 'CSL / Smartone 5G', '115.000đ')">
-            <div class="country-left">
-              <span class="country-flag">🇭🇰</span>
-              <span class="country-name">Hồng Kông</span>
+          <div class="country-white-pill" onclick="openCountryModal('Vương quốc Anh', '🇬🇧', '130.000đ')">
+            <div class="country-pill-left">
+              <span class="country-flag-emoji">🇬🇧</span>
+              <span class="country-pill-name">Vương quốc Anh</span>
             </div>
-            <span class="country-price">115.000đ</span>
+            <span class="country-pill-price">Từ 130.000đ</span>
           </div>
-
-          <!-- Card 10 -->
-          <div class="country-card" onclick="openCountryModal('Trung Quốc', '🇨🇳', 'China Unicom 5G (Vượt Tường Lửa)', '145.000đ')">
-            <div class="country-left">
-              <span class="country-flag">🇨🇳</span>
-              <span class="country-name">Trung Quốc</span>
+          <div class="country-white-pill" onclick="openCountryModal('Úc', '🇦🇺', '150.000đ')">
+            <div class="country-pill-left">
+              <span class="country-flag-emoji">🇦🇺</span>
+              <span class="country-pill-name">Úc</span>
             </div>
-            <span class="country-price">145.000đ</span>
+            <span class="country-pill-price">Từ 150.000đ</span>
           </div>
-
-          <!-- Card 11 -->
-          <div class="country-card" onclick="openCountryModal('Philippines', '🇵🇭', 'Globe / Smart 5G', '120.000đ')">
-            <div class="country-left">
-              <span class="country-flag">🇵🇭</span>
-              <span class="country-name">Philippines</span>
+          <div class="country-white-pill" onclick="openCountryModal('Trung Quốc', '🇨🇳', '120.000đ')">
+            <div class="country-pill-left">
+              <span class="country-flag-emoji">🇨🇳</span>
+              <span class="country-pill-name">Trung Quốc</span>
             </div>
-            <span class="country-price">120.000đ</span>
+            <span class="country-pill-price">Từ 120.000đ</span>
           </div>
-
-          <!-- Card 12 -->
-          <div class="country-card" onclick="openCountryModal('Đài Loan', '🇹🇼', 'Chunghwa Telecom 5G', '125.000đ')">
-            <div class="country-left">
-              <span class="country-flag">🇹🇼</span>
-              <span class="country-name">Đài Loan</span>
+          <div class="country-white-pill" onclick="openCountryModal('Đài Loan', '🇹🇼', '105.000đ')">
+            <div class="country-pill-left">
+              <span class="country-flag-emoji">🇹🇼</span>
+              <span class="country-pill-name">Đài Loan</span>
             </div>
-            <span class="country-price">125.000đ</span>
+            <span class="country-pill-price">Từ 105.000đ</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ── FAQ & 24/7 SUPPORT SECTION (WITH ANIMATED SPECIALIST) ── -->
-    <section class="faq-support-section section-wrap" id="faq">
+    <!-- ==================================================== -->
+    <!-- 7. FAQ & SUPPORT AGENT ROW                           -->
+    <!-- ==================================================== -->
+    <section class="section-wrap" id="faq">
+      <div class="faq-section-header">
+        <h2 class="faq-title">Câu hỏi thường gặp</h2>
+        <a href="javascript:void(0)" class="btn-help-center">
+          <span>Đi đến trung tâm trợ giúp</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
       <div class="faq-support-grid">
-        <div class="faq-left">
-          <h3>Câu hỏi thường gặp</h3>
+        <div class="faq-column">
           <div class="faq-list">
-            <!-- FAQ 1 -->
-            <div class="faq-item open">
+            <div class="faq-item active">
               <div class="faq-question" onclick="toggleFaq(this)">
-                <span>eSIM là gì và hoạt động như thế nào trên điện thoại?</span>
+                <span>eSIM là gì và hoạt động như thế nào?</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
               </div>
               <div class="faq-answer">
-                eSIM (Embedded SIM) là SIM kỹ thuật số được tích hợp sẵn bên trong phần cứng điện thoại của bạn. Với Tabi Go, bạn không cần tháo lắp SIM vật lý phức tạp — chỉ cần quét mã QR trong 60 giây là có ngay internet tốc độ cao khi máy bay vừa hạ cánh.
+                eSIM (Embedded SIM) là SIM điện tử được tích hợp sẵn vào phần cứng của điện thoại. Bạn không cần tháo lắp khay SIM vật lý, chỉ cần quét mã QR hoặc chạm cài đặt trên app Tabi Go là có thể kết nối Internet tốc độ cao ngay khi hạ cánh.
               </div>
             </div>
-
-            <!-- FAQ 2 -->
             <div class="faq-item">
               <div class="faq-question" onclick="toggleFaq(this)">
-                <span>Thiết bị của tôi có hỗ trợ eSIM không và kiểm tra ra sao?</span>
+                <span>SIM chính của tôi ở Việt Nam có nhận được cuộc gọi/OTP không?</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
               </div>
               <div class="faq-answer">
-                Hầu hết các dòng iPhone từ iPhone XS/XR trở lên, Samsung Galaxy S20 trở lên, Google Pixel 3 trở lên đều hỗ trợ eSIM. Bạn có thể bấm *#06# trong bàn phím gọi điện, nếu có dòng mã EID tức là máy bạn hỗ trợ eSIM hoàn hảo.
+                Có! Bạn hoàn toàn có thể sử dụng song song 2 SIM: SIM chính giữ nguyên trong máy để nhận cuộc gọi, tin nhắn OTP ngân hàng miễn phí, còn eSIM Tabi Go được dùng chuyên dụng cho kết nối dữ liệu mạng 4G/5G.
               </div>
             </div>
-
-            <!-- FAQ 3 -->
             <div class="faq-item">
               <div class="faq-question" onclick="toggleFaq(this)">
-                <span>Khi nào là thời điểm tốt nhất để cài đặt eSIM Tabi Go?</span>
+                <span>Làm sao để biết điện thoại của tôi có hỗ trợ eSIM không?</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
               </div>
               <div class="faq-answer">
-                Bạn nên quét cài đặt mã QR trước khi lên máy bay (khi còn kết nối Wi-Fi ổn định tại nhà hoặc sân bay Việt Nam). Khi tới nơi, bạn chỉ cần bật chuyển vùng dữ liệu (Data Roaming) cho eSIM là internet tự động kết nối trong chớp mắt.
+                Hầu hết các dòng máy từ iPhone XS/XR trở lên, Samsung Galaxy S20 trở lên, Google Pixel 3 trở lên đều hỗ trợ eSIM. Bạn có thể bấm *#06# trên bàn phím gọi, nếu thấy xuất hiện dãy mã EID nghĩa là máy của bạn có hỗ trợ eSIM.
               </div>
             </div>
-
-            <!-- FAQ 4 -->
             <div class="faq-item">
               <div class="faq-question" onclick="toggleFaq(this)">
-                <span>Tôi có thể dùng song song SIM chính Việt Nam và eSIM Tabi Go không?</span>
+                <span>Tôi nên cài đặt eSIM trước chuyến đi hay khi tới nơi?</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
               </div>
               <div class="faq-answer">
-                Hoàn toàn được! Bạn giữ nguyên SIM vật lý Việt Nam để nhận cuộc gọi, tin nhắn OTP ngân hàng miễn phí, và chọn eSIM Tabi Go làm đường truyền dữ liệu di động (Cellular Data) để lướt mạng không lo phát sinh cước.
+                Bạn nên quét cài đặt eSIM trước khi lên máy bay (khi còn kết nối WiFi tại nhà hoặc sân bay). Khi vừa hạ cánh xuống nước đến, bạn chỉ cần bật mục "Chuyển vùng dữ liệu" (Data Roaming) cho eSIM Tabi Go là máy sẽ tự động kết nối nhà mạng đối tác.
               </div>
             </div>
-
-            <!-- FAQ 5 -->
             <div class="faq-item">
               <div class="faq-question" onclick="toggleFaq(this)">
-                <span>Làm thế nào để nạp thêm dung lượng nếu hết data giữa chuyến đi?</span>
+                <span>Nếu tôi dùng hết dung lượng thì có thể nạp thêm được không?</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
               </div>
               <div class="faq-answer">
-                Bạn chỉ cần mở ứng dụng Tabi Go, chọn gói eSIM đang sử dụng và bấm "Nạp thêm" (Top-up). Dung lượng mới sẽ được nạp tức thì mà không cần cài đặt lại mã QR mới.
+                Hoàn toàn được! Bạn chỉ cần mở app Tabi Go, chọn gói cước đang sử dụng và bấm "Nạp thêm dung lượng" (Top-up). Hệ thống sẽ cộng trực tiếp data vào eSIM hiện tại mà không cần cài đặt lại cấu hình.
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Right: 24/7 Support Card with Native Animated Lottie Specialist -->
         <div class="support-card">
-          <div>
-            <span class="support-badge">Hỗ trợ tiếng Việt 24/7/365</span>
-            <h4>Bạn cần trợ giúp? Tabi Go luôn đồng hành 24/7/365</h4>
-            <p>Đội ngũ chuyên viên tư vấn kỹ thuật người Việt luôn túc trực để hướng dẫn bạn kích hoạt và giải quyết mọi sự cố kết nối.</p>
-            <a href="javascript:void(0)" class="btn-chat-now" onclick="alert('Đang kết nối tới chuyên viên Live Chat tiếng Việt Tabi Go 24/7...')">Trò chuyện ngay</a>
+          <div class="support-card-left">
+            <div class="support-sub-label">Hỗ trợ</div>
+            <h3 class="support-main-title">Bạn cần trợ giúp? Chúng tôi hỗ trợ 24/7, đa ngôn ngữ</h3>
+            <div class="support-links-group">
+              <a href="javascript:void(0)" class="support-text-link">
+                <span>Liên hệ đội ngũ hỗ trợ</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <a href="javascript:void(0)" class="support-text-link">
+                <span>Trò chuyện trực tuyến 24/7</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
           </div>
-
-          <div class="support-agent-illus">
-            <img src="./assets/images/lottie/support.svg" alt="Tabi Go Customer Support" />
-          </div>
+          <img class="support-agent-illus" src="./assets/images/lottie/support.svg" alt="Hỗ trợ Tabi Go 24/7" />
         </div>
       </div>
     </section>
 
-    <!-- ── BLOG SECTION ("KẾT NỐI, KHÁM PHÁ CÙNG TABI GO") ── -->
+    <!-- ==================================================== -->
+    <!-- 8. BLOG / TRAVEL GUIDES                              -->
+    <!-- ==================================================== -->
     <section class="blog-section section-wrap" id="blog">
       <div class="blog-header">
-        <h3>Kết nối, khám phá cùng Tabi Go</h3>
-        <a href="javascript:void(0)" class="blog-view-all">Xem tất cả</a>
+        <h2>Kết nối, khám phá và hơn thế nữa</h2>
       </div>
-
       <div class="blog-grid">
-        <!-- Blog 1 -->
-        <div class="blog-card" onclick="alert('Đang mở bài viết: Cách kích hoạt eSIM trên điện thoại của bạn')">
-          <div class="blog-img-box">
-            <svg viewBox="0 0 300 170" fill="none" style="width:100%; height:100%;">
-              <rect width="300" height="170" fill="#E2E8F0"/>
-              <path d="M0 130 L100 110 L180 130 L300 120 L300 170 L0 170 Z" fill="#CBD5E1"/>
-              <rect x="30" y="40" width="60" height="90" fill="#94A3B8"/>
-              <rect x="110" y="20" width="70" height="110" fill="#64748B"/>
-              <circle cx="210" cy="95" r="12" fill="#FDE68A"/>
-              <rect x="204" y="107" width="12" height="28" fill="#FF6E30"/>
-            </svg>
+        <a href="javascript:void(0)" class="blog-card">
+          <div class="blog-img-wrap">
+            <img src="./assets/images/lottie/ready-connected.svg" alt="Cách kích hoạt eSIM" />
           </div>
           <div class="blog-content">
-            <div class="blog-title">Cách kích hoạt eSIM Tabi Go trên điện thoại chỉ trong 2 phút</div>
-            <div class="blog-meta">Cẩm nang eSIM • 4 phút đọc</div>
+            <div class="blog-category-tag">Cẩm nang du lịch</div>
+            <div class="blog-title">Cách kích hoạt eSIM trên điện thoại iPhone và Android trong 60 giây</div>
+            <div class="blog-read-link">Đọc bài viết <span>→</span></div>
           </div>
-        </div>
-
-        <!-- Blog 2 -->
-        <div class="blog-card" onclick="alert('Đang mở bài viết: 10 mẹo tiết kiệm dung lượng data')">
-          <div class="blog-img-box">
-            <svg viewBox="0 0 300 170" fill="none" style="width:100%; height:100%;">
-              <rect width="300" height="170" fill="#D1FAE5"/>
-              <path d="M0 100 Q80 40 160 90 Q220 30 300 80 L300 170 L0 170 Z" fill="#6EE7B7"/>
-              <circle cx="150" cy="115" r="14" fill="#FBCFE8"/>
-              <path d="M140 130 L160 130 L165 170 L135 170 Z" fill="#047857"/>
-            </svg>
+        </a>
+        <a href="javascript:void(0)" class="blog-card">
+          <div class="blog-img-wrap">
+            <img src="./assets/images/lottie/our-mission.svg" alt="Kinh nghiệm du lịch Nhật Bản" />
           </div>
           <div class="blog-content">
-            <div class="blog-title">10 mẹo tiết kiệm dung lượng data hiệu quả khi du lịch quốc tế</div>
-            <div class="blog-meta">Mẹo du lịch • 5 phút đọc</div>
+            <div class="blog-category-tag">Điểm đến nổi bật</div>
+            <div class="blog-title">Kinh nghiệm du lịch Nhật Bản tự túc: Chọn gói eSIM nào tối ưu nhất?</div>
+            <div class="blog-read-link">Đọc bài viết <span>→</span></div>
           </div>
-        </div>
-
-        <!-- Blog 3 -->
-        <div class="blog-card" onclick="alert('Đang mở bài viết: Những địa điểm du lịch hot nhất')">
-          <div class="blog-img-box">
-            <svg viewBox="0 0 300 170" fill="none" style="width:100%; height:100%;">
-              <rect width="300" height="170" fill="#FEF3C7"/>
-              <path d="M0 120 Q150 90 300 130 L300 170 L0 170 Z" fill="#38BDF8"/>
-              <polygon points="120,60 140,110 100,110" fill="#F59E0B"/>
-              <polygon points="180,40 210,120 150,120" fill="#D97706"/>
-            </svg>
+        </a>
+        <a href="javascript:void(0)" class="blog-card">
+          <div class="blog-img-wrap">
+            <img src="./assets/images/lottie/partner-platform.svg" alt="Chương trình Tabi Xu" />
           </div>
           <div class="blog-content">
-            <div class="blog-title">Những điểm đến du lịch quốc tế hot nhất năm nay bạn không nên bỏ lỡ</div>
-            <div class="blog-meta">Khám phá • 6 phút đọc</div>
+            <div class="blog-category-tag">Ưu đãi & Điểm thưởng</div>
+            <div class="blog-title">Hướng dẫn tích lũy và sử dụng Tabi Xu để nhận chuyến đi kết nối miễn phí</div>
+            <div class="blog-read-link">Đọc bài viết <span>→</span></div>
           </div>
-        </div>
-
-        <!-- Blog 4 -->
-        <div class="blog-card" onclick="alert('Đang mở bài viết: Roaming vs eSIM')">
-          <div class="blog-img-box">
-            <svg viewBox="0 0 300 170" fill="none" style="width:100%; height:100%;">
-              <rect width="300" height="170" fill="#FCE7F3"/>
-              <circle cx="150" cy="70" r="24" fill="#FDE68A"/>
-              <path d="M125 105 C125 90 175 90 175 105 L180 170 L120 170 Z" fill="#DB2777"/>
-              <rect x="145" y="95" width="10" height="18" rx="2" fill="#1E293B"/>
-            </svg>
-          </div>
-          <div class="blog-content">
-            <div class="blog-title">Dùng Roaming vs eSIM Tabi Go: Phương án nào tiết kiệm chi phí hơn?</div>
-            <div class="blog-meta">So sánh chi phí • 3 phút đọc</div>
-          </div>
-        </div>
-
-        <!-- Blog 5 -->
-        <div class="blog-card" onclick="alert('Đang mở bài viết: Tất tần tật về eSIM trước khi bay')">
-          <div class="blog-img-box">
-            <svg viewBox="0 0 300 170" fill="none" style="width:100%; height:100%;">
-              <rect width="300" height="170" fill="#EFF6FF"/>
-              <rect x="100" y="40" width="40" height="60" rx="4" fill="#EF4444" transform="rotate(-15 100 40)"/>
-              <rect x="140" y="35" width="40" height="60" rx="4" fill="#10B981" transform="rotate(10 140 35)"/>
-              <rect x="180" y="50" width="40" height="60" rx="4" fill="#3B82F6" transform="rotate(25 180 50)"/>
-            </svg>
-          </div>
-          <div class="blog-content">
-            <div class="blog-title">Tất tần tật những điều cần biết về eSIM trước khi lên máy bay</div>
-            <div class="blog-meta">Hành trang du lịch • 5 phút đọc</div>
-          </div>
-        </div>
-
-        <!-- Blog 6 -->
-        <div class="blog-card" onclick="alert('Đang mở bài viết: Chia sẻ Hotspot qua eSIM')">
-          <div class="blog-img-box">
-            <svg viewBox="0 0 300 170" fill="none" style="width:100%; height:100%;">
-              <rect width="300" height="170" fill="#EDE9FE"/>
-              <rect x="110" y="45" width="80" height="48" rx="8" fill="#1E293B" transform="rotate(20 110 45)"/>
-              <circle cx="150" cy="85" r="28" stroke="#8B5CF6" stroke-width="2" stroke-dasharray="4 4" fill="none"/>
-            </svg>
-          </div>
-          <div class="blog-content">
-            <div class="blog-title">Cách chia sẻ dữ liệu (Hotspot) qua eSIM cho bạn bè cùng nhóm</div>
-            <div class="blog-meta">Mẹo công nghệ • 4 phút đọc</div>
-          </div>
-        </div>
+        </a>
       </div>
     </section>
 
-    <!-- ── B2B / PARTNER SECTION ("CỔNG ĐỐI TÁC TABI GO") ── -->
-    <section class="b2b-section section-wrap" id="b2b">
-      <div class="b2b-container">
-        <div class="b2b-text">
+    <!-- ==================================================== -->
+    <!-- 9. B2B PARTNERS & APP DOWNLOAD                       -->
+    <!-- ==================================================== -->
+    <section class="section-wrap" id="b2b-partner">
+      <!-- B2B Partner Hub -->
+      <div class="b2b-partner-banner">
+        <div class="b2b-content">
           <h3>Một nền tảng, vô vàn khả năng kinh doanh</h3>
           <p>
-            Cung cấp giải pháp eSIM toàn diện từ Tabi Go cho doanh nghiệp, công ty lữ hành, đại lý du lịch, OTA và các nhà sáng tạo nội dung (KOC/KOL) với mức chiết khấu hấp dẫn và API tích hợp tự động.
+            Cổng đối tác Tabi Go Partners cung cấp giải pháp phân phối eSIM toàn diện cho các công ty du lịch, đại lý lữ hành, OTA và các nhà sáng tạo nội dung (KOC/KOL) với mức chiết khấu hấp dẫn nhất thị trường.
           </p>
-          <a href="javascript:void(0)" class="b2b-link" onclick="alert('Đang chuyển đến cổng đăng ký đối tác kinh doanh Tabi Go Partners')">
-            Tìm hiểu đối tác của chúng tôi →
-          </a>
+          <a href="javascript:void(0)" class="btn-b2b">Tìm hiểu về Tabi Go Partners →</a>
         </div>
-
-        <div class="b2b-illustration">
-          <img src="./assets/images/lottie/partner-platform.svg" alt="Tabi Go Partner Platform" />
+        <div class="b2b-art-wrap">
+          <img src="./assets/images/lottie/partner-platform.svg" alt="Tabi Go Partners Platform" />
         </div>
       </div>
-    </section>
 
-    <!-- ── APP DOWNLOAD BANNER (CYAN CONTAINER WITH ANIMATED CHARACTERS) ── -->
-    <section class="app-banner-section section-wrap">
-      <div class="app-banner-card">
-        <div class="app-banner-left">
-          <img src="./assets/images/lottie/ready-connected.svg" alt="Tabi Go App Video Call" />
+      <!-- App Download Banner (Exact Match to Airalo Sample Image 2) -->
+      <div class="app-download-banner">
+        <div class="app-phone-preview-wrap">
+          <img src="./assets/images/tabigo_phone_transparent.png" alt="Ứng dụng Tabi Go" class="app-phone-mockup-img" />
         </div>
-
-        <div class="app-banner-right">
-          <h3>Tabi Go luôn đồng hành cùng bạn, dù bạn ở bất cứ đâu</h3>
-          <p>Tải ứng dụng Tabi Go để quản lý eSIM thuận tiện, kiểm tra dung lượng còn lại và nạp thêm data mọi lúc mọi nơi.</p>
-          
-          <div class="app-rating-badges">
-            <div class="rating-badge">
-              <span class="rating-badge-store">🍏 App Store</span>
-              <span class="rating-stars">4.8 ★★★★★</span>
-            </div>
-            <div class="rating-badge">
-              <span class="rating-badge-store">🤖 Google Play</span>
-              <span class="rating-stars">4.9 ★★★★★</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── FOOTER & GIANT STYLIZED BRAND ART LOGO ── -->
-    <footer id="telecom-rules">
-      <div class="section-wrap">
-        <div class="footer-columns-grid">
-          <!-- Col 1 -->
-          <div class="footer-col">
-            <h5>Cửa hàng eSIM</h5>
-            <ul>
-              <li><a href="#marketplace">eSIM Địa phương</a></li>
-              <li><a href="#marketplace">eSIM Khu vực</a></li>
-              <li><a href="#marketplace">eSIM Toàn cầu</a></li>
-              <li><a href="javascript:void(0)">Hướng dẫn mua eSIM</a></li>
-            </ul>
-          </div>
-
-          <!-- Col 2 -->
-          <div class="footer-col">
-            <h5>Về Tabi Go</h5>
-            <ul>
-              <li><a href="javascript:void(0)">Câu chuyện thương hiệu</a></li>
-              <li><a href="javascript:void(0)">Đội ngũ sáng lập</a></li>
-              <li><a href="javascript:void(0)">Tuyển dụng</a></li>
-              <li><a href="javascript:void(0)">Báo chí & Truyền thông</a></li>
-            </ul>
-          </div>
-
-          <!-- Col 3 -->
-          <div class="footer-col">
-            <h5>Chính sách</h5>
-            <ul>
-              <li><a href="javascript:void(0)">Chính sách bảo mật</a></li>
-              <li><a href="javascript:void(0)">Điều khoản dịch vụ</a></li>
-              <li><a href="javascript:void(0)">Chính sách hoàn tiền 100%</a></li>
-              <li><a href="javascript:void(0)">Quy chế hoạt động</a></li>
-            </ul>
-          </div>
-
-          <!-- Col 4 -->
-          <div class="footer-col" id="partners">
-            <h5>Hợp tác</h5>
-            <ul>
-              <li><a href="javascript:void(0)">Đối tác đại lý du lịch</a></li>
-              <li><a href="javascript:void(0)">Dành cho KOC / KOL</a></li>
-              <li><a href="javascript:void(0)">API Doanh nghiệp</a></li>
-              <li><a href="javascript:void(0)">Chương trình Affiliate</a></li>
-            </ul>
-          </div>
-
-          <!-- Col 5 -->
-          <div class="footer-col">
-            <h5>Hỗ trợ</h5>
-            <ul>
-              <li><a href="#faq">Trung tâm trợ giúp</a></li>
-              <li><a href="#faq">Liên hệ hỗ trợ 24/7</a></li>
-              <li><a href="javascript:void(0)">Kiểm tra tương thích máy</a></li>
-              <li><a href="javascript:void(0)">Trạng thái mạng hệ thống</a></li>
-            </ul>
-          </div>
-
-          <!-- Col 6 -->
-          <div class="footer-col">
-            <h5>Ngôn ngữ & Tiền tệ</h5>
-            <ul>
-              <li><a href="javascript:void(0)">🇻🇳 Tiếng Việt</a></li>
-              <li><a href="javascript:void(0)">₫ VND (Đồng)</a></li>
-              <li><a href="javascript:void(0)">🌐 Phủ sóng 200+ quốc gia</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Footer Brand Logo + Tagline -->
-        <div class="footer-big-logo-wrap">
-          <div style="display:flex; align-items:center; gap:14px; justify-content:center; margin-bottom:8px;">
-            <svg width="48" height="48" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" style="border-radius:12px; box-shadow:0 4px 14px rgba(0,102,255,0.25);">
-              <rect width="36" height="36" rx="9" fill="url(#tabigo_ftr_bg)"/>
-              <circle cx="18" cy="18" r="9.5" fill="url(#tabigo_ftr_globe)"/>
-              <path d="M14 12C15.5 12 16.5 13.5 16 15C15.5 16.5 14 17 12 16.5C10.5 16 10 14 11.5 13C12.5 12.2 13 12 14 12Z" fill="#E0F2FE" fill-opacity="0.9"/>
-              <path d="M19 14C20.5 14.5 21.5 16 21 18C20.5 19.5 18 20 17 21C16.5 21.5 15.5 22 15 21C14 19 15 17 16.5 16C17.5 15.2 18 14.2 19 14Z" fill="#E0F2FE" fill-opacity="0.9"/>
-              <ellipse cx="18" cy="18" rx="12.5" ry="5.5" transform="rotate(-25 18 18)" stroke="#FFFFFF" stroke-width="1.3" stroke-dasharray="2 1.5" stroke-opacity="0.9"/>
-              <path d="M23.5 23C24.5 22 25 21 25 19.8" stroke="#FFFFFF" stroke-width="1.4" stroke-linecap="round" stroke-opacity="0.95"/>
-              <path d="M26 24.5C27.5 23 28.2 21.5 28.2 19.8" stroke="#FFFFFF" stroke-width="1.4" stroke-linecap="round" stroke-opacity="0.8"/>
-              <path d="M28 7.5L19 11.5L22.5 14.5L28 7.5Z" fill="#FFB800"/>
-              <path d="M28 7.5L22.5 14.5L25 17.5L28 7.5Z" fill="#FF9500"/>
-              <path d="M22.5 14.5L21.5 17L23.5 15.5L22.5 14.5Z" fill="#E67E00"/>
+        <div class="app-banner-content">
+          <h3>Chúng tôi luôn đồng hành cùng bạn, dù bạn ở bất cứ đâu</h3>
+          <p>Tải ứng dụng Tabi Go ngay hôm nay để mua, quản lý và nạp thêm dung lượng eSIM mọi lúc, mọi nơi.</p>
+          <div class="app-badges-row">
+            <!-- Hidden SVG Gradients for Partial Fractional Stars -->
+            <svg width="0" height="0" style="position:absolute; width:0; height:0; pointer-events:none;">
               <defs>
-                <linearGradient id="tabigo_ftr_bg" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
-                  <stop stop-color="#00C2FF"/>
-                  <stop offset="1" stop-color="#0066FF"/>
+                <linearGradient id="starPartial47" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="72%" stop-color="#FF7A30" />
+                  <stop offset="72%" stop-color="#CFD8DC" />
                 </linearGradient>
-                <linearGradient id="tabigo_ftr_globe" x1="8" y1="8" x2="28" y2="28" gradientUnits="userSpaceOnUse">
-                  <stop stop-color="#38BDF8"/>
-                  <stop offset="1" stop-color="#0284C7"/>
+                <linearGradient id="starPartial46" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="60%" stop-color="#FF7A30" />
+                  <stop offset="60%" stop-color="#CFD8DC" />
                 </linearGradient>
               </defs>
             </svg>
-            <span style="font-size:36px; font-weight:900; color:#0B2545; letter-spacing:-1px;">Tabi<span style="color:#00A3E0;">Go</span></span>
+
+            <!-- Card 1: iOS App -->
+            <div class="app-store-pill-card">
+              <a href="javascript:void(0)" class="app-badge-btn-pill">
+                <svg class="store-app-icon" width="28" height="28" viewBox="0 0 256 256">
+                  <defs>
+                    <linearGradient id="appStoreGrad" x1="50%" x2="50%" y1="0%" y2="100%">
+                      <stop offset="0%" stop-color="#17C9FB" />
+                      <stop offset="100%" stop-color="#1A74E8" />
+                    </linearGradient>
+                  </defs>
+                  <path fill="url(#appStoreGrad)" d="M56.064 0h143.872C230.9 0 256 25.1 256 56.064v143.872C256 230.9 230.9 256 199.936 256H56.064C25.1 256 0 230.9 0 199.936V56.064C0 25.1 25.1 0 56.064 0" />
+                  <path fill="#FFF" d="m82.042 185.81l.024.008l-8.753 15.16c-3.195 5.534-10.271 7.43-15.805 4.235s-7.43-10.271-4.235-15.805l6.448-11.168l.619-1.072c1.105-1.588 3.832-4.33 9.287-3.814c0 0 12.837 1.393 13.766 8.065c0 0 .126 2.195-1.351 4.391m124.143-38.72h-27.294c-1.859-.125-2.67-.789-2.99-1.175l-.02-.035l-29.217-50.606l-.038.025l-1.752-2.512c-2.872-4.392-7.432 6.84-7.432 6.84c-5.445 12.516.773 26.745 2.94 31.046l40.582 70.29c3.194 5.533 10.27 7.43 15.805 4.234c5.533-3.195 7.43-10.271 4.234-15.805l-10.147-17.576c-.197-.426-.539-1.582 1.542-1.587h13.787c6.39 0 11.57-5.18 11.57-11.57s-5.18-11.57-11.57-11.57m-53.014 15.728s1.457 7.411-4.18 7.411H48.092c-6.39 0-11.57-5.18-11.57-11.57s5.18-11.57 11.57-11.57h25.94c4.188-.242 5.18-2.66 5.18-2.66l.024.012l33.86-58.648l-.01-.002c.617-1.133.103-2.204.014-2.373l-11.183-19.369c-3.195-5.533-1.299-12.61 4.235-15.804s12.61-1.3 15.805 4.234l5.186 8.983l5.177-8.967c3.195-5.533 10.271-7.43 15.805-4.234s7.43 10.27 4.235 15.804l-47.118 81.61c-.206.497-.269 1.277 1.264 1.414h28.164l.006.275s16.278.253 18.495 15.454" />
+                </svg>
+                <span>Download iOS app</span>
+              </a>
+              <div class="app-rating-row">
+                <span class="app-rating-label">Rating</span>
+                <span class="app-rating-score">4.7</span>
+                <div class="app-rating-stars">
+                  <svg class="rating-star" width="16" height="16" viewBox="0 0 24 24" fill="#FF7A30" stroke="#FF7A30" stroke-width="1" stroke-linejoin="round"><path d="M12 2.5l2.85 6.2 6.75.8-5 4.6 1.3 6.6-5.9-3.3-5.9 3.3 1.3-6.6-5-4.6 6.75-.8L12 2.5z"/></svg>
+                  <svg class="rating-star" width="16" height="16" viewBox="0 0 24 24" fill="#FF7A30" stroke="#FF7A30" stroke-width="1" stroke-linejoin="round"><path d="M12 2.5l2.85 6.2 6.75.8-5 4.6 1.3 6.6-5.9-3.3-5.9 3.3 1.3-6.6-5-4.6 6.75-.8L12 2.5z"/></svg>
+                  <svg class="rating-star" width="16" height="16" viewBox="0 0 24 24" fill="#FF7A30" stroke="#FF7A30" stroke-width="1" stroke-linejoin="round"><path d="M12 2.5l2.85 6.2 6.75.8-5 4.6 1.3 6.6-5.9-3.3-5.9 3.3 1.3-6.6-5-4.6 6.75-.8L12 2.5z"/></svg>
+                  <svg class="rating-star" width="16" height="16" viewBox="0 0 24 24" fill="#FF7A30" stroke="#FF7A30" stroke-width="1" stroke-linejoin="round"><path d="M12 2.5l2.85 6.2 6.75.8-5 4.6 1.3 6.6-5.9-3.3-5.9 3.3 1.3-6.6-5-4.6 6.75-.8L12 2.5z"/></svg>
+                  <svg class="rating-star" width="16" height="16" viewBox="0 0 24 24" fill="url(#starPartial47)" stroke="url(#starPartial47)" stroke-width="1" stroke-linejoin="round"><path d="M12 2.5l2.85 6.2 6.75.8-5 4.6 1.3 6.6-5.9-3.3-5.9 3.3 1.3-6.6-5-4.6 6.75-.8L12 2.5z"/></svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2: Android App -->
+            <div class="app-store-pill-card">
+              <a href="javascript:void(0)" class="app-badge-btn-pill">
+                <svg class="store-app-icon" width="28" height="28" viewBox="0 0 466 512">
+                  <g fill-rule="nonzero">
+                    <path fill="#EA4335" d="M199.9 237.8 1.4 470.17c7.22 24.57 30.16 41.81 55.8 41.81 11.16 0 20.93-2.79 29.3-8.37l244.16-139.46L199.9 237.8z"/>
+                    <path fill="#FBBC04" d="m433.91 205.1-104.65-60-111.61 110.22 113.01 108.83 104.64-58.6c18.14-9.77 30.7-29.3 30.7-50.23-1.4-20.93-13.95-40.46-32.09-50.22z"/>
+                    <path fill="#34A853" d="M199.42 273.45 329.27 145.1 87.9 8.37C79.53 2.79 68.36 0 57.2 0 30.7 0 6.98 18.14 1.4 41.86l198.02 231.59z"/>
+                    <path fill="#4285F4" d="M1.39 41.86C0 46.04 0 51.63 0 57.2v397.64c0 5.57 0 9.76 1.4 15.34l216.27-214.86L1.39 41.86z"/>
+                  </g>
+                </svg>
+                <span>Download Android app</span>
+              </a>
+              <div class="app-rating-row">
+                <span class="app-rating-label">Rating</span>
+                <span class="app-rating-score">4.6</span>
+                <div class="app-rating-stars">
+                  <svg class="rating-star" width="16" height="16" viewBox="0 0 24 24" fill="#FF7A30" stroke="#FF7A30" stroke-width="1" stroke-linejoin="round"><path d="M12 2.5l2.85 6.2 6.75.8-5 4.6 1.3 6.6-5.9-3.3-5.9 3.3 1.3-6.6-5-4.6 6.75-.8L12 2.5z"/></svg>
+                  <svg class="rating-star" width="16" height="16" viewBox="0 0 24 24" fill="#FF7A30" stroke="#FF7A30" stroke-width="1" stroke-linejoin="round"><path d="M12 2.5l2.85 6.2 6.75.8-5 4.6 1.3 6.6-5.9-3.3-5.9 3.3 1.3-6.6-5-4.6 6.75-.8L12 2.5z"/></svg>
+                  <svg class="rating-star" width="16" height="16" viewBox="0 0 24 24" fill="#FF7A30" stroke="#FF7A30" stroke-width="1" stroke-linejoin="round"><path d="M12 2.5l2.85 6.2 6.75.8-5 4.6 1.3 6.6-5.9-3.3-5.9 3.3 1.3-6.6-5-4.6 6.75-.8L12 2.5z"/></svg>
+                  <svg class="rating-star" width="16" height="16" viewBox="0 0 24 24" fill="#FF7A30" stroke="#FF7A30" stroke-width="1" stroke-linejoin="round"><path d="M12 2.5l2.85 6.2 6.75.8-5 4.6 1.3 6.6-5.9-3.3-5.9 3.3 1.3-6.6-5-4.6 6.75-.8L12 2.5z"/></svg>
+                  <svg class="rating-star" width="16" height="16" viewBox="0 0 24 24" fill="url(#starPartial46)" stroke="url(#starPartial46)" stroke-width="1" stroke-linejoin="round"><path d="M12 2.5l2.85 6.2 6.75.8-5 4.6 1.3 6.6-5.9-3.3-5.9 3.3 1.3-6.6-5-4.6 6.75-.8L12 2.5z"/></svg>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="footer-tabigo-tagline">Đồng hành cùng mọi chuyến đi của bạn</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================== -->
+    <!-- 11. FOOTER (AIRALO CLEAN LAYOUT & BRANDING)          -->
+    <!-- ==================================================== -->
+    <footer>
+      <div class="footer-inner">
+        <!-- 7 Columns Directory (Exact Match to Airalo Sample Image 2 & 3) -->
+        <div class="footer-columns-grid">
+          <div class="footer-col">
+            <h5>Gói cước eSIM</h5>
+            <ul>
+              <li><a href="#destinations">Cửa hàng eSIM</a></li>
+              <li><a href="#destinations">Dữ liệu không giới hạn</a></li>
+              <li><a href="#destinations">eSIM Toàn cầu</a></li>
+              <li><a href="#destinations">eSIM Khu vực</a></li>
+              <li><a href="#destinations">eSIM Quốc gia</a></li>
+              <li><a href="#hero">Giới thiệu & Nhận thưởng</a></li>
+              <li><a href="#hero">Chương trình thành viên</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h5>Về eSIM</h5>
+            <ul>
+              <li><a href="#faq">eSIM là gì?</a></li>
+              <li><a href="#how-it-works">Cách thức hoạt động</a></li>
+              <li><a href="#faq">Thiết bị tương thích</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h5>Trợ giúp</h5>
+            <ul>
+              <li><a href="#faq">Trung tâm trợ giúp</a></li>
+              <li><a href="javascript:void(0)">Trò chuyện hỗ trợ 24/7</a></li>
+              <li><a href="javascript:void(0)">Liên hệ với chúng tôi</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h5>Tạp chí</h5>
+            <ul>
+              <li><a href="#blog">Bài viết mới nhất</a></li>
+              <li><a href="#blog">Cẩm nang du lịch</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h5>Tabi Go</h5>
+            <ul>
+              <li><a href="#why-tabigo">Về Tabi Go</a></li>
+              <li><a href="javascript:void(0)">Tác động xã hội</a></li>
+              <li><a href="#why-tabigo">Giá trị cốt lõi</a></li>
+              <li><a href="javascript:void(0)">Trung tâm truyền thông</a></li>
+              <li><a href="#blog">Tin tức mới nhất</a></li>
+              <li><a href="javascript:void(0)">Cơ hội nghề nghiệp</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h5>Doanh nghiệp</h5>
+            <ul>
+              <li><a href="#b2b-partner">Tabi Go Partners ↗</a></li>
+              <li><a href="#b2b-partner">Cổng đại lý du lịch</a></li>
+              <li><a href="#b2b-partner">Kết nối API eSIM</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h5>Theo dõi chúng tôi</h5>
+            <div class="footer-social-list">
+              <a href="javascript:void(0)" class="footer-social-link">
+                <svg viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                <span>Facebook</span>
+              </a>
+              <a href="javascript:void(0)" class="footer-social-link">
+                <svg viewBox="0 0 24 24" fill="#E4405F"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                <span>Facebook</span>
+              </a>
+              <a href="javascript:void(0)" class="footer-social-link">
+                <svg viewBox="0 0 24 24" fill="#E4405F"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                <span>Instagram</span>
+              </a>
+              <a href="javascript:void(0)" class="footer-social-link">
+                <svg viewBox="0 0 24 24" fill="#000000"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                <span>X (Twitter)</span>
+              </a>
+              <a href="javascript:void(0)" class="footer-social-link">
+                <svg viewBox="0 0 24 24" fill="#000000"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.298-.002.595.042.88.13V9.4a6.33 6.33 0 0 0-1-.08A6.34 6.34 0 0 0 3 15.66a6.34 6.34 0 0 0 10.82 4.46 6.27 6.27 0 0 0 1.88-4.46V8.71a8.28 8.28 0 0 0 4.89 1.57V6.83a4.85 4.85 0 0 1-1-.14z"/></svg>
+                <span>TikTok</span>
+              </a>
+              <a href="javascript:void(0)" class="footer-social-link">
+                <svg viewBox="0 0 24 24" fill="#0A66C2"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                <span>LinkedIn</span>
+              </a>
+              <a href="javascript:void(0)" class="footer-social-link">
+                <svg viewBox="0 0 24 24" fill="#FF0000"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                <span>YouTube</span>
+              </a>
+            </div>
+          </div>
         </div>
 
-        <div class="footer-bottom-bar">
-          <p>© 2026 Tabi Go. Bản quyền thuộc về Tabi Go (3M Intel). Nền tảng kết nối eSIM du lịch quốc tế hàng đầu.</p>
+        <!-- Giant TabiGo Brand World Mascot Artwork (Authentic Illustrated Characters + 3D Porcelain TabiGo Letters) -->
+        <div class="footer-artwork-wrap">
+          <img src="./assets/images/lottie/tabigo-footer-world.svg?v=20261030h" alt="TabiGo World Brand Mascot Animation" />
+        </div>
+
+        <!-- Centered Minimalist Copyright & Legal row (Sample Image 3) -->
+        <div class="footer-bottom-row">
+          <span class="footer-copyright">©2026 TABI GO</span>
+          <div class="footer-legal-links">
+            <a href="javascript:void(0)">Trung tâm tin cậy</a>
+            <a href="javascript:void(0)">Chính sách bảo mật</a>
+            <a href="javascript:void(0)">Trung tâm pháp lý</a>
+            <a href="javascript:void(0)">Quản lý cookie</a>
+            <a href="javascript:void(0)">Danh mục liên kết</a>
+            <a href="javascript:void(0)">Tuyên bố về khả năng truy cập</a>
+          </div>
         </div>
       </div>
     </footer>
+
   </div>
 
-  <!-- ── MODAL: ESIM PACKAGE DETAILS ── -->
-  <div class="modal-overlay" id="packageModal" onclick="closeModalOnOverlay(event)">
-    <div class="modal-card">
-      <button class="modal-close-btn" onclick="closePackageModal()" aria-label="Đóng">✕</button>
-
-      <div class="modal-header-country">
-        <span class="modal-flag" id="modalFlag">🇻🇳</span>
-        <div>
-          <div class="modal-country-name" id="modalCountryName">Việt Nam</div>
-          <div class="modal-country-operator" id="modalOperator">Nhà mạng: Viettel / Vinaphone 5G</div>
+  <!-- Modal Package Details -->
+  <div class="country-modal-overlay" id="countryModal" onclick="closeCountryModalOnBg(event)">
+    <div class="country-modal-card">
+      <div class="modal-header">
+        <h3 id="modalCountryTitle">
+          <span id="modalCountryFlag">🇯🇵</span>
+          <span id="modalCountryName">Nhật Bản</span>
+        </h3>
+        <button class="modal-close-btn" onclick="closeCountryModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="package-option-item">
+          <div class="pkg-info-left">
+            <strong>Gói 1 GB — Tốc độ cao 5G</strong>
+            <span>Thời hạn 7 ngày • Không giới hạn nạp thêm</span>
+          </div>
+          <div class="pkg-action-right">
+            <span class="pkg-price" id="pkgPrice1">99.000đ</span>
+            <button class="btn-buy-pkg" onclick="alert('Đã chọn gói! Quét mã để cài đặt eSIM.')">Chọn mua</button>
+          </div>
+        </div>
+        <div class="package-option-item">
+          <div class="pkg-info-left">
+            <strong>Gói 3 GB — Tốc độ cao 5G</strong>
+            <span>Thời hạn 15 ngày • Tự động kích hoạt</span>
+          </div>
+          <div class="pkg-action-right">
+            <span class="pkg-price" id="pkgPrice2">189.000đ</span>
+            <button class="btn-buy-pkg" onclick="alert('Đã chọn gói! Quét mã để cài đặt eSIM.')">Chọn mua</button>
+          </div>
+        </div>
+        <div class="package-option-item">
+          <div class="pkg-info-left">
+            <strong>Gói 5 GB — Tốc độ cao 5G</strong>
+            <span>Thời hạn 30 ngày • Tặng 10.000đ Tabi Xu</span>
+          </div>
+          <div class="pkg-action-right">
+            <span class="pkg-price" id="pkgPrice3">269.000đ</span>
+            <button class="btn-buy-pkg" onclick="alert('Đã chọn gói! Quét mã để cài đặt eSIM.')">Chọn mua</button>
+          </div>
+        </div>
+        <div class="package-option-item">
+          <div class="pkg-info-left">
+            <strong>Gói Không Giới Hạn Data</strong>
+            <span>Thời hạn 5 ngày • Data 5G tốc độ tối đa</span>
+          </div>
+          <div class="pkg-action-right">
+            <span class="pkg-price" id="pkgPrice4">329.000đ</span>
+            <button class="btn-buy-pkg" onclick="alert('Đã chọn gói! Quét mã để cài đặt eSIM.')">Chọn mua</button>
+          </div>
         </div>
       </div>
-
-      <div style="font-size: 13.5px; font-weight: 700; color: #374151; margin-bottom: 12px;">
-        Chọn gói cước Tabi Go phù hợp:
-      </div>
-
-      <div class="package-options-list" id="packageOptionsList">
-        <!-- Option 1 -->
-        <div class="package-option-item selected" onclick="selectPackage(this, '99.000đ')">
-          <div>
-            <div class="package-info-left">1 GB Data 5G Tốc Độ Cao</div>
-            <div class="package-info-sub">Hiệu lực trong 7 ngày • Không giới hạn cuộc gọi đến</div>
-          </div>
-          <div class="package-price-right">99.000đ</div>
-        </div>
-
-        <!-- Option 2 -->
-        <div class="package-option-item" onclick="selectPackage(this, '189.000đ')">
-          <div>
-            <div class="package-info-left">3 GB Data 5G Tốc Độ Cao <span style="background:#FF6E30; color:#fff; font-size:10px; padding:2px 6px; border-radius:10px; margin-left:6px;">Phổ biến nhất</span></div>
-            <div class="package-info-sub">Hiệu lực trong 30 ngày • Tự động kích hoạt khi hạ cánh</div>
-          </div>
-          <div class="package-price-right">189.000đ</div>
-        </div>
-
-        <!-- Option 3 -->
-        <div class="package-option-item" onclick="selectPackage(this, '289.000đ')">
-          <div>
-            <div class="package-info-left">5 GB Data 5G Tốc Độ Cao</div>
-            <div class="package-info-sub">Hiệu lực trong 30 ngày • Hỗ trợ chia sẻ Hotspot thoải mái</div>
-          </div>
-          <div class="package-price-right">289.000đ</div>
-        </div>
-
-        <!-- Option 4 -->
-        <div class="package-option-item" onclick="selectPackage(this, '479.000đ')">
-          <div>
-            <div class="package-info-left">10 GB Data 5G Tốc Độ Cao</div>
-            <div class="package-info-sub">Hiệu lực trong 30 ngày • Tốc độ 5G tối đa không bóp băng thông</div>
-          </div>
-          <div class="package-price-right">479.000đ</div>
-        </div>
-
-        <!-- Option 5 -->
-        <div class="package-option-item" onclick="selectPackage(this, '719.000đ')">
-          <div>
-            <div class="package-info-left">20 GB Data 5G Tốc Độ Cao</div>
-            <div class="package-info-sub">Hiệu lực trong 30 ngày • Dành cho chuyến công tác, du lịch dài ngày</div>
-          </div>
-          <div class="package-price-right">719.000đ</div>
-        </div>
-      </div>
-
-      <button class="modal-btn-buy" id="modalBuyBtn" onclick="handleBuyAction()">
-        Mua ngay – 99.000đ
-      </button>
     </div>
   </div>
 
   <script>
-    // Smooth scrolling
-    function scrollToSection(id) {
-      const el = document.getElementById(id);
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    /* ==================================================== */
+    /* HERO SLIDER (3 SLIDES & REVOLVING 6s TIMER)          */
+    /* ==================================================== */
+    let currentSlide = 0;
+    const totalSlides = 3;
+    let slideTimer = null;
+
+    function showSlide(index) {
+      currentSlide = (index + totalSlides) % totalSlides;
+      const slides = document.querySelectorAll('.hero-slide');
+      const segments = document.querySelectorAll('.carousel-segment');
+
+      slides.forEach((slide, idx) => {
+        slide.classList.toggle('active', idx === currentSlide);
+      });
+
+      segments.forEach((seg, idx) => {
+        seg.classList.toggle('active', idx === currentSlide);
+        const fill = seg.querySelector('.carousel-segment-fill');
+        if (fill) {
+          // Reset CSS animation
+          fill.style.animation = 'none';
+          fill.offsetHeight; // trigger reflow
+          if (idx === currentSlide) {
+            fill.style.animation = 'fillSegment 6s linear forwards';
+          }
+        }
+      });
+
+      resetAutoSlideTimer();
     }
 
-    // Live search autocomplete
+    function nextHeroSlide() {
+      showSlide(currentSlide + 1);
+    }
+
+    function prevHeroSlide() {
+      showSlide(currentSlide - 1);
+    }
+
+    function gotoHeroSlide(idx) {
+      showSlide(idx);
+    }
+
+    function resetAutoSlideTimer() {
+      if (slideTimer) clearInterval(slideTimer);
+      slideTimer = setInterval(() => {
+        nextHeroSlide();
+      }, 6000);
+    }
+
+    // Initialize Hero Slider on load
+    window.addEventListener('DOMContentLoaded', () => {
+      showSlide(0);
+    });
+
+    /* ==================================================== */
+    /* LIVE SEARCH AUTOCOMPLETE                            */
+    /* ==================================================== */
     const searchInput = document.getElementById('searchInput');
     const searchDropdown = document.getElementById('searchDropdown');
 
-    searchInput.addEventListener('input', function(e) {
-      const query = e.target.value.trim().toLowerCase();
-      if (query.length > 0) {
+    if (searchInput && searchDropdown) {
+      searchInput.addEventListener('focus', () => {
         searchDropdown.classList.add('active');
+      });
+      searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase().trim();
         const items = searchDropdown.querySelectorAll('.search-item');
-        let visibleCount = 0;
+        let hasMatch = false;
+
         items.forEach(item => {
-          const text = item.innerText.toLowerCase();
+          const text = item.textContent.toLowerCase();
           if (text.includes(query)) {
             item.style.display = 'flex';
-            visibleCount++;
+            hasMatch = true;
           } else {
             item.style.display = 'none';
           }
         });
-        if (visibleCount === 0) {
+        searchDropdown.classList.toggle('active', hasMatch || query === '');
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!searchInput.contains(e.target) && !searchDropdown.contains(e.target)) {
           searchDropdown.classList.remove('active');
         }
-      } else {
-        searchDropdown.classList.remove('active');
-      }
-    });
-
-    document.addEventListener('click', function(e) {
-      if (!searchInput.contains(e.target) && !searchDropdown.contains(e.target)) {
-        searchDropdown.classList.remove('active');
-      }
-    });
-
-    // Hero Slider Carousel Logic (3 Slides with Exact Capsule Progress Bar)
-    let currentHeroIndex = 0;
-    const heroSlides = document.querySelectorAll('.hero-slide');
-    const heroSegments = document.querySelectorAll('.carousel-segment');
-    let sliderTimer = null;
-
-    function showHeroSlide(index) {
-      heroSlides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === index);
       });
-      heroSegments.forEach((seg, i) => {
-        seg.classList.toggle('active', i === index);
-        // Reset CSS animation on active segment
-        const fill = seg.querySelector('.carousel-segment-fill');
-        if (fill) {
-          fill.style.animation = 'none';
-          void fill.offsetWidth; // Trigger DOM reflow
-          if (i === index) {
-            fill.style.animation = 'fillPill 6s linear forwards';
+    }
+
+    /* ==================================================== */
+    /* GREEN MARKETPLACE TABS SWITCHER                      */
+    /* ==================================================== */
+    const regionalDestinations = [
+      { name: 'Châu Á (14 nước)', flag: '🌏', price: 'Từ 150.000đ' },
+      { name: 'Châu Âu (39 nước)', flag: '🇪🇺', price: 'Từ 190.000đ' },
+      { name: 'Bắc Mỹ (Mỹ & Canada)', flag: '🌎', price: 'Từ 210.000đ' },
+      { name: 'Đông Nam Á (8 nước)', flag: '🏝️', price: 'Từ 120.000đ' },
+      { name: 'Trung Đông (12 nước)', flag: '🏜️', price: 'Từ 240.000đ' },
+      { name: 'Châu Đại Dương (Úc & NZ)', flag: '🦘', price: 'Từ 170.000đ' },
+    ];
+
+    const globalDestinations = [
+      { name: 'Toàn Cầu (130+ nước)', flag: '🌐', price: 'Từ 290.000đ' },
+      { name: 'Toàn Cầu Không Giới Hạn', flag: '🚀', price: 'Từ 450.000đ' },
+      { name: 'Gói Doanh Nhân VIP Toàn Cầu', flag: '💼', price: 'Từ 650.000đ' },
+    ];
+
+    const localDestinations = [
+      { name: 'Việt Nam', flag: '🇻🇳', price: 'Từ 99.000đ' },
+      { name: 'Thái Lan', flag: '🇹🇭', price: 'Từ 115.000đ' },
+      { name: 'Nhật Bản', flag: '🇯🇵', price: 'Từ 135.000đ' },
+      { name: 'Singapore', flag: '🇸🇬', price: 'Từ 125.000đ' },
+      { name: 'Hàn Quốc', flag: '🇰🇷', price: 'Từ 130.000đ' },
+      { name: 'Hoa Kỳ', flag: '🇺🇸', price: 'Từ 180.000đ' },
+      { name: 'Châu Âu', flag: '🇪🇺', price: 'Từ 190.000đ' },
+      { name: 'Pháp', flag: '🇫🇷', price: 'Từ 125.000đ' },
+      { name: 'Vương quốc Anh', flag: '🇬🇧', price: 'Từ 130.000đ' },
+      { name: 'Úc', flag: '🇦🇺', price: 'Từ 150.000đ' },
+      { name: 'Trung Quốc', flag: '🇨🇳', price: 'Từ 120.000đ' },
+      { name: 'Đài Loan', flag: '🇹🇼', price: 'Từ 105.000đ' },
+    ];
+
+    function switchGreenTab(type) {
+      const pills = document.querySelectorAll('.green-tab-pill');
+      pills.forEach(p => p.classList.remove('active'));
+      event.target.classList.add('active');
+
+      const grid = document.getElementById('greenCardsGrid');
+      let data = localDestinations;
+      if (type === 'regional') data = regionalDestinations;
+      if (type === 'global') data = globalDestinations;
+
+      grid.innerHTML = data.map(item => `
+        <div class="country-white-pill" onclick="openCountryModal('${item.name}', '${item.flag}', '${item.price}')">
+          <div class="country-pill-left">
+            <span class="country-flag-emoji">${item.flag}</span>
+            <span class="country-pill-name">${item.name}</span>
+          </div>
+          <span class="country-pill-price">${item.price}</span>
+        </div>
+      `).join('');
+    }
+
+    /* ==================================================== */
+    /* COUNTRY PACKAGES MODAL                               */
+    /* ==================================================== */
+    const modal = document.getElementById('countryModal');
+
+    function openCountryModal(name, flag, startPrice) {
+      document.getElementById('modalCountryName').textContent = name;
+      document.getElementById('modalCountryFlag').textContent = flag;
+      document.getElementById('pkgPrice1').textContent = startPrice;
+      modal.classList.add('active');
+    }
+
+    function closeCountryModal() {
+      modal.classList.remove('active');
+    }
+
+    function closeCountryModalOnBg(e) {
+      if (e.target === modal) {
+        closeCountryModal();
+      }
+    }
+
+    /* ==================================================== */
+    /* FAQ ACCORDION TOGGLE                                 */
+    /* ==================================================== */
+    function toggleFaq(btn) {
+      const item = btn.parentElement;
+      const isActive = item.classList.contains('active');
+      document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('active'));
+      if (!isActive) {
+        item.classList.add('active');
+      }
+    }
+
+    /* ==================================================== */
+    /* QUICK NAV JUMP CARDS INTERACTION & SCROLL SPY       */
+    /* ==================================================== */
+    function setActiveQuickCard(el) {
+      document.querySelectorAll('.hero-quick-card').forEach(c => c.classList.remove('active'));
+      el.classList.add('active');
+    }
+
+    /* ==================================================== */
+    /* SCROLLED HEADER: MENU ☰ BUTTON & NAVIGATION DROPDOWN */
+    /* ==================================================== */
+    const headerMenuBtn = document.getElementById('headerMenuBtn');
+    const headerNavDropdown = document.getElementById('headerNavDropdown');
+    const dropdownLinks = document.querySelectorAll('.header-nav-dropdown .dropdown-link');
+
+    if (headerMenuBtn && headerNavDropdown) {
+      headerMenuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = headerNavDropdown.classList.contains('open');
+        if (isOpen) {
+          headerNavDropdown.classList.remove('open');
+          headerMenuBtn.classList.remove('active');
+        } else {
+          headerNavDropdown.classList.add('open');
+          headerMenuBtn.classList.add('active');
+          if (headerSearchDropdown) headerSearchDropdown.classList.remove('active');
+        }
+      });
+
+      // Close dropdown when clicking a nav link
+      dropdownLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          headerNavDropdown.classList.remove('open');
+          headerMenuBtn.classList.remove('active');
+        });
+      });
+
+      // Quick Currency & Language buttons inside dropdown
+      const dropdownCurrencyBtn = document.getElementById('dropdownCurrencyBtn');
+      const dropdownLangBtn = document.getElementById('dropdownLangBtn');
+      if (dropdownCurrencyBtn) {
+        dropdownCurrencyBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const currBtn = document.querySelector('.header-currency-btn');
+          if (currBtn) currBtn.click();
+        });
+      }
+      if (dropdownLangBtn) {
+        dropdownLangBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const langBtn = document.querySelector('.header-icon-btn');
+          if (langBtn) langBtn.click();
+        });
+      }
+
+      // Close dropdown when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!headerNavDropdown.contains(e.target) && !headerMenuBtn.contains(e.target)) {
+          headerNavDropdown.classList.remove('open');
+          headerMenuBtn.classList.remove('active');
+        }
+      });
+    }
+
+    /* ==================================================== */
+    /* SCROLLED HEADER: SEARCH BAR & QUICK DESTINATIONS     */
+    /* ==================================================== */
+    const headerSearchPill = document.getElementById('headerSearchPill');
+    const headerSearchInput = document.getElementById('headerSearchInput');
+    const headerSearchBadge = document.getElementById('headerSearchBadge');
+    const headerSearchDropdown = document.getElementById('headerSearchDropdown');
+    const headerSearchTags = document.querySelectorAll('.header-search-tag');
+
+    if (headerSearchInput && headerSearchDropdown) {
+      headerSearchInput.addEventListener('focus', () => {
+        headerSearchDropdown.classList.add('active');
+        if (headerNavDropdown) {
+          headerNavDropdown.classList.remove('open');
+          if (headerMenuBtn) headerMenuBtn.classList.remove('active');
+        }
+      });
+
+      if (headerSearchBadge) {
+        headerSearchBadge.addEventListener('click', (e) => {
+          e.stopPropagation();
+          headerSearchDropdown.classList.toggle('active');
+          if (headerSearchDropdown.classList.contains('active')) {
+            headerSearchInput.focus();
+          }
+        });
+      }
+
+      headerSearchInput.addEventListener('input', (e) => {
+        const val = e.target.value;
+        if (searchInput) {
+          searchInput.value = val;
+          searchInput.dispatchEvent(new Event('input'));
+        }
+        headerSearchDropdown.classList.add('active');
+      });
+
+      headerSearchInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          const destSec = document.getElementById('destinations');
+          if (destSec) {
+            destSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            headerSearchDropdown.classList.remove('active');
           }
         }
       });
-      currentHeroIndex = index;
-    }
 
-    function nextHeroSlide() {
-      let next = (currentHeroIndex + 1) % heroSlides.length;
-      showHeroSlide(next);
-      resetSliderTimer();
-    }
-
-    function prevHeroSlide() {
-      let prev = (currentHeroIndex - 1 + heroSlides.length) % heroSlides.length;
-      showHeroSlide(prev);
-      resetSliderTimer();
-    }
-
-    function gotoHeroSlide(idx) {
-      showHeroSlide(idx);
-      resetSliderTimer();
-    }
-
-    function resetSliderTimer() {
-      if (sliderTimer) clearInterval(sliderTimer);
-      sliderTimer = setInterval(nextHeroSlide, 6000);
-    }
-
-    // Initialize auto-play
-    resetSliderTimer();
-
-    // Pause on hover
-    const sliderWrap = document.getElementById('heroSlider');
-    sliderWrap.addEventListener('mouseenter', () => clearInterval(sliderTimer));
-    sliderWrap.addEventListener('mouseleave', resetSliderTimer);
-
-    // How it works tabs toggle
-    function switchHowTab(btn, mode) {
-      document.querySelectorAll('.how-tab').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-    }
-
-    // Destination Green Box Tabs
-    const destinationsData = {
-      popular: [
-        { name: 'Việt Nam', flag: '🇻🇳', op: 'Viettel / Vinaphone 5G', price: '99.000đ' },
-        { name: 'Thái Lan', flag: '🇹🇭', op: 'AIS / TrueMove 5G', price: '115.000đ' },
-        { name: 'Malaysia', flag: '🇲🇾', op: 'CelcomDigi 5G', price: '120.000đ' },
-        { name: 'Nhật Bản', flag: '🇯🇵', op: 'SoftBank / KDDI 5G', price: '135.000đ' },
-        { name: 'Singapore', flag: '🇸🇬', op: 'Singtel 5G', price: '125.000đ' },
-        { name: 'Hàn Quốc', flag: '🇰🇷', op: 'SK Telecom 5G', price: '130.000đ' },
-        { name: 'Úc', flag: '🇦🇺', op: 'Optus / Telstra 5G', price: '160.000đ' },
-        { name: 'Indonesia', flag: '🇮🇩', op: 'Telkomsel 4G/5G', price: '110.000đ' },
-        { name: 'Hồng Kông', flag: '🇭🇰', op: 'CSL / Smartone 5G', price: '115.000đ' },
-        { name: 'Trung Quốc', flag: '🇨🇳', op: 'China Unicom 5G (Vượt Tường Lửa)', price: '145.000đ' },
-        { name: 'Philippines', flag: '🇵🇭', op: 'Globe / Smart 5G', price: '120.000đ' },
-        { name: 'Đài Loan', flag: '🇹🇼', op: 'Chunghwa Telecom 5G', price: '125.000đ' }
-      ],
-      local: [
-        { name: 'Pháp', flag: '🇫🇷', op: 'Orange / SFR 5G', price: '125.000đ' },
-        { name: 'Đức', flag: '🇩🇪', op: 'Telekom / Vodafone 5G', price: '130.000đ' },
-        { name: 'Ý (Italy)', flag: '🇮🇹', op: 'TIM / Vodafone 5G', price: '125.000đ' },
-        { name: 'Vương quốc Anh', flag: '🇬🇧', op: 'EE / Vodafone 5G', price: '135.000đ' },
-        { name: 'Hoa Kỳ', flag: '🇺🇸', op: 'T-Mobile / AT&T 5G', price: '180.000đ' },
-        { name: 'Canada', flag: '🇨🇦', op: 'Rogers / Bell 5G', price: '175.000đ' },
-        { name: 'Thổ Nhĩ Kỳ', flag: '🇹🇷', op: 'Turkcell 4G/5G', price: '115.000đ' },
-        { name: 'Tây Ban Nha', flag: '🇪🇸', op: 'Movistar 5G', price: '125.000đ' },
-        { name: 'Hà Lan', flag: '🇳🇱', op: 'KPN / Vodafone 5G', price: '130.000đ' },
-        { name: 'Thụy Sĩ', flag: '🇨🇭', op: 'Swisscom 5G', price: '150.000đ' },
-        { name: 'Ả Rập Xê Út', flag: '🇸🇦', op: 'STC / Mobily 5G', price: '160.000đ' },
-        { name: 'UAE (Dubai)', flag: '🇦🇪', op: 'Etisalat / du 5G', price: '170.000đ' }
-      ],
-      regional: [
-        { name: 'Châu Á (18 nước)', flag: '🌏', op: 'Multi-network Asian Pass', price: '210.000đ' },
-        { name: 'Châu Âu (39 nước)', flag: '🇪🇺', op: 'Eurolink Tier-1 Networks', price: '190.000đ' },
-        { name: 'Bắc Mỹ (Mỹ + Canada)', flag: '🌎', op: 'North America Seamless', price: '240.000đ' },
-        { name: 'Đông Nam Á (8 nước)', flag: '🏝️', op: 'ASEAN Explorer Pass', price: '160.000đ' },
-        { name: 'Mỹ Latinh (19 nước)', flag: '💃', op: 'Latamlink Multi-Net', price: '280.000đ' },
-        { name: 'Trung Đông & Bắc Phi', flag: '🐪', op: 'MENA Regional Pass', price: '290.000đ' }
-      ],
-      global: [
-        { name: 'Toàn cầu (130+ nước)', flag: '🌍', op: 'Global Discovery Pass', price: '320.000đ' },
-        { name: 'Toàn cầu (Data + Thoại)', flag: '🌐', op: 'Global Calls & Data', price: '450.000đ' },
-        { name: 'Toàn cầu Không giới hạn', flag: '⚡', op: 'Global Unlimited 5G', price: '690.000đ' }
-      ]
-    };
-
-    function switchGreenTab(cat) {
-      document.querySelectorAll('.green-tab-pill').forEach(btn => btn.classList.remove('active'));
-      const activeBtn = Array.from(document.querySelectorAll('.green-tab-pill')).find(b => b.getAttribute('onclick').includes(cat));
-      if (activeBtn) activeBtn.classList.add('active');
-
-      const titleEl = document.getElementById('greenCategoryTitle');
-      if (cat === 'popular') titleEl.textContent = 'Chọn eSIM Tabi Go cho các địa điểm phổ biến';
-      else if (cat === 'local') titleEl.textContent = 'Chọn eSIM theo Quốc gia & Địa phương';
-      else if (cat === 'regional') titleEl.textContent = 'Chọn eSIM cho các Khu vực liên quốc gia';
-      else if (cat === 'global') titleEl.textContent = 'Gói cước eSIM Toàn cầu phủ sóng 130+ nước';
-
-      const grid = document.getElementById('countryCardsGrid');
-      grid.innerHTML = '';
-      const list = destinationsData[cat] || destinationsData.popular;
-      list.forEach(c => {
-        const card = document.createElement('div');
-        card.className = 'country-card';
-        card.onclick = () => openCountryModal(c.name, c.flag, c.op, c.price);
-        card.innerHTML = `
-          <div class="country-left">
-            <span class="country-flag">${c.flag}</span>
-            <span class="country-name">${c.name}</span>
-          </div>
-          <span class="country-price">${c.price}</span>
-        `;
-        grid.appendChild(card);
+      headerSearchTags.forEach(tag => {
+        tag.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const dest = tag.getAttribute('data-dest');
+          if (dest) {
+            headerSearchInput.value = dest;
+            if (searchInput) {
+              searchInput.value = dest;
+              searchInput.dispatchEvent(new Event('input'));
+            }
+            headerSearchDropdown.classList.remove('active');
+            const destSec = document.getElementById('destinations');
+            if (destSec) {
+              destSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          }
+        });
       });
-      scrollToSection('marketplace');
+
+      document.addEventListener('click', (e) => {
+        if (!headerSearchDropdown.contains(e.target) && !headerSearchPill.contains(e.target)) {
+          headerSearchDropdown.classList.remove('active');
+        }
+      });
     }
 
-    // FAQ Accordion Toggle
-    function toggleFaq(el) {
-      const parent = el.parentElement;
-      const wasOpen = parent.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach(item => item.classList.remove('open'));
-      if (!wasOpen) parent.classList.add('open');
-    }
+    // Scroll spy to dynamically highlight active quick card and header nav menu based on viewport
+    const headerEl = document.querySelector('header');
+    const navLinks = document.querySelectorAll('.nav-menu a');
 
-    // Modal logic
-    let currentSelectedPrice = '99.000đ';
+    const sectionsToSpy = [
+      { id: 'how-it-works', cardIndex: 0 },
+      { id: 'destinations', cardIndex: 1 },
+      { id: 'b2b-partner', cardIndex: 2 }
+    ];
 
-    function openCountryModal(name, flag, operator, price) {
-      document.getElementById('modalCountryName').textContent = name;
-      document.getElementById('modalFlag').textContent = flag;
-      document.getElementById('modalOperator').textContent = 'Nhà mạng đối tác: ' + operator;
-      currentSelectedPrice = price;
-      document.getElementById('modalBuyBtn').textContent = 'Mua ngay – ' + price;
-      document.getElementById('packageModal').classList.add('active');
-    }
+    const navSections = [
+      { id: 'hero', index: 0 },
+      { id: 'destinations', index: 1 },
+      { id: 'how-it-works', index: 2 },
+      { id: 'why-tabigo', index: 3 },
+      { id: 'blog', index: 4 },
+      { id: 'faq', index: 5 }
+    ];
 
-    function closePackageModal() {
-      document.getElementById('packageModal').classList.remove('active');
-    }
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
 
-    function closeModalOnOverlay(e) {
-      if (e.target.id === 'packageModal') {
-        closePackageModal();
+      if (headerEl) {
+        const isScrolled = scrollY > 20;
+        headerEl.classList.toggle('scrolled', isScrolled);
+        if (!isScrolled) {
+          if (headerNavDropdown) headerNavDropdown.classList.remove('open');
+          if (headerMenuBtn) headerMenuBtn.classList.remove('active');
+          if (headerSearchDropdown) headerSearchDropdown.classList.remove('active');
+        }
       }
-    }
 
-    function selectPackage(el, price) {
-      document.querySelectorAll('.package-option-item').forEach(i => i.classList.remove('selected'));
-      el.classList.add('selected');
-      currentSelectedPrice = price;
-      document.getElementById('modalBuyBtn').textContent = 'Mua ngay – ' + price;
-    }
+      const scrollPos = scrollY + 220;
+      const cards = document.querySelectorAll('.hero-quick-card');
 
-    function handleBuyAction() {
-      const country = document.getElementById('modalCountryName').textContent;
-      alert(`Xác nhận đơn hàng: Tabi Go eSIM ${country} với giá ${currentSelectedPrice}. Cảm ơn bạn đã đồng hành cùng Tabi Go!`);
-      closePackageModal();
-    }
+      if (cards.length) {
+        sectionsToSpy.forEach(item => {
+          const sec = document.getElementById(item.id);
+          if (sec) {
+            const top = sec.offsetTop;
+            const height = sec.offsetHeight;
+            if (scrollPos >= top && scrollPos < top + height) {
+              cards.forEach(c => c.classList.remove('active'));
+              if (cards[item.cardIndex]) cards[item.cardIndex].classList.add('active');
+            }
+          }
+        });
+      }
 
-    function showAllCountriesModal() {
-      switchGreenTab('local');
-    }
+      if (navLinks.length) {
+        let activeNavFound = false;
+        for (let i = navSections.length - 1; i >= 0; i--) {
+          const item = navSections[i];
+          const sec = document.getElementById(item.id);
+          if (sec) {
+            const top = sec.offsetTop - 140;
+            if (scrollY >= top) {
+              navLinks.forEach(link => link.classList.remove('active'));
+              dropdownLinks.forEach(link => link.classList.remove('active'));
+              if (navLinks[item.index]) navLinks[item.index].classList.add('active');
+              if (dropdownLinks[item.index]) dropdownLinks[item.index].classList.add('active');
+              activeNavFound = true;
+              break;
+            }
+          }
+        }
+        if (!activeNavFound && scrollY < 300 && navLinks[0]) {
+          navLinks.forEach(link => link.classList.remove('active'));
+          dropdownLinks.forEach(link => link.classList.remove('active'));
+          navLinks[0].classList.add('active');
+          if (dropdownLinks[0]) dropdownLinks[0].classList.add('active');
+        }
+      }
+    }, { passive: true });
 
-    // Keyboard ESC to close modal
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') closePackageModal();
+    /* ==================================================== */
+    /* SAFEGUARD: INTERCEPT NON-NAVIGATING PLACEHOLDER LINKS */
+    /* ==================================================== */
+    document.querySelectorAll('a').forEach(link => {
+      const href = link.getAttribute('href');
+      if (!href || href === '#' || href === 'javascript:void(0)' || href.startsWith('javascript:')) {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+        });
+      }
     });
   </script>
 </body>
