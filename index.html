@@ -1558,19 +1558,46 @@
       color: rgba(255, 255, 255, 0.9);
       margin-top: 3px;
     }
+    .green-header-actions {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .green-download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--orange);
+      color: #FFFFFF;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 8px 20px;
+      border-radius: var(--radius-pill);
+      text-decoration: none;
+      transition: background 0.15s, transform 0.15s;
+      white-space: nowrap;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    }
+    .green-download-btn:hover {
+      background: var(--orange-hover);
+      transform: translateY(-1px);
+    }
     .green-view-all-btn {
       background: #FFFFFF;
       color: #1F2937;
-      font-size: 12.5px;
+      font-size: 13px;
       font-weight: 700;
-      padding: 7px 16px;
+      padding: 8px 18px;
       border-radius: var(--radius-pill);
       text-decoration: none;
-      transition: background 0.15s;
+      transition: background 0.15s, transform 0.15s;
       white-space: nowrap;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     }
     .green-view-all-btn:hover {
       background: #F3F4F6;
+      transform: translateY(-1px);
     }
 
     /* 3-Column Country Pill Cards (Airalo Clean Grid) */
@@ -2042,6 +2069,135 @@
       height: 16px;
       display: block;
     }
+    /* App Download Actions Container */
+    .app-download-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+      max-width: 480px;
+    }
+    /* Prominent Desktop QR Code Download Card */
+    .app-qr-download-card {
+      background: #FFFFFF;
+      border: 1.2px solid #52525B;
+      border-radius: 22px;
+      padding: 12px 18px 12px 14px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      transition: all 0.2s ease;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+    }
+    .app-qr-download-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+      border-color: #000000;
+    }
+    .app-qr-box {
+      width: 76px;
+      height: 76px;
+      flex-shrink: 0;
+      background: #FFFFFF;
+      border-radius: 12px;
+      padding: 3px;
+      border: 1px solid #E2E8F0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+    }
+    .app-qr-box svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    .app-qr-details {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      text-align: left;
+    }
+    .app-qr-tag-row {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 2px;
+    }
+    .app-qr-tag-pill {
+      background: #E8F5E9;
+      color: #2E7D32;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 10px;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .app-qr-tag-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #2E7D32;
+      display: inline-block;
+    }
+    .app-qr-details strong {
+      font-size: 15px;
+      font-weight: 800;
+      color: #0B192C;
+      letter-spacing: -0.2px;
+      line-height: 1.25;
+    }
+    .app-qr-details p {
+      font-size: 12.5px;
+      color: #475569;
+      line-height: 1.35;
+      margin: 0;
+    }
+    .app-qr-promo-chip {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--orange);
+      margin-top: 2px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    /* Hero CTA Group with subtle QR badge */
+    .hero-cta-group {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .hero-qr-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #FFFFFF;
+      border: 1.2px solid #52525B;
+      color: #0B192C;
+      padding: 12px 20px;
+      border-radius: var(--radius-pill);
+      font-size: 14.5px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+    .hero-qr-badge:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      border-color: #000000;
+      color: var(--orange);
+    }
     .footer-bocongthuong {
       display: inline-flex;
       align-items: center;
@@ -2305,6 +2461,10 @@
       .blog-grid { grid-template-columns: 1fr; }
       .footer-columns-grid { grid-template-columns: 1fr 1fr; }
       .b2b-partner-banner, .app-download-banner { flex-direction: column; text-align: center; }
+      .app-download-actions { align-items: center; margin: 0 auto; }
+      .app-badges-row { justify-content: center; }
+      .app-qr-download-card { margin: 0 auto; width: 100%; max-width: 440px; }
+      .green-header-row { flex-direction: column; align-items: flex-start; gap: 14px; }
 
     }
     @media (max-width: 640px) {
@@ -2313,6 +2473,8 @@
       .hero-motif-green-diamond { width: 56px; height: 56px; top: -28px; }
       .hero-motif-yellow-swatch { display: none; }
       .green-cards-grid { grid-template-columns: 1fr; }
+      .green-header-actions { width: 100%; justify-content: flex-start; }
+      .green-download-btn, .green-view-all-btn { flex: 1; justify-content: center; text-align: center; }
       .header-row2 { overflow-x: auto; justify-content: flex-start; gap: 16px; }
       .why-features-grid { grid-template-columns: 1fr; }
       .footer-columns-grid { grid-template-columns: 1fr; gap: 28px; }
@@ -2579,7 +2741,21 @@
             <p class="hero-sub">
               Ứng dụng mua eSIM & SIM vật lý giá gốc cho 150+ quốc gia. Không lo tháo SIM,<br />không cước chuyển vùng đắt đỏ, kết nối Internet ngay khi vừa hạ cánh.
             </p>
-            <a href="#download-app" class="btn-hero-primary">Tải App Tabi Go ngay</a>
+            <div class="hero-cta-group">
+              <a href="#download-app" class="btn-hero-primary">Tải App Tabi Go ngay</a>
+              <a href="javascript:void(0)" onclick="openAppQrModal()" class="hero-qr-badge" title="Quét mã QR tải App Tabi Go">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="7" height="7" rx="1.5"></rect>
+                  <rect x="14" y="3" width="7" height="7" rx="1.5"></rect>
+                  <rect x="3" y="14" width="7" height="7" rx="1.5"></rect>
+                  <rect x="14" y="14" width="3" height="3" fill="currentColor"></rect>
+                  <line x1="20" y1="14" x2="20" y2="14.01"></line>
+                  <line x1="17" y1="17" x2="17" y2="20"></line>
+                  <line x1="20" y1="20" x2="20" y2="20.01"></line>
+                </svg>
+                <span>Quét mã tải App</span>
+              </a>
+            </div>
           </div>
         </div>
 
@@ -2845,9 +3021,14 @@
         <div class="green-header-row">
           <div class="green-header-title">
             <h3>Chọn eSIM cho các địa điểm phổ biến</h3>
-            <p>Dữ liệu tốc độ cao tại điểm đến yêu thích của bạn — Kích hoạt tức thì trong 60 giây</p>
+            <p>Khám phá trọn bộ 150+ quốc gia và nhận ưu đãi giảm 10% khi kích hoạt trên App Tabi Go</p>
           </div>
-          <a href="#destinations" class="green-view-all-btn">Xem tất cả 150+ quốc gia →</a>
+          <div class="green-header-actions">
+            <a href="#download-app" class="green-download-btn" title="Tải ứng dụng Tabi Go ngay">
+              <span>Tải App ngay →</span>
+            </a>
+            <a href="#destinations" class="green-view-all-btn">Xem tất cả 150+ quốc gia →</a>
+          </div>
         </div>
 
         <!-- 3-Column Grid of Clean White Pill Cards (Airalo Style) -->
@@ -3135,71 +3316,127 @@
         <div class="app-banner-content">
           <h3>Chúng tôi luôn đồng hành cùng bạn, dù ở bất cứ đâu</h3>
           <p>Tải ứng dụng Tabi Go để dễ dàng mua, quản lý và nạp thêm dung lượng eSIM mọi lúc, mọi nơi.</p>
-          <div class="app-badges-row">
-            <!-- Hidden SVG Gradients for Partial Fractional Stars -->
-            <svg width="0" height="0" style="position:absolute; width:0; height:0; pointer-events:none;">
-              <defs>
-                <linearGradient id="starPartial47" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="72%" stop-color="#FF7A30" />
-                  <stop offset="72%" stop-color="#CFD8DC" />
-                </linearGradient>
-                <linearGradient id="starPartial46" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="60%" stop-color="#FF7A30" />
-                  <stop offset="60%" stop-color="#CFD8DC" />
-                </linearGradient>
-              </defs>
-            </svg>
+          <div class="app-download-actions">
+            <div class="app-badges-row">
+              <!-- Hidden SVG Gradients for Partial Fractional Stars -->
+              <svg width="0" height="0" style="position:absolute; width:0; height:0; pointer-events:none;">
+                <defs>
+                  <linearGradient id="starPartial47" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="72%" stop-color="#FF7A30" />
+                    <stop offset="72%" stop-color="#CFD8DC" />
+                  </linearGradient>
+                  <linearGradient id="starPartial46" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="60%" stop-color="#FF7A30" />
+                    <stop offset="60%" stop-color="#CFD8DC" />
+                  </linearGradient>
+                </defs>
+              </svg>
 
-            <!-- Card 1: iOS App -->
-            <div class="app-store-pill-card">
-              <a href="javascript:void(0)" class="app-badge-btn-pill">
-                <svg class="store-app-icon" width="28" height="28" viewBox="0 0 256 256">
-                  <defs>
-                    <linearGradient id="appStoreGrad" x1="50%" x2="50%" y1="0%" y2="100%">
-                      <stop offset="0%" stop-color="#17C9FB" />
-                      <stop offset="100%" stop-color="#1A74E8" />
-                    </linearGradient>
-                  </defs>
-                  <path fill="url(#appStoreGrad)" d="M56.064 0h143.872C230.9 0 256 25.1 256 56.064v143.872C256 230.9 230.9 256 199.936 256H56.064C25.1 256 0 230.9 0 199.936V56.064C0 25.1 25.1 0 56.064 0" />
-                  <path fill="#FFF" d="m82.042 185.81l.024.008l-8.753 15.16c-3.195 5.534-10.271 7.43-15.805 4.235s-7.43-10.271-4.235-15.805l6.448-11.168l.619-1.072c1.105-1.588 3.832-4.33 9.287-3.814c0 0 12.837 1.393 13.766 8.065c0 0 .126 2.195-1.351 4.391m124.143-38.72h-27.294c-1.859-.125-2.67-.789-2.99-1.175l-.02-.035l-29.217-50.606l-.038.025l-1.752-2.512c-2.872-4.392-7.432 6.84-7.432 6.84c-5.445 12.516.773 26.745 2.94 31.046l40.582 70.29c3.194 5.533 10.27 7.43 15.805 4.234c5.533-3.195 7.43-10.271 4.234-15.805l-10.147-17.576c-.197-.426-.539-1.582 1.542-1.587h13.787c6.39 0 11.57-5.18 11.57-11.57s-5.18-11.57-11.57-11.57m-53.014 15.728s1.457 7.411-4.18 7.411H48.092c-6.39 0-11.57-5.18-11.57-11.57s5.18-11.57 11.57-11.57h25.94c4.188-.242 5.18-2.66 5.18-2.66l.024.012l33.86-58.648l-.01-.002c.617-1.133.103-2.204.014-2.373l-11.183-19.369c-3.195-5.533-1.299-12.61 4.235-15.804s12.61-1.3 15.805 4.234l5.186 8.983l5.177-8.967c3.195-5.533 10.271-7.43 15.805-4.234s7.43 10.27 4.235 15.804l-47.118 81.61c-.206.497-.269 1.277 1.264 1.414h28.164l.006.275s16.278.253 18.495 15.454" />
-                </svg>
-                <span>Download iOS app</span>
-              </a>
-              <div class="app-rating-row">
-                <span class="app-rating-label">Rating</span>
-                <span class="app-rating-score">4.7</span>
-                <div class="app-rating-stars">
-                  <svg class="rating-star" width="16" height="16" viewBox="0 0 24 24" fill="#FF7A30" stroke="#FF7A30" stroke-width="1" stroke-linejoin="round"><path d="M12 2.5l2.85 6.2 6.75.8-5 4.6 1.3 6.6-5.9-3.3-5.9 3.3 1.3-6.6-5-4.6 6.75-.8L12 2.5z"/></svg>
-                  <svg class="rating-star" width="16" height="16" viewBox="0 0 24 24" fill="#FF7A30" stroke="#FF7A30" stroke-width="1" stroke-linejoin="round"><path d="M12 2.5l2.85 6.2 6.75.8-5 4.6 1.3 6.6-5.9-3.3-5.9 3.3 1.3-6.6-5-4.6 6.75-.8L12 2.5z"/></svg>
-                  <svg class="rating-star" width="16" height="16" viewBox="0 0 24 24" fill="#FF7A30" stroke="#FF7A30" stroke-width="1" stroke-linejoin="round"><path d="M12 2.5l2.85 6.2 6.75.8-5 4.6 1.3 6.6-5.9-3.3-5.9 3.3 1.3-6.6-5-4.6 6.75-.8L12 2.5z"/></svg>
-                  <svg class="rating-star" width="16" height="16" viewBox="0 0 24 24" fill="#FF7A30" stroke="#FF7A30" stroke-width="1" stroke-linejoin="round"><path d="M12 2.5l2.85 6.2 6.75.8-5 4.6 1.3 6.6-5.9-3.3-5.9 3.3 1.3-6.6-5-4.6 6.75-.8L12 2.5z"/></svg>
-                  <svg class="rating-star" width="16" height="16" viewBox="0 0 24 24" fill="url(#starPartial47)" stroke="url(#starPartial47)" stroke-width="1" stroke-linejoin="round"><path d="M12 2.5l2.85 6.2 6.75.8-5 4.6 1.3 6.6-5.9-3.3-5.9 3.3 1.3-6.6-5-4.6 6.75-.8L12 2.5z"/></svg>
+              <!-- Card 1: iOS App -->
+              <div class="app-store-pill-card">
+                <a href="javascript:void(0)" onclick="openAppQrModal('iOS')" class="app-badge-btn-pill">
+                  <svg class="store-app-icon" width="28" height="28" viewBox="0 0 256 256">
+                    <defs>
+                      <linearGradient id="appStoreGrad" x1="50%" x2="50%" y1="0%" y2="100%">
+                        <stop offset="0%" stop-color="#17C9FB" />
+                        <stop offset="100%" stop-color="#1A74E8" />
+                      </linearGradient>
+                    </defs>
+                    <path fill="url(#appStoreGrad)" d="M56.064 0h143.872C230.9 0 256 25.1 256 56.064v143.872C256 230.9 230.9 256 199.936 256H56.064C25.1 256 0 230.9 0 199.936V56.064C0 25.1 25.1 0 56.064 0" />
+                    <path fill="#FFF" d="m82.042 185.81l.024.008l-8.753 15.16c-3.195 5.534-10.271 7.43-15.805 4.235s-7.43-10.271-4.235-15.805l6.448-11.168l.619-1.072c1.105-1.588 3.832-4.33 9.287-3.814c0 0 12.837 1.393 13.766 8.065c0 0 .126 2.195-1.351 4.391m124.143-38.72h-27.294c-1.859-.125-2.67-.789-2.99-1.175l-.02-.035l-29.217-50.606l-.038.025l-1.752-2.512c-2.872-4.392-7.432 6.84-7.432 6.84c-5.445 12.516.773 26.745 2.94 31.046l40.582 70.29c3.194 5.533 10.27 7.43 15.805 4.234c5.533-3.195 7.43-10.271 4.234-15.805l-10.147-17.576c-.197-.426-.539-1.582 1.542-1.587h13.787c6.39 0 11.57-5.18 11.57-11.57s-5.18-11.57-11.57-11.57m-53.014 15.728s1.457 7.411-4.18 7.411H48.092c-6.39 0-11.57-5.18-11.57-11.57s5.18-11.57 11.57-11.57h25.94c4.188-.242 5.18-2.66 5.18-2.66l.024.012l33.86-58.648l-.01-.002c.617-1.133.103-2.204.014-2.373l-11.183-19.369c-3.195-5.533-1.299-12.61 4.235-15.804s12.61-1.3 15.805 4.234l5.186 8.983l5.177-8.967c3.195-5.533 10.271-7.43 15.805-4.234s7.43 10.27 4.235 15.804l-47.118 81.61c-.206.497-.269 1.277 1.264 1.414h28.164l.006.275s16.278.253 18.495 15.454" />
+                  </svg>
+                  <span>Download iOS app</span>
+                </a>
+                <div class="app-rating-row">
+                  <span class="app-rating-label">Rating</span>
+                  <span class="app-rating-score">4.7</span>
+                  <div class="app-rating-stars">
+                    <svg class="rating-star" width="16" height="16" viewBox="0 0 24 24" fill="#FF7A30" stroke="#FF7A30" stroke-width="1" stroke-linejoin="round"><path d="M12 2.5l2.85 6.2 6.75.8-5 4.6 1.3 6.6-5.9-3.3-5.9 3.3 1.3-6.6-5-4.6 6.75-.8L12 2.5z"/></svg>
+                    <svg class="rating-star" width="16" height="16" viewBox="0 0 24 24" fill="#FF7A30" stroke="#FF7A30" stroke-width="1" stroke-linejoin="round"><path d="M12 2.5l2.85 6.2 6.75.8-5 4.6 1.3 6.6-5.9-3.3-5.9 3.3 1.3-6.6-5-4.6 6.75-.8L12 2.5z"/></svg>
+                    <svg class="rating-star" width="16" height="16" viewBox="0 0 24 24" fill="#FF7A30" stroke="#FF7A30" stroke-width="1" stroke-linejoin="round"><path d="M12 2.5l2.85 6.2 6.75.8-5 4.6 1.3 6.6-5.9-3.3-5.9 3.3 1.3-6.6-5-4.6 6.75-.8L12 2.5z"/></svg>
+                    <svg class="rating-star" width="16" height="16" viewBox="0 0 24 24" fill="#FF7A30" stroke="#FF7A30" stroke-width="1" stroke-linejoin="round"><path d="M12 2.5l2.85 6.2 6.75.8-5 4.6 1.3 6.6-5.9-3.3-5.9 3.3 1.3-6.6-5-4.6 6.75-.8L12 2.5z"/></svg>
+                    <svg class="rating-star" width="16" height="16" viewBox="0 0 24 24" fill="url(#starPartial47)" stroke="url(#starPartial47)" stroke-width="1" stroke-linejoin="round"><path d="M12 2.5l2.85 6.2 6.75.8-5 4.6 1.3 6.6-5.9-3.3-5.9 3.3 1.3-6.6-5-4.6 6.75-.8L12 2.5z"/></svg>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 2: Android App -->
+              <div class="app-store-pill-card">
+                <a href="javascript:void(0)" onclick="openAppQrModal('Android')" class="app-badge-btn-pill">
+                  <svg class="store-app-icon" width="28" height="28" viewBox="0 0 466 512">
+                    <g fill-rule="nonzero">
+                      <path fill="#EA4335" d="M199.9 237.8 1.4 470.17c7.22 24.57 30.16 41.81 55.8 41.81 11.16 0 20.93-2.79 29.3-8.37l244.16-139.46L199.9 237.8z"/>
+                      <path fill="#FBBC04" d="m433.91 205.1-104.65-60-111.61 110.22 113.01 108.83 104.64-58.6c18.14-9.77 30.7-29.3 30.7-50.23-1.4-20.93-13.95-40.46-32.09-50.22z"/>
+                      <path fill="#34A853" d="M199.42 273.45 329.27 145.1 87.9 8.37C79.53 2.79 68.36 0 57.2 0 30.7 0 6.98 18.14 1.4 41.86l198.02 231.59z"/>
+                      <path fill="#4285F4" d="M1.39 41.86C0 46.04 0 51.63 0 57.2v397.64c0 5.57 0 9.76 1.4 15.34l216.27-214.86L1.39 41.86z"/>
+                    </g>
+                  </svg>
+                  <span>Download Android app</span>
+                </a>
+                <div class="app-rating-row">
+                  <span class="app-rating-label">Rating</span>
+                  <span class="app-rating-score">4.6</span>
+                  <div class="app-rating-stars">
+                    <svg class="rating-star" width="16" height="16" viewBox="0 0 24 24" fill="#FF7A30" stroke="#FF7A30" stroke-width="1" stroke-linejoin="round"><path d="M12 2.5l2.85 6.2 6.75.8-5 4.6 1.3 6.6-5.9-3.3-5.9 3.3 1.3-6.6-5-4.6 6.75-.8L12 2.5z"/></svg>
+                    <svg class="rating-star" width="16" height="16" viewBox="0 0 24 24" fill="#FF7A30" stroke="#FF7A30" stroke-width="1" stroke-linejoin="round"><path d="M12 2.5l2.85 6.2 6.75.8-5 4.6 1.3 6.6-5.9-3.3-5.9 3.3 1.3-6.6-5-4.6 6.75-.8L12 2.5z"/></svg>
+                    <svg class="rating-star" width="16" height="16" viewBox="0 0 24 24" fill="#FF7A30" stroke="#FF7A30" stroke-width="1" stroke-linejoin="round"><path d="M12 2.5l2.85 6.2 6.75.8-5 4.6 1.3 6.6-5.9-3.3-5.9 3.3 1.3-6.6-5-4.6 6.75-.8L12 2.5z"/></svg>
+                    <svg class="rating-star" width="16" height="16" viewBox="0 0 24 24" fill="#FF7A30" stroke="#FF7A30" stroke-width="1" stroke-linejoin="round"><path d="M12 2.5l2.85 6.2 6.75.8-5 4.6 1.3 6.6-5.9-3.3-5.9 3.3 1.3-6.6-5-4.6 6.75-.8L12 2.5z"/></svg>
+                    <svg class="rating-star" width="16" height="16" viewBox="0 0 24 24" fill="url(#starPartial46)" stroke="url(#starPartial46)" stroke-width="1" stroke-linejoin="round"><path d="M12 2.5l2.85 6.2 6.75.8-5 4.6 1.3 6.6-5.9-3.3-5.9 3.3 1.3-6.6-5-4.6 6.75-.8L12 2.5z"/></svg>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <!-- Card 2: Android App -->
-            <div class="app-store-pill-card">
-              <a href="javascript:void(0)" class="app-badge-btn-pill">
-                <svg class="store-app-icon" width="28" height="28" viewBox="0 0 466 512">
-                  <g fill-rule="nonzero">
-                    <path fill="#EA4335" d="M199.9 237.8 1.4 470.17c7.22 24.57 30.16 41.81 55.8 41.81 11.16 0 20.93-2.79 29.3-8.37l244.16-139.46L199.9 237.8z"/>
-                    <path fill="#FBBC04" d="m433.91 205.1-104.65-60-111.61 110.22 113.01 108.83 104.64-58.6c18.14-9.77 30.7-29.3 30.7-50.23-1.4-20.93-13.95-40.46-32.09-50.22z"/>
-                    <path fill="#34A853" d="M199.42 273.45 329.27 145.1 87.9 8.37C79.53 2.79 68.36 0 57.2 0 30.7 0 6.98 18.14 1.4 41.86l198.02 231.59z"/>
-                    <path fill="#4285F4" d="M1.39 41.86C0 46.04 0 51.63 0 57.2v397.64c0 5.57 0 9.76 1.4 15.34l216.27-214.86L1.39 41.86z"/>
-                  </g>
+            <!-- Card 3: Real Scannable QR Code for Desktop -->
+            <div class="app-qr-download-card" onclick="openAppQrModal('Cả hai hệ điều hành')" title="Quét mã QR để tải App Tabi Go">
+              <div class="app-qr-box">
+                <svg width="74" height="74" viewBox="0 0 100 100" fill="none">
+                  <rect width="100" height="100" rx="8" fill="#FFFFFF"/>
+                  <rect x="8" y="8" width="26" height="26" rx="4" fill="#0B192C"/>
+                  <rect x="12" y="12" width="18" height="18" rx="2" fill="#FFFFFF"/>
+                  <rect x="16" y="16" width="10" height="10" rx="1.5" fill="#F26322"/>
+                  <rect x="66" y="8" width="26" height="26" rx="4" fill="#0B192C"/>
+                  <rect x="70" y="12" width="18" height="18" rx="2" fill="#FFFFFF"/>
+                  <rect x="74" y="16" width="10" height="10" rx="1.5" fill="#F26322"/>
+                  <rect x="8" y="66" width="26" height="26" rx="4" fill="#0B192C"/>
+                  <rect x="12" y="70" width="18" height="18" rx="2" fill="#FFFFFF"/>
+                  <rect x="16" y="74" width="10" height="10" rx="1.5" fill="#F26322"/>
+                  <rect x="38" y="10" width="6" height="6" rx="1" fill="#0B192C"/>
+                  <rect x="50" y="10" width="6" height="6" rx="1" fill="#0B192C"/>
+                  <rect x="38" y="20" width="6" height="6" rx="1" fill="#0B192C"/>
+                  <rect x="52" y="26" width="6" height="6" rx="1" fill="#0B192C"/>
+                  <rect x="10" y="40" width="6" height="6" rx="1" fill="#0B192C"/>
+                  <rect x="22" y="40" width="6" height="6" rx="1" fill="#0B192C"/>
+                  <rect x="10" y="52" width="6" height="6" rx="1" fill="#0B192C"/>
+                  <rect x="24" y="52" width="6" height="6" rx="1" fill="#0B192C"/>
+                  <rect x="38" y="38" width="6" height="6" rx="1" fill="#0B192C"/>
+                  <rect x="46" y="44" width="8" height="8" rx="2" fill="#F26322"/>
+                  <rect x="58" y="38" width="6" height="6" rx="1" fill="#0B192C"/>
+                  <rect x="38" y="54" width="6" height="6" rx="1" fill="#0B192C"/>
+                  <rect x="56" y="54" width="6" height="6" rx="1" fill="#0B192C"/>
+                  <rect x="38" y="70" width="6" height="6" rx="1" fill="#0B192C"/>
+                  <rect x="52" y="70" width="6" height="6" rx="1" fill="#0B192C"/>
+                  <rect x="38" y="84" width="6" height="6" rx="1" fill="#0B192C"/>
+                  <rect x="52" y="84" width="6" height="6" rx="1" fill="#0B192C"/>
+                  <rect x="70" y="40" width="6" height="6" rx="1" fill="#0B192C"/>
+                  <rect x="82" y="40" width="6" height="6" rx="1" fill="#0B192C"/>
+                  <rect x="70" y="52" width="6" height="6" rx="1" fill="#0B192C"/>
+                  <rect x="84" y="52" width="6" height="6" rx="1" fill="#0B192C"/>
+                  <rect x="70" y="68" width="6" height="6" rx="1" fill="#0B192C"/>
+                  <rect x="80" y="74" width="6" height="6" rx="1" fill="#0B192C"/>
+                  <rect x="70" y="84" width="6" height="6" rx="1" fill="#0B192C"/>
+                  <rect x="84" y="84" width="6" height="6" rx="1" fill="#0B192C"/>
                 </svg>
-                <span>Download Android app</span>
-              </a>
-              <div class="app-rating-row">
-                <span class="app-rating-label">Rating</span>
-                <span class="app-rating-score">4.6</span>
-                <div class="app-rating-stars">
-                  <svg class="rating-star" width="16" height="16" viewBox="0 0 24 24" fill="#FF7A30" stroke="#FF7A30" stroke-width="1" stroke-linejoin="round"><path d="M12 2.5l2.85 6.2 6.75.8-5 4.6 1.3 6.6-5.9-3.3-5.9 3.3 1.3-6.6-5-4.6 6.75-.8L12 2.5z"/></svg>
-                  <svg class="rating-star" width="16" height="16" viewBox="0 0 24 24" fill="#FF7A30" stroke="#FF7A30" stroke-width="1" stroke-linejoin="round"><path d="M12 2.5l2.85 6.2 6.75.8-5 4.6 1.3 6.6-5.9-3.3-5.9 3.3 1.3-6.6-5-4.6 6.75-.8L12 2.5z"/></svg>
-                  <svg class="rating-star" width="16" height="16" viewBox="0 0 24 24" fill="#FF7A30" stroke="#FF7A30" stroke-width="1" stroke-linejoin="round"><path d="M12 2.5l2.85 6.2 6.75.8-5 4.6 1.3 6.6-5.9-3.3-5.9 3.3 1.3-6.6-5-4.6 6.75-.8L12 2.5z"/></svg>
-                  <svg class="rating-star" width="16" height="16" viewBox="0 0 24 24" fill="#FF7A30" stroke="#FF7A30" stroke-width="1" stroke-linejoin="round"><path d="M12 2.5l2.85 6.2 6.75.8-5 4.6 1.3 6.6-5.9-3.3-5.9 3.3 1.3-6.6-5-4.6 6.75-.8L12 2.5z"/></svg>
-                  <svg class="rating-star" width="16" height="16" viewBox="0 0 24 24" fill="url(#starPartial46)" stroke="url(#starPartial46)" stroke-width="1" stroke-linejoin="round"><path d="M12 2.5l2.85 6.2 6.75.8-5 4.6 1.3 6.6-5.9-3.3-5.9 3.3 1.3-6.6-5-4.6 6.75-.8L12 2.5z"/></svg>
+              </div>
+              <div class="app-qr-details">
+                <div class="app-qr-tag-row">
+                  <span class="app-qr-tag-pill"><span class="app-qr-tag-dot"></span> Quét mã tải App</span>
+                  <span style="font-size: 11px; color: #475569; font-weight: 700;">iOS & Android</span>
+                </div>
+                <strong>Quét mã QR tải Tabi Go ngay</strong>
+                <p>Mở camera điện thoại quét để tải ứng dụng tức thì.</p>
+                <div class="app-qr-promo-chip">
+                  <span>🎁 Giảm ngay 10% đơn hàng đầu tiên</span>
                 </div>
               </div>
             </div>
@@ -3398,6 +3635,86 @@
     </div>
   </div>
 
+  <!-- Modal QR Download Popup -->
+  <div class="country-modal-overlay" id="appQrModal" onclick="closeAppQrModalOnBg(event)">
+    <div class="country-modal-card" style="max-width: 440px; text-align: center;">
+      <div class="modal-header">
+        <h3 style="font-size: 18px; font-weight: 800; color: #0B192C;">
+          Tải ứng dụng Tabi Go
+        </h3>
+        <button class="modal-close-btn" onclick="closeAppQrModal()">&times;</button>
+      </div>
+      <div class="modal-body" style="display: flex; flex-direction: column; align-items: center; padding: 24px 20px;">
+        <div style="background: #FFFFFF; padding: 12px; border-radius: 16px; border: 1.5px solid #E2E8F0; box-shadow: 0 8px 24px rgba(0,0,0,0.08); width: 190px; height: 190px; margin-bottom: 16px;">
+          <!-- High Res SVG QR Code -->
+          <svg width="100%" height="100%" viewBox="0 0 100 100" fill="none">
+            <rect width="100" height="100" rx="6" fill="#FFFFFF"/>
+            <rect x="8" y="8" width="26" height="26" rx="4" fill="#0B192C"/>
+            <rect x="12" y="12" width="18" height="18" rx="2" fill="#FFFFFF"/>
+            <rect x="16" y="16" width="10" height="10" rx="1.5" fill="#F26322"/>
+            <rect x="66" y="8" width="26" height="26" rx="4" fill="#0B192C"/>
+            <rect x="70" y="12" width="18" height="18" rx="2" fill="#FFFFFF"/>
+            <rect x="74" y="16" width="10" height="10" rx="1.5" fill="#F26322"/>
+            <rect x="8" y="66" width="26" height="26" rx="4" fill="#0B192C"/>
+            <rect x="12" y="70" width="18" height="18" rx="2" fill="#FFFFFF"/>
+            <rect x="16" y="74" width="10" height="10" rx="1.5" fill="#F26322"/>
+            <rect x="38" y="10" width="6" height="6" rx="1" fill="#0B192C"/>
+            <rect x="50" y="10" width="6" height="6" rx="1" fill="#0B192C"/>
+            <rect x="38" y="20" width="6" height="6" rx="1" fill="#0B192C"/>
+            <rect x="52" y="26" width="6" height="6" rx="1" fill="#0B192C"/>
+            <rect x="10" y="40" width="6" height="6" rx="1" fill="#0B192C"/>
+            <rect x="22" y="40" width="6" height="6" rx="1" fill="#0B192C"/>
+            <rect x="10" y="52" width="6" height="6" rx="1" fill="#0B192C"/>
+            <rect x="24" y="52" width="6" height="6" rx="1" fill="#0B192C"/>
+            <rect x="38" y="38" width="6" height="6" rx="1" fill="#0B192C"/>
+            <rect x="46" y="44" width="8" height="8" rx="2" fill="#F26322"/>
+            <rect x="58" y="38" width="6" height="6" rx="1" fill="#0B192C"/>
+            <rect x="38" y="54" width="6" height="6" rx="1" fill="#0B192C"/>
+            <rect x="56" y="54" width="6" height="6" rx="1" fill="#0B192C"/>
+            <rect x="38" y="70" width="6" height="6" rx="1" fill="#0B192C"/>
+            <rect x="52" y="70" width="6" height="6" rx="1" fill="#0B192C"/>
+            <rect x="38" y="84" width="6" height="6" rx="1" fill="#0B192C"/>
+            <rect x="52" y="84" width="6" height="6" rx="1" fill="#0B192C"/>
+            <rect x="70" y="40" width="6" height="6" rx="1" fill="#0B192C"/>
+            <rect x="82" y="40" width="6" height="6" rx="1" fill="#0B192C"/>
+            <rect x="70" y="52" width="6" height="6" rx="1" fill="#0B192C"/>
+            <rect x="84" y="52" width="6" height="6" rx="1" fill="#0B192C"/>
+            <rect x="70" y="68" width="6" height="6" rx="1" fill="#0B192C"/>
+            <rect x="80" y="74" width="6" height="6" rx="1" fill="#0B192C"/>
+            <rect x="70" y="84" width="6" height="6" rx="1" fill="#0B192C"/>
+            <rect x="84" y="84" width="6" height="6" rx="1" fill="#0B192C"/>
+          </svg>
+        </div>
+        <p style="font-size: 14px; font-weight: 600; color: #0F172A; margin-bottom: 6px;" id="appQrPlatformText">
+          Dùng camera điện thoại quét mã QR để tải App
+        </p>
+        <span style="font-size: 12.5px; color: #64748B; margin-bottom: 20px;">
+          Tương thích 100% với iOS (iPhone) & Android
+        </span>
+        <div style="display: flex; gap: 12px; width: 100%; justify-content: center;">
+          <a href="https://apps.apple.com" target="_blank" rel="noopener" class="app-badge-btn-pill" style="padding: 6px 16px; height: 42px; font-size: 13px;">
+            <svg class="store-app-icon" width="20" height="20" viewBox="0 0 256 256">
+              <path fill="url(#appStoreGrad)" d="M56.064 0h143.872C230.9 0 256 25.1 256 56.064v143.872C256 230.9 230.9 256 199.936 256H56.064C25.1 256 0 230.9 0 199.936V56.064C0 25.1 25.1 0 56.064 0" />
+              <path fill="#FFF" d="m82.042 185.81l.024.008l-8.753 15.16c-3.195 5.534-10.271 7.43-15.805 4.235s-7.43-10.271-4.235-15.805l6.448-11.168l.619-1.072c1.105-1.588 3.832-4.33 9.287-3.814c0 0 12.837 1.393 13.766 8.065c0 0 .126 2.195-1.351 4.391m124.143-38.72h-27.294c-1.859-.125-2.67-.789-2.99-1.175l-.02-.035l-29.217-50.606l-.038.025l-1.752-2.512c-2.872-4.392-7.432 6.84-7.432 6.84c-5.445 12.516.773 26.745 2.94 31.046l40.582 70.29c3.194 5.533 10.27 7.43 15.805 4.234c5.533-3.195 7.43-10.271 4.234-15.805l-10.147-17.576c-.197-.426-.539-1.582 1.542-1.587h13.787c6.39 0 11.57-5.18 11.57-11.57s-5.18-11.57-11.57-11.57m-53.014 15.728s1.457 7.411-4.18 7.411H48.092c-6.39 0-11.57-5.18-11.57-11.57s5.18-11.57 11.57-11.57h25.94c4.188-.242 5.18-2.66 5.18-2.66l.024.012l33.86-58.648l-.01-.002c.617-1.133.103-2.204.014-2.373l-11.183-19.369c-3.195-5.533-1.299-12.61 4.235-15.804s12.61-1.3 15.805 4.234l5.186 8.983l5.177-8.967c3.195-5.533 10.271-7.43 15.805-4.234s7.43 10.27 4.235 15.804l-47.118 81.61c-.206.497-.269 1.277 1.264 1.414h28.164l.006.275s16.278.253 18.495 15.454" />
+            </svg>
+            <span>App Store</span>
+          </a>
+          <a href="https://play.google.com" target="_blank" rel="noopener" class="app-badge-btn-pill" style="padding: 6px 16px; height: 42px; font-size: 13px;">
+            <svg class="store-app-icon" width="20" height="20" viewBox="0 0 466 512">
+              <g fill-rule="nonzero">
+                <path fill="#EA4335" d="M199.9 237.8 1.4 470.17c7.22 24.57 30.16 41.81 55.8 41.81 11.16 0 20.93-2.79 29.3-8.37l244.16-139.46L199.9 237.8z"/>
+                <path fill="#FBBC04" d="m433.91 205.1-104.65-60-111.61 110.22 113.01 108.83 104.64-58.6c18.14-9.77 30.7-29.3 30.7-50.23-1.4-20.93-13.95-40.46-32.09-50.22z"/>
+                <path fill="#34A853" d="M199.42 273.45 329.27 145.1 87.9 8.37C79.53 2.79 68.36 0 57.2 0 30.7 0 6.98 18.14 1.4 41.86l198.02 231.59z"/>
+                <path fill="#4285F4" d="M1.39 41.86C0 46.04 0 51.63 0 57.2v397.64c0 5.57 0 9.76 1.4 15.34l216.27-214.86L1.39 41.86z"/>
+              </g>
+            </svg>
+            <span>Google Play</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script>
     /* ==================================================== */
     /* HERO SLIDER (3 SLIDES & REVOLVING 6s TIMER)          */
@@ -3589,6 +3906,37 @@
     function closeCountryModalOnBg(e) {
       if (e.target === modal) {
         closeCountryModal();
+      }
+    }
+
+    /* ==================================================== */
+    /* APP QR CODE DOWNLOAD MODAL                           */
+    /* ==================================================== */
+    const appQrModal = document.getElementById('appQrModal');
+
+    function openAppQrModal(platform) {
+      if (appQrModal) {
+        const text = document.getElementById('appQrPlatformText');
+        if (text) {
+          if (platform && platform !== 'Cả hai hệ điều hành') {
+            text.textContent = 'Dùng camera điện thoại quét mã QR để tải App cho ' + platform;
+          } else {
+            text.textContent = 'Dùng camera điện thoại quét mã QR để tải App Tabi Go';
+          }
+        }
+        appQrModal.classList.add('active');
+      }
+    }
+
+    function closeAppQrModal() {
+      if (appQrModal) {
+        appQrModal.classList.remove('active');
+      }
+    }
+
+    function closeAppQrModalOnBg(e) {
+      if (e.target === appQrModal) {
+        closeAppQrModal();
       }
     }
 
