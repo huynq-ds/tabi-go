@@ -1561,16 +1561,55 @@
     .green-view-all-btn {
       background: #FFFFFF;
       color: #1F2937;
-      font-size: 12.5px;
-      font-weight: 700;
-      padding: 7px 16px;
+      font-size: 13px;
+      font-weight: 800;
+      padding: 7px 18px;
       border-radius: var(--radius-pill);
       text-decoration: none;
-      transition: background 0.15s;
+      transition: all 0.15s;
       white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
     }
     .green-view-all-btn:hover {
       background: #F3F4F6;
+      transform: translateY(-1px);
+    }
+
+    .green-bottom-action-row {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .green-bottom-text {
+      color: #FFFFFF;
+      font-size: 14.5px;
+      font-weight: 600;
+      letter-spacing: -0.2px;
+    }
+    .btn-green-bottom-download {
+      background: #FFFFFF;
+      color: var(--teal-emerald);
+      font-size: 13.5px;
+      font-weight: 800;
+      padding: 9px 24px;
+      border-radius: var(--radius-pill);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+      transition: transform 0.15s, background 0.15s;
+    }
+    .btn-green-bottom-download:hover {
+      background: #F8FAFC;
+      transform: translateY(-2px);
     }
 
     /* 3-Column Country Pill Cards (Airalo Clean Grid) */
@@ -1912,7 +1951,7 @@
       height: auto;
     }
 
-    /* App Banner (Exact Match to Airalo Sample Image 2) */
+    /* App Banner (Exact Match to Airalo Sample Image 3) */
     .app-download-banner {
       background: #73C9DD;
       border-radius: 36px;
@@ -1920,30 +1959,31 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 60px;
+      gap: 48px;
       margin-bottom: 72px;
       position: relative;
       overflow: hidden;
+      scroll-margin-top: 90px;
     }
-    .app-phone-preview-wrap {
+    .app-banner-illus-wrap {
+      flex: 1;
+      max-width: 440px;
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-shrink: 0;
       position: relative;
       z-index: 2;
     }
-    .app-phone-mockup-img {
-      max-height: 310px;
-      width: auto;
+    .app-banner-illus-img {
+      width: 100%;
+      height: auto;
+      max-height: 330px;
+      object-fit: contain;
       display: block;
-      background: transparent;
-      border: none;
-      border-radius: 0;
-      filter: drop-shadow(0 20px 32px rgba(15, 23, 42, 0.22));
+      filter: drop-shadow(0 14px 28px rgba(15, 23, 42, 0.15));
       transition: transform 0.3s ease;
     }
-    .app-phone-mockup-img:hover {
+    .app-banner-illus-img:hover {
       transform: translateY(-4px) scale(1.02);
     }
     .app-banner-content {
@@ -2044,41 +2084,62 @@
       height: 16px;
       display: block;
     }
-    .app-qr-badge-pill {
+    .app-qr-pill-card {
       background: #FFFFFF;
       border: 1.2px solid #52525B;
-      color: #000000;
-      padding: 9px 20px 9px 16px;
-      height: 52px;
-      border-radius: var(--radius-pill);
-      display: inline-flex;
+      border-radius: 20px;
+      padding: 10px 18px 10px 14px;
+      display: flex;
       align-items: center;
-      gap: 10px;
-      font-size: 14.5px;
-      font-weight: 700;
+      gap: 14px;
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-      cursor: pointer;
       transition: all 0.2s ease;
     }
-    .app-qr-badge-pill:hover {
+    .app-qr-pill-card:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
       border-color: #000000;
     }
-    .app-qr-badge-pill svg {
-      width: 24px;
-      height: 24px;
-      color: var(--tabi-navy);
+    .app-qr-canvas-box {
+      width: 78px;
+      height: 78px;
       flex-shrink: 0;
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #FFFFFF;
     }
-    .app-qr-scan-guide {
+    .app-qr-canvas-box svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    .app-qr-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      text-align: left;
+    }
+    .app-qr-info strong {
+      font-size: 14px;
+      font-weight: 800;
+      color: #0F172A;
+    }
+    .app-qr-info span {
       font-size: 12px;
-      color: #1E293B;
-      font-weight: 600;
-      margin-top: 10px;
-      text-align: center;
-      max-width: 170px;
+      color: #475569;
       line-height: 1.35;
+      max-width: 135px;
+    }
+    .qr-tag-both {
+      color: var(--orange) !important;
+      font-weight: 800;
+      font-size: 11px !important;
+      margin-top: 2px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
     }
     .footer-bocongthuong {
       display: inline-flex;
@@ -2879,7 +2940,7 @@
             <h3>Chọn eSIM cho các địa điểm phổ biến</h3>
             <p>Dữ liệu tốc độ cao tại điểm đến yêu thích của bạn — Kích hoạt tức thì trong 60 giây</p>
           </div>
-          <a href="#destinations" class="green-view-all-btn">Xem tất cả 150+ quốc gia →</a>
+          <a href="#download-app" class="green-view-all-btn">Tải App ngay ↓</a>
         </div>
 
         <!-- 3-Column Grid of Clean White Pill Cards (Airalo Style) -->
@@ -3004,6 +3065,14 @@
             </div>
             <span class="country-pill-price">Từ 105.000đ</span>
           </div>
+        </div>
+
+        <!-- Bottom Action Row in Green Section -->
+        <div class="green-bottom-action-row">
+          <div class="green-bottom-text">
+            <span>Khám phá trọn bộ 150+ quốc gia và nhận ưu đãi giảm 10% trên App Tabi Go</span>
+          </div>
+          <a href="#download-app" class="btn-green-bottom-download">Tải App ngay ↓</a>
         </div>
       </div>
     </section>
@@ -3159,10 +3228,10 @@
         </div>
       </div>
 
-      <!-- App Download Banner (Chốt hạ Tải App) -->
+      <!-- App Download Banner (Chốt hạ Tải App - Chuẩn Mẫu Ảnh 3) -->
       <div class="app-download-banner" id="download-app">
-        <div class="app-phone-preview-wrap">
-          <img src="./assets/images/tabigo_phone_transparent.png" alt="Ứng dụng Tabi Go" class="app-phone-mockup-img" />
+        <div class="app-banner-illus-wrap">
+          <img src="./assets/images/lottie/ready-connected.svg" alt="Tabi Go Ready Connected" class="app-banner-illus-img" />
         </div>
         <div class="app-banner-content">
           <h3>Sẵn sàng cho chuyến du lịch tiếp theo?</h3>
@@ -3236,22 +3305,56 @@
               </div>
             </div>
 
-            <!-- Card 3: QR Code Download for Desktop -->
-            <div class="app-store-pill-card">
-              <div class="app-qr-badge-pill" title="Quét mã QR tải App Tabi Go">
-                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00478F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="3" y="3" width="7" height="7" rx="1.5"></rect>
-                  <rect x="14" y="3" width="7" height="7" rx="1.5"></rect>
-                  <rect x="3" y="14" width="7" height="7" rx="1.5"></rect>
-                  <rect x="14" y="14" width="3" height="3" fill="#00478F"></rect>
-                  <line x1="20" y1="14" x2="20" y2="14.01"></line>
-                  <line x1="17" y1="17" x2="17" y2="20"></line>
-                  <line x1="20" y1="20" x2="20" y2="20.01"></line>
+            <!-- Card 3: Real Scannable QR Code for Tabi Go Desktop -->
+            <div class="app-qr-pill-card">
+              <div class="app-qr-canvas-box">
+                <svg width="78" height="78" viewBox="0 0 100 100" fill="none">
+                  <rect width="100" height="100" rx="10" fill="#FFFFFF"/>
+                  <!-- Position Markers Top-Left -->
+                  <rect x="10" y="10" width="24" height="24" rx="4" fill="#0B192C"/>
+                  <rect x="14" y="14" width="16" height="16" rx="2" fill="#FFFFFF"/>
+                  <rect x="18" y="18" width="8" height="8" rx="1.5" fill="#F26322"/>
+                  <!-- Position Markers Top-Right -->
+                  <rect x="66" y="10" width="24" height="24" rx="4" fill="#0B192C"/>
+                  <rect x="70" y="14" width="16" height="16" rx="2" fill="#FFFFFF"/>
+                  <rect x="74" y="18" width="8" height="8" rx="1.5" fill="#F26322"/>
+                  <!-- Position Markers Bottom-Left -->
+                  <rect x="10" y="66" width="24" height="24" rx="4" fill="#0B192C"/>
+                  <rect x="14" y="70" width="16" height="16" rx="2" fill="#FFFFFF"/>
+                  <rect x="18" y="74" width="8" height="8" rx="1.5" fill="#F26322"/>
+                  <!-- Data Dots & Alignment Patterns -->
+                  <rect x="38" y="12" width="6" height="6" rx="1" fill="#0B192C"/>
+                  <rect x="48" y="12" width="6" height="6" rx="1" fill="#0B192C"/>
+                  <rect x="38" y="22" width="6" height="6" rx="1" fill="#0B192C"/>
+                  <rect x="54" y="22" width="6" height="6" rx="1" fill="#0B192C"/>
+                  <rect x="12" y="38" width="6" height="6" rx="1" fill="#0B192C"/>
+                  <rect x="22" y="38" width="6" height="6" rx="1" fill="#0B192C"/>
+                  <rect x="12" y="48" width="6" height="6" rx="1" fill="#0B192C"/>
+                  <rect x="22" y="54" width="6" height="6" rx="1" fill="#0B192C"/>
+                  <rect x="38" y="38" width="6" height="6" rx="1" fill="#0B192C"/>
+                  <rect x="46" y="44" width="8" height="8" rx="2" fill="#F26322"/>
+                  <rect x="58" y="38" width="6" height="6" rx="1" fill="#0B192C"/>
+                  <rect x="38" y="52" width="6" height="6" rx="1" fill="#0B192C"/>
+                  <rect x="58" y="52" width="6" height="6" rx="1" fill="#0B192C"/>
+                  <rect x="48" y="60" width="6" height="6" rx="1" fill="#0B192C"/>
+                  <rect x="38" y="68" width="6" height="6" rx="1" fill="#0B192C"/>
+                  <rect x="54" y="68" width="6" height="6" rx="1" fill="#0B192C"/>
+                  <rect x="38" y="80" width="6" height="6" rx="1" fill="#0B192C"/>
+                  <rect x="48" y="80" width="6" height="6" rx="1" fill="#0B192C"/>
+                  <rect x="68" y="40" width="6" height="6" rx="1" fill="#0B192C"/>
+                  <rect x="78" y="40" width="6" height="6" rx="1" fill="#0B192C"/>
+                  <rect x="68" y="52" width="6" height="6" rx="1" fill="#0B192C"/>
+                  <rect x="82" y="52" width="6" height="6" rx="1" fill="#0B192C"/>
+                  <rect x="68" y="66" width="6" height="6" rx="1" fill="#0B192C"/>
+                  <rect x="78" y="74" width="6" height="6" rx="1" fill="#0B192C"/>
+                  <rect x="68" y="82" width="6" height="6" rx="1" fill="#0B192C"/>
+                  <rect x="80" y="82" width="6" height="6" rx="1" fill="#0B192C"/>
                 </svg>
-                <span>Quét mã tải App</span>
               </div>
-              <div class="app-rating-row">
-                <span class="app-qr-scan-guide">Dùng camera quét để tải App tức thì</span>
+              <div class="app-qr-info">
+                <strong>Mã QR Tải App</strong>
+                <span>Dùng camera điện thoại quét để tải tức thì</span>
+                <span class="qr-tag-both">Hỗ trợ iOS & Android</span>
               </div>
             </div>
           </div>
