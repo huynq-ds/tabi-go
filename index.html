@@ -14,8 +14,8 @@
 
   <!-- SEO Meta Tags -->
   <meta name="description" content="TabiGo - Ứng dụng eSIM du lịch quốc tế, chạm là có Internet toàn cầu tại 200+ quốc gia. Kích hoạt siêu tốc trong 1 phút, không lo tháo SIM, hỗ trợ tiếng Việt 24/7." />
-  <meta name="keywords" content="TabiGo, Tabi Go, eSIM du lịch, mua eSIM quốc tế, eSIM Nhật Bản, eSIM Hàn Quốc, eSIM Châu Âu, SIM du lịch giá rẻ, 3M, eSIM 3M" />
-  <meta name="author" content="TabiGo - 3M Ecosystem" />
+  <meta name="keywords" content="TabiGo, Tabi Go, eSIM du lịch, mua eSIM quốc tế, eSIM Nhật Bản, eSIM Hàn Quốc, eSIM Châu Âu, SIM du lịch giá rẻ, ứng dụng eSIM" />
+  <meta name="author" content="Tabi Go" />
   <meta name="theme-color" content="#00478F" />
 
   <!-- Open Graph / Facebook -->
@@ -1294,23 +1294,31 @@
     }
 
     /* Tab 1: Steps */
-    .how-illustration-wrap {
-      max-width: 720px;
+    .video-card-preview {
+      max-width: 680px;
       margin: 0 auto 32px;
       background: #FFFFFF;
-      border-radius: 22px;
+      border-radius: 20px;
       overflow: hidden;
       border: 1px solid var(--border-card);
       box-shadow: 0 4px 18px rgba(0,0,0,0.06);
-      padding: 16px;
+      position: relative;
     }
-    .how-illustration-wrap img {
+    .video-thumbnail-wrap {
       width: 100%;
-      height: auto;
-      max-height: 340px;
+      height: 360px;
+      position: relative;
+      background: linear-gradient(135deg, #E6F4EA 0%, #D1E7DD 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .video-thumbnail-wrap img {
+      width: 100%;
+      height: 100%;
       object-fit: contain;
+      opacity: 0.95;
       display: block;
-      margin: 0 auto;
     }
 
     .how-steps-grid {
@@ -1484,45 +1492,7 @@
       transform: translateY(-1px);
     }
 
-    .video-sub-family-art {
-      max-width: 380px;
-      margin: 0 auto;
-      display: block;
-    }
 
-    /* Promo Badge Bar for Destinations */
-    .dest-promo-badge-bar {
-      background: #FFF7ED;
-      border: 1px solid #FFEDD5;
-      border-radius: var(--radius-pill);
-      padding: 10px 22px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 24px;
-      font-size: 13.5px;
-      color: #9A3412;
-      flex-wrap: wrap;
-    }
-    .dest-promo-tag {
-      background: var(--orange);
-      color: #FFFFFF;
-      font-weight: 800;
-      font-size: 11px;
-      text-transform: uppercase;
-      padding: 3px 9px;
-      border-radius: var(--radius-pill);
-      letter-spacing: 0.5px;
-    }
-    .dest-promo-link {
-      color: var(--orange);
-      font-weight: 700;
-      text-decoration: none;
-      margin-left: auto;
-    }
-    .dest-promo-link:hover {
-      text-decoration: underline;
-    }
 
     .country-pill-info {
       display: flex;
@@ -2369,8 +2339,7 @@
       .blog-grid { grid-template-columns: 1fr; }
       .footer-columns-grid { grid-template-columns: 1fr 1fr; }
       .b2b-partner-banner, .app-download-banner { flex-direction: column; text-align: center; }
-      .dest-promo-badge-bar { flex-direction: column; align-items: flex-start; }
-      .dest-promo-link { margin-left: 0; }
+
     }
     @media (max-width: 640px) {
       .hero-quick-nav-row { grid-template-columns: 1fr; gap: 10px; }
@@ -2803,8 +2772,10 @@
 
       <!-- Tab 1: Cách thức hoạt động (3 Bước đơn giản) -->
       <div class="how-content-pane active" id="paneHowSteps">
-        <div class="how-illustration-wrap">
-          <img src="./assets/images/lottie/our-mission.svg" alt="Cách thức hoạt động của Tabi Go" />
+        <div class="video-card-preview">
+          <div class="video-thumbnail-wrap">
+            <img src="./assets/images/lottie/our-mission.svg" alt="Cách thức hoạt động của Tabi Go" />
+          </div>
         </div>
 
         <div class="how-steps-grid">
@@ -2824,15 +2795,13 @@
             <div class="how-step-desc">Vừa đáp xuống sân bay, chỉ cần bật "Chuyển vùng dữ liệu" (Data Roaming) cho eSIM Tabi Go là tự động kết nối ngay.</div>
           </div>
         </div>
-
-        <img class="video-sub-family-art" src="./assets/images/lottie/ready-connected.svg" alt="Tabi Go Ready Connected" />
       </div>
 
       <!-- Tab 2: Tìm hiểu cùng Tabi Go -->
       <div class="how-content-pane" id="paneHowAbout">
         <div class="tabigo-about-card">
           <div class="tabigo-about-header">
-            <span class="tabigo-about-tag">Hệ sinh thái công nghệ 3M</span>
+            <span class="tabigo-about-tag">Về Ứng Dụng Tabi Go</span>
             <h3>Tabi Go — Ứng Dụng eSIM Du Lịch Tiên Phong Dành Cho Bạn</h3>
             <p class="tabigo-about-lead">Tabi Go được phát triển nhằm mang lại giải pháp kết nối Internet không biên giới cho du khách cá nhân. Không còn cảnh xếp hàng mua SIM ở sân bay, không cần tháo lắp khay SIM vật lý, và hoàn toàn nói KHÔNG với cước chuyển vùng quốc tế đắt đỏ.</p>
           </div>
@@ -2902,12 +2871,7 @@
           <button class="green-tab-pill" onclick="switchGreenTab('global')">Toàn cầu</button>
         </div>
 
-        <!-- Promo Banner -->
-        <div class="dest-promo-badge-bar">
-          <span class="dest-promo-tag">Ưu đãi độc quyền</span>
-          <span>Mở App Tabi Go để xem trọn bộ 150+ quốc gia và nhận ưu đãi <strong>giảm 10%</strong> cho đơn hàng eSIM đầu tiên!</span>
-          <a href="#download-app" class="dest-promo-link">Tải App ngay →</a>
-        </div>
+
 
         <!-- Title Row -->
         <div class="green-header-row">
@@ -3406,7 +3370,7 @@
         <!-- Centered Minimalist Copyright & Legal row (Sample Image 3) -->
         <div class="footer-bottom-row">
           <div class="footer-copyright-col" style="display: flex; flex-direction: column; gap: 8px;">
-            <span class="footer-copyright">©2026 TABI GO — Hệ sinh thái Công nghệ 3M</span>
+            <span class="footer-copyright">©2026 TABI GO — Ứng dụng eSIM Du lịch Toàn cầu</span>
             <div class="footer-bocongthuong">
               <svg width="135" height="42" viewBox="0 0 160 50" fill="none">
                 <rect width="160" height="50" rx="6" fill="#B91C1C"/>
