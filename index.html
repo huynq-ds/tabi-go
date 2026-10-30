@@ -1281,58 +1281,259 @@
       background: #111827;
       border-radius: 2px;
     }
-    .video-card-preview {
-      max-width: 680px;
-      margin: 0 auto 28px;
+    .how-content-pane {
+      display: none;
+      animation: fadeInHow 0.25s ease forwards;
+    }
+    .how-content-pane.active {
+      display: block;
+    }
+    @keyframes fadeInHow {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Tab 1: Steps */
+    .how-illustration-wrap {
+      max-width: 720px;
+      margin: 0 auto 32px;
       background: #FFFFFF;
-      border-radius: 20px;
+      border-radius: 22px;
       overflow: hidden;
       border: 1px solid var(--border-card);
       box-shadow: 0 4px 18px rgba(0,0,0,0.06);
-      cursor: pointer;
+      padding: 16px;
+    }
+    .how-illustration-wrap img {
+      width: 100%;
+      height: auto;
+      max-height: 340px;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .how-steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      max-width: 980px;
+      margin: 0 auto 36px;
+      text-align: left;
+    }
+    .how-step-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-card);
+      border-radius: 18px;
+      padding: 24px 22px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+      display: flex;
+      flex-direction: column;
       position: relative;
       transition: transform 0.2s, box-shadow 0.2s;
     }
-    .video-card-preview:hover {
+    .how-step-card:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 26px rgba(0,0,0,0.1);
+      box-shadow: 0 8px 22px rgba(0,0,0,0.08);
     }
-    .video-thumbnail-wrap {
-      width: 100%;
-      height: 360px;
-      position: relative;
-      background: linear-gradient(135deg, #E6F4EA 0%, #D1E7DD 100%);
+    .how-step-num {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: #FFF3EB;
+      color: var(--orange);
+      font-weight: 800;
+      font-size: 14px;
       display: flex;
       align-items: center;
       justify-content: center;
+      margin-bottom: 14px;
     }
-    .video-play-btn {
-      width: 68px;
-      height: 48px;
-      background: #FF0000;
+    .how-step-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 8px;
+      line-height: 1.35;
+    }
+    .how-step-desc {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Tab 2: About Tabi Go */
+    .tabigo-about-card {
+      max-width: 980px;
+      margin: 0 auto 36px;
+      background: #FFFFFF;
+      border: 1px solid var(--border-card);
+      border-radius: 22px;
+      padding: 38px 36px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      text-align: left;
+    }
+    .tabigo-about-header {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 32px;
+    }
+    .tabigo-about-tag {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--orange);
+      background: #FFF3EB;
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
+      margin-bottom: 10px;
+    }
+    .tabigo-about-header h3 {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 12px;
+      letter-spacing: -0.3px;
+    }
+    .tabigo-about-lead {
+      font-size: 14.5px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .tabigo-values-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+    .tabigo-value-item {
+      background: #FAF8F5;
+      border: 1px solid #ECE7DE;
+      border-radius: 16px;
+      padding: 20px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .tabigo-value-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: #FFFFFF;
+      color: var(--orange);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .tabigo-value-icon svg {
+      width: 22px;
+      height: 22px;
+    }
+    .tabigo-value-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 6px;
+    }
+    .tabigo-value-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .tabigo-about-footer {
+      background: linear-gradient(135deg, #FFF3EB 0%, #FFE9DC 100%);
       border-radius: 14px;
+      padding: 20px 24px;
       display: flex;
       align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 14px rgba(255,0,0,0.35);
-      z-index: 2;
-      transition: transform 0.15s;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
     }
-    .video-card-preview:hover .video-play-btn {
-      transform: scale(1.08);
+    .tabigo-about-footer-text strong {
+      display: block;
+      font-size: 15px;
+      color: #7C2D12;
+      font-weight: 800;
+      margin-bottom: 4px;
     }
-    .video-play-triangle {
-      width: 0;
-      height: 0;
-      border-style: solid;
-      border-width: 10px 0 10px 17px;
-      border-color: transparent transparent transparent #FFFFFF;
-      margin-left: 3px;
+    .tabigo-about-footer-text span {
+      font-size: 13px;
+      color: #9A3412;
     }
+    .btn-tab-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--orange);
+      color: #FFFFFF;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 10px 22px;
+      border-radius: var(--radius-pill);
+      text-decoration: none;
+      transition: background 0.15s, transform 0.15s;
+      white-space: nowrap;
+    }
+    .btn-tab-cta:hover {
+      background: var(--orange-hover);
+      transform: translateY(-1px);
+    }
+
     .video-sub-family-art {
       max-width: 380px;
       margin: 0 auto;
       display: block;
+    }
+
+    /* Promo Badge Bar for Destinations */
+    .dest-promo-badge-bar {
+      background: #FFF7ED;
+      border: 1px solid #FFEDD5;
+      border-radius: var(--radius-pill);
+      padding: 10px 22px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+      font-size: 13.5px;
+      color: #9A3412;
+      flex-wrap: wrap;
+    }
+    .dest-promo-tag {
+      background: var(--orange);
+      color: #FFFFFF;
+      font-weight: 800;
+      font-size: 11px;
+      text-transform: uppercase;
+      padding: 3px 9px;
+      border-radius: var(--radius-pill);
+      letter-spacing: 0.5px;
+    }
+    .dest-promo-link {
+      color: var(--orange);
+      font-weight: 700;
+      text-decoration: none;
+      margin-left: auto;
+    }
+    .dest-promo-link:hover {
+      text-decoration: underline;
+    }
+
+    .country-pill-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      text-align: left;
+    }
+    .country-pill-sub {
+      font-size: 11px;
+      color: #6B7280;
+      font-weight: 500;
     }
 
     /* ==================================================== */
@@ -1873,6 +2074,60 @@
       height: 16px;
       display: block;
     }
+    .app-qr-badge-pill {
+      background: #FFFFFF;
+      border: 1.2px solid #52525B;
+      color: #000000;
+      padding: 9px 20px 9px 16px;
+      height: 52px;
+      border-radius: var(--radius-pill);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14.5px;
+      font-weight: 700;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .app-qr-badge-pill:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+      border-color: #000000;
+    }
+    .app-qr-badge-pill svg {
+      width: 24px;
+      height: 24px;
+      color: var(--tabi-navy);
+      flex-shrink: 0;
+    }
+    .app-qr-scan-guide {
+      font-size: 12px;
+      color: #1E293B;
+      font-weight: 600;
+      margin-top: 10px;
+      text-align: center;
+      max-width: 170px;
+      line-height: 1.35;
+    }
+    .footer-bocongthuong {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 12px;
+    }
+    .footer-bocongthuong svg {
+      height: 42px;
+      width: auto;
+    }
+    .footer-contact-hotline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 8px;
+      font-size: 13px;
+      color: var(--orange);
+      font-weight: 700;
+    }
 
     /* ==================================================== */
     /* 11. FOOTER (EXACT MATCH TO AIRALO SAMPLES 2 & 3)     */
@@ -2107,10 +2362,15 @@
       .hero-sub { margin-left: auto; margin-right: auto; }
       .why-features-grid { grid-template-columns: repeat(2, 1fr); }
       .green-cards-grid { grid-template-columns: repeat(2, 1fr); }
+      .how-steps-grid { grid-template-columns: 1fr; }
+      .tabigo-values-grid { grid-template-columns: 1fr; }
+      .tabigo-about-footer { flex-direction: column; text-align: center; }
       .faq-support-grid { grid-template-columns: 1fr; }
       .blog-grid { grid-template-columns: 1fr; }
       .footer-columns-grid { grid-template-columns: 1fr 1fr; }
       .b2b-partner-banner, .app-download-banner { flex-direction: column; text-align: center; }
+      .dest-promo-badge-bar { flex-direction: column; align-items: flex-start; }
+      .dest-promo-link { margin-left: 0; }
     }
     @media (max-width: 640px) {
       .hero-quick-nav-row { grid-template-columns: 1fr; gap: 10px; }
@@ -2246,7 +2506,7 @@
             <span style="font-size: 13px;">🇻🇳</span>
           </button>
           <div class="header-divider-v"></div>
-          <a href="#destinations" class="btn-header-cta">Khám phá eSIM</a>
+          <a href="#download-app" class="btn-header-cta">Tải App ngay</a>
           <div class="header-divider-v menu-divider" id="headerMenuDivider"></div>
           <div class="header-menu-wrap">
             <button class="btn-header-menu" id="headerMenuBtn" aria-label="Menu điều hướng" title="Mở danh mục điều hướng">
@@ -2268,11 +2528,11 @@
 
               <ul class="dropdown-menu-list">
                 <li><a href="#hero" class="dropdown-link active">Trang chủ</a></li>
-                <li><a href="#destinations" class="dropdown-link">Cửa hàng eSIM</a></li>
-                <li><a href="#how-it-works" class="dropdown-link">Cách thức hoạt động của Tabi Go</a></li>
-                <li><a href="#why-tabigo" class="dropdown-link">Giới thiệu về Tabi Go</a></li>
-                <li><a href="#blog" class="dropdown-link">Tạp chí</a></li>
-                <li><a href="#faq" class="dropdown-link">Trợ giúp</a></li>
+                <li><a href="#why-tabigo" class="dropdown-link">Tính năng nổi bật</a></li>
+                <li><a href="#destinations" class="dropdown-link">Điểm đến phổ biến</a></li>
+                <li><a href="#how-it-works" class="dropdown-link">Hướng dẫn sử dụng</a></li>
+                <li><a href="#download-app" class="dropdown-link">Đánh giá & Tải App</a></li>
+                <li><a href="#faq" class="dropdown-link">Câu hỏi thường gặp</a></li>
               </ul>
 
               <div class="dropdown-divider-h"></div>
@@ -2303,11 +2563,11 @@
       <div class="header-row2">
         <ul class="nav-menu">
           <li><a href="#hero">Trang chủ</a></li>
-          <li><a href="#destinations">Cửa hàng eSIM</a></li>
-          <li><a href="#how-it-works">Cách thức hoạt động của Tabi Go</a></li>
-          <li><a href="#why-tabigo">Giới thiệu về Tabi Go</a></li>
-          <li><a href="#blog">Tạp chí</a></li>
-          <li><a href="#faq">Trợ giúp</a></li>
+          <li><a href="#why-tabigo">Tính năng nổi bật</a></li>
+          <li><a href="#destinations">Điểm đến phổ biến</a></li>
+          <li><a href="#how-it-works">Hướng dẫn sử dụng</a></li>
+          <li><a href="#download-app">Đánh giá & Tải App</a></li>
+          <li><a href="#faq">Câu hỏi thường gặp</a></li>
         </ul>
       </div>
     </header>
@@ -2323,7 +2583,7 @@
             <circle cx="11" cy="11" r="8"></circle>
             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
           </svg>
-          <input type="text" id="searchInput" class="search-bar-input" placeholder="Bạn cần eSIM ở đâu?" autocomplete="off" />
+          <input type="text" id="searchInput" class="search-bar-input" placeholder="Bạn sắp đi du lịch/công tác đâu? (Nhập Nhật Bản, Hàn Quốc, Mỹ, Châu Âu...)" autocomplete="off" />
           <div class="search-location-divider"></div>
           <div class="search-location-tag">
             <span>Địa điểm</span>
@@ -2372,17 +2632,17 @@
     <section class="hero-section section-wrap" id="hero">
       <div class="hero-slider-wrap" id="heroSlider">
         
-        <!-- Slide 0: Cảm nhận sự tự do của dữ liệu không giới hạn (hero-slide-1.svg: 2 bạn selfie & music) -->
+        <!-- Slide 0: Chạm Là Có Internet Toàn Cầu (hero-slide-1.svg: 2 bạn selfie & music) -->
         <div class="hero-slide active" data-slide="0">
           <div class="hero-illustration">
-            <img src="./assets/images/lottie/hero-slide-1.svg" alt="Cảm nhận sự tự do cùng Tabi Go" />
+            <img src="./assets/images/lottie/hero-slide-1.svg" alt="Tabi Go eSIM Du Lịch Toàn Cầu" />
           </div>
           <div class="hero-content">
-            <h1 class="hero-h1">Cảm nhận sự tự do của<br />dữ liệu không giới hạn</h1>
+            <h1 class="hero-h1">Chạm là có Internet toàn cầu –<br />Kích hoạt eSIM trong 1 phút</h1>
             <p class="hero-sub">
-              Hãy cứ xem video đó, nghe bài hát đó, tải ứng dụng đó — nhận dữ liệu<br />không giới hạn để có kết nối không gián đoạn.
+              Ứng dụng mua eSIM & SIM vật lý giá gốc cho 150+ quốc gia. Không lo tháo SIM,<br />không cước chuyển vùng đắt đỏ, kết nối Internet ngay khi vừa hạ cánh.
             </p>
-            <a href="#destinations" class="btn-hero-primary">Về các gói không giới hạn</a>
+            <a href="#download-app" class="btn-hero-primary">Tải App Tabi Go ngay</a>
           </div>
         </div>
 
@@ -2480,18 +2740,21 @@
     <!-- ==================================================== -->
     <!-- 4. CYAN BANNER ("VÌ SAO HÀNG TRIỆU TÍN ĐỒ DU LỊCH...") -->
     <!-- ==================================================== -->
+    <!-- ==================================================== -->
+    <!-- 4. CYAN BANNER ("VÌ SAO DU KHÁCH CHỌN TABI GO...")   -->
+    <!-- ==================================================== -->
     <section class="section-wrap" id="why-tabigo">
       <div class="why-cyan-banner">
-        <h2>Vì sao hơn 30 triệu người dùng lựa chọn Tabi Go?</h2>
+        <h2>Vì sao hơn 30 triệu du khách tin chọn Tabi Go thay vì SIM truyền thống?</h2>
         <div class="why-features-grid">
           <div class="why-feature-item">
             <div class="why-feature-icon-circle">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
               </svg>
             </div>
-            <div class="why-feature-title">Kết nối tức thì</div>
-            <div class="why-feature-desc">Nhận eSIM kết nối mạng ngay khi máy bay vừa chạm đường băng.</div>
+            <div class="why-feature-title">Mua & Kích hoạt siêu tốc 1-Tap</div>
+            <div class="why-feature-desc">Kích hoạt cấu hình eSIM thẳng vào máy chỉ trong 1 phút, không tháo SIM, có mạng ngay khi hạ cánh.</div>
           </div>
           <div class="why-feature-item">
             <div class="why-feature-icon-circle">
@@ -2500,8 +2763,8 @@
                 <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8M12 6v2M12 16v2"/>
               </svg>
             </div>
-            <div class="why-feature-title">Không phí chuyển vùng</div>
-            <div class="why-feature-desc">Tiết kiệm tới 85% so với cước Data Roaming quốc tế truyền thống.</div>
+            <div class="why-feature-title">Không cước chuyển vùng đắt đỏ</div>
+            <div class="why-feature-desc">Tiết kiệm tới 85% so với cước Data Roaming, giá gốc minh bạch từ các nhà mạng quốc tế hàng đầu.</div>
           </div>
           <div class="why-feature-item">
             <div class="why-feature-icon-circle">
@@ -2510,8 +2773,8 @@
                 <line x1="12" y1="18" x2="12.01" y2="18"/>
               </svg>
             </div>
-            <div class="why-feature-title">Giữ SIM chính nhận OTP</div>
-            <div class="why-feature-desc">Không cần tháo SIM vật lý, nhận mã xác thực ngân hàng xuyên suốt.</div>
+            <div class="why-feature-title">Quản lý Data & Giao SIM tận nhà</div>
+            <div class="why-feature-desc">Kiểm tra dung lượng còn lại real-time trên App. Máy đời cũ chưa có eSIM? Đặt SIM vật lý giao nhanh tận nhà.</div>
           </div>
           <div class="why-feature-item">
             <div class="why-feature-icon-circle">
@@ -2519,8 +2782,8 @@
                 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
               </svg>
             </div>
-            <div class="why-feature-title">Hỗ trợ tiếng Việt 24/7</div>
-            <div class="why-feature-desc">Đội ngũ kỹ thuật túc trực 24/7/365 giải đáp mọi thắc mắc ngay lập tức.</div>
+            <div class="why-feature-title">Kiểm tra máy & Hỗ trợ 24/7</div>
+            <div class="why-feature-desc">Tự động nhận diện thiết bị (Device Checker), đội ngũ kỹ thuật người Việt hỗ trợ 24/7/365 qua Livechat.</div>
           </div>
         </div>
 
@@ -2530,24 +2793,101 @@
     </section>
 
     <!-- ==================================================== -->
-    <!-- 5. HOW IT WORKS & VIDEO SECTION                      -->
+    <!-- 5. HOW IT WORKS & LEARN WITH TABI GO SECTION         -->
     <!-- ==================================================== -->
     <section class="how-section section-wrap" id="how-it-works">
       <div class="how-tabs">
-        <button class="how-tab active">Cách thức hoạt động</button>
-        <button class="how-tab">Tìm hiểu cùng Tabi Go</button>
+        <button class="how-tab active" id="tabHowSteps" onclick="switchHowTab('steps')">Cách thức hoạt động</button>
+        <button class="how-tab" id="tabHowAbout" onclick="switchHowTab('about')">Tìm hiểu cùng Tabi Go</button>
       </div>
 
-      <div class="video-card-preview" onclick="alert('Video hướng dẫn cài đặt eSIM Tabi Go trong 60 giây')">
-        <div class="video-thumbnail-wrap">
-          <img src="./assets/images/lottie/our-mission.svg" alt="Learn with Tabi Go" style="width:100%; height:100%; object-fit:contain; opacity:0.85;" />
-          <div class="video-play-btn">
-            <div class="video-play-triangle"></div>
+      <!-- Tab 1: Cách thức hoạt động (3 Bước đơn giản) -->
+      <div class="how-content-pane active" id="paneHowSteps">
+        <div class="how-illustration-wrap">
+          <img src="./assets/images/lottie/our-mission.svg" alt="Cách thức hoạt động của Tabi Go" />
+        </div>
+
+        <div class="how-steps-grid">
+          <div class="how-step-card">
+            <div class="how-step-num">01</div>
+            <div class="how-step-title">Tải App & Chọn Điểm Đến</div>
+            <div class="how-step-desc">Tải App Tabi Go miễn phí trên App Store/Google Play. Tìm kiếm quốc gia bạn sắp đến và chọn gói cước phù hợp.</div>
+          </div>
+          <div class="how-step-card">
+            <div class="how-step-num">02</div>
+            <div class="how-step-title">Mua & Cài Đặt Tức Thì</div>
+            <div class="how-step-desc">Thanh toán an toàn, quét mã QR hoặc chạm 1-Tap để máy tự động cài đặt cấu hình eSIM trong 60 giây.</div>
+          </div>
+          <div class="how-step-card">
+            <div class="how-step-num">03</div>
+            <div class="how-step-title">Hạ Cánh Là Có Internet</div>
+            <div class="how-step-desc">Vừa đáp xuống sân bay, chỉ cần bật "Chuyển vùng dữ liệu" (Data Roaming) cho eSIM Tabi Go là tự động kết nối ngay.</div>
+          </div>
+        </div>
+
+        <img class="video-sub-family-art" src="./assets/images/lottie/ready-connected.svg" alt="Tabi Go Ready Connected" />
+      </div>
+
+      <!-- Tab 2: Tìm hiểu cùng Tabi Go -->
+      <div class="how-content-pane" id="paneHowAbout">
+        <div class="tabigo-about-card">
+          <div class="tabigo-about-header">
+            <span class="tabigo-about-tag">Hệ sinh thái công nghệ 3M</span>
+            <h3>Tabi Go — Ứng Dụng eSIM Du Lịch Tiên Phong Dành Cho Bạn</h3>
+            <p class="tabigo-about-lead">Tabi Go được phát triển nhằm mang lại giải pháp kết nối Internet không biên giới cho du khách cá nhân. Không còn cảnh xếp hàng mua SIM ở sân bay, không cần tháo lắp khay SIM vật lý, và hoàn toàn nói KHÔNG với cước chuyển vùng quốc tế đắt đỏ.</p>
+          </div>
+
+          <div class="tabigo-values-grid">
+            <div class="tabigo-value-item">
+              <div class="tabigo-value-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+              </div>
+              <div>
+                <div class="tabigo-value-title">Tiện lợi & Kích hoạt tức thì 1-Tap</div>
+                <div class="tabigo-value-desc">Mua và kích hoạt eSIM chỉ trong 1 phút trước hoặc trong chuyến đi. Giữ nguyên SIM vật lý Việt Nam để nhận OTP ngân hàng và cuộc gọi quan trọng miễn phí.</div>
+              </div>
+            </div>
+
+            <div class="tabigo-value-item">
+              <div class="tabigo-value-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8M12 6v2M12 16v2"/></svg>
+              </div>
+              <div>
+                <div class="tabigo-value-title">Giá gốc tiết kiệm tới 85%</div>
+                <div class="tabigo-value-desc">Hợp tác trực tiếp với các nhà mạng viễn thông hàng đầu (SoftBank, SK Telecom, AT&T, Vodafone...). Cước phí minh bạch chỉ từ vài chục nghìn/ngày, không chi phí ẩn.</div>
+              </div>
+            </div>
+
+            <div class="tabigo-value-item">
+              <div class="tabigo-value-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><circle cx="12" cy="18" r="1"/></svg>
+              </div>
+              <div>
+                <div class="tabigo-value-title">Dễ dùng & Hỗ trợ mọi dòng máy</div>
+                <div class="tabigo-value-desc">App tự động nhận diện điện thoại có hỗ trợ eSIM hay không (Device Checker). Nếu máy bạn chưa hỗ trợ eSIM, dễ dàng đặt SIM vật lý giao nhanh tận nhà trước khi bay.</div>
+              </div>
+            </div>
+
+            <div class="tabigo-value-item">
+              <div class="tabigo-value-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <div>
+                <div class="tabigo-value-title">Độ tin cậy & Hỗ trợ tiếng Việt 24/7</div>
+                <div class="tabigo-value-desc">Kết nối 150+ quốc gia với đường truyền tốc độ cao ổn định. Luôn có đội ngũ kỹ thuật viên người Việt túc trực 24/7/365 giải đáp thắc mắc ngay trong App.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tabigo-about-footer">
+            <div class="tabigo-about-footer-text">
+              <strong>Chuẩn bị cho chuyến đi tiếp theo của bạn?</strong>
+              <span>Tải App ngay hôm nay để nhận voucher giảm 10% cho đơn hàng eSIM đầu tiên!</span>
+            </div>
+            <a href="#download-app" class="btn-tab-cta">Tải App ngay →</a>
           </div>
         </div>
       </div>
-
-      <img class="video-sub-family-art" src="./assets/images/lottie/ready-connected.svg" alt="Tabi Go Ready Connected" />
     </section>
 
     <!-- ==================================================== -->
@@ -2562,13 +2902,20 @@
           <button class="green-tab-pill" onclick="switchGreenTab('global')">Toàn cầu</button>
         </div>
 
+        <!-- Promo Banner -->
+        <div class="dest-promo-badge-bar">
+          <span class="dest-promo-tag">Ưu đãi độc quyền</span>
+          <span>Mở App Tabi Go để xem trọn bộ 150+ quốc gia và nhận ưu đãi <strong>giảm 10%</strong> cho đơn hàng eSIM đầu tiên!</span>
+          <a href="#download-app" class="dest-promo-link">Tải App ngay →</a>
+        </div>
+
         <!-- Title Row -->
         <div class="green-header-row">
           <div class="green-header-title">
             <h3>Chọn eSIM cho các địa điểm phổ biến</h3>
             <p>Dữ liệu tốc độ cao tại điểm đến yêu thích của bạn — Kích hoạt tức thì trong 60 giây</p>
           </div>
-          <a href="#destinations" class="green-view-all-btn">Xem tất cả 200+ quốc gia →</a>
+          <a href="#destinations" class="green-view-all-btn">Xem tất cả 150+ quốc gia →</a>
         </div>
 
         <!-- 3-Column Grid of Clean White Pill Cards (Airalo Style) -->
@@ -2576,84 +2923,120 @@
           <div class="country-white-pill" onclick="openCountryModal('Việt Nam', '🇻🇳', '99.000đ')">
             <div class="country-pill-left">
               <span class="country-flag-emoji">🇻🇳</span>
-              <span class="country-pill-name">Việt Nam</span>
+              <div class="country-pill-info">
+                <span class="country-pill-name">Việt Nam</span>
+                <span class="country-pill-sub">Viettel / Vinaphone 5G</span>
+              </div>
             </div>
             <span class="country-pill-price">Từ 99.000đ</span>
           </div>
           <div class="country-white-pill" onclick="openCountryModal('Thái Lan', '🇹🇭', '115.000đ')">
             <div class="country-pill-left">
               <span class="country-flag-emoji">🇹🇭</span>
-              <span class="country-pill-name">Thái Lan</span>
+              <div class="country-pill-info">
+                <span class="country-pill-name">Thái Lan</span>
+                <span class="country-pill-sub">Nhận tức thì • Sóng AIS</span>
+              </div>
             </div>
             <span class="country-pill-price">Từ 115.000đ</span>
           </div>
-          <div class="country-white-pill" onclick="openCountryModal('Nhật Bản', '🇯🇵', '135.000đ')">
+          <div class="country-white-pill" onclick="openCountryModal('Nhật Bản', '🇯🇵', '99.000đ')">
             <div class="country-pill-left">
               <span class="country-flag-emoji">🇯🇵</span>
-              <span class="country-pill-name">Nhật Bản</span>
+              <div class="country-pill-info">
+                <span class="country-pill-name">Nhật Bản</span>
+                <span class="country-pill-sub">Chỉ từ 99k/ngày • Sóng 5G SoftBank</span>
+              </div>
             </div>
-            <span class="country-pill-price">Từ 135.000đ</span>
+            <span class="country-pill-price">Từ 99.000đ</span>
           </div>
           <div class="country-white-pill" onclick="openCountryModal('Singapore', '🇸🇬', '125.000đ')">
             <div class="country-pill-left">
               <span class="country-flag-emoji">🇸🇬</span>
-              <span class="country-pill-name">Singapore</span>
+              <div class="country-pill-info">
+                <span class="country-pill-name">Singapore</span>
+                <span class="country-pill-sub">Sóng Singtel tốc độ cao</span>
+              </div>
             </div>
             <span class="country-pill-price">Từ 125.000đ</span>
           </div>
-          <div class="country-white-pill" onclick="openCountryModal('Hàn Quốc', '🇰🇷', '130.000đ')">
+          <div class="country-white-pill" onclick="openCountryModal('Hàn Quốc', '🇰🇷', '79.000đ')">
             <div class="country-pill-left">
               <span class="country-flag-emoji">🇰🇷</span>
-              <span class="country-pill-name">Hàn Quốc</span>
+              <div class="country-pill-info">
+                <span class="country-pill-name">Hàn Quốc</span>
+                <span class="country-pill-sub">Chỉ từ 79k/ngày • Sóng SK Telecom</span>
+              </div>
             </div>
-            <span class="country-pill-price">Từ 130.000đ</span>
+            <span class="country-pill-price">Từ 79.000đ</span>
           </div>
           <div class="country-white-pill" onclick="openCountryModal('Hoa Kỳ', '🇺🇸', '180.000đ')">
             <div class="country-pill-left">
               <span class="country-flag-emoji">🇺🇸</span>
-              <span class="country-pill-name">Hoa Kỳ</span>
+              <div class="country-pill-info">
+                <span class="country-pill-name">Hoa Kỳ</span>
+                <span class="country-pill-sub">Mạng T-Mobile / AT&T</span>
+              </div>
             </div>
             <span class="country-pill-price">Từ 180.000đ</span>
           </div>
           <div class="country-white-pill" onclick="openCountryModal('Châu Âu (39 nước)', '🇪🇺', '190.000đ')">
             <div class="country-pill-left">
               <span class="country-flag-emoji">🇪🇺</span>
-              <span class="country-pill-name">Châu Âu</span>
+              <div class="country-pill-info">
+                <span class="country-pill-name">Châu Âu</span>
+                <span class="country-pill-sub">Chỉ từ 250k/5 ngày • Dung lượng 10GB</span>
+              </div>
             </div>
             <span class="country-pill-price">Từ 190.000đ</span>
           </div>
           <div class="country-white-pill" onclick="openCountryModal('Pháp', '🇫🇷', '125.000đ')">
             <div class="country-pill-left">
               <span class="country-flag-emoji">🇫🇷</span>
-              <span class="country-pill-name">Pháp</span>
+              <div class="country-pill-info">
+                <span class="country-pill-name">Pháp</span>
+                <span class="country-pill-sub">Mạng Orange 5G</span>
+              </div>
             </div>
             <span class="country-pill-price">Từ 125.000đ</span>
           </div>
           <div class="country-white-pill" onclick="openCountryModal('Vương quốc Anh', '🇬🇧', '130.000đ')">
             <div class="country-pill-left">
               <span class="country-flag-emoji">🇬🇧</span>
-              <span class="country-pill-name">Vương quốc Anh</span>
+              <div class="country-pill-info">
+                <span class="country-pill-name">Vương quốc Anh</span>
+                <span class="country-pill-sub">Sóng Vodafone UK</span>
+              </div>
             </div>
             <span class="country-pill-price">Từ 130.000đ</span>
           </div>
           <div class="country-white-pill" onclick="openCountryModal('Úc', '🇦🇺', '150.000đ')">
             <div class="country-pill-left">
               <span class="country-flag-emoji">🇦🇺</span>
-              <span class="country-pill-name">Úc</span>
+              <div class="country-pill-info">
+                <span class="country-pill-name">Úc</span>
+                <span class="country-pill-sub">Sóng Telstra / Optus</span>
+              </div>
             </div>
             <span class="country-pill-price">Từ 150.000đ</span>
           </div>
           <div class="country-white-pill" onclick="openCountryModal('Trung Quốc', '🇨🇳', '120.000đ')">
             <div class="country-pill-left">
               <span class="country-flag-emoji">🇨🇳</span>
-              <span class="country-pill-name">Trung Quốc</span>
+              <div class="country-pill-info">
+                <span class="country-pill-name">Trung Quốc</span>
+                <span class="country-pill-sub">Vượt tường lửa tự động</span>
+              </div>
             </div>
             <span class="country-pill-price">Từ 120.000đ</span>
           </div>
           <div class="country-white-pill" onclick="openCountryModal('Đài Loan', '🇹🇼', '105.000đ')">
             <div class="country-pill-left">
               <span class="country-flag-emoji">🇹🇼</span>
-              <span class="country-pill-name">Đài Loan</span>
+              <div class="country-pill-info">
+                <span class="country-pill-name">Đài Loan</span>
+                <span class="country-pill-sub">Chunghwa Telecom 5G</span>
+              </div>
             </div>
             <span class="country-pill-price">Từ 105.000đ</span>
           </div>
@@ -2678,11 +3061,29 @@
           <div class="faq-list">
             <div class="faq-item active">
               <div class="faq-question" onclick="toggleFaq(this)">
-                <span>eSIM là gì và hoạt động như thế nào?</span>
+                <span>eSIM là gì? Điện thoại nào dùng được eSIM?</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
               </div>
               <div class="faq-answer">
-                eSIM (Embedded SIM) là SIM điện tử được tích hợp sẵn vào phần cứng của điện thoại. Bạn không cần tháo lắp khay SIM vật lý, chỉ cần quét mã QR hoặc chạm cài đặt trên app Tabi Go là có thể kết nối Internet tốc độ cao ngay khi hạ cánh.
+                eSIM (Embedded SIM) là SIM điện tử được tích hợp sẵn vào phần cứng của điện thoại. App Tabi Go có tính năng tự động nhận diện thiết bị của bạn có hỗ trợ eSIM hay không (Device Checker) ngay khi vừa mở ứng dụng. Hầu hết các dòng máy từ iPhone XS/XR trở lên, Samsung Galaxy S20 trở lên, Google Pixel 3 trở lên đều hỗ trợ eSIM.
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question" onclick="toggleFaq(this)">
+                <span>Tôi nên cài đặt eSIM trước khi đi hay đến nơi mới cài?</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+              </div>
+              <div class="faq-answer">
+                Bạn nên quét mã cài đặt eSIM trước khi lên máy bay (khi còn kết nối WiFi ổn định tại nhà hoặc sân bay). Khi vừa hạ cánh xuống nước đến, bạn chỉ cần bật "Chuyển vùng dữ liệu" (Data Roaming) cho eSIM Tabi Go là máy sẽ tự động kết nối mạng viễn thông địa phương tức thì.
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question" onclick="toggleFaq(this)">
+                <span>Nếu SIM/eSIM không có mạng thì hỗ trợ như thế nào?</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+              </div>
+              <div class="faq-answer">
+                Đừng lo lắng! Tabi Go tích hợp tính năng Livechat Hỗ trợ 24/7 trực tiếp ngay trong ứng dụng. Đội ngũ chuyên viên kỹ thuật người Việt túc trực 24/7/365 sẵn sàng kiểm tra cấu hình mạng, APN hoặc kích hoạt lại gói cước cho bạn ngay lập tức.
               </div>
             </div>
             <div class="faq-item">
@@ -2691,34 +3092,25 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
               </div>
               <div class="faq-answer">
-                Có! Bạn hoàn toàn có thể sử dụng song song 2 SIM: SIM chính giữ nguyên trong máy để nhận cuộc gọi, tin nhắn OTP ngân hàng miễn phí, còn eSIM Tabi Go được dùng chuyên dụng cho kết nối dữ liệu mạng 4G/5G.
+                Có! Bạn hoàn toàn sử dụng song song 2 SIM: SIM vật lý chính giữ nguyên trong máy để nhận cuộc gọi, tin nhắn OTP ngân hàng miễn phí, còn eSIM Tabi Go được dùng chuyên dụng cho kết nối dữ liệu mạng 4G/5G tốc độ cao.
               </div>
             </div>
             <div class="faq-item">
               <div class="faq-question" onclick="toggleFaq(this)">
-                <span>Làm sao để biết điện thoại của tôi có hỗ trợ eSIM không?</span>
+                <span>Máy cũ chưa hỗ trợ eSIM thì có mua được trên Tabi Go không?</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
               </div>
               <div class="faq-answer">
-                Hầu hết các dòng máy từ iPhone XS/XR trở lên, Samsung Galaxy S20 trở lên, Google Pixel 3 trở lên đều hỗ trợ eSIM. Bạn có thể bấm *#06# trên bàn phím gọi, nếu thấy xuất hiện dãy mã EID nghĩa là máy của bạn có hỗ trợ eSIM.
+                Hoàn toàn được! Đối với các dòng máy chưa hỗ trợ eSIM, bạn có thể chọn hình thức đặt SIM vật lý giao nhanh tận nhà ngay trên ứng dụng Tabi Go. SIM sẽ được chuyển phát nhanh đến tận tay bạn trước ngày khởi hành.
               </div>
             </div>
             <div class="faq-item">
               <div class="faq-question" onclick="toggleFaq(this)">
-                <span>Tôi nên cài đặt eSIM trước chuyến đi hay khi tới nơi?</span>
+                <span>Nếu tôi dùng hết dung lượng thì có thể nạp thêm (Top-up) được không?</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
               </div>
               <div class="faq-answer">
-                Bạn nên quét cài đặt eSIM trước khi lên máy bay (khi còn kết nối WiFi tại nhà hoặc sân bay). Khi vừa hạ cánh xuống nước đến, bạn chỉ cần bật mục "Chuyển vùng dữ liệu" (Data Roaming) cho eSIM Tabi Go là máy sẽ tự động kết nối nhà mạng đối tác.
-              </div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-question" onclick="toggleFaq(this)">
-                <span>Nếu tôi dùng hết dung lượng thì có thể nạp thêm được không?</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-              </div>
-              <div class="faq-answer">
-                Hoàn toàn được! Bạn chỉ cần mở app Tabi Go, chọn gói cước đang sử dụng và bấm "Nạp thêm dung lượng" (Top-up). Hệ thống sẽ cộng trực tiếp data vào eSIM hiện tại mà không cần cài đặt lại cấu hình.
+                Rất đơn giản! Bạn chỉ cần mở App Tabi Go, chọn gói cước đang sử dụng và bấm "Nạp thêm dung lượng". Hệ thống sẽ cộng trực tiếp data vào eSIM hiện tại mà không cần cài đặt lại cấu hình hay đổi mã QR.
               </div>
             </div>
           </div>
@@ -2803,14 +3195,14 @@
         </div>
       </div>
 
-      <!-- App Download Banner (Exact Match to Airalo Sample Image 2) -->
-      <div class="app-download-banner">
+      <!-- App Download Banner (Chốt hạ Tải App) -->
+      <div class="app-download-banner" id="download-app">
         <div class="app-phone-preview-wrap">
           <img src="./assets/images/tabigo_phone_transparent.png" alt="Ứng dụng Tabi Go" class="app-phone-mockup-img" />
         </div>
         <div class="app-banner-content">
-          <h3>Chúng tôi luôn đồng hành cùng bạn, dù bạn ở bất cứ đâu</h3>
-          <p>Tải ứng dụng Tabi Go ngay hôm nay để mua, quản lý và nạp thêm dung lượng eSIM mọi lúc, mọi nơi.</p>
+          <h3>Sẵn sàng cho chuyến du lịch tiếp theo?</h3>
+          <p>Tải App Tabi Go ngay hôm nay để nhận Voucher giảm 10% cho đơn hàng eSIM đầu tiên! Kết nối Internet tốc độ cao tại 150+ quốc gia chỉ với 1 chạm.</p>
           <div class="app-badges-row">
             <!-- Hidden SVG Gradients for Partial Fractional Stars -->
             <svg width="0" height="0" style="position:absolute; width:0; height:0; pointer-events:none;">
@@ -2879,6 +3271,25 @@
                 </div>
               </div>
             </div>
+
+            <!-- Card 3: QR Code Download for Desktop -->
+            <div class="app-store-pill-card">
+              <div class="app-qr-badge-pill" title="Quét mã QR tải App Tabi Go">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00478F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="7" height="7" rx="1.5"></rect>
+                  <rect x="14" y="3" width="7" height="7" rx="1.5"></rect>
+                  <rect x="3" y="14" width="7" height="7" rx="1.5"></rect>
+                  <rect x="14" y="14" width="3" height="3" fill="#00478F"></rect>
+                  <line x1="20" y1="14" x2="20" y2="14.01"></line>
+                  <line x1="17" y1="17" x2="17" y2="20"></line>
+                  <line x1="20" y1="20" x2="20" y2="20.01"></line>
+                </svg>
+                <span>Quét mã tải App</span>
+              </div>
+              <div class="app-rating-row">
+                <span class="app-qr-scan-guide">Dùng camera quét để tải App tức thì</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -2917,8 +3328,9 @@
             <h5>Trợ giúp</h5>
             <ul>
               <li><a href="#faq">Trung tâm trợ giúp</a></li>
-              <li><a href="javascript:void(0)">Trò chuyện hỗ trợ 24/7</a></li>
-              <li><a href="javascript:void(0)">Liên hệ với chúng tôi</a></li>
+              <li><a href="#faq">Trò chuyện hỗ trợ 24/7</a></li>
+              <li><a href="tel:19003388" class="footer-contact-hotline">Hotline: 1900 3388</a></li>
+              <li><a href="javascript:void(0)">Zalo CSKH Tabi Go</a></li>
             </ul>
           </div>
 
@@ -2993,13 +3405,23 @@
 
         <!-- Centered Minimalist Copyright & Legal row (Sample Image 3) -->
         <div class="footer-bottom-row">
-          <span class="footer-copyright">©2026 TABI GO</span>
+          <div class="footer-copyright-col" style="display: flex; flex-direction: column; gap: 8px;">
+            <span class="footer-copyright">©2026 TABI GO — Hệ sinh thái Công nghệ 3M</span>
+            <div class="footer-bocongthuong">
+              <svg width="135" height="42" viewBox="0 0 160 50" fill="none">
+                <rect width="160" height="50" rx="6" fill="#B91C1C"/>
+                <circle cx="26" cy="25" r="16" fill="#991B1B" stroke="#FDE047" stroke-width="1.5"/>
+                <polygon points="26,14 29,21 37,21.5 31,26 33,34 26,29.5 19,34 21,26 15,21.5 23,21" fill="#FDE047"/>
+                <text x="52" y="23" fill="#FFFFFF" font-size="11" font-weight="800" font-family="'Plus Jakarta Sans', sans-serif" letter-spacing="0.5">ĐÃ ĐĂNG KÝ</text>
+                <text x="52" y="38" fill="#FDE047" font-size="9.5" font-weight="700" font-family="'Plus Jakarta Sans', sans-serif" letter-spacing="0.3">BỘ CÔNG THƯƠNG</text>
+              </svg>
+            </div>
+          </div>
           <div class="footer-legal-links">
-            <a href="javascript:void(0)">Trung tâm tin cậy</a>
+            <a href="javascript:void(0)">Điều khoản sử dụng</a>
             <a href="javascript:void(0)">Chính sách bảo mật</a>
             <a href="javascript:void(0)">Trung tâm pháp lý</a>
             <a href="javascript:void(0)">Quản lý cookie</a>
-            <a href="javascript:void(0)">Danh mục liên kết</a>
             <a href="javascript:void(0)">Tuyên bố về khả năng truy cập</a>
           </div>
         </div>
@@ -3155,36 +3577,60 @@
     }
 
     /* ==================================================== */
+    /* HOW IT WORKS / ABOUT TAB SWITCHER                    */
+    /* ==================================================== */
+    function switchHowTab(tab) {
+      const tabSteps = document.getElementById('tabHowSteps');
+      const tabAbout = document.getElementById('tabHowAbout');
+      const paneSteps = document.getElementById('paneHowSteps');
+      const paneAbout = document.getElementById('paneHowAbout');
+
+      if (!tabSteps || !tabAbout || !paneSteps || !paneAbout) return;
+
+      if (tab === 'about') {
+        tabSteps.classList.remove('active');
+        tabAbout.classList.add('active');
+        paneSteps.classList.remove('active');
+        paneAbout.classList.add('active');
+      } else {
+        tabAbout.classList.remove('active');
+        tabSteps.classList.add('active');
+        paneAbout.classList.remove('active');
+        paneSteps.classList.add('active');
+      }
+    }
+
+    /* ==================================================== */
     /* GREEN MARKETPLACE TABS SWITCHER                      */
     /* ==================================================== */
     const regionalDestinations = [
-      { name: 'Châu Á (14 nước)', flag: '🌏', price: 'Từ 150.000đ' },
-      { name: 'Châu Âu (39 nước)', flag: '🇪🇺', price: 'Từ 190.000đ' },
-      { name: 'Bắc Mỹ (Mỹ & Canada)', flag: '🌎', price: 'Từ 210.000đ' },
-      { name: 'Đông Nam Á (8 nước)', flag: '🏝️', price: 'Từ 120.000đ' },
-      { name: 'Trung Đông (12 nước)', flag: '🏜️', price: 'Từ 240.000đ' },
-      { name: 'Châu Đại Dương (Úc & NZ)', flag: '🦘', price: 'Từ 170.000đ' },
+      { name: 'Châu Á (14 nước)', flag: '🌏', sub: 'Data 5G tốc độ cao', price: 'Từ 150.000đ' },
+      { name: 'Châu Âu (39 nước)', flag: '🇪🇺', sub: '39 nước liên tuyến', price: 'Từ 190.000đ' },
+      { name: 'Bắc Mỹ (Mỹ & Canada)', flag: '🌎', sub: 'Sóng AT&T & T-Mobile', price: 'Từ 210.000đ' },
+      { name: 'Đông Nam Á (8 nước)', flag: '🏝️', sub: 'Không giới hạn dung lượng', price: 'Từ 120.000đ' },
+      { name: 'Trung Đông (12 nước)', flag: '🏜️', sub: 'Phủ sóng 12 quốc gia', price: 'Từ 240.000đ' },
+      { name: 'Châu Đại Dương (Úc & NZ)', flag: '🦘', sub: 'Sóng Telstra / Optus', price: 'Từ 170.000đ' },
     ];
 
     const globalDestinations = [
-      { name: 'Toàn Cầu (130+ nước)', flag: '🌐', price: 'Từ 290.000đ' },
-      { name: 'Toàn Cầu Không Giới Hạn', flag: '🚀', price: 'Từ 450.000đ' },
-      { name: 'Gói Doanh Nhân VIP Toàn Cầu', flag: '💼', price: 'Từ 650.000đ' },
+      { name: 'Toàn Cầu (130+ nước)', flag: '🌐', sub: 'Kết nối đa quốc gia', price: 'Từ 290.000đ' },
+      { name: 'Toàn Cầu Không Giới Hạn', flag: '🚀', sub: 'Data không giới hạn', price: 'Từ 450.000đ' },
+      { name: 'Gói Doanh Nhân VIP', flag: '💼', sub: 'Độ ưu tiên cao nhất', price: 'Từ 650.000đ' },
     ];
 
     const localDestinations = [
-      { name: 'Việt Nam', flag: '🇻🇳', price: 'Từ 99.000đ' },
-      { name: 'Thái Lan', flag: '🇹🇭', price: 'Từ 115.000đ' },
-      { name: 'Nhật Bản', flag: '🇯🇵', price: 'Từ 135.000đ' },
-      { name: 'Singapore', flag: '🇸🇬', price: 'Từ 125.000đ' },
-      { name: 'Hàn Quốc', flag: '🇰🇷', price: 'Từ 130.000đ' },
-      { name: 'Hoa Kỳ', flag: '🇺🇸', price: 'Từ 180.000đ' },
-      { name: 'Châu Âu', flag: '🇪🇺', price: 'Từ 190.000đ' },
-      { name: 'Pháp', flag: '🇫🇷', price: 'Từ 125.000đ' },
-      { name: 'Vương quốc Anh', flag: '🇬🇧', price: 'Từ 130.000đ' },
-      { name: 'Úc', flag: '🇦🇺', price: 'Từ 150.000đ' },
-      { name: 'Trung Quốc', flag: '🇨🇳', price: 'Từ 120.000đ' },
-      { name: 'Đài Loan', flag: '🇹🇼', price: 'Từ 105.000đ' },
+      { name: 'Việt Nam', flag: '🇻🇳', sub: 'Viettel / Vinaphone 5G', price: 'Từ 99.000đ' },
+      { name: 'Thái Lan', flag: '🇹🇭', sub: 'Nhận tức thì • Sóng AIS', price: 'Từ 115.000đ' },
+      { name: 'Nhật Bản', flag: '🇯🇵', sub: 'Chỉ từ 99k/ngày • Sóng 5G SoftBank', price: 'Từ 99.000đ' },
+      { name: 'Singapore', flag: '🇸🇬', sub: 'Sóng Singtel tốc độ cao', price: 'Từ 125.000đ' },
+      { name: 'Hàn Quốc', flag: '🇰🇷', sub: 'Chỉ từ 79k/ngày • Sóng SK Telecom', price: 'Từ 79.000đ' },
+      { name: 'Hoa Kỳ', flag: '🇺🇸', sub: 'Mạng T-Mobile / AT&T', price: 'Từ 180.000đ' },
+      { name: 'Châu Âu', flag: '🇪🇺', sub: 'Chỉ từ 250k/5 ngày • Dung lượng 10GB', price: 'Từ 190.000đ' },
+      { name: 'Pháp', flag: '🇫🇷', sub: 'Mạng Orange 5G', price: 'Từ 125.000đ' },
+      { name: 'Vương quốc Anh', flag: '🇬🇧', sub: 'Sóng Vodafone UK', price: 'Từ 130.000đ' },
+      { name: 'Úc', flag: '🇦🇺', sub: 'Sóng Telstra / Optus', price: 'Từ 150.000đ' },
+      { name: 'Trung Quốc', flag: '🇨🇳', sub: 'Vượt tường lửa tự động', price: 'Từ 120.000đ' },
+      { name: 'Đài Loan', flag: '🇹🇼', sub: 'Chunghwa Telecom 5G', price: 'Từ 105.000đ' },
     ];
 
     function switchGreenTab(type) {
@@ -3201,7 +3647,10 @@
         <div class="country-white-pill" onclick="openCountryModal('${item.name}', '${item.flag}', '${item.price}')">
           <div class="country-pill-left">
             <span class="country-flag-emoji">${item.flag}</span>
-            <span class="country-pill-name">${item.name}</span>
+            <div class="country-pill-info">
+              <span class="country-pill-name">${item.name}</span>
+              ${item.sub ? `<span class="country-pill-sub">${item.sub}</span>` : ''}
+            </div>
           </div>
           <span class="country-pill-price">${item.price}</span>
         </div>
@@ -3391,10 +3840,10 @@
 
     const navSections = [
       { id: 'hero', index: 0 },
-      { id: 'destinations', index: 1 },
-      { id: 'how-it-works', index: 2 },
-      { id: 'why-tabigo', index: 3 },
-      { id: 'blog', index: 4 },
+      { id: 'why-tabigo', index: 1 },
+      { id: 'destinations', index: 2 },
+      { id: 'how-it-works', index: 3 },
+      { id: 'download-app', index: 4 },
       { id: 'faq', index: 5 }
     ];
 
