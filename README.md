@@ -4,16 +4,11 @@ Dự án xây dựng 5 giao diện Landing Page độc bản hoàn toàn khác b
 
 ---
 
-## 📂 Danh Sách Các File Trong Dự Án
+## 📂 Cấu Trúc Dự Án
 
-| File | Concept | Phong Cách | Tham Chiếu | Điểm Nhấn Tương Tác |
-| :--- | :--- | :--- | :--- | :--- |
-| [`index.html`](./index.html) | **Portal Hub** | Master Showcase Switcher & A/B Matrix | Tổng hợp 5 Concept | So sánh ma trận 5 phong cách |
-| [`concept-1-trifa.html`](./concept-1-trifa.html) | **Concept 1: Trifa Vibe** | Japan Friendly & Travel Onboarding | [trifa.co](https://trifa.co) | Dropdown check máy, Postcard Destinations Grid, Voucher TABIGO10 |
-| [`concept-2-firsty.html`](./concept-2-firsty.html) | **Concept 2: Firsty Vibe** | 3D Cyber Glow & Floating Bento Grid | [firsty.app](https://firsty.app) | Quả địa cầu CSS, HUD Radar User-Agent Scanner, Live Bento Specs |
-| [`concept-3-saily.html`](./concept-3-saily.html) | **Concept 3: Saily Vibe** | High-Trust Security & Instant Search Hero | [saily.com](https://saily.com) | Ô Search Hero tức thì + Popup giá, Marquee nhà mạng, Bảng 3 cột |
-| [`concept-4-betterroaming.html`](./concept-4-betterroaming.html) | **Concept 4: BetterRoaming** | Apple Minimalist & Savings Calculator | [betterroaming.com](https://betterroaming.com) | Bộ tính tiết kiệm Roaming animated counter, Editorial Tabs 01/02/03 |
-| [`concept-5-airalo.html`](./concept-5-airalo.html) | **Concept 5: Airalo Vibe** | E-Commerce Destination Marketplace | [airalo.com](https://airalo.com) | Thanh tìm kiếm điểm đến, Sàn 3 Tab (Quốc gia / Khu vực / Toàn cầu) |
+| File | Mô Tả | Phong Cách | Điểm Nhấn |
+| :--- | :--- | :--- | :--- |
+| [`index.html`](./index.html) | **Tabi Go Landing Page** | E-Commerce Destination Marketplace (Airalo Vibe) | Thanh tìm kiếm điểm đến, Sàn 3 Tab (Quốc gia / Khu vực / Toàn cầu), Drawer & Modal chi tiết gói cước |
 
 ---
 
@@ -22,15 +17,14 @@ Dự án xây dựng 5 giao diện Landing Page độc bản hoàn toàn khác b
 ### Cách 1: Mở Trực Tiếp Trên Trình Duyệt (Không cần cài đặt)
 Chỉ cần nhấp đúp hoặc chạy lệnh sau từ terminal:
 ```bash
-open tabigo-multi-landing/index.html
+open index.html
 ```
 
 ### Cách 2: Chạy Bằng Local Server
 ```bash
-cd tabigo-multi-landing
-npx serve -l 3334 .
-# hoặc nếu dùng vite:
 npm run dev
+# hoặc:
+npm run serve
 ```
 Sau đó truy cập: `http://localhost:3334/`
 
