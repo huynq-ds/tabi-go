@@ -1912,58 +1912,57 @@
       height: auto;
     }
 
-    /* App Banner (Exact Match to Airalo Sample Image 2) */
+    /* App Banner (Exact Match to Airalo Sample Image 1) */
     .app-download-banner {
       background: #73C9DD;
       border-radius: 36px;
-      padding: 56px 64px;
+      padding: 48px 64px 0 64px;
       display: flex;
-      align-items: center;
+      align-items: flex-end;
       justify-content: space-between;
-      gap: 60px;
+      gap: 48px;
       margin-bottom: 72px;
       position: relative;
       overflow: hidden;
+      min-height: 380px;
     }
-    .app-phone-preview-wrap {
+    .app-banner-illus-wrap {
+      flex: 0 0 420px;
       display: flex;
-      align-items: center;
+      align-items: flex-end;
       justify-content: center;
-      flex-shrink: 0;
       position: relative;
       z-index: 2;
+      align-self: flex-end;
+      margin-bottom: 0;
+      line-height: 0;
     }
-    .app-phone-mockup-img {
-      max-height: 310px;
-      width: auto;
+    .app-banner-illus-img {
+      width: 100%;
+      max-width: 420px;
+      height: auto;
       display: block;
-      background: transparent;
-      border: none;
-      border-radius: 0;
-      filter: drop-shadow(0 20px 32px rgba(15, 23, 42, 0.22));
-      transition: transform 0.3s ease;
-    }
-    .app-phone-mockup-img:hover {
-      transform: translateY(-4px) scale(1.02);
     }
     .app-banner-content {
       flex: 1;
-      max-width: 540px;
+      max-width: 520px;
       color: #0F172A;
       z-index: 2;
+      align-self: center;
+      padding-bottom: 48px;
     }
     .app-banner-content h3 {
       font-size: 38px;
       font-weight: 800;
       color: #0B192C;
       letter-spacing: -1px;
-      line-height: 1.18;
-      margin-bottom: 16px;
+      line-height: 1.15;
+      margin-bottom: 14px;
     }
     .app-banner-content p {
       font-size: 15.5px;
       color: #1E293B;
-      line-height: 1.55;
+      line-height: 1.5;
       margin-bottom: 28px;
       max-width: 460px;
     }
@@ -1971,7 +1970,6 @@
       display: flex;
       align-items: flex-start;
       gap: 20px;
-      flex-wrap: wrap;
     }
     .app-store-pill-card {
       display: flex;
@@ -2044,50 +2042,15 @@
       height: 16px;
       display: block;
     }
-    .app-qr-badge-pill {
-      background: #FFFFFF;
-      border: 1.2px solid #52525B;
-      color: #000000;
-      padding: 9px 20px 9px 16px;
-      height: 52px;
-      border-radius: var(--radius-pill);
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 14.5px;
-      font-weight: 700;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-    .app-qr-badge-pill:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
-      border-color: #000000;
-    }
-    .app-qr-badge-pill svg {
-      width: 24px;
-      height: 24px;
-      color: var(--tabi-navy);
-      flex-shrink: 0;
-    }
-    .app-qr-scan-guide {
-      font-size: 12px;
-      color: #1E293B;
-      font-weight: 600;
-      margin-top: 10px;
-      text-align: center;
-      max-width: 170px;
-      line-height: 1.35;
-    }
     .footer-bocongthuong {
       display: inline-flex;
       align-items: center;
-      margin-top: 12px;
     }
     .footer-bocongthuong svg {
-      height: 42px;
+      height: 28px;
       width: auto;
+      border-radius: 4px;
+      display: block;
     }
     .footer-contact-hotline {
       display: inline-flex;
@@ -2185,35 +2148,38 @@
       display: block;
     }
 
-    /* Bottom Copyright & Legal row (Centered, minimalist) */
+    /* Bottom Copyright & Legal row (Clean inline alignment) */
     .footer-bottom-row {
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      font-size: 12px;
+      font-size: 12.5px;
       color: #6B7280;
       flex-wrap: wrap;
-      gap: 18px;
-      text-align: center;
-      border-top: none;
-      padding-top: 0;
+      gap: 20px;
+      border-top: 1px solid rgba(0, 0, 0, 0.06);
+      padding-top: 24px;
+    }
+    .footer-bottom-left {
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
     }
     .footer-copyright {
-      font-size: 12px;
+      font-size: 12.5px;
       font-weight: 500;
       color: #6B7280;
     }
     .footer-legal-links {
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 18px;
       flex-wrap: wrap;
-      justify-content: center;
     }
     .footer-legal-links a {
       color: #6B7280;
       text-decoration: none;
-      font-size: 12px;
+      font-size: 12.5px;
       transition: color 0.15s;
     }
     .footer-legal-links a:hover {
@@ -2351,7 +2317,9 @@
       .why-features-grid { grid-template-columns: 1fr; }
       .footer-columns-grid { grid-template-columns: 1fr; gap: 28px; }
       .footer-top-row { flex-direction: column; align-items: flex-start; gap: 20px; }
-      .footer-bottom-row { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .footer-bottom-row { flex-direction: column; align-items: center; gap: 14px; text-align: center; }
+      .footer-bottom-left { justify-content: center; }
+      .footer-legal-links { justify-content: center; }
       .support-card { padding: 28px 20px 220px 20px; min-height: auto; }
       .support-agent-illus { max-height: 200px; }
       .faq-section-header { flex-direction: column; align-items: flex-start; gap: 14px; }
@@ -3159,14 +3127,14 @@
         </div>
       </div>
 
-      <!-- App Download Banner (Chốt hạ Tải App) -->
+      <!-- App Download Banner (Exact Match to Airalo Sample Image 1) -->
       <div class="app-download-banner" id="download-app">
-        <div class="app-phone-preview-wrap">
-          <img src="./assets/images/tabigo_phone_transparent.png" alt="Ứng dụng Tabi Go" class="app-phone-mockup-img" />
+        <div class="app-banner-illus-wrap">
+          <img src="./assets/images/lottie/ready-connected.svg" alt="Tabi Go - Kết nối mọi lúc mọi nơi" class="app-banner-illus-img" />
         </div>
         <div class="app-banner-content">
-          <h3>Sẵn sàng cho chuyến du lịch tiếp theo?</h3>
-          <p>Tải App Tabi Go ngay hôm nay để nhận Voucher giảm 10% cho đơn hàng eSIM đầu tiên! Kết nối Internet tốc độ cao tại 150+ quốc gia chỉ với 1 chạm.</p>
+          <h3>Chúng tôi luôn đồng hành cùng bạn, dù ở bất cứ đâu</h3>
+          <p>Tải ứng dụng Tabi Go để dễ dàng mua, quản lý và nạp thêm dung lượng eSIM mọi lúc, mọi nơi.</p>
           <div class="app-badges-row">
             <!-- Hidden SVG Gradients for Partial Fractional Stars -->
             <svg width="0" height="0" style="position:absolute; width:0; height:0; pointer-events:none;">
@@ -3233,25 +3201,6 @@
                   <svg class="rating-star" width="16" height="16" viewBox="0 0 24 24" fill="#FF7A30" stroke="#FF7A30" stroke-width="1" stroke-linejoin="round"><path d="M12 2.5l2.85 6.2 6.75.8-5 4.6 1.3 6.6-5.9-3.3-5.9 3.3 1.3-6.6-5-4.6 6.75-.8L12 2.5z"/></svg>
                   <svg class="rating-star" width="16" height="16" viewBox="0 0 24 24" fill="url(#starPartial46)" stroke="url(#starPartial46)" stroke-width="1" stroke-linejoin="round"><path d="M12 2.5l2.85 6.2 6.75.8-5 4.6 1.3 6.6-5.9-3.3-5.9 3.3 1.3-6.6-5-4.6 6.75-.8L12 2.5z"/></svg>
                 </div>
-              </div>
-            </div>
-
-            <!-- Card 3: QR Code Download for Desktop -->
-            <div class="app-store-pill-card">
-              <div class="app-qr-badge-pill" title="Quét mã QR tải App Tabi Go">
-                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00478F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="3" y="3" width="7" height="7" rx="1.5"></rect>
-                  <rect x="14" y="3" width="7" height="7" rx="1.5"></rect>
-                  <rect x="3" y="14" width="7" height="7" rx="1.5"></rect>
-                  <rect x="14" y="14" width="3" height="3" fill="#00478F"></rect>
-                  <line x1="20" y1="14" x2="20" y2="14.01"></line>
-                  <line x1="17" y1="17" x2="17" y2="20"></line>
-                  <line x1="20" y1="20" x2="20" y2="20.01"></line>
-                </svg>
-                <span>Quét mã tải App</span>
-              </div>
-              <div class="app-rating-row">
-                <span class="app-qr-scan-guide">Dùng camera quét để tải App tức thì</span>
               </div>
             </div>
           </div>
@@ -3369,15 +3318,15 @@
 
         <!-- Centered Minimalist Copyright & Legal row (Sample Image 3) -->
         <div class="footer-bottom-row">
-          <div class="footer-copyright-col" style="display: flex; flex-direction: column; gap: 8px;">
-            <span class="footer-copyright">©2026 TABI GO — Ứng dụng eSIM Du lịch Toàn cầu</span>
-            <div class="footer-bocongthuong">
-              <svg width="135" height="42" viewBox="0 0 160 50" fill="none">
-                <rect width="160" height="50" rx="6" fill="#B91C1C"/>
-                <circle cx="26" cy="25" r="16" fill="#991B1B" stroke="#FDE047" stroke-width="1.5"/>
-                <polygon points="26,14 29,21 37,21.5 31,26 33,34 26,29.5 19,34 21,26 15,21.5 23,21" fill="#FDE047"/>
-                <text x="52" y="23" fill="#FFFFFF" font-size="11" font-weight="800" font-family="'Plus Jakarta Sans', sans-serif" letter-spacing="0.5">ĐÃ ĐĂNG KÝ</text>
-                <text x="52" y="38" fill="#FDE047" font-size="9.5" font-weight="700" font-family="'Plus Jakarta Sans', sans-serif" letter-spacing="0.3">BỘ CÔNG THƯƠNG</text>
+          <div class="footer-bottom-left">
+            <span class="footer-copyright">©2026 TABI GO</span>
+            <div class="footer-bocongthuong" title="Đã đăng ký Bộ Công Thương">
+              <svg width="112" height="30" viewBox="0 0 160 46" fill="none">
+                <rect width="160" height="46" rx="5" fill="#BB1E24"/>
+                <circle cx="23" cy="23" r="14" fill="#991B1B" stroke="#FDE047" stroke-width="1.2"/>
+                <polygon points="23,13 25.5,19.5 32.5,20 27,24 29,31 23,27 17,31 19,24 13.5,20 20.5,19.5" fill="#FDE047"/>
+                <text x="44" y="20" fill="#FFFFFF" font-size="10" font-weight="800" font-family="'Plus Jakarta Sans', sans-serif" letter-spacing="0.5">ĐÃ ĐĂNG KÝ</text>
+                <text x="44" y="34" fill="#FDE047" font-size="9" font-weight="700" font-family="'Plus Jakarta Sans', sans-serif" letter-spacing="0.3">BỘ CÔNG THƯƠNG</text>
               </svg>
             </div>
           </div>
