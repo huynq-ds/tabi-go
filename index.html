@@ -25,35 +25,39 @@
   <meta property="og:description" content="Ứng dụng mua eSIM & SIM du lịch giá gốc cho 200+ quốc gia. Kích hoạt tức thì 1-tap, không tháo SIM, bảo hiểm kết nối 24/7." />
   <meta property="og:image" content="./assets/images/tabigo_og_banner.png" />
 
-  <!-- Google Fonts: Plus Jakarta Sans -->
+  <!-- Google Fonts: Inter (Sắc nét, hiện đại chuẩn B2C Quốc Tế) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Flag Icons Lipis (Official Standard Vector SVG Flags - https://flagicons.lipis.dev/) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css" />
   
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      /* Exact Airalo Almond Cream Background */
+      --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      /* Exact Almond Cream Background */
       --bg-page: #F5EFE6;
       --bg-card: #FFFFFF;
-      --orange: #F26322;
-      --orange-hover: #E05415;
-      --green-banner: #48B080;
+      --orange: #F05123;
+      --orange-hover: #D63F13;
+      --green-banner: #10B981;
       --cyan-banner: #78CFE5;
       --blue-slider: #0055FF;
       --tabi-navy: #00478F;
       --tabi-sky: #00A8FF;
       --tabi-orange: #FF9500;
-      --text-main: #111827;
-      --text-muted: #4B5563;
-      --text-light: #9CA3AF;
-      --border: #E8E2D8;
-      --border-card: #E5E7EB;
+      --text-main: #0F172A;
+      --text-muted: #334155;
+      --text-light: #64748B;
+      --border: #E2E8F0;
+      --border-card: #E2E8F0;
       --radius-sm: 8px;
       --radius-md: 14px;
       --radius-lg: 20px;
-      --radius-xl: 26px;
+      --radius-xl: 28px;
       --radius-pill: 9999px;
       --max-w: 1140px;
     }
@@ -64,13 +68,27 @@
     }
 
     body {
-      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-family: var(--font-family);
       background-color: var(--bg-page);
       color: var(--text-main);
       line-height: 1.5;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
       position: relative;
+    }
+
+    body, button, input, select, textarea, .brand-text, text {
+      font-family: var(--font-family) !important;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      color: var(--text-main);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    section[id], .section-wrap[id], #download-app, #why-tabigo, #destinations, #how-it-works, #faq, #b2b-partner {
+      scroll-margin-top: 130px;
     }
 
     /* Full Page Ambient Airalo Background Shapes (Pastel geometric art) */
@@ -319,11 +337,11 @@
       overflow: hidden;
     }
     header.scrolled .header-row2 {
-      max-height: 0;
-      opacity: 0;
-      padding-top: 0;
-      padding-bottom: 0;
-      pointer-events: none;
+      max-height: 48px;
+      opacity: 1;
+      padding-top: 2px;
+      padding-bottom: 8px;
+      pointer-events: auto;
     }
 
 
@@ -612,162 +630,10 @@
       transform: translateY(-1px);
     }
 
-    /* ==================================================== */
-    /* SCROLLED HEADER MENU BUTTON & AIRALO-STYLE DROPDOWN  */
-    /* (EXACT 1:1 REPLICATION OF USER REFERENCE SCREENSHOT) */
-    /* ==================================================== */
-    .menu-divider {
-      display: none;
-      width: 1px;
-      height: 20px;
-      background: #D8D2C5;
-      margin: 0 4px;
-    }
-    .header-menu-wrap {
-      position: relative;
-      display: inline-flex;
-      align-items: center;
-    }
-    .btn-header-menu {
-      display: none;
-      align-items: center;
-      gap: 7px;
-      background: transparent;
-      border: none;
-      padding: 6px 4px;
-      font-size: 15px;
-      font-weight: 700;
-      color: #000000;
-      cursor: pointer;
-      transition: color 0.15s ease, opacity 0.15s ease;
-      white-space: nowrap;
-      user-select: none;
-    }
-    .btn-header-menu:hover {
-      opacity: 0.75;
-    }
-    .btn-header-menu .menu-icon-close {
-      display: none;
-    }
-    .btn-header-menu .menu-icon-hamburger {
-      display: block;
-    }
-    .btn-header-menu.active .menu-icon-hamburger {
-      display: none;
-    }
-    .btn-header-menu.active .menu-icon-close {
-      display: block;
-    }
-    header.scrolled .menu-divider {
-      display: block;
-    }
-    header.scrolled .btn-header-menu {
-      display: inline-flex;
-    }
     @media (max-width: 1024px) {
-      .menu-divider, .btn-header-menu {
-        display: inline-flex !important;
-      }
       .header-scrolled-search {
         display: none !important;
       }
-    }
-
-    /* Floating Navigation Dropdown (Airalo Exact Match) */
-    .header-nav-dropdown {
-      position: absolute;
-      top: calc(100% + 14px);
-      right: 0;
-      min-width: 290px;
-      width: max-content;
-      max-width: 350px;
-      background: #FFFFFF;
-      border-radius: 28px 4px 28px 28px;
-      padding: 34px 30px 22px 30px;
-      filter: drop-shadow(0 20px 48px rgba(0, 0, 0, 0.14)) drop-shadow(0 4px 12px rgba(0, 0, 0, 0.04));
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(-8px) scale(0.98);
-      transform-origin: top right;
-      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
-      z-index: 1000;
-      box-sizing: border-box;
-    }
-    .header-nav-dropdown.open {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0) scale(1);
-    }
-    .dropdown-beak {
-      position: absolute;
-      top: -15px;
-      right: 0;
-      width: 32px;
-      height: 16px;
-      pointer-events: none;
-    }
-    .dropdown-menu-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 22px;
-    }
-    .dropdown-link {
-      font-size: 16.5px;
-      font-weight: 800;
-      color: #000000;
-      text-decoration: none;
-      letter-spacing: -0.2px;
-      display: inline-block;
-      width: fit-content;
-      line-height: 1.35;
-      transition: opacity 0.15s ease, color 0.15s ease;
-      cursor: pointer;
-    }
-    .dropdown-link:hover {
-      opacity: 0.65;
-    }
-    .dropdown-link.active {
-      text-decoration: underline;
-      text-underline-offset: 5px;
-      text-decoration-thickness: 2.2px;
-      text-decoration-color: #000000;
-      color: #000000;
-      font-weight: 800;
-    }
-    .dropdown-divider-h {
-      width: 100%;
-      height: 1px;
-      background: #E5E7EB;
-      margin: 26px 0 16px 0;
-    }
-    .dropdown-footer-row {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-    .dropdown-footer-btn {
-      background: none;
-      border: none;
-      padding: 4px;
-      margin: 0;
-      color: #000000;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.15s, opacity 0.15s;
-    }
-    .dropdown-footer-btn:hover {
-      transform: scale(1.15);
-      opacity: 0.75;
-    }
-    .dropdown-footer-divider {
-      width: 1px;
-      height: 20px;
-      background: #D1D5DB;
     }
 
     /* ==================================================== */
@@ -928,16 +794,306 @@
     }
     .hero-illustration {
       flex: 1.1;
-      max-width: 470px;
+      max-width: 480px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    /* ==================================================== */
+    /* EDITORIAL LIFESTYLE PHOTO CARD & TELECOM STATUS PILL */
+    /* ==================================================== */
+    .hero-photo-card {
+      width: 100%;
+      max-width: 480px;
+      height: 380px;
+      border-radius: 24px;
+      position: relative;
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.12), 0 0 0 1px rgba(15, 23, 42, 0.04);
+      overflow: visible;
+    }
+    .hero-photo-card picture,
+    .hero-photo-img {
+      width: 100%;
+      height: 100%;
+      border-radius: 23px;
+      object-fit: cover;
+      display: block;
+    }
+    .floating-badge {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid #E2E8F0;
+      border-radius: 12px;
+      padding: 8px 14px;
+      box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.12);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      z-index: 3;
+      white-space: nowrap;
+      animation: badgeFloat 4s ease-in-out infinite alternate;
+    }
+    .floating-badge.badge-top {
+      top: 18px;
+      left: 16px;
+    }
+    .floating-badge.badge-bottom {
+      bottom: 18px;
+      right: 16px;
+      animation-delay: -2s;
+    }
+    @keyframes badgeFloat {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-5px); }
+    }
+    .badge-dot-live {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #10B981;
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
+      flex-shrink: 0;
+    }
+    .badge-icon-svg {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+    .badge-text {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #0F172A;
+      letter-spacing: -0.1px;
+    }
+
+    /* ==================================================== */
+    /* REAL LIFESTYLE PHOTOGRAPHY STYLES (NO 2D CARTOONS)   */
+    /* ==================================================== */
+    .real-photo-cover {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* B2B Partner Real Photo Card & Value Badges */
+    .b2b-art-wrap {
+      flex: 1;
       display: flex;
       justify-content: center;
       align-items: center;
     }
-    .hero-illustration img {
+    .b2b-photo-card {
       width: 100%;
-      height: auto;
-      max-height: 350px;
-      object-fit: contain;
+      max-width: 440px;
+      aspect-ratio: 16 / 11;
+      border-radius: 24px;
+      position: relative;
+      overflow: visible;
+      border: 1px solid #E2E8F0;
+      box-shadow: 0 20px 40px -12px rgba(15, 23, 42, 0.12);
+      background: #FFFFFF;
+    }
+    .b2b-photo-card picture,
+    .b2b-photo-card img {
+      width: 100%;
+      height: 100%;
+      border-radius: 23px;
+      object-fit: cover;
+      display: block;
+    }
+    .b2b-floating-badge {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid #E2E8F0;
+      border-radius: 12px;
+      padding: 7px 14px;
+      box-shadow: 0 10px 24px -4px rgba(15, 23, 42, 0.12);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #0F172A;
+      white-space: nowrap;
+      z-index: 2;
+    }
+    .b2b-badge-stat {
+      bottom: 16px;
+      left: 16px;
+    }
+    .b2b-badge-api {
+      top: 16px;
+      right: 16px;
+    }
+    .b2b-badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #10B981;
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
+    }
+
+    /* ==================================================== */
+    /* HERO DOWNLOAD APP ACTIONS & MINI QR BADGE            */
+    /* ==================================================== */
+    .hero-actions-container {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+    .hero-app-badges {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .hero-store-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #0F172A;
+      color: #FFFFFF;
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 12px;
+      border: 1px solid #1E293B;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.1);
+      transition: all 0.15s ease;
+    }
+    .hero-store-btn:hover {
+      background: #1E293B;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(15, 23, 42, 0.15);
+    }
+    .hero-store-btn .store-svg {
+      width: 22px;
+      height: 22px;
+      fill: #FFFFFF;
+      flex-shrink: 0;
+    }
+    .hero-store-btn .store-txt {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      line-height: 1.15;
+    }
+    .hero-store-btn .store-sub {
+      font-size: 9.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      opacity: 0.8;
+      font-weight: 500;
+    }
+    .hero-store-btn .store-name {
+      font-size: 13.5px;
+      font-weight: 700;
+      letter-spacing: -0.2px;
+    }
+    .hero-qr-badge {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 12px;
+      padding: 7px 14px;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .hero-qr-badge:hover {
+      border-color: #CBD5E1;
+      background: #F8FAFC;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.1);
+    }
+    .hero-qr-frame {
+      width: 28px;
+      height: 28px;
+      background: #F1F5F9;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #0F172A;
+      flex-shrink: 0;
+    }
+    .hero-qr-frame .qr-svg {
+      width: 18px;
+      height: 18px;
+    }
+    .hero-qr-info {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      line-height: 1.2;
+    }
+    .hero-qr-info strong {
+      font-size: 12px;
+      font-weight: 700;
+      color: #0F172A;
+    }
+    .hero-qr-info span {
+      font-size: 11px;
+      font-weight: 600;
+      color: #F05123;
+    }
+
+    /* ==================================================== */
+    /* FLAG-ICONS (LIPIS) & REGIONAL VECTOR ICONS           */
+    /* ==================================================== */
+    .country-flag-icon {
+      width: 22px;
+      height: 16px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 3px;
+      box-shadow: 0 1px 3px rgba(15, 23, 42, 0.12);
+      display: inline-block;
+      vertical-align: middle;
+      flex-shrink: 0;
+    }
+    .country-flag-icon.lg {
+      width: 30px;
+      height: 22px;
+      border-radius: 4px;
+    }
+    .regional-icon-wrap {
+      width: 22px;
+      height: 16px;
+      border-radius: 3px;
+      background: #F1F5F9;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: #0F172A;
+      border: 1px solid #E2E8F0;
+      vertical-align: middle;
+    }
+    .regional-icon-wrap.lg {
+      width: 30px;
+      height: 22px;
+      border-radius: 4px;
+    }
+    .regional-icon-wrap svg {
+      width: 13px;
+      height: 13px;
+      stroke: #0F172A;
+    }
+    .regional-icon-wrap.lg svg {
+      width: 16px;
+      height: 16px;
     }
     .hero-content {
       flex: 1.2;
@@ -962,19 +1118,26 @@
       max-width: 480px;
     }
     .btn-hero-primary {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 44px;
+      box-sizing: border-box;
       background: var(--orange);
       color: #FFFFFF;
       font-weight: 700;
       font-size: 14px;
-      padding: 12px 28px;
-      border-radius: var(--radius-pill);
+      padding: 0 24px;
+      border-radius: 12px;
       text-decoration: none;
-      transition: background 0.15s, transform 0.15s;
+      box-shadow: 0 4px 12px rgba(240, 81, 35, 0.2);
+      transition: all 0.15s ease;
+      white-space: nowrap;
     }
     .btn-hero-primary:hover {
       background: var(--orange-hover);
       transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(240, 81, 35, 0.3);
     }
 
     /* ==================================================== */
@@ -1293,81 +1456,127 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Tab 1: Steps */
-    .video-card-preview {
+    /* Tab 1: 3-Step Visual Process Journey */
+    .how-journey-header {
+      text-align: center;
       max-width: 680px;
-      margin: 0 auto 32px;
-      background: #FFFFFF;
-      border-radius: 20px;
-      overflow: hidden;
-      border: 1px solid var(--border-card);
-      box-shadow: 0 4px 18px rgba(0,0,0,0.06);
-      position: relative;
+      margin: 0 auto 36px;
     }
-    .video-thumbnail-wrap {
-      width: 100%;
-      height: 360px;
-      position: relative;
-      background: linear-gradient(135deg, #E6F4EA 0%, #D1E7DD 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .how-journey-pill {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      color: #F05123;
+      background: #FFF3EB;
+      padding: 4px 14px;
+      border-radius: 9999px;
+      margin-bottom: 12px;
+      border: 1px solid rgba(240, 81, 35, 0.2);
     }
-    .video-thumbnail-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      opacity: 0.95;
-      display: block;
+    .how-journey-title {
+      font-size: 26px;
+      font-weight: 800;
+      color: #0F172A;
+      margin-bottom: 10px;
+      letter-spacing: -0.4px;
     }
-
+    .how-journey-sub {
+      font-size: 14.5px;
+      color: #64748B;
+      line-height: 1.6;
+    }
     .how-steps-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-      max-width: 980px;
+      gap: 24px;
+      max-width: 1040px;
       margin: 0 auto 36px;
       text-align: left;
     }
     .how-step-card {
       background: #FFFFFF;
-      border: 1px solid var(--border-card);
-      border-radius: 18px;
-      padding: 24px 22px;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+      border: 1px solid #E2E8F0;
+      border-radius: 22px;
+      padding: 30px 26px;
+      box-shadow: 0 4px 18px rgba(15, 23, 42, 0.04);
       display: flex;
       flex-direction: column;
       position: relative;
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: all 0.25s ease;
     }
     .how-step-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+      border-color: #CBD5E1;
     }
-    .how-step-num {
-      width: 36px;
-      height: 36px;
-      border-radius: 10px;
-      background: #FFF3EB;
-      color: var(--orange);
+    .how-step-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    .how-step-badge {
+      font-size: 12px;
       font-weight: 800;
-      font-size: 14px;
+      letter-spacing: 0.5px;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      background: #F1F5F9;
+      color: #0F172A;
+      border: 1px solid #E2E8F0;
+    }
+    .how-step-card:nth-child(1) .how-step-badge {
+      background: #E0F2FE;
+      color: #0369A1;
+      border-color: #BAE6FD;
+    }
+    .how-step-card:nth-child(2) .how-step-badge {
+      background: #FFF3EB;
+      color: #F05123;
+      border-color: #FED7AA;
+    }
+    .how-step-card:nth-child(3) .how-step-badge {
+      background: #ECFDF5;
+      color: #059669;
+      border-color: #A7F3D0;
+    }
+    .how-step-icon-wrap {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 14px;
+    }
+    .how-step-icon-wrap.icon-cyan {
+      background: #E0F2FE;
+      color: #0284C7;
+    }
+    .how-step-icon-wrap.icon-orange {
+      background: #FFF3EB;
+      color: #F05123;
+    }
+    .how-step-icon-wrap.icon-green {
+      background: #ECFDF5;
+      color: #10B981;
+    }
+    .how-step-icon-wrap svg {
+      width: 22px;
+      height: 22px;
     }
     .how-step-title {
-      font-size: 16px;
+      font-size: 17px;
       font-weight: 800;
-      color: var(--text-main);
-      margin-bottom: 8px;
+      color: #0F172A;
+      margin-bottom: 10px;
       line-height: 1.35;
     }
     .how-step-desc {
       font-size: 13.5px;
-      color: var(--text-muted);
-      line-height: 1.5;
+      color: #64748B;
+      line-height: 1.6;
     }
 
     /* Tab 2: About Tabi Go */
@@ -1453,7 +1662,7 @@
       line-height: 1.5;
     }
     .tabigo-about-footer {
-      background: linear-gradient(135deg, #FFF3EB 0%, #FFE9DC 100%);
+      background: #FFF7ED; border: 1px solid #FED7AA;
       border-radius: 14px;
       padding: 20px 24px;
       display: flex;
@@ -1740,72 +1949,137 @@
       display: block;
     }
 
-    /* Support Card on Right (Exact Match to Image 4) */
+    /* ==================================================== */
+    /* HIGH-TRUST SUPPORT HUB CARD                          */
+    /* ==================================================== */
     .support-card {
       background: #FFFFFF;
-      border: 1px solid #E5E7EB;
-      border-radius: 20px;
-      padding: 34px 32px 0 32px;
+      border: 1px solid #E2E8F0;
+      border-radius: 24px;
+      padding: 34px 30px;
       position: relative;
-      overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+      box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       min-height: 380px;
     }
-    .support-card-left {
-      position: relative;
-      z-index: 2;
-      max-width: 290px;
-    }
-    .support-sub-label {
-      font-size: 13px;
-      font-weight: 600;
-      color: #64748B;
-      margin-bottom: 12px;
-      letter-spacing: -0.2px;
-    }
-    .support-main-title {
-      font-size: 22px;
-      font-weight: 800;
-      color: #111827;
-      line-height: 1.35;
-      margin-bottom: 28px;
-      letter-spacing: -0.4px;
-    }
-    .support-links-group {
+    .support-hub-content {
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      height: 100%;
+      justify-content: space-between;
     }
-    .support-text-link {
-      display: inline-flex;
+    .support-sub-label {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: #64748B;
+      margin-bottom: 10px;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+    }
+    .support-main-title {
+      font-size: 21px;
+      font-weight: 800;
+      color: #0F172A;
+      line-height: 1.35;
+      margin-bottom: 22px;
+      letter-spacing: -0.3px;
+    }
+    .support-team-presence {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 18px;
+      padding: 16px 18px;
+      margin-bottom: 22px;
+      display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 16px;
+    }
+    .support-avatar-stack {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+    .support-avatar-item {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 2.5px solid #FFFFFF;
+      overflow: hidden;
+      margin-left: -12px;
+      box-shadow: 0 4px 8px rgba(15, 23, 42, 0.1);
+      display: block;
+    }
+    .support-avatar-item:first-child {
+      margin-left: 0;
+    }
+    .support-avatar-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .support-presence-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .presence-status-line {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 13.5px;
+      color: #0F172A;
+    }
+    .presence-subtext {
+      font-size: 12px;
+      color: #64748B;
+      font-weight: 500;
+    }
+    .support-hub-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .btn-support-zalo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: #0068FF;
+      color: #FFFFFF;
       font-size: 14.5px;
       font-weight: 700;
-      color: #111827;
+      padding: 12px 20px;
+      border-radius: 14px;
       text-decoration: none;
-      transition: color 0.15s, transform 0.15s;
+      transition: all 0.15s ease;
+      box-shadow: 0 4px 14px rgba(0, 104, 255, 0.28);
     }
-    .support-text-link:hover {
-      color: var(--orange);
-      transform: translateX(3px);
+    .btn-support-zalo:hover {
+      background: #0056D6;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(0, 104, 255, 0.38);
     }
-    .support-text-link svg {
-      width: 16px;
-      height: 16px;
-      stroke-width: 2.2;
+    .btn-support-hotline {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      background: #FFFFFF;
+      color: #0F172A;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 11px 20px;
+      border-radius: 14px;
+      border: 1px solid #E2E8F0;
+      text-decoration: none;
+      transition: all 0.15s ease;
     }
-    .support-agent-illus {
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      max-height: 250px;
-      width: auto;
-      pointer-events: none;
-      z-index: 1;
+    .btn-support-hotline:hover {
+      background: #F8FAFC;
+      border-color: #CBD5E1;
     }
 
     /* ==================================================== */
@@ -1903,80 +2177,156 @@
     .b2b-content {
       flex: 1.2;
     }
-    .b2b-content h3 {
-      font-size: 24px;
+    .b2b-sub-badge {
+      font-size: 11px;
       font-weight: 800;
-      color: #111827;
-      margin-bottom: 12px;
+      letter-spacing: 0.6px;
+      color: #0284C7;
+      text-transform: uppercase;
+      background: #E0F2FE;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      display: inline-block;
+      margin-bottom: 14px;
+      border: 1px solid rgba(2, 132, 199, 0.2);
+    }
+    .b2b-content h3 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #0F172A;
+      margin-bottom: 14px;
+      letter-spacing: -0.4px;
     }
     .b2b-content p {
-      font-size: 14px;
-      color: #4B5563;
+      font-size: 14.5px;
+      color: #64748B;
       line-height: 1.6;
       margin-bottom: 20px;
     }
+    .b2b-features-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 24px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .b2b-features-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      color: #1E293B;
+      font-weight: 600;
+    }
+    .b2b-features-list li svg {
+      width: 18px;
+      height: 18px;
+      color: #10B981;
+      flex-shrink: 0;
+    }
     .btn-b2b {
-      background: #111827;
+      background: #0F172A;
       color: #FFFFFF;
-      font-size: 13.5px;
+      font-size: 14px;
       font-weight: 700;
-      padding: 10px 22px;
-      border-radius: var(--radius-pill);
+      padding: 12px 26px;
+      border-radius: 12px;
       text-decoration: none;
-      display: inline-block;
-      transition: background 0.15s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.15s ease;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.15);
     }
     .btn-b2b:hover {
-      background: #374151;
-    }
-    .b2b-art-wrap {
-      flex: 0.9;
-      display: flex;
-      justify-content: center;
-    }
-    .b2b-art-wrap img {
-      max-width: 240px;
-      height: auto;
+      background: #1E293B;
+      transform: translateY(-1px);
     }
 
-    /* App Banner (Exact Match to Airalo Sample Image 1) */
+    /* App Download Banner (High-Trust Lifestyle Photo Card) */
     .app-download-banner {
-      background: #73C9DD;
+      background: linear-gradient(135deg, #73C9DD 0%, #5BBAD0 100%);
       border-radius: 36px;
-      padding: 48px 64px 0 64px;
+      padding: 44px 56px;
       display: flex;
-      align-items: flex-end;
+      align-items: center;
       justify-content: space-between;
       gap: 48px;
       margin-bottom: 72px;
       position: relative;
       overflow: hidden;
-      min-height: 380px;
+      box-shadow: 0 20px 50px -15px rgba(91, 186, 208, 0.4);
     }
-    .app-banner-illus-wrap {
-      flex: 0 0 420px;
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
+    .app-banner-photo-wrap {
+      flex: 0 0 440px;
+      max-width: 440px;
       position: relative;
       z-index: 2;
-      align-self: flex-end;
-      margin-bottom: 0;
-      line-height: 0;
     }
-    .app-banner-illus-img {
+    .app-banner-photo-card {
+      position: relative;
       width: 100%;
-      max-width: 420px;
-      height: auto;
+      height: 330px;
+      border-radius: 26px;
+      overflow: hidden;
+      border: 2px solid rgba(255, 255, 255, 0.7);
+      box-shadow: 0 16px 36px rgba(15, 23, 42, 0.16);
+      background: #E2E8F0;
+    }
+    .app-banner-photo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
       display: block;
+      transition: transform 0.4s ease;
+    }
+    .app-banner-photo-card:hover .app-banner-photo-img {
+      transform: scale(1.03);
+    }
+    .app-floating-badge {
+      position: absolute;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(8px);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #0F172A;
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      z-index: 3;
+    }
+    .app-badge-status {
+      top: 16px;
+      left: 16px;
+    }
+    .app-badge-status .app-badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #10B981;
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
+    }
+    .app-badge-coverage {
+      bottom: 16px;
+      right: 16px;
+    }
+    .app-badge-coverage svg {
+      width: 16px;
+      height: 16px;
+      color: #0284C7;
+      flex-shrink: 0;
     }
     .app-banner-content {
       flex: 1;
       max-width: 520px;
       color: #0F172A;
       z-index: 2;
-      align-self: center;
-      padding-bottom: 48px;
     }
     .app-banner-content h3 {
       font-size: 38px;
@@ -2447,11 +2797,65 @@
       cursor: pointer;
     }
 
+    /* Floating Zalo CSKH Button (Synced with 3M Mobile App) */
+    .floating-zalo-fab {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 990;
+      background: #0068FF;
+      color: #FFFFFF;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 16px 8px 10px;
+      border-radius: 9999px;
+      box-shadow: 0 8px 24px rgba(0, 104, 255, 0.4), 0 2px 6px rgba(0, 0, 0, 0.1);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .floating-zalo-fab:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 12px 30px rgba(0, 104, 255, 0.5);
+    }
+    .fab-zalo-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: block;
+      flex-shrink: 0;
+    }
+    .fab-zalo-label {
+      font-size: 13.5px;
+      font-weight: 700;
+      letter-spacing: -0.2px;
+      white-space: nowrap;
+    }
+    .fab-pulse-ring {
+      position: absolute;
+      top: -3px;
+      left: -3px;
+      right: -3px;
+      bottom: -3px;
+      border-radius: 9999px;
+      border: 2px solid rgba(0, 104, 255, 0.6);
+      animation: fabPulse 2.5s infinite;
+      pointer-events: none;
+    }
+    @keyframes fabPulse {
+      0% { transform: scale(1); opacity: 0.8; }
+      70% { transform: scale(1.15, 1.3); opacity: 0; }
+      100% { transform: scale(1.15, 1.3); opacity: 0; }
+    }
+
     /* Responsive */
     @media (max-width: 900px) {
-      .hero-slide { flex-direction: column-reverse; text-align: center; gap: 20px; }
+      .hero-slide { flex-direction: column-reverse; text-align: center; gap: 24px; min-height: auto; }
+      .hero-illustration { width: 100%; max-width: 100%; }
+      .hero-photo-card { height: 280px; max-width: 100%; }
       .hero-content { text-align: center; }
       .hero-sub { margin-left: auto; margin-right: auto; }
+      .hero-actions-container { justify-content: center; }
       .why-features-grid { grid-template-columns: repeat(2, 1fr); }
       .green-cards-grid { grid-template-columns: repeat(2, 1fr); }
       .how-steps-grid { grid-template-columns: 1fr; }
@@ -2460,14 +2864,22 @@
       .faq-support-grid { grid-template-columns: 1fr; }
       .blog-grid { grid-template-columns: 1fr; }
       .footer-columns-grid { grid-template-columns: 1fr 1fr; }
-      .b2b-partner-banner, .app-download-banner { flex-direction: column; text-align: center; }
+      .b2b-partner-banner { flex-direction: column-reverse; padding: 32px 24px; text-align: left; }
+      .b2b-art-wrap { width: 100%; }
+      .b2b-photo-card { max-width: 100%; }
+      .app-download-banner { flex-direction: column-reverse; align-items: center; padding: 40px 24px; text-align: center; min-height: auto; }
+      .app-banner-photo-wrap { width: 100%; max-width: 100%; margin-top: 24px; }
+      .app-banner-photo-card { height: 260px; max-width: 100%; }
+      .app-banner-content { padding-bottom: 0; }
       .app-download-actions { align-items: center; margin: 0 auto; }
       .app-badges-row { justify-content: center; }
       .app-qr-download-card { margin: 0 auto; width: 100%; max-width: 440px; }
       .green-header-row { flex-direction: column; align-items: flex-start; gap: 14px; }
-
     }
     @media (max-width: 640px) {
+      .hero-photo-card { height: 230px; }
+      .floating-badge { padding: 6px 10px; }
+      .badge-text { font-size: 11px; }
       .hero-quick-nav-row { grid-template-columns: 1fr; gap: 10px; }
       .hero-quick-card { height: 50px; padding: 0 16px; }
       .hero-motif-green-diamond { width: 56px; height: 56px; top: -28px; }
@@ -2482,9 +2894,15 @@
       .footer-bottom-row { flex-direction: column; align-items: center; gap: 14px; text-align: center; }
       .footer-bottom-left { justify-content: center; }
       .footer-legal-links { justify-content: center; }
-      .support-card { padding: 28px 20px 220px 20px; min-height: auto; }
-      .support-agent-illus { max-height: 200px; }
+      .support-card { padding: 24px 18px; min-height: auto; }
+      .support-team-presence { flex-direction: column; align-items: flex-start; gap: 12px; }
+      .b2b-partner-banner { padding: 24px 18px; }
+      .app-banner-photo-card { height: 210px; }
+      .app-floating-badge { padding: 5px 10px; font-size: 11px; }
       .faq-section-header { flex-direction: column; align-items: flex-start; gap: 14px; }
+      .floating-zalo-fab { bottom: 18px; right: 16px; padding: 7px; border-radius: 50%; }
+      .fab-zalo-label { display: none; }
+      .fab-zalo-icon { width: 34px; height: 34px; }
     }
   </style>
 </head>
@@ -2579,13 +2997,13 @@
           <div class="header-search-dropdown" id="headerSearchDropdown">
             <div class="header-search-group-title">Điểm đến phổ biến</div>
             <div class="header-search-tags">
-              <button type="button" class="header-search-tag" data-dest="Nhật Bản">🇯🇵 Nhật Bản</button>
-              <button type="button" class="header-search-tag" data-dest="Hàn Quốc">🇰🇷 Hàn Quốc</button>
-              <button type="button" class="header-search-tag" data-dest="Thái Lan">🇹🇭 Thái Lan</button>
-              <button type="button" class="header-search-tag" data-dest="Singapore">🇸🇬 Singapore</button>
-              <button type="button" class="header-search-tag" data-dest="Hoa Kỳ">🇺🇸 Hoa Kỳ</button>
-              <button type="button" class="header-search-tag" data-dest="Châu Âu">🇪🇺 Châu Âu</button>
-              <button type="button" class="header-search-tag" data-dest="Trung Quốc">🇨🇳 Trung Quốc</button>
+              <button type="button" class="header-search-tag" data-dest="Nhật Bản"><span class="fi fi-jp country-flag-icon"></span> <span>Nhật Bản</span></button>
+              <button type="button" class="header-search-tag" data-dest="Hàn Quốc"><span class="fi fi-kr country-flag-icon"></span> <span>Hàn Quốc</span></button>
+              <button type="button" class="header-search-tag" data-dest="Thái Lan"><span class="fi fi-th country-flag-icon"></span> <span>Thái Lan</span></button>
+              <button type="button" class="header-search-tag" data-dest="Singapore"><span class="fi fi-sg country-flag-icon"></span> <span>Singapore</span></button>
+              <button type="button" class="header-search-tag" data-dest="Hoa Kỳ"><span class="fi fi-us country-flag-icon"></span> <span>Hoa Kỳ</span></button>
+              <button type="button" class="header-search-tag" data-dest="Châu Âu"><span class="fi fi-eu country-flag-icon"></span> <span>Châu Âu</span></button>
+              <button type="button" class="header-search-tag" data-dest="Trung Quốc"><span class="fi fi-cn country-flag-icon"></span> <span>Trung Quốc</span></button>
             </div>
           </div>
         </div>
@@ -2602,59 +3020,10 @@
           <div class="header-divider-v"></div>
           <button class="header-currency-btn" title="Đơn vị tiền tệ">
             <span>₫ VND</span>
-            <span style="font-size: 13px;">🇻🇳</span>
+            <span class="fi fi-vn country-flag-icon" style="width: 18px; height: 13px;"></span>
           </button>
           <div class="header-divider-v"></div>
           <a href="#destinations" class="btn-header-cta">Khám phá eSIM</a>
-          <div class="header-divider-v menu-divider" id="headerMenuDivider"></div>
-          <div class="header-menu-wrap">
-            <button class="btn-header-menu" id="headerMenuBtn" aria-label="Menu điều hướng" title="Mở danh mục điều hướng">
-              <span>Menu</span>
-              <svg class="menu-icon-hamburger" width="16" height="12" viewBox="0 0 16 12" fill="none">
-                <path d="M1 1.5H15M1 6H15M1 10.5H15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-              <svg class="menu-icon-close" width="14" height="14" viewBox="0 0 14 14" fill="none">
-                <path d="M1 1L13 13M1 13L13 1" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-              </svg>
-            </button>
-
-            <!-- Floating Navigation Dropdown (Airalo Exact Match to User Reference Screenshot) -->
-            <div class="header-nav-dropdown" id="headerNavDropdown">
-              <!-- Curved beak pointing up to Menu ✕ -->
-              <svg class="dropdown-beak" viewBox="0 0 32 16" fill="#FFFFFF" preserveAspectRatio="none">
-                <path d="M0,16 C16,16 32,8 32,0 L32,16 Z"/>
-              </svg>
-
-              <ul class="dropdown-menu-list">
-                <li><a href="#hero" class="dropdown-link active">Trang chủ</a></li>
-                <li><a href="#why-tabigo" class="dropdown-link">Tính năng nổi bật</a></li>
-                <li><a href="#destinations" class="dropdown-link">Điểm đến phổ biến</a></li>
-                <li><a href="#how-it-works" class="dropdown-link">Hướng dẫn sử dụng</a></li>
-                <li><a href="#download-app" class="dropdown-link">Đánh giá & Tải App</a></li>
-                <li><a href="#faq" class="dropdown-link">Câu hỏi thường gặp</a></li>
-              </ul>
-
-              <div class="dropdown-divider-h"></div>
-
-              <div class="dropdown-footer-row">
-                <button class="dropdown-footer-btn" id="dropdownCurrencyBtn" title="Đơn vị tiền tệ (₫ VND)" aria-label="Tiền tệ">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="2" y="6" width="20" height="12" rx="2.5"/>
-                    <circle cx="12" cy="12" r="2.5"/>
-                    <path d="M6 12h.01M18 12h.01"/>
-                  </svg>
-                </button>
-                <div class="dropdown-footer-divider"></div>
-                <button class="dropdown-footer-btn" id="dropdownLangBtn" title="Ngôn ngữ (Tiếng Việt)" aria-label="Ngôn ngữ">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="10"/>
-                    <line x1="2" y1="12" x2="22" y2="12"/>
-                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
 
@@ -2692,32 +3061,32 @@
 
         <!-- Live Search Autocomplete Dropdown -->
         <div class="search-results-dropdown" id="searchDropdown">
-          <div class="search-item" onclick="openCountryModal('Việt Nam', '🇻🇳', '99.000đ')">
-            <div class="search-item-left"><span>🇻🇳</span> <span>Việt Nam</span></div>
+          <div class="search-item" onclick="openCountryModal('Việt Nam', 'vn', '99.000đ')">
+            <div class="search-item-left"><span class="fi fi-vn country-flag-icon"></span> <span>Việt Nam</span></div>
             <div class="search-item-price">Từ 99.000đ</div>
           </div>
-          <div class="search-item" onclick="openCountryModal('Nhật Bản', '🇯🇵', '135.000đ')">
-            <div class="search-item-left"><span>🇯🇵</span> <span>Nhật Bản</span></div>
+          <div class="search-item" onclick="openCountryModal('Nhật Bản', 'jp', '135.000đ')">
+            <div class="search-item-left"><span class="fi fi-jp country-flag-icon"></span> <span>Nhật Bản</span></div>
             <div class="search-item-price">Từ 135.000đ</div>
           </div>
-          <div class="search-item" onclick="openCountryModal('Hàn Quốc', '🇰🇷', '130.000đ')">
-            <div class="search-item-left"><span>🇰🇷</span> <span>Hàn Quốc</span></div>
+          <div class="search-item" onclick="openCountryModal('Hàn Quốc', 'kr', '130.000đ')">
+            <div class="search-item-left"><span class="fi fi-kr country-flag-icon"></span> <span>Hàn Quốc</span></div>
             <div class="search-item-price">Từ 130.000đ</div>
           </div>
-          <div class="search-item" onclick="openCountryModal('Thái Lan', '🇹🇭', '115.000đ')">
-            <div class="search-item-left"><span>🇹🇭</span> <span>Thái Lan</span></div>
+          <div class="search-item" onclick="openCountryModal('Thái Lan', 'th', '115.000đ')">
+            <div class="search-item-left"><span class="fi fi-th country-flag-icon"></span> <span>Thái Lan</span></div>
             <div class="search-item-price">Từ 115.000đ</div>
           </div>
-          <div class="search-item" onclick="openCountryModal('Singapore', '🇸🇬', '125.000đ')">
-            <div class="search-item-left"><span>🇸🇬</span> <span>Singapore</span></div>
+          <div class="search-item" onclick="openCountryModal('Singapore', 'sg', '125.000đ')">
+            <div class="search-item-left"><span class="fi fi-sg country-flag-icon"></span> <span>Singapore</span></div>
             <div class="search-item-price">Từ 125.000đ</div>
           </div>
-          <div class="search-item" onclick="openCountryModal('Hoa Kỳ', '🇺🇸', '180.000đ')">
-            <div class="search-item-left"><span>🇺🇸</span> <span>Hoa Kỳ</span></div>
+          <div class="search-item" onclick="openCountryModal('Hoa Kỳ', 'us', '180.000đ')">
+            <div class="search-item-left"><span class="fi fi-us country-flag-icon"></span> <span>Hoa Kỳ</span></div>
             <div class="search-item-price">Từ 180.000đ</div>
           </div>
-          <div class="search-item" onclick="openCountryModal('Châu Âu (39 nước)', '🇪🇺', '190.000đ')">
-            <div class="search-item-left"><span>🇪🇺</span> <span>Châu Âu (39 nước)</span></div>
+          <div class="search-item" onclick="openCountryModal('Châu Âu (39 nước)', 'eu', '190.000đ')">
+            <div class="search-item-left"><span class="fi fi-eu country-flag-icon"></span> <span>Châu Âu (39 nước)</span></div>
             <div class="search-item-price">Từ 190.000đ</div>
           </div>
         </div>
@@ -2731,59 +3100,174 @@
     <section class="hero-section section-wrap" id="hero">
       <div class="hero-slider-wrap" id="heroSlider">
         
-        <!-- Slide 0: Chạm Là Có Internet Toàn Cầu (hero-slide-1.svg: 2 bạn selfie & music) -->
+        <!-- Slide 0: Chạm Là Có Internet Toàn Cầu (Curved Lifestyle Photo Card) -->
         <div class="hero-slide active" data-slide="0">
           <div class="hero-illustration">
-            <img src="./assets/images/lottie/hero-slide-1.svg" alt="Tabi Go eSIM Du Lịch Toàn Cầu" />
+            <div class="hero-photo-card">
+              <picture>
+                <source srcset="./assets/images/hero-lifestyle-1.webp" type="image/webp" />
+                <img src="./assets/images/hero-lifestyle-1.jpg" alt="Du khách kết nối Internet toàn cầu Tabi Go" class="hero-photo-img" />
+              </picture>
+              <div class="floating-badge badge-top">
+                <span class="badge-dot-live"></span>
+                <span class="badge-text">SoftBank 5G • Tokyo, Nhật Bản</span>
+              </div>
+              <div class="floating-badge badge-bottom">
+                <svg class="badge-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#F05123" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+                <span class="badge-text">eSIM Kích Hoạt Tức Thì - 1 Phút</span>
+              </div>
+            </div>
           </div>
           <div class="hero-content">
             <h1 class="hero-h1">Chạm là có Internet toàn cầu –<br />Kích hoạt eSIM trong 1 phút</h1>
             <p class="hero-sub">
-              Ứng dụng mua eSIM & SIM vật lý giá gốc cho 150+ quốc gia. Không lo tháo SIM,<br />không cước chuyển vùng đắt đỏ, kết nối Internet ngay khi vừa hạ cánh.
+              Ứng dụng mua eSIM & SIM du lịch giá gốc cho 150+ quốc gia. Không lo tháo SIM,<br />không cước chuyển vùng đắt đỏ, kết nối Internet ngay khi vừa hạ cánh.
             </p>
-            <div class="hero-cta-group">
-              <a href="#download-app" class="btn-hero-primary">Tải App Tabi Go ngay</a>
-              <a href="javascript:void(0)" onclick="openAppQrModal()" class="hero-qr-badge" title="Quét mã QR tải App Tabi Go">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="3" y="3" width="7" height="7" rx="1.5"></rect>
-                  <rect x="14" y="3" width="7" height="7" rx="1.5"></rect>
-                  <rect x="3" y="14" width="7" height="7" rx="1.5"></rect>
-                  <rect x="14" y="14" width="3" height="3" fill="currentColor"></rect>
-                  <line x1="20" y1="14" x2="20" y2="14.01"></line>
-                  <line x1="17" y1="17" x2="17" y2="20"></line>
-                  <line x1="20" y1="20" x2="20" y2="20.01"></line>
-                </svg>
-                <span>Quét mã tải App</span>
-              </a>
+            <div class="hero-actions-container">
+              <!-- Hàng nút Store chuẩn Mobile -->
+              <div class="hero-app-badges">
+                <a href="javascript:void(0)" onclick="openAppQrModal('iOS')" class="hero-store-btn" title="Tải Tabi Go trên App Store">
+                  <svg class="store-svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.63-.76 1.06-1.81.94-2.87-.91.04-2.02.61-2.67 1.37-.58.67-.98 1.74-.84 2.78 1.02.08 2.05-.52 2.57-1.28z"/>
+                  </svg>
+                  <div class="store-txt">
+                    <span class="store-sub">Tải về trên</span>
+                    <span class="store-name">App Store</span>
+                  </div>
+                </a>
+                
+                <a href="javascript:void(0)" onclick="openAppQrModal('Android')" class="hero-store-btn" title="Tải Tabi Go trên Google Play">
+                  <svg class="store-svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M3.609 1.814L13.792 12 3.61 22.186a2.02 2.02 0 0 1-.61-.318c-.37-.282-.6-.723-.6-1.198V3.33c0-.475.23-.916.6-1.198.18-.137.393-.245.609-.318zm11.606 11.61l2.408 2.408-11.75 6.78 9.342-9.188zm0-2.848L5.873 1.394l11.75 6.78-2.408 2.408zm1.424 1.424l3.18-1.837a1.47 1.47 0 0 1 1.481 0l.01.006c.45.26.72.742.72 1.265 0 .523-.27 1.005-.72 1.265l-.01.006-3.18 1.837-2.91-2.91 1.429-1.632z"/>
+                  </svg>
+                  <div class="store-txt">
+                    <span class="store-sub">TẢI TRÊN</span>
+                    <span class="store-name">Google Play</span>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Hộp QR Code Quét Nhanh Desktop -->
+              <div class="hero-qr-badge" onclick="openAppQrModal()" title="Quét mã QR để tải App">
+                <div class="hero-qr-frame">
+                  <svg class="qr-svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M2 2h8v8H2V2zm2 2v4h4V4H4zm10-2h8v8h-8V2zm2 2v4h4V4h-4zM2 14h8v8H2v-8zm2 2v4h4v-4H4zm14 0h4v2h-4v-2zm-4 0h2v4h-2v-4zm2 2h2v4h-2v-4zm2 2h4v2h-4v-2zm-6-2h2v2h-2v-2zm0 4h4v2h-4v-2z"/>
+                  </svg>
+                </div>
+                <div class="hero-qr-info">
+                  <strong>Quét mã tải App</strong>
+                  <span>Tặng 100K Tabi Xu</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Slide 1: Giới thiệu bạn bè. Kiếm Tabi Xu (hero-slide-2.svg: 3 bạn khoác vai) -->
+        <!-- Slide 1: Giới thiệu bạn bè. Kiếm Tabi Xu (Curved Lifestyle Photo Card) -->
         <div class="hero-slide" data-slide="1">
           <div class="hero-illustration">
-            <img src="./assets/images/lottie/hero-slide-2.svg" alt="Giới thiệu bạn bè nhận Tabi Xu" />
+            <div class="hero-photo-card">
+              <picture>
+                <source srcset="./assets/images/hero-lifestyle-2.webp" type="image/webp" />
+                <img src="./assets/images/hero-lifestyle-2.jpg" alt="Du lịch cùng bạn bè nhận ưu đãi Tabi Xu" class="hero-photo-img" />
+              </picture>
+              <div class="floating-badge badge-top">
+                <span class="badge-dot-live"></span>
+                <span class="badge-text">Vodafone 5G • Rome, Ý</span>
+              </div>
+              <div class="floating-badge badge-bottom">
+                <svg class="badge-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#00478F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                <span class="badge-text">100.000+ Du Khách Đã Giới Thiệu</span>
+              </div>
+            </div>
           </div>
           <div class="hero-content">
             <h1 class="hero-h1">Giới thiệu bạn bè.<br />Nhận ngay 100.000đ Tabi Xu.</h1>
             <p class="hero-sub">
-              Nhận ngay 100.000đ Tabi Xu cho mỗi lượt môi giới có mua hàng<br />— bạn bè của bạn cũng sẽ được nhận ưu đãi 10%.
+              Nhận ngay 100.000đ Tabi Xu cho mỗi lượt giới thiệu có mua hàng<br />— bạn bè của bạn cũng sẽ được nhận ưu đãi 10%.
             </p>
-            <a href="#destinations" class="btn-hero-primary">Giới thiệu bạn bè ngay</a>
+            <div class="hero-actions-container">
+              <a href="#destinations" class="btn-hero-primary">Giới thiệu bạn bè ngay</a>
+              <div class="hero-app-badges">
+                <a href="javascript:void(0)" onclick="openAppQrModal('iOS')" class="hero-store-btn" title="Tải Tabi Go trên App Store">
+                  <svg class="store-svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.63-.76 1.06-1.81.94-2.87-.91.04-2.02.61-2.67 1.37-.58.67-.98 1.74-.84 2.78 1.02.08 2.05-.52 2.57-1.28z"/>
+                  </svg>
+                  <div class="store-txt">
+                    <span class="store-sub">Tải về trên</span>
+                    <span class="store-name">App Store</span>
+                  </div>
+                </a>
+                <a href="javascript:void(0)" onclick="openAppQrModal('Android')" class="hero-store-btn" title="Tải Tabi Go trên Google Play">
+                  <svg class="store-svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M3.609 1.814L13.792 12 3.61 22.186a2.02 2.02 0 0 1-.61-.318c-.37-.282-.6-.723-.6-1.198V3.33c0-.475.23-.916.6-1.198.18-.137.393-.245.609-.318zm11.606 11.61l2.408 2.408-11.75 6.78 9.342-9.188zm0-2.848L5.873 1.394l11.75 6.78-2.408 2.408zm1.424 1.424l3.18-1.837a1.47 1.47 0 0 1 1.481 0l.01.006c.45.26.72.742.72 1.265 0 .523-.27 1.005-.72 1.265l-.01.006-3.18 1.837-2.91-2.91 1.429-1.632z"/>
+                  </svg>
+                  <div class="store-txt">
+                    <span class="store-sub">TẢI TRÊN</span>
+                    <span class="store-name">Google Play</span>
+                  </div>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- Slide 2: Tích lũy điểm thưởng Tabi Go (hero-slide-3.svg: 3 bạn high-five) -->
+        <!-- Slide 2: Tích lũy điểm thưởng Tabi Go (Curved Lifestyle Photo Card) -->
         <div class="hero-slide" data-slide="2">
           <div class="hero-illustration">
-            <img src="./assets/images/lottie/hero-slide-3.svg" alt="Tích lũy điểm thưởng Tabi Go" />
+            <div class="hero-photo-card">
+              <picture>
+                <source srcset="./assets/images/hero-lifestyle-3.webp" type="image/webp" />
+                <img src="./assets/images/hero-lifestyle-3.jpg" alt="Tích lũy điểm thưởng Tabi Go mỗi chuyến đi" class="hero-photo-img" />
+              </picture>
+              <div class="floating-badge badge-top">
+                <span class="badge-dot-live"></span>
+                <span class="badge-text">Telkomsel 5G • Bali, Indonesia</span>
+              </div>
+              <div class="floating-badge badge-bottom">
+                <svg class="badge-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#00A8FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 2L11 13"></path>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+                <span class="badge-text">Đổi Xu Lấy Data Miễn Phí</span>
+              </div>
+            </div>
           </div>
           <div class="hero-content">
             <h1 class="hero-h1">Tích lũy điểm thưởng<br />Tabi Go mỗi chuyến đi</h1>
             <p class="hero-sub">
               Nhận hoàn tiền lên tới 10%, tự động. Bạn đi càng nhiều càng tiết kiệm!<br />Đổi Tabi Xu lấy dữ liệu cho những chuyến đi kế tiếp.
             </p>
-            <a href="#destinations" class="btn-hero-primary">Xem các cấp độ thành viên</a>
+            <div class="hero-actions-container">
+              <a href="#destinations" class="btn-hero-primary">Xem cấp độ thành viên</a>
+              <div class="hero-app-badges">
+                <a href="javascript:void(0)" onclick="openAppQrModal('iOS')" class="hero-store-btn" title="Tải Tabi Go trên App Store">
+                  <svg class="store-svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.63-.76 1.06-1.81.94-2.87-.91.04-2.02.61-2.67 1.37-.58.67-.98 1.74-.84 2.78 1.02.08 2.05-.52 2.57-1.28z"/>
+                  </svg>
+                  <div class="store-txt">
+                    <span class="store-sub">Tải về trên</span>
+                    <span class="store-name">App Store</span>
+                  </div>
+                </a>
+                <a href="javascript:void(0)" onclick="openAppQrModal('Android')" class="hero-store-btn" title="Tải Tabi Go trên Google Play">
+                  <svg class="store-svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M3.609 1.814L13.792 12 3.61 22.186a2.02 2.02 0 0 1-.61-.318c-.37-.282-.6-.723-.6-1.198V3.33c0-.475.23-.916.6-1.198.18-.137.393-.245.609-.318zm11.606 11.61l2.408 2.408-11.75 6.78 9.342-9.188zm0-2.848L5.873 1.394l11.75 6.78-2.408 2.408zm1.424 1.424l3.18-1.837a1.47 1.47 0 0 1 1.481 0l.01.006c.45.26.72.742.72 1.265 0 .523-.27 1.005-.72 1.265l-.01.006-3.18 1.837-2.91-2.91 1.429-1.632z"/>
+                  </svg>
+                  <div class="store-txt">
+                    <span class="store-sub">TẢI TRÊN</span>
+                    <span class="store-name">Google Play</span>
+                  </div>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -2900,8 +3384,7 @@
           </div>
         </div>
 
-        <img class="cyan-deco-left" src="./assets/images/lottie/usp-left.svg" alt="Decoration" />
-        <img class="cyan-deco-right" src="./assets/images/lottie/usp-right.svg" alt="Decoration" />
+
       </div>
     </section>
 
@@ -2916,27 +3399,58 @@
 
       <!-- Tab 1: Cách thức hoạt động (3 Bước đơn giản) -->
       <div class="how-content-pane active" id="paneHowSteps">
-        <div class="video-card-preview">
-          <div class="video-thumbnail-wrap">
-            <img src="./assets/images/lottie/our-mission.svg" alt="Cách thức hoạt động của Tabi Go" />
-          </div>
+        <div class="how-journey-header">
+          <span class="how-journey-pill">QUY TRÌNH 3 BƯỚC ĐƠN GIẢN</span>
+          <h3 class="how-journey-title">Kết nối Internet toàn cầu chỉ trong 3 bước</h3>
+          <p class="how-journey-sub">Không cần xếp hàng mua SIM tại sân bay, không cần tháo lắp khe SIM, sẵn sàng 5G ngay khi hạ cánh.</p>
         </div>
 
         <div class="how-steps-grid">
           <div class="how-step-card">
-            <div class="how-step-num">01</div>
+            <div class="how-step-top">
+              <span class="how-step-badge">BƯỚC 01</span>
+              <div class="how-step-icon-wrap icon-cyan">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                  <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                  <circle cx="12" cy="9" r="2"></circle>
+                </svg>
+              </div>
+            </div>
             <div class="how-step-title">Tải App & Chọn Điểm Đến</div>
-            <div class="how-step-desc">Tải App Tabi Go miễn phí trên App Store/Google Play. Tìm kiếm quốc gia bạn sắp đến và chọn gói cước phù hợp.</div>
+            <div class="how-step-desc">Tải ứng dụng Tabi Go miễn phí trên App Store hoặc Google Play. Tìm kiếm điểm đến trong hơn 150+ quốc gia và chọn gói dung lượng data phù hợp.</div>
           </div>
+
           <div class="how-step-card">
-            <div class="how-step-num">02</div>
-            <div class="how-step-title">Mua & Cài Đặt Tức Thì</div>
-            <div class="how-step-desc">Thanh toán an toàn, quét mã QR hoặc chạm 1-Tap để máy tự động cài đặt cấu hình eSIM trong 60 giây.</div>
+            <div class="how-step-top">
+              <span class="how-step-badge">BƯỚC 02</span>
+              <div class="how-step-icon-wrap icon-orange">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="14" width="7" height="7"></rect>
+                  <rect x="3" y="14" width="7" height="7"></rect>
+                </svg>
+              </div>
+            </div>
+            <div class="how-step-title">Cài Đặt Tức Thì Trong 1 Phút</div>
+            <div class="how-step-desc">Thanh toán an toàn qua VNPAY, Thẻ quốc tế hoặc Tabi Xu. Quét mã QR gửi về email hoặc chạm 1-Tap trong ứng dụng để thiết bị tự kích hoạt hồ sơ eSIM.</div>
           </div>
+
           <div class="how-step-card">
-            <div class="how-step-num">03</div>
-            <div class="how-step-title">Hạ Cánh Là Có Internet</div>
-            <div class="how-step-desc">Vừa đáp xuống sân bay, chỉ cần bật "Chuyển vùng dữ liệu" (Data Roaming) cho eSIM Tabi Go là tự động kết nối ngay.</div>
+            <div class="how-step-top">
+              <span class="how-step-badge">BƯỚC 03</span>
+              <div class="how-step-icon-wrap icon-green">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
+                  <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
+                  <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+                  <line x1="12" y1="20" x2="12.01" y2="20"></line>
+                </svg>
+              </div>
+            </div>
+            <div class="how-step-title">Hạ Cánh Là Có Internet 5G</div>
+            <div class="how-step-desc">Vừa đáp xuống sân bay quốc tế, chỉ cần bật "Chuyển vùng dữ liệu" (Data Roaming) cho eSIM Tabi Go là lập tức kết nối Internet 5G tốc độ cao mọi lúc mọi nơi.</div>
           </div>
         </div>
       </div>
@@ -3033,9 +3547,9 @@
 
         <!-- 3-Column Grid of Clean White Pill Cards (Airalo Style) -->
         <div class="green-cards-grid" id="greenCardsGrid">
-          <div class="country-white-pill" onclick="openCountryModal('Việt Nam', '🇻🇳', '99.000đ')">
+          <div class="country-white-pill" onclick="openCountryModal('Việt Nam', 'vn', '99.000đ')">
             <div class="country-pill-left">
-              <span class="country-flag-emoji">🇻🇳</span>
+              <span class="fi fi-vn country-flag-icon"></span>
               <div class="country-pill-info">
                 <span class="country-pill-name">Việt Nam</span>
                 <span class="country-pill-sub">Viettel / Vinaphone 5G</span>
@@ -3043,9 +3557,9 @@
             </div>
             <span class="country-pill-price">Từ 99.000đ</span>
           </div>
-          <div class="country-white-pill" onclick="openCountryModal('Thái Lan', '🇹🇭', '115.000đ')">
+          <div class="country-white-pill" onclick="openCountryModal('Thái Lan', 'th', '115.000đ')">
             <div class="country-pill-left">
-              <span class="country-flag-emoji">🇹🇭</span>
+              <span class="fi fi-th country-flag-icon"></span>
               <div class="country-pill-info">
                 <span class="country-pill-name">Thái Lan</span>
                 <span class="country-pill-sub">Nhận tức thì • Sóng AIS</span>
@@ -3053,9 +3567,9 @@
             </div>
             <span class="country-pill-price">Từ 115.000đ</span>
           </div>
-          <div class="country-white-pill" onclick="openCountryModal('Nhật Bản', '🇯🇵', '99.000đ')">
+          <div class="country-white-pill" onclick="openCountryModal('Nhật Bản', 'jp', '99.000đ')">
             <div class="country-pill-left">
-              <span class="country-flag-emoji">🇯🇵</span>
+              <span class="fi fi-jp country-flag-icon"></span>
               <div class="country-pill-info">
                 <span class="country-pill-name">Nhật Bản</span>
                 <span class="country-pill-sub">Chỉ từ 99k/ngày • Sóng 5G SoftBank</span>
@@ -3063,9 +3577,9 @@
             </div>
             <span class="country-pill-price">Từ 99.000đ</span>
           </div>
-          <div class="country-white-pill" onclick="openCountryModal('Singapore', '🇸🇬', '125.000đ')">
+          <div class="country-white-pill" onclick="openCountryModal('Singapore', 'sg', '125.000đ')">
             <div class="country-pill-left">
-              <span class="country-flag-emoji">🇸🇬</span>
+              <span class="fi fi-sg country-flag-icon"></span>
               <div class="country-pill-info">
                 <span class="country-pill-name">Singapore</span>
                 <span class="country-pill-sub">Sóng Singtel tốc độ cao</span>
@@ -3073,9 +3587,9 @@
             </div>
             <span class="country-pill-price">Từ 125.000đ</span>
           </div>
-          <div class="country-white-pill" onclick="openCountryModal('Hàn Quốc', '🇰🇷', '79.000đ')">
+          <div class="country-white-pill" onclick="openCountryModal('Hàn Quốc', 'kr', '79.000đ')">
             <div class="country-pill-left">
-              <span class="country-flag-emoji">🇰🇷</span>
+              <span class="fi fi-kr country-flag-icon"></span>
               <div class="country-pill-info">
                 <span class="country-pill-name">Hàn Quốc</span>
                 <span class="country-pill-sub">Chỉ từ 79k/ngày • Sóng SK Telecom</span>
@@ -3083,9 +3597,9 @@
             </div>
             <span class="country-pill-price">Từ 79.000đ</span>
           </div>
-          <div class="country-white-pill" onclick="openCountryModal('Hoa Kỳ', '🇺🇸', '180.000đ')">
+          <div class="country-white-pill" onclick="openCountryModal('Hoa Kỳ', 'us', '180.000đ')">
             <div class="country-pill-left">
-              <span class="country-flag-emoji">🇺🇸</span>
+              <span class="fi fi-us country-flag-icon"></span>
               <div class="country-pill-info">
                 <span class="country-pill-name">Hoa Kỳ</span>
                 <span class="country-pill-sub">Mạng T-Mobile / AT&T</span>
@@ -3093,9 +3607,9 @@
             </div>
             <span class="country-pill-price">Từ 180.000đ</span>
           </div>
-          <div class="country-white-pill" onclick="openCountryModal('Châu Âu (39 nước)', '🇪🇺', '190.000đ')">
+          <div class="country-white-pill" onclick="openCountryModal('Châu Âu (39 nước)', 'eu', '190.000đ')">
             <div class="country-pill-left">
-              <span class="country-flag-emoji">🇪🇺</span>
+              <span class="fi fi-eu country-flag-icon"></span>
               <div class="country-pill-info">
                 <span class="country-pill-name">Châu Âu</span>
                 <span class="country-pill-sub">Chỉ từ 250k/5 ngày • Dung lượng 10GB</span>
@@ -3103,9 +3617,9 @@
             </div>
             <span class="country-pill-price">Từ 190.000đ</span>
           </div>
-          <div class="country-white-pill" onclick="openCountryModal('Pháp', '🇫🇷', '125.000đ')">
+          <div class="country-white-pill" onclick="openCountryModal('Pháp', 'fr', '125.000đ')">
             <div class="country-pill-left">
-              <span class="country-flag-emoji">🇫🇷</span>
+              <span class="fi fi-fr country-flag-icon"></span>
               <div class="country-pill-info">
                 <span class="country-pill-name">Pháp</span>
                 <span class="country-pill-sub">Mạng Orange 5G</span>
@@ -3113,9 +3627,9 @@
             </div>
             <span class="country-pill-price">Từ 125.000đ</span>
           </div>
-          <div class="country-white-pill" onclick="openCountryModal('Vương quốc Anh', '🇬🇧', '130.000đ')">
+          <div class="country-white-pill" onclick="openCountryModal('Vương quốc Anh', 'gb', '130.000đ')">
             <div class="country-pill-left">
-              <span class="country-flag-emoji">🇬🇧</span>
+              <span class="fi fi-gb country-flag-icon"></span>
               <div class="country-pill-info">
                 <span class="country-pill-name">Vương quốc Anh</span>
                 <span class="country-pill-sub">Sóng Vodafone UK</span>
@@ -3123,9 +3637,9 @@
             </div>
             <span class="country-pill-price">Từ 130.000đ</span>
           </div>
-          <div class="country-white-pill" onclick="openCountryModal('Úc', '🇦🇺', '150.000đ')">
+          <div class="country-white-pill" onclick="openCountryModal('Úc', 'au', '150.000đ')">
             <div class="country-pill-left">
-              <span class="country-flag-emoji">🇦🇺</span>
+              <span class="fi fi-au country-flag-icon"></span>
               <div class="country-pill-info">
                 <span class="country-pill-name">Úc</span>
                 <span class="country-pill-sub">Sóng Telstra / Optus</span>
@@ -3133,9 +3647,9 @@
             </div>
             <span class="country-pill-price">Từ 150.000đ</span>
           </div>
-          <div class="country-white-pill" onclick="openCountryModal('Trung Quốc', '🇨🇳', '120.000đ')">
+          <div class="country-white-pill" onclick="openCountryModal('Trung Quốc', 'cn', '120.000đ')">
             <div class="country-pill-left">
-              <span class="country-flag-emoji">🇨🇳</span>
+              <span class="fi fi-cn country-flag-icon"></span>
               <div class="country-pill-info">
                 <span class="country-pill-name">Trung Quốc</span>
                 <span class="country-pill-sub">Vượt tường lửa tự động</span>
@@ -3143,9 +3657,9 @@
             </div>
             <span class="country-pill-price">Từ 120.000đ</span>
           </div>
-          <div class="country-white-pill" onclick="openCountryModal('Đài Loan', '🇹🇼', '105.000đ')">
+          <div class="country-white-pill" onclick="openCountryModal('Đài Loan', 'tw', '105.000đ')">
             <div class="country-pill-left">
-              <span class="country-flag-emoji">🇹🇼</span>
+              <span class="fi fi-tw country-flag-icon"></span>
               <div class="country-pill-info">
                 <span class="country-pill-name">Đài Loan</span>
                 <span class="country-pill-sub">Chunghwa Telecom 5G</span>
@@ -3230,21 +3744,49 @@
         </div>
 
         <div class="support-card">
-          <div class="support-card-left">
-            <div class="support-sub-label">Hỗ trợ</div>
-            <h3 class="support-main-title">Bạn cần trợ giúp? Chúng tôi hỗ trợ 24/7, đa ngôn ngữ</h3>
-            <div class="support-links-group">
-              <a href="javascript:void(0)" class="support-text-link">
-                <span>Liên hệ đội ngũ hỗ trợ</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <div class="support-hub-content">
+            <div>
+              <div class="support-sub-label">HỖ TRỢ TRỰC TUYẾN 24/7</div>
+              <h3 class="support-main-title">Bạn cần trợ giúp? Chúng tôi luôn sẵn sàng hỗ trợ bạn</h3>
+              
+              <div class="support-team-presence">
+                <div class="support-avatar-stack">
+                  <picture class="support-avatar-item">
+                    <source srcset="./assets/images/support-agent-real.webp" type="image/webp" />
+                    <img src="./assets/images/support-agent-real.jpg" alt="Chuyên viên hỗ trợ Tabi Go" class="support-avatar-img" />
+                  </picture>
+                  <picture class="support-avatar-item">
+                    <source srcset="./assets/images/support-agent-2.webp" type="image/webp" />
+                    <img src="./assets/images/support-agent-2.jpg" alt="Chuyên viên hỗ trợ Tabi Go" class="support-avatar-img" />
+                  </picture>
+                  <picture class="support-avatar-item">
+                    <source srcset="./assets/images/support-agent-3.webp" type="image/webp" />
+                    <img src="./assets/images/support-agent-3.jpg" alt="Chuyên viên hỗ trợ Tabi Go" class="support-avatar-img" />
+                  </picture>
+                </div>
+                <div class="support-presence-meta">
+                  <div class="presence-status-line">
+                    <span class="badge-dot-live"></span>
+                    <strong>Đội ngũ CSKH đang trực tuyến</strong>
+                  </div>
+                  <span class="presence-subtext">⚡ Thời gian phản hồi: dưới 2 phút</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="support-hub-actions">
+              <a href="https://zalo.me/0794058999" target="_blank" rel="noopener noreferrer" class="btn-support-zalo" title="Chat Zalo CSKH Tabi Go 24/7">
+                <img src="./assets/images/ic_zalo.svg" alt="Zalo" width="22" height="22" style="border-radius: 6px; display: block;" />
+                <span>Chat Zalo CSKH (0794.058.999)</span>
               </a>
-              <a href="javascript:void(0)" class="support-text-link">
-                <span>Trò chuyện trực tuyến 24/7</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              <a href="tel:0794058999" class="btn-support-hotline" title="Gọi Hotline CSKH 0794.058.999">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                <span>Hotline: 0794.058.999</span>
               </a>
             </div>
           </div>
-          <img class="support-agent-illus" src="./assets/images/lottie/support.svg" alt="Hỗ trợ Tabi Go 24/7" />
         </div>
       </div>
     </section>
@@ -3259,7 +3801,10 @@
       <div class="blog-grid">
         <a href="javascript:void(0)" class="blog-card">
           <div class="blog-img-wrap">
-            <img src="./assets/images/lottie/ready-connected.svg" alt="Cách kích hoạt eSIM" />
+            <picture>
+              <source srcset="./assets/images/blog-esim-guide.webp" type="image/webp" />
+              <img src="./assets/images/blog-esim-guide.jpg" alt="Cách kích hoạt eSIM" />
+            </picture>
           </div>
           <div class="blog-content">
             <div class="blog-category-tag">Cẩm nang du lịch</div>
@@ -3269,7 +3814,10 @@
         </a>
         <a href="javascript:void(0)" class="blog-card">
           <div class="blog-img-wrap">
-            <img src="./assets/images/lottie/our-mission.svg" alt="Kinh nghiệm du lịch Nhật Bản" />
+            <picture>
+              <source srcset="./assets/images/blog-japan-travel.webp" type="image/webp" />
+              <img src="./assets/images/blog-japan-travel.jpg" alt="Kinh nghiệm du lịch Nhật Bản" />
+            </picture>
           </div>
           <div class="blog-content">
             <div class="blog-category-tag">Điểm đến nổi bật</div>
@@ -3279,10 +3827,13 @@
         </a>
         <a href="javascript:void(0)" class="blog-card">
           <div class="blog-img-wrap">
-            <img src="./assets/images/lottie/partner-platform.svg" alt="Chương trình Tabi Xu" />
+            <picture>
+              <source srcset="./assets/images/blog-tabixu-rewards.webp" type="image/webp" />
+              <img src="./assets/images/blog-tabixu-rewards.jpg" alt="Chương trình Tabi Xu" />
+            </picture>
           </div>
           <div class="blog-content">
-            <div class="blog-category-tag">Ưu đãi & Điểm thưởng</div>
+            <div class="blog-category-tag">Ưu đãi &amp; Điểm thưởng</div>
             <div class="blog-title">Hướng dẫn tích lũy và sử dụng Tabi Xu để nhận chuyến đi kết nối miễn phí</div>
             <div class="blog-read-link">Đọc bài viết <span>→</span></div>
           </div>
@@ -3297,21 +3848,66 @@
       <!-- B2B Partner Hub -->
       <div class="b2b-partner-banner">
         <div class="b2b-content">
-          <h3>Một nền tảng, vô vàn khả năng kinh doanh</h3>
+          <div class="b2b-sub-badge">DÀNH CHO ĐỐI TÁC DOANH NGHIỆP</div>
+          <h3>Một nền tảng, vô vàn cơ hội tăng trưởng</h3>
           <p>
-            Cổng đối tác Tabi Go Partners cung cấp giải pháp phân phối eSIM toàn diện cho các công ty du lịch, đại lý lữ hành, OTA và các nhà sáng tạo nội dung (KOC/KOL) với mức chiết khấu hấp dẫn nhất thị trường.
+            Cổng đối tác Tabi Go Partners cung cấp giải pháp phân phối eSIM toàn diện cho các công ty du lịch, đại lý lữ hành, OTA và các nhà sáng tạo nội dung (KOC/KOL) với chính sách chiết khấu dẫn đầu thị trường.
           </p>
-          <a href="javascript:void(0)" class="btn-b2b">Tìm hiểu về Tabi Go Partners →</a>
+          <ul class="b2b-features-list">
+            <li>
+              <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              <span>Chiết khấu hoa hồng tới 25% cho mỗi đơn hàng eSIM thành công</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              <span>Cung cấp API tích hợp trực tiếp vào website/app đại lý trong 24h</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              <span>Báo cáo doanh thu, sản lượng và cấp mã QR eSIM realtime 24/7</span>
+            </li>
+          </ul>
+          <a href="javascript:void(0)" class="btn-b2b">Trở thành Đại lý / KOC Tabi Go →</a>
         </div>
         <div class="b2b-art-wrap">
-          <img src="./assets/images/lottie/partner-platform.svg" alt="Tabi Go Partners Platform" />
+          <div class="b2b-photo-card">
+            <picture>
+              <source srcset="./assets/images/b2b-partner-real.webp" type="image/webp" />
+              <img src="./assets/images/b2b-partner-real.jpg" alt="Tabi Go Partners Platform" class="b2b-photo-img" />
+            </picture>
+            <div class="b2b-floating-badge b2b-badge-stat">
+              <span class="b2b-badge-dot"></span>
+              <span>Chiết khấu đối tác tới 25%</span>
+            </div>
+            <div class="b2b-floating-badge b2b-badge-api">
+              <svg class="badge-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2.5"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+              <span>Sẵn sàng API eSIM</span>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- App Download Banner (Exact Match to Airalo Sample Image 1) -->
+      <!-- App Download Banner (High-Trust Lifestyle Photo Card) -->
       <div class="app-download-banner" id="download-app">
-        <div class="app-banner-illus-wrap">
-          <img src="./assets/images/lottie/ready-connected.svg" alt="Tabi Go - Kết nối mọi lúc mọi nơi" class="app-banner-illus-img" />
+        <div class="app-banner-photo-wrap">
+          <div class="app-banner-photo-card">
+            <picture>
+              <source srcset="./assets/images/app-download-lifestyle.webp" type="image/webp" />
+              <img src="./assets/images/app-download-lifestyle.jpg" alt="Du khách kết nối Internet qua Tabi Go tại sân bay" class="app-banner-photo-img" />
+            </picture>
+            <div class="app-floating-badge app-badge-status">
+              <span class="app-badge-dot"></span>
+              <span>5G Sẵn sàng khi cất cánh</span>
+            </div>
+            <div class="app-floating-badge app-badge-coverage">
+              <svg class="badge-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="2" y1="12" x2="22" y2="12"></line>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+              </svg>
+              <span>150+ Quốc gia & Vùng lãnh thổ</span>
+            </div>
+          </div>
         </div>
         <div class="app-banner-content">
           <h3>Chúng tôi luôn đồng hành cùng bạn, dù ở bất cứ đâu</h3>
@@ -3436,7 +4032,8 @@
                 <strong>Quét mã QR tải Tabi Go ngay</strong>
                 <p>Mở camera điện thoại quét để tải ứng dụng tức thì.</p>
                 <div class="app-qr-promo-chip">
-                  <span>🎁 Giảm ngay 10% đơn hàng đầu tiên</span>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><polyline points="20 12 20 22 4 22 4 12"></polyline><rect x="2" y="7" width="20" height="5"></rect><line x1="12" y1="22" x2="12" y2="7"></line><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg>
+                  <span>Giảm ngay 10% đơn hàng đầu tiên</span>
                 </div>
               </div>
             </div>
@@ -3448,7 +4045,7 @@
     <!-- ==================================================== -->
     <!-- 11. FOOTER (AIRALO CLEAN LAYOUT & BRANDING)          -->
     <!-- ==================================================== -->
-    <footer>
+    <footer id="footer">
       <div class="footer-inner">
         <!-- 7 Columns Directory (Exact Match to Airalo Sample Image 2 & 3) -->
         <div class="footer-columns-grid">
@@ -3479,8 +4076,8 @@
             <ul>
               <li><a href="#faq">Trung tâm trợ giúp</a></li>
               <li><a href="#faq">Trò chuyện hỗ trợ 24/7</a></li>
-              <li><a href="tel:19003388" class="footer-contact-hotline">Hotline: 1900 3388</a></li>
-              <li><a href="javascript:void(0)">Zalo CSKH Tabi Go</a></li>
+              <li><a href="tel:0794058999" class="footer-contact-hotline">Hotline: 0794.058.999</a></li>
+              <li><a href="https://zalo.me/0794058999" target="_blank" rel="noopener noreferrer">Zalo CSKH: 0794.058.999</a></li>
             </ul>
           </div>
 
@@ -3548,9 +4145,9 @@
           </div>
         </div>
 
-        <!-- Giant TabiGo Brand World Mascot Artwork (Authentic Illustrated Characters + 3D Porcelain TabiGo Letters) -->
+        <!-- Giant TabiGo Brand 3D Porcelain Landmark (Realistic Nature & Botanical Foliage, Zero Cartoon Characters) -->
         <div class="footer-artwork-wrap">
-          <img src="./assets/images/lottie/tabigo-footer-world.svg?v=20261030h" alt="TabiGo World Brand Mascot Animation" />
+          <img src="./assets/images/lottie/tabigo-footer-botanical.svg?v=20261103" alt="TabiGo 3D Brand Landmark" />
         </div>
 
         <!-- Centered Minimalist Copyright & Legal row (Sample Image 3) -->
@@ -3562,8 +4159,8 @@
                 <rect width="160" height="46" rx="5" fill="#BB1E24"/>
                 <circle cx="23" cy="23" r="14" fill="#991B1B" stroke="#FDE047" stroke-width="1.2"/>
                 <polygon points="23,13 25.5,19.5 32.5,20 27,24 29,31 23,27 17,31 19,24 13.5,20 20.5,19.5" fill="#FDE047"/>
-                <text x="44" y="20" fill="#FFFFFF" font-size="10" font-weight="800" font-family="'Plus Jakarta Sans', sans-serif" letter-spacing="0.5">ĐÃ ĐĂNG KÝ</text>
-                <text x="44" y="34" fill="#FDE047" font-size="9" font-weight="700" font-family="'Plus Jakarta Sans', sans-serif" letter-spacing="0.3">BỘ CÔNG THƯƠNG</text>
+                <text x="44" y="20" fill="#FFFFFF" font-size="10" font-weight="800" font-family="'Inter', sans-serif" letter-spacing="0.5">ĐÃ ĐĂNG KÝ</text>
+                <text x="44" y="34" fill="#FDE047" font-size="9" font-weight="700" font-family="'Inter', sans-serif" letter-spacing="0.3">BỘ CÔNG THƯƠNG</text>
               </svg>
             </div>
           </div>
@@ -3585,7 +4182,7 @@
     <div class="country-modal-card">
       <div class="modal-header">
         <h3 id="modalCountryTitle">
-          <span id="modalCountryFlag">🇯🇵</span>
+          <span id="modalCountryFlag"><span class="fi fi-jp country-flag-icon lg"></span></span>
           <span id="modalCountryName">Nhật Bản</span>
         </h3>
         <button class="modal-close-btn" onclick="closeCountryModal()">&times;</button>
@@ -3715,6 +4312,13 @@
     </div>
   </div>
 
+  <!-- Floating Zalo CSKH Widget (Synced with 3M Mobile App) -->
+  <a href="https://zalo.me/0794058999" target="_blank" rel="noopener noreferrer" class="floating-zalo-fab" title="Chat Zalo CSKH Tabi Go 24/7">
+    <div class="fab-pulse-ring"></div>
+    <img src="./assets/images/ic_zalo.svg" alt="Zalo" class="fab-zalo-icon" />
+    <span class="fab-zalo-label">Chat Zalo</span>
+  </a>
+
   <script>
     /* ==================================================== */
     /* HERO SLIDER (3 SLIDES & REVOLVING 6s TIMER)          */
@@ -3833,35 +4437,53 @@
     /* ==================================================== */
     /* GREEN MARKETPLACE TABS SWITCHER                      */
     /* ==================================================== */
+    /* Standard SVG Regional Icons */
+    const SVG_GLOBE = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><line x1="2" y1="12" x2="22" y2="12"/></svg>';
+    const SVG_COMPASS = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>';
+    const SVG_SUN = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>';
+    const SVG_BOLT = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>';
+    const SVG_BIZ = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>';
+
     const regionalDestinations = [
-      { name: 'Châu Á (14 nước)', flag: '🌏', sub: 'Data 5G tốc độ cao', price: 'Từ 150.000đ' },
-      { name: 'Châu Âu (39 nước)', flag: '🇪🇺', sub: '39 nước liên tuyến', price: 'Từ 190.000đ' },
-      { name: 'Bắc Mỹ (Mỹ & Canada)', flag: '🌎', sub: 'Sóng AT&T & T-Mobile', price: 'Từ 210.000đ' },
-      { name: 'Đông Nam Á (8 nước)', flag: '🏝️', sub: 'Không giới hạn dung lượng', price: 'Từ 120.000đ' },
-      { name: 'Trung Đông (12 nước)', flag: '🏜️', sub: 'Phủ sóng 12 quốc gia', price: 'Từ 240.000đ' },
-      { name: 'Châu Đại Dương (Úc & NZ)', flag: '🦘', sub: 'Sóng Telstra / Optus', price: 'Từ 170.000đ' },
+      { name: 'Châu Á (14 nước)', id: 'asia', sub: 'Data 5G tốc độ cao', price: 'Từ 150.000đ', iconSvg: SVG_GLOBE },
+      { name: 'Châu Âu (39 nước)', code: 'eu', sub: '39 nước liên tuyến', price: 'Từ 190.000đ' },
+      { name: 'Bắc Mỹ (Mỹ & Canada)', code: 'us', sub: 'Sóng AT&T & T-Mobile', price: 'Từ 210.000đ' },
+      { name: 'Đông Nam Á (8 nước)', id: 'sea', sub: 'Không giới hạn dung lượng', price: 'Từ 120.000đ', iconSvg: SVG_COMPASS },
+      { name: 'Trung Đông (12 nước)', id: 'me', sub: 'Phủ sóng 12 quốc gia', price: 'Từ 240.000đ', iconSvg: SVG_SUN },
+      { name: 'Châu Đại Dương (Úc & NZ)', code: 'au', sub: 'Sóng Telstra / Optus', price: 'Từ 170.000đ' },
     ];
 
     const globalDestinations = [
-      { name: 'Toàn Cầu (130+ nước)', flag: '🌐', sub: 'Kết nối đa quốc gia', price: 'Từ 290.000đ' },
-      { name: 'Toàn Cầu Không Giới Hạn', flag: '🚀', sub: 'Data không giới hạn', price: 'Từ 450.000đ' },
-      { name: 'Gói Doanh Nhân VIP', flag: '💼', sub: 'Độ ưu tiên cao nhất', price: 'Từ 650.000đ' },
+      { name: 'Toàn Cầu (130+ nước)', id: 'global-130', sub: 'Kết nối đa quốc gia', price: 'Từ 290.000đ', iconSvg: SVG_GLOBE },
+      { name: 'Toàn Cầu Không Giới Hạn', id: 'global-unlimited', sub: 'Data không giới hạn', price: 'Từ 450.000đ', iconSvg: SVG_BOLT },
+      { name: 'Gói Doanh Nhân VIP', id: 'vip-biz', sub: 'Độ ưu tiên cao nhất', price: 'Từ 650.000đ', iconSvg: SVG_BIZ },
     ];
 
     const localDestinations = [
-      { name: 'Việt Nam', flag: '🇻🇳', sub: 'Viettel / Vinaphone 5G', price: 'Từ 99.000đ' },
-      { name: 'Thái Lan', flag: '🇹🇭', sub: 'Nhận tức thì • Sóng AIS', price: 'Từ 115.000đ' },
-      { name: 'Nhật Bản', flag: '🇯🇵', sub: 'Chỉ từ 99k/ngày • Sóng 5G SoftBank', price: 'Từ 99.000đ' },
-      { name: 'Singapore', flag: '🇸🇬', sub: 'Sóng Singtel tốc độ cao', price: 'Từ 125.000đ' },
-      { name: 'Hàn Quốc', flag: '🇰🇷', sub: 'Chỉ từ 79k/ngày • Sóng SK Telecom', price: 'Từ 79.000đ' },
-      { name: 'Hoa Kỳ', flag: '🇺🇸', sub: 'Mạng T-Mobile / AT&T', price: 'Từ 180.000đ' },
-      { name: 'Châu Âu', flag: '🇪🇺', sub: 'Chỉ từ 250k/5 ngày • Dung lượng 10GB', price: 'Từ 190.000đ' },
-      { name: 'Pháp', flag: '🇫🇷', sub: 'Mạng Orange 5G', price: 'Từ 125.000đ' },
-      { name: 'Vương quốc Anh', flag: '🇬🇧', sub: 'Sóng Vodafone UK', price: 'Từ 130.000đ' },
-      { name: 'Úc', flag: '🇦🇺', sub: 'Sóng Telstra / Optus', price: 'Từ 150.000đ' },
-      { name: 'Trung Quốc', flag: '🇨🇳', sub: 'Vượt tường lửa tự động', price: 'Từ 120.000đ' },
-      { name: 'Đài Loan', flag: '🇹🇼', sub: 'Chunghwa Telecom 5G', price: 'Từ 105.000đ' },
+      { name: 'Việt Nam', code: 'vn', sub: 'Viettel / Vinaphone 5G', price: 'Từ 99.000đ' },
+      { name: 'Thái Lan', code: 'th', sub: 'Nhận tức thì • Sóng AIS', price: 'Từ 115.000đ' },
+      { name: 'Nhật Bản', code: 'jp', sub: 'Chỉ từ 99k/ngày • Sóng 5G SoftBank', price: 'Từ 99.000đ' },
+      { name: 'Singapore', code: 'sg', sub: 'Sóng Singtel tốc độ cao', price: 'Từ 125.000đ' },
+      { name: 'Hàn Quốc', code: 'kr', sub: 'Chỉ từ 79k/ngày • Sóng SK Telecom', price: 'Từ 79.000đ' },
+      { name: 'Hoa Kỳ', code: 'us', sub: 'Mạng T-Mobile / AT&T', price: 'Từ 180.000đ' },
+      { name: 'Châu Âu (39 nước)', code: 'eu', sub: 'Chỉ từ 250k/5 ngày • Dung lượng 10GB', price: 'Từ 190.000đ' },
+      { name: 'Pháp', code: 'fr', sub: 'Mạng Orange 5G', price: 'Từ 125.000đ' },
+      { name: 'Vương quốc Anh', code: 'gb', sub: 'Sóng Vodafone UK', price: 'Từ 130.000đ' },
+      { name: 'Úc', code: 'au', sub: 'Sóng Telstra / Optus', price: 'Từ 150.000đ' },
+      { name: 'Trung Quốc', code: 'cn', sub: 'Vượt tường lửa tự động', price: 'Từ 120.000đ' },
+      { name: 'Đài Loan', code: 'tw', sub: 'Chunghwa Telecom 5G', price: 'Từ 105.000đ' },
     ];
+
+    function renderFlagElement(item, isLg = false) {
+      const lgClass = isLg ? ' lg' : '';
+      if (item.code) {
+        return `<span class="fi fi-${item.code} country-flag-icon${lgClass}"></span>`;
+      }
+      if (item.iconSvg) {
+        return `<span class="regional-icon-wrap${lgClass}">${item.iconSvg}</span>`;
+      }
+      return `<span class="regional-icon-wrap${lgClass}">${SVG_GLOBE}</span>`;
+    }
 
     function switchGreenTab(type) {
       const pills = document.querySelectorAll('.green-tab-pill');
@@ -3874,9 +4496,9 @@
       if (type === 'global') data = globalDestinations;
 
       grid.innerHTML = data.map(item => `
-        <div class="country-white-pill" onclick="openCountryModal('${item.name}', '${item.flag}', '${item.price}')">
+        <div class="country-white-pill" onclick="openCountryModal('${item.name}', '${item.code || item.id}', '${item.price}')">
           <div class="country-pill-left">
-            <span class="country-flag-emoji">${item.flag}</span>
+            ${renderFlagElement(item)}
             <div class="country-pill-info">
               <span class="country-pill-name">${item.name}</span>
               ${item.sub ? `<span class="country-pill-sub">${item.sub}</span>` : ''}
@@ -3892,9 +4514,21 @@
     /* ==================================================== */
     const modal = document.getElementById('countryModal');
 
-    function openCountryModal(name, flag, startPrice) {
+    function openCountryModal(name, flagIdentifier, startPrice) {
       document.getElementById('modalCountryName').textContent = name;
-      document.getElementById('modalCountryFlag').textContent = flag;
+      const modalFlagEl = document.getElementById('modalCountryFlag');
+      
+      const allDest = [...localDestinations, ...regionalDestinations, ...globalDestinations];
+      const found = allDest.find(d => d.name === name || d.code === flagIdentifier || d.id === flagIdentifier);
+      
+      if (found) {
+        modalFlagEl.innerHTML = renderFlagElement(found, true);
+      } else if (flagIdentifier && flagIdentifier.length === 2) {
+        modalFlagEl.innerHTML = `<span class="fi fi-${flagIdentifier} country-flag-icon lg"></span>`;
+      } else {
+        modalFlagEl.innerHTML = `<span class="regional-icon-wrap lg">${SVG_GLOBE}</span>`;
+      }
+
       document.getElementById('pkgPrice1').textContent = startPrice;
       modal.classList.add('active');
     }
@@ -3961,62 +4595,6 @@
     }
 
     /* ==================================================== */
-    /* SCROLLED HEADER: MENU ☰ BUTTON & NAVIGATION DROPDOWN */
-    /* ==================================================== */
-    const headerMenuBtn = document.getElementById('headerMenuBtn');
-    const headerNavDropdown = document.getElementById('headerNavDropdown');
-    const dropdownLinks = document.querySelectorAll('.header-nav-dropdown .dropdown-link');
-
-    if (headerMenuBtn && headerNavDropdown) {
-      headerMenuBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const isOpen = headerNavDropdown.classList.contains('open');
-        if (isOpen) {
-          headerNavDropdown.classList.remove('open');
-          headerMenuBtn.classList.remove('active');
-        } else {
-          headerNavDropdown.classList.add('open');
-          headerMenuBtn.classList.add('active');
-          if (headerSearchDropdown) headerSearchDropdown.classList.remove('active');
-        }
-      });
-
-      // Close dropdown when clicking a nav link
-      dropdownLinks.forEach(link => {
-        link.addEventListener('click', () => {
-          headerNavDropdown.classList.remove('open');
-          headerMenuBtn.classList.remove('active');
-        });
-      });
-
-      // Quick Currency & Language buttons inside dropdown
-      const dropdownCurrencyBtn = document.getElementById('dropdownCurrencyBtn');
-      const dropdownLangBtn = document.getElementById('dropdownLangBtn');
-      if (dropdownCurrencyBtn) {
-        dropdownCurrencyBtn.addEventListener('click', (e) => {
-          e.stopPropagation();
-          const currBtn = document.querySelector('.header-currency-btn');
-          if (currBtn) currBtn.click();
-        });
-      }
-      if (dropdownLangBtn) {
-        dropdownLangBtn.addEventListener('click', (e) => {
-          e.stopPropagation();
-          const langBtn = document.querySelector('.header-icon-btn');
-          if (langBtn) langBtn.click();
-        });
-      }
-
-      // Close dropdown when clicking outside
-      document.addEventListener('click', (e) => {
-        if (!headerNavDropdown.contains(e.target) && !headerMenuBtn.contains(e.target)) {
-          headerNavDropdown.classList.remove('open');
-          headerMenuBtn.classList.remove('active');
-        }
-      });
-    }
-
-    /* ==================================================== */
     /* SCROLLED HEADER: SEARCH BAR & QUICK DESTINATIONS     */
     /* ==================================================== */
     const headerSearchPill = document.getElementById('headerSearchPill');
@@ -4028,10 +4606,6 @@
     if (headerSearchInput && headerSearchDropdown) {
       headerSearchInput.addEventListener('focus', () => {
         headerSearchDropdown.classList.add('active');
-        if (headerNavDropdown) {
-          headerNavDropdown.classList.remove('open');
-          if (headerMenuBtn) headerMenuBtn.classList.remove('active');
-        }
       });
 
       if (headerSearchBadge) {
@@ -4115,8 +4689,6 @@
         const isScrolled = scrollY > 20;
         headerEl.classList.toggle('scrolled', isScrolled);
         if (!isScrolled) {
-          if (headerNavDropdown) headerNavDropdown.classList.remove('open');
-          if (headerMenuBtn) headerMenuBtn.classList.remove('active');
           if (headerSearchDropdown) headerSearchDropdown.classList.remove('active');
         }
       }
