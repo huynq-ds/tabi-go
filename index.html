@@ -1117,6 +1117,9 @@
       margin-bottom: 26px;
       max-width: 480px;
     }
+    .desktop-br {
+      display: inline;
+    }
     .btn-hero-primary {
       display: inline-flex;
       align-items: center;
@@ -1743,6 +1746,8 @@
       padding: 7px 20px;
       border-radius: var(--radius-pill);
       cursor: pointer;
+      white-space: nowrap;
+      flex-shrink: 0;
       transition: all 0.15s;
     }
     .green-tab-pill.active, .green-tab-pill:hover {
@@ -2848,61 +2853,603 @@
       100% { transform: scale(1.15, 1.3); opacity: 0; }
     }
 
-    /* Responsive */
-    @media (max-width: 900px) {
-      .hero-slide { flex-direction: column-reverse; text-align: center; gap: 24px; min-height: auto; }
-      .hero-illustration { width: 100%; max-width: 100%; }
-      .hero-photo-card { height: 280px; max-width: 100%; }
-      .hero-content { text-align: center; }
-      .hero-sub { margin-left: auto; margin-right: auto; }
-      .hero-actions-container { justify-content: center; }
-      .why-features-grid { grid-template-columns: repeat(2, 1fr); }
-      .green-cards-grid { grid-template-columns: repeat(2, 1fr); }
-      .how-steps-grid { grid-template-columns: 1fr; }
-      .tabigo-values-grid { grid-template-columns: 1fr; }
-      .tabigo-about-footer { flex-direction: column; text-align: center; }
-      .faq-support-grid { grid-template-columns: 1fr; }
-      .blog-grid { grid-template-columns: 1fr; }
-      .footer-columns-grid { grid-template-columns: 1fr 1fr; }
-      .b2b-partner-banner { flex-direction: column-reverse; padding: 32px 24px; text-align: left; }
-      .b2b-art-wrap { width: 100%; }
-      .b2b-photo-card { max-width: 100%; }
-      .app-download-banner { flex-direction: column-reverse; align-items: center; padding: 40px 24px; text-align: center; min-height: auto; }
-      .app-banner-photo-wrap { width: 100%; max-width: 100%; margin-top: 24px; }
-      .app-banner-photo-card { height: 260px; max-width: 100%; }
-      .app-banner-content { padding-bottom: 0; }
-      .app-download-actions { align-items: center; margin: 0 auto; }
-      .app-badges-row { justify-content: center; }
-      .app-qr-download-card { margin: 0 auto; width: 100%; max-width: 440px; }
-      .green-header-row { flex-direction: column; align-items: flex-start; gap: 14px; }
+    /* ==================================================== */
+    /* RESPONSIVE DESIGN - LAPTOP, TABLET & MOBILE          */
+    /* ==================================================== */
+
+    /* 1. LAPTOPS & SMALL DESKTOPS (1024px - 1199px) */
+    @media (max-width: 1199px) {
+      .hero-h1 {
+        font-size: 32px;
+        letter-spacing: -0.8px;
+        line-height: 1.2;
+      }
+      .hero-photo-card {
+        height: 330px;
+      }
+      .hero-sub {
+        font-size: 14px;
+        max-width: 440px;
+      }
+      .nav-menu {
+        gap: 20px;
+      }
+      .nav-menu a {
+        font-size: 14px;
+      }
+      .search-pill-container {
+        max-width: 760px;
+      }
     }
+
+    /* 2. TABLETS (769px - 900px) */
+    @media (max-width: 900px) {
+      /* Show/Hide controls */
+      .desktop-br {
+        display: none;
+      }
+      .hero-qr-badge {
+        display: none !important;
+      }
+      .app-qr-download-card {
+        display: none !important;
+      }
+      .header-icon-btn,
+      .header-row1 .header-divider-v:first-of-type {
+        display: none !important;
+      }
+
+      /* Hero Section Tablet Layout */
+      .hero-slide {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 24px;
+        min-height: auto;
+        padding: 10px 0 24px;
+      }
+      .hero-illustration {
+        width: 100%;
+        max-width: 520px;
+        margin: 0 auto;
+      }
+      .hero-photo-card {
+        height: 280px;
+        max-width: 100%;
+      }
+      .hero-content {
+        text-align: center;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      .hero-h1 {
+        font-size: 28px;
+        line-height: 1.25;
+        letter-spacing: -0.6px;
+      }
+      .hero-sub {
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 14px;
+      }
+      .hero-actions-container {
+        justify-content: center;
+      }
+
+      /* Section Grids */
+      .why-features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+      .green-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+      }
+      .green-header-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+      }
+      .how-steps-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .tabigo-values-grid {
+        grid-template-columns: 1fr;
+      }
+      .tabigo-about-footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+      }
+      .faq-support-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+      .blog-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-columns-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+      }
+
+      /* B2B Partner */
+      .b2b-partner-banner {
+        flex-direction: column-reverse;
+        padding: 32px 24px;
+        text-align: left;
+      }
+      .b2b-art-wrap {
+        width: 100%;
+      }
+      .b2b-photo-card {
+        max-width: 100%;
+        height: 260px;
+      }
+
+      /* App Download */
+      .app-download-banner {
+        flex-direction: column-reverse;
+        align-items: center;
+        padding: 36px 24px;
+        text-align: center;
+        min-height: auto;
+      }
+      .app-banner-photo-wrap {
+        width: 100%;
+        max-width: 440px;
+        margin-top: 24px;
+      }
+      .app-banner-photo-card {
+        height: 260px;
+        max-width: 100%;
+      }
+      .app-banner-content {
+        padding-bottom: 0;
+        max-width: 100%;
+        text-align: center;
+      }
+      .app-banner-content h3 {
+        font-size: 30px;
+      }
+      .app-banner-content p {
+        margin: 0 auto 24px;
+      }
+      .app-download-actions {
+        align-items: center;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 440px;
+      }
+      .app-badges-row {
+        justify-content: center;
+      }
+    }
+
+    /* 3. SMALL TABLETS & LANDSCAPE MOBILES (641px - 768px) */
+    @media (max-width: 768px) {
+      /* Smooth horizontal scroll for Nav row without text wrapping */
+      .header-row2 {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        justify-content: flex-start;
+        padding: 4px 16px 8px;
+        max-height: none;
+      }
+      .header-row2::-webkit-scrollbar {
+        display: none;
+      }
+      .nav-menu {
+        display: flex;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+        gap: 14px;
+        width: max-content;
+      }
+      .nav-menu li {
+        flex-shrink: 0;
+      }
+      .nav-menu a {
+        white-space: nowrap;
+        font-size: 13.5px;
+        padding: 4px 0;
+      }
+
+      /* Search Bar: remove side line and span clean full width */
+      .search-divider-row {
+        padding: 16px 16px 12px;
+      }
+      .search-side-line {
+        display: none !important;
+      }
+      .search-pill-container {
+        margin: 0;
+        width: 100%;
+        max-width: 100%;
+      }
+
+      /* Hide distracting decorative motifs that cause horizontal scroll */
+      .hero-motif-green-diamond,
+      .hero-motif-yellow-swatch {
+        display: none !important;
+      }
+      .page-backdrop-decorations {
+        opacity: 0.4;
+      }
+    }
+
+    /* 4. STANDARD MOBILES (<= 640px) */
     @media (max-width: 640px) {
-      .hero-photo-card { height: 230px; }
-      .floating-badge { padding: 6px 10px; }
-      .badge-text { font-size: 11px; }
-      .hero-quick-nav-row { grid-template-columns: 1fr; gap: 10px; }
-      .hero-quick-card { height: 50px; padding: 0 16px; }
-      .hero-motif-green-diamond { width: 56px; height: 56px; top: -28px; }
-      .hero-motif-yellow-swatch { display: none; }
-      .green-cards-grid { grid-template-columns: 1fr; }
-      .green-header-actions { width: 100%; justify-content: flex-start; }
-      .green-download-btn, .green-view-all-btn { flex: 1; justify-content: center; text-align: center; }
-      .header-row2 { overflow-x: auto; justify-content: flex-start; gap: 16px; }
-      .why-features-grid { grid-template-columns: 1fr; }
-      .footer-columns-grid { grid-template-columns: 1fr; gap: 28px; }
-      .footer-top-row { flex-direction: column; align-items: flex-start; gap: 20px; }
-      .footer-bottom-row { flex-direction: column; align-items: center; gap: 14px; text-align: center; }
-      .footer-bottom-left { justify-content: center; }
-      .footer-legal-links { justify-content: center; }
-      .support-card { padding: 24px 18px; min-height: auto; }
-      .support-team-presence { flex-direction: column; align-items: flex-start; gap: 12px; }
-      .b2b-partner-banner { padding: 24px 18px; }
-      .app-banner-photo-card { height: 210px; }
-      .app-floating-badge { padding: 5px 10px; font-size: 11px; }
-      .faq-section-header { flex-direction: column; align-items: flex-start; gap: 14px; }
-      .floating-zalo-fab { bottom: 18px; right: 16px; padding: 7px; border-radius: 50%; }
-      .fab-zalo-label { display: none; }
-      .fab-zalo-icon { width: 34px; height: 34px; }
+      .section-wrap {
+        padding: 0 16px;
+      }
+
+      /* Header Row 1 Compact */
+      .header-row1 {
+        padding: 10px 16px 6px;
+      }
+      .brand-text-row {
+        font-size: 18.5px;
+      }
+      .brand-icon-box {
+        width: 28px;
+        height: 28px;
+      }
+      .header-actions {
+        gap: 8px;
+      }
+      .header-currency-btn {
+        font-size: 12px;
+        padding: 4px 6px;
+      }
+      .btn-header-cta {
+        padding: 7px 12px;
+        font-size: 12px;
+      }
+
+      /* Search Bar Mobile */
+      .search-bar-box {
+        height: 48px;
+        padding: 0 12px;
+        gap: 8px;
+      }
+      .search-bar-input {
+        font-size: 13px;
+      }
+      .search-bar-input::placeholder {
+        font-size: 12px;
+      }
+      .search-location-divider {
+        margin: 0 4px;
+      }
+      .search-location-tag span {
+        display: none;
+      }
+
+      /* Hero Mobile Typography & Photo */
+      .hero-h1 {
+        font-size: 21.5px;
+        line-height: 1.25;
+        letter-spacing: -0.4px;
+        margin-bottom: 12px;
+      }
+      .hero-sub {
+        font-size: 13.5px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+        padding: 0 4px;
+      }
+      .hero-photo-card {
+        height: 220px;
+        border-radius: 20px;
+      }
+      .floating-badge {
+        padding: 5px 9px;
+        font-size: 11px;
+        border-radius: 999px;
+        animation: none;
+      }
+      .floating-badge .badge-text {
+        font-size: 11px;
+      }
+      .badge-top {
+        top: 10px;
+        left: 10px;
+      }
+      .badge-bottom {
+        bottom: 10px;
+        right: 10px;
+      }
+
+      /* Hero Actions on Mobile */
+      .hero-actions-container {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        gap: 10px;
+      }
+      .btn-hero-primary {
+        width: 100%;
+        height: 44px;
+        font-size: 13.5px;
+        justify-content: center;
+      }
+      .hero-app-badges {
+        width: 100%;
+        display: flex;
+        gap: 8px;
+      }
+      .hero-store-btn {
+        flex: 1;
+        justify-content: center;
+        padding: 7px 8px;
+        border-radius: 10px;
+        gap: 6px;
+      }
+      .hero-store-btn .store-svg {
+        width: 18px;
+        height: 18px;
+      }
+      .hero-store-btn .store-sub {
+        font-size: 8px;
+      }
+      .hero-store-btn .store-name {
+        font-size: 12px;
+      }
+
+      /* Hero Carousel Indicators & Quick Nav */
+      .carousel-nav-container {
+        gap: 8px;
+        margin-top: 16px;
+      }
+      .carousel-arrow-btn {
+        width: 32px;
+        height: 32px;
+      }
+      .carousel-track {
+        max-width: 180px;
+      }
+      .hero-quick-nav-row {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+      .hero-quick-card {
+        height: 48px;
+        padding: 0 14px;
+        font-size: 13px;
+      }
+
+      /* Why Tabi Go Banner */
+      .why-cyan-banner {
+        padding: 28px 16px;
+        border-radius: 24px;
+      }
+      .why-cyan-banner h2 {
+        font-size: 20px;
+        line-height: 1.3;
+        margin-bottom: 20px;
+      }
+      .why-features-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .why-feature-item {
+        padding: 16px;
+      }
+
+      /* Destinations Marketplace */
+      .green-tabs-header {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        gap: 8px;
+        padding-bottom: 4px;
+      }
+      .green-tabs-header::-webkit-scrollbar {
+        display: none;
+      }
+      .green-tab-pill {
+        white-space: nowrap;
+        flex-shrink: 0;
+        padding: 7px 16px;
+        font-size: 13px;
+      }
+      .green-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      .green-header-actions {
+        width: 100%;
+        display: flex;
+        gap: 8px;
+      }
+      .green-download-btn,
+      .green-view-all-btn {
+        flex: 1;
+        justify-content: center;
+        text-align: center;
+        padding: 8px 10px;
+        font-size: 12px;
+      }
+
+      /* B2B Partner Banner */
+      .b2b-partner-banner {
+        padding: 24px 16px;
+        border-radius: 24px;
+      }
+      .b2b-content h3 {
+        font-size: 22px;
+        line-height: 1.3;
+      }
+      .b2b-photo-card {
+        height: 200px;
+        border-radius: 18px;
+      }
+      .b2b-floating-badge {
+        padding: 5px 9px;
+        font-size: 11px;
+      }
+      .b2b-badge-stat {
+        bottom: 10px;
+        left: 10px;
+      }
+      .b2b-badge-api {
+        top: 10px;
+        right: 10px;
+      }
+
+      /* App Download Banner */
+      .app-download-banner {
+        padding: 28px 16px;
+        border-radius: 24px;
+        margin-bottom: 48px;
+      }
+      .app-banner-content h3 {
+        font-size: 22px;
+        line-height: 1.3;
+      }
+      .app-banner-content p {
+        font-size: 14px;
+        margin-bottom: 20px;
+      }
+      .app-badges-row {
+        flex-direction: column;
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
+        gap: 14px;
+      }
+      .app-store-pill-card {
+        width: 100%;
+      }
+      .app-badge-btn-pill {
+        width: 100%;
+        height: 48px;
+        justify-content: center;
+        padding: 8px 16px;
+        font-size: 14px;
+      }
+      .app-banner-photo-card {
+        height: 200px;
+        border-radius: 18px;
+      }
+      .app-floating-badge {
+        padding: 5px 9px;
+        font-size: 10.5px;
+      }
+
+      /* FAQ & Support */
+      .faq-section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+      .support-card {
+        padding: 20px 16px;
+        border-radius: 20px;
+      }
+
+      /* Footer */
+      .footer-columns-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .footer-top-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+      }
+      .footer-bottom-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        text-align: center;
+      }
+      .footer-bottom-left {
+        justify-content: center;
+      }
+      .footer-legal-links {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      /* Floating Zalo FAB */
+      .floating-zalo-fab {
+        bottom: 16px;
+        right: 14px;
+        padding: 6px;
+        border-radius: 50%;
+      }
+      .fab-zalo-label {
+        display: none;
+      }
+      .fab-zalo-icon {
+        width: 32px;
+        height: 32px;
+      }
+
+      /* Modals */
+      .country-modal-card {
+        width: calc(100% - 24px);
+        margin: 12px;
+      }
+      .modal-header {
+        padding: 16px 18px;
+      }
+      .modal-body {
+        padding: 16px 18px;
+        max-height: 65vh;
+      }
+    }
+
+    /* 5. ULTRA-COMPACT MOBILE (<= 380px, e.g. iPhone SE / Galaxy Z Flip) */
+    @media (max-width: 380px) {
+      .section-wrap {
+        padding: 0 12px;
+      }
+      .header-row1 {
+        padding: 8px 10px 4px;
+      }
+      .brand-text-row {
+        font-size: 17px;
+      }
+      .brand-icon-box {
+        width: 24px;
+        height: 24px;
+      }
+      .header-currency-btn {
+        display: none !important;
+      }
+      .header-actions .header-divider-v {
+        display: none !important;
+      }
+      .btn-header-cta {
+        padding: 6px 10px;
+        font-size: 11.5px;
+      }
+      .hero-h1 {
+        font-size: 21px;
+        letter-spacing: -0.3px;
+      }
+      .hero-photo-card {
+        height: 190px;
+      }
+      .hero-store-btn {
+        padding: 6px 6px;
+        gap: 5px;
+      }
+      .hero-store-btn .store-name {
+        font-size: 11px;
+      }
+      .hero-store-btn .store-sub {
+        font-size: 7.5px;
+      }
+      .hero-store-btn .store-svg {
+        width: 16px;
+        height: 16px;
+      }
     }
   </style>
 </head>
@@ -3121,9 +3668,9 @@
             </div>
           </div>
           <div class="hero-content">
-            <h1 class="hero-h1">Chạm là có Internet toàn cầu –<br />Kích hoạt eSIM trong 1 phút</h1>
+            <h1 class="hero-h1">Chạm là có Internet toàn cầu – <br class="desktop-br" />Kích hoạt eSIM trong 1 phút</h1>
             <p class="hero-sub">
-              Ứng dụng mua eSIM & SIM du lịch giá gốc cho 150+ quốc gia. Không lo tháo SIM,<br />không cước chuyển vùng đắt đỏ, kết nối Internet ngay khi vừa hạ cánh.
+              Ứng dụng mua eSIM & SIM du lịch giá gốc cho 150+ quốc gia. Không lo tháo SIM, <br class="desktop-br" />không cước chuyển vùng đắt đỏ, kết nối Internet ngay khi vừa hạ cánh.
             </p>
             <div class="hero-actions-container">
               <!-- Hàng nút Store chuẩn Mobile -->
@@ -3189,9 +3736,9 @@
             </div>
           </div>
           <div class="hero-content">
-            <h1 class="hero-h1">Giới thiệu bạn bè.<br />Nhận ngay 100.000đ Tabi Xu.</h1>
+            <h1 class="hero-h1">Giới thiệu bạn bè. <br class="desktop-br" />Nhận ngay 100.000đ Tabi Xu.</h1>
             <p class="hero-sub">
-              Nhận ngay 100.000đ Tabi Xu cho mỗi lượt giới thiệu có mua hàng<br />— bạn bè của bạn cũng sẽ được nhận ưu đãi 10%.
+              Nhận ngay 100.000đ Tabi Xu cho mỗi lượt giới thiệu có mua hàng <br class="desktop-br" />— bạn bè của bạn cũng sẽ được nhận ưu đãi 10%.
             </p>
             <div class="hero-actions-container">
               <a href="#destinations" class="btn-hero-primary">Giới thiệu bạn bè ngay</a>
@@ -3241,9 +3788,9 @@
             </div>
           </div>
           <div class="hero-content">
-            <h1 class="hero-h1">Tích lũy điểm thưởng<br />Tabi Go mỗi chuyến đi</h1>
+            <h1 class="hero-h1">Tích lũy điểm thưởng <br class="desktop-br" />Tabi Go mỗi chuyến đi</h1>
             <p class="hero-sub">
-              Nhận hoàn tiền lên tới 10%, tự động. Bạn đi càng nhiều càng tiết kiệm!<br />Đổi Tabi Xu lấy dữ liệu cho những chuyến đi kế tiếp.
+              Nhận hoàn tiền lên tới 10%, tự động. <br class="desktop-br" />Bạn đi càng nhiều càng tiết kiệm! Đổi Tabi Xu lấy dữ liệu cho những chuyến đi kế tiếp.
             </p>
             <div class="hero-actions-container">
               <a href="#destinations" class="btn-hero-primary">Xem cấp độ thành viên</a>
