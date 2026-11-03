@@ -10,7 +10,7 @@
 | **Dự án / Module** | `tabi-go` (Website Landing Page B2C & Compliance) |
 | **Mức độ ưu tiên** | **HIGH / P1 (Tuân thủ pháp lý Bộ Công Thương & Bảo vệ người dùng)** |
 | **Nhánh Git đề xuất** | `version-2` |
-| **Trạng thái** | 📋 **GIAI ĐOẠN 1: LẬP KẾ HOẠCH & ĐỀ XUẤT KIẾN TRÚC (CHỜ DUYỆT - HARD GATE)** |
+| **Trạng thái** | ✅ **HOÀN THÀNH: TRIỂN KHAI THEO OPTION C (TRANG RIÊNG BIỆT MỞ TAB MỚI)** |
 
 ---
 
