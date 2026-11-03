@@ -3305,6 +3305,12 @@
       .mobile-menu-toggle {
         display: flex !important;
       }
+      /* Hide desktop currency, language & vertical dividers (already integrated into mobile drawer toolbar) */
+      .header-currency-btn,
+      .header-icon-btn,
+      .header-actions .header-divider-v {
+        display: none !important;
+      }
 
       /* Search Bar: remove side line and span clean full width */
       .search-divider-row {
@@ -3348,10 +3354,6 @@
       }
       .header-actions {
         gap: 8px;
-      }
-      .header-currency-btn {
-        font-size: 12px;
-        padding: 4px 6px;
       }
       .btn-header-cta {
         padding: 7px 12px;
