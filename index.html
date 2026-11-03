@@ -418,6 +418,13 @@
     .header-icon-btn:hover {
       background: rgba(0, 0, 0, 0.05);
     }
+    .header-icon-btn.header-lang-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border-radius: 8px;
+      padding: 6px 8px;
+    }
     .header-currency-btn {
       background: transparent;
       border: none;
@@ -3861,17 +3868,13 @@
 
         <!-- Right Controls (Matching Airalo format with divider) -->
         <div class="header-actions">
-          <button class="header-icon-btn" aria-label="Ngôn ngữ" title="Tiếng Việt">
+          <button class="header-icon-btn header-lang-btn" aria-label="Ngôn ngữ: Tiếng Việt" title="Tiếng Việt">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="10"/>
               <line x1="2" y1="12" x2="22" y2="12"/>
               <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
             </svg>
-          </button>
-          <div class="header-divider-v"></div>
-          <button class="header-currency-btn" title="Đơn vị tiền tệ">
-            <span>₫ VND</span>
-            <span class="fi fi-vn country-flag-icon" style="width: 18px; height: 13px;"></span>
+            <span class="fi fi-vn country-flag-icon" style="width: 18px; height: 13px; border-radius: 2px;"></span>
           </button>
           <div class="header-divider-v"></div>
           <a href="#destinations" class="btn-header-cta">Khám phá eSIM</a>
