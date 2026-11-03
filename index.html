@@ -457,6 +457,271 @@
       transform: translateY(-1px);
     }
 
+    /* Mobile Menu Toggle Button (Hamburger ☰) */
+    .mobile-menu-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 4.5px;
+      width: 38px;
+      height: 38px;
+      background: #FFFFFF;
+      border: 1.2px solid #D5CEBF;
+      border-radius: 10px;
+      padding: 0;
+      cursor: pointer;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+      transition: all 0.15s ease;
+      flex-shrink: 0;
+    }
+    .mobile-menu-toggle:hover,
+    .mobile-menu-toggle:active {
+      background: #F8FAFC;
+      border-color: #A39B8B;
+      transform: scale(0.97);
+    }
+    .hamburger-line {
+      width: 18px;
+      height: 2px;
+      background: #18181B;
+      border-radius: 2px;
+      transition: all 0.2s ease;
+    }
+
+    /* Mobile Nav Backdrop */
+    .mobile-nav-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.45);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      z-index: 9998;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+    .mobile-nav-backdrop.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* Mobile Nav Drawer Panel */
+    .mobile-nav-drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 86%;
+      max-width: 340px;
+      background: #FFFFFF;
+      z-index: 9999;
+      box-shadow: -8px 0 32px rgba(15, 23, 42, 0.18);
+      display: flex;
+      flex-direction: column;
+      transform: translateX(100%);
+      transition: transform 0.28s cubic-bezier(0.33, 1, 0.68, 1);
+      visibility: hidden;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .mobile-nav-drawer.active {
+      transform: translateX(0);
+      visibility: visible;
+    }
+
+    /* Drawer Header */
+    .mobile-drawer-header {
+      padding: 16px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #F1F5F9;
+      background: #FFFFFF;
+      position: sticky;
+      top: 0;
+      z-index: 2;
+    }
+    .mobile-drawer-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .mobile-drawer-close {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #F1F5F9;
+      border: none;
+      color: #64748B;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s, transform 0.15s;
+    }
+    .mobile-drawer-close:hover,
+    .mobile-drawer-close:active {
+      background: #E2E8F0;
+      color: #0F172A;
+      transform: scale(0.95);
+    }
+
+    /* Drawer Body */
+    .mobile-drawer-body {
+      padding: 16px 18px 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .mobile-drawer-section-title {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #94A3B8;
+      margin-bottom: 10px;
+      padding-left: 4px;
+    }
+    .mobile-nav-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .mobile-nav-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 11px 12px;
+      border-radius: 12px;
+      text-decoration: none;
+      color: #1E293B;
+      font-weight: 600;
+      font-size: 14.5px;
+      transition: background 0.15s, color 0.15s;
+    }
+    .mobile-nav-link:hover,
+    .mobile-nav-link:active {
+      background: #F8FAFC;
+      color: var(--orange);
+    }
+    .mobile-nav-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: #F1F5F9;
+      color: #475569;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .mobile-nav-icon svg {
+      width: 17px;
+      height: 17px;
+    }
+    .mobile-nav-link:hover .mobile-nav-icon,
+    .mobile-nav-link:active .mobile-nav-icon {
+      background: rgba(240, 81, 35, 0.1);
+      color: var(--orange);
+    }
+    .mobile-nav-text {
+      flex: 1;
+      text-align: left;
+    }
+    .mobile-nav-pill-badge {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 999px;
+      background: #FEE2E2;
+      color: #DC2626;
+    }
+    .mobile-nav-arrow {
+      width: 16px;
+      height: 16px;
+      color: #94A3B8;
+      flex-shrink: 0;
+    }
+
+    /* Settings Card in Drawer */
+    .mobile-drawer-settings-card {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 14px;
+      padding: 4px 14px;
+      margin-bottom: 20px;
+    }
+    .mobile-drawer-setting-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 0;
+      font-size: 13.5px;
+    }
+    .mobile-drawer-setting-row:not(:last-child) {
+      border-bottom: 1px solid #E2E8F0;
+    }
+    .setting-row-left {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #64748B;
+      font-weight: 500;
+    }
+    .setting-row-val {
+      font-weight: 700;
+      color: #0F172A;
+    }
+
+    /* Drawer Actions */
+    .mobile-drawer-actions {
+      margin-top: auto;
+      padding-top: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .mobile-drawer-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 46px;
+      background: var(--orange);
+      color: #FFFFFF;
+      font-weight: 700;
+      font-size: 14px;
+      border-radius: 12px;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(240, 81, 35, 0.25);
+      transition: background 0.15s;
+    }
+    .mobile-drawer-cta:hover {
+      background: var(--orange-hover);
+    }
+    .mobile-drawer-store-row {
+      display: flex;
+      gap: 10px;
+    }
+    .mobile-drawer-store-btn {
+      flex: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      height: 40px;
+      background: #0F172A;
+      color: #FFFFFF;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 12.5px;
+      font-weight: 700;
+    }
+
     /* Nav Menu Links (Exact Airalo style: bold prominent clean text) */
     .nav-menu {
       display: flex;
@@ -3026,34 +3291,15 @@
       }
     }
 
-    /* 3. SMALL TABLETS & LANDSCAPE MOBILES (641px - 768px) */
+    /* 3. MOBILE & TABLET (<= 768px) - HIDE ROW 2, SHOW HAMBURGER DRAWER */
     @media (max-width: 768px) {
-      /* Smooth horizontal scroll for Nav row without text wrapping */
+      /* Hide desktop 2nd row on mobile and tablet */
       .header-row2 {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-        justify-content: flex-start;
-        padding: 4px 16px 8px;
-        max-height: none;
+        display: none !important;
       }
-      .header-row2::-webkit-scrollbar {
-        display: none;
-      }
-      .nav-menu {
-        display: flex;
-        flex-wrap: nowrap;
-        white-space: nowrap;
-        gap: 14px;
-        width: max-content;
-      }
-      .nav-menu li {
-        flex-shrink: 0;
-      }
-      .nav-menu a {
-        white-space: nowrap;
-        font-size: 13.5px;
-        padding: 4px 0;
+      /* Show modern mobile hamburger toggle button */
+      .mobile-menu-toggle {
+        display: flex !important;
       }
 
       /* Search Bar: remove side line and span clean full width */
@@ -3087,7 +3333,7 @@
 
       /* Header Row 1 Compact */
       .header-row1 {
-        padding: 10px 16px 6px;
+        padding: 10px 16px 10px;
       }
       .brand-text-row {
         font-size: 18.5px;
@@ -3106,6 +3352,10 @@
       .btn-header-cta {
         padding: 7px 12px;
         font-size: 12px;
+      }
+      .mobile-menu-toggle {
+        width: 36px;
+        height: 36px;
       }
 
       /* Search Bar Mobile */
@@ -3429,6 +3679,10 @@
         padding: 6px 10px;
         font-size: 11.5px;
       }
+      .mobile-menu-toggle {
+        width: 34px;
+        height: 34px;
+      }
       .hero-h1 {
         font-size: 21px;
         letter-spacing: -0.3px;
@@ -3571,6 +3825,11 @@
           </button>
           <div class="header-divider-v"></div>
           <a href="#destinations" class="btn-header-cta">Khám phá eSIM</a>
+          <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Mở menu điều hướng" onclick="toggleMobileNav()">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
         </div>
       </div>
 
@@ -4724,6 +4983,154 @@
 
   </div>
 
+  <!-- Mobile Navigation Drawer Overlay & Panel -->
+  <div class="mobile-nav-backdrop" id="mobileNavBackdrop" onclick="closeMobileNav()"></div>
+
+  <div class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
+    <!-- Drawer Header -->
+    <div class="mobile-drawer-header">
+      <div class="mobile-drawer-brand">
+        <div class="brand-icon-box" style="width: 28px; height: 28px;">
+          <svg viewBox="0 0 100 100" fill="none">
+            <circle cx="50" cy="50" r="32" fill="url(#navGlobeGrad)" />
+            <ellipse cx="50" cy="50" rx="42" ry="17" stroke="#00A3E0" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="5 3" transform="rotate(-28 50 50)" />
+            <g transform="translate(62, 17) rotate(22)">
+              <polygon points="12,0 0,16 6,10 12,0" fill="url(#navPlaneGrad)" />
+              <polygon points="12,0 6,10 16,8 12,0" fill="#FFAA00" />
+              <polygon points="6,10 7,16 9,12 6,10" fill="#E65100" />
+            </g>
+          </svg>
+        </div>
+        <div class="brand-text-row" style="font-size: 19px;">
+          <span class="brand-tabi">Tabi</span><span class="brand-go">Go<svg class="brand-plane-accent" viewBox="0 0 24 24" fill="currentColor"><path d="m21.426 2.574-19 9a1 1 0 0 0 .044 1.832l6.877 2.457 2.457 6.877a1 1 0 0 0 1.832.044l9-19a1 1 0 0 0-1.21-1.21z"/></svg></span>
+        </div>
+      </div>
+      <button class="mobile-drawer-close" onclick="closeMobileNav()" aria-label="Đóng menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Drawer Body -->
+    <div class="mobile-drawer-body">
+      <div class="mobile-drawer-section-title">Menu Điều Hướng</div>
+      <ul class="mobile-nav-list">
+        <li>
+          <a href="#hero" class="mobile-nav-link" onclick="handleMobileNavClick('#hero')">
+            <span class="mobile-nav-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+            </span>
+            <span class="mobile-nav-text">Trang chủ</span>
+            <svg class="mobile-nav-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="#why-tabigo" class="mobile-nav-link" onclick="handleMobileNavClick('#why-tabigo')">
+            <span class="mobile-nav-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </span>
+            <span class="mobile-nav-text">Tính năng nổi bật</span>
+            <span class="mobile-nav-pill-badge">Hot</span>
+            <svg class="mobile-nav-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="#destinations" class="mobile-nav-link" onclick="handleMobileNavClick('#destinations')">
+            <span class="mobile-nav-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+            </span>
+            <span class="mobile-nav-text">Điểm đến phổ biến (150+)</span>
+            <svg class="mobile-nav-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="#how-it-works" class="mobile-nav-link" onclick="handleMobileNavClick('#how-it-works')">
+            <span class="mobile-nav-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10"/><path d="M6 10h10"/></svg>
+            </span>
+            <span class="mobile-nav-text">Hướng dẫn sử dụng</span>
+            <svg class="mobile-nav-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="#download-app" class="mobile-nav-link" onclick="handleMobileNavClick('#download-app')">
+            <span class="mobile-nav-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
+            </span>
+            <span class="mobile-nav-text">Đánh giá & Tải App Tabi Go</span>
+            <span class="mobile-nav-pill-badge" style="background:#ECFDF5;color:#059669;">★ 4.7</span>
+            <svg class="mobile-nav-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="#faq" class="mobile-nav-link" onclick="handleMobileNavClick('#faq')">
+            <span class="mobile-nav-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" x2="12.01" y1="17" y2="17"/></svg>
+            </span>
+            <span class="mobile-nav-text">Câu hỏi thường gặp</span>
+            <svg class="mobile-nav-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="#blog" class="mobile-nav-link" onclick="handleMobileNavClick('#blog')">
+            <span class="mobile-nav-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            </span>
+            <span class="mobile-nav-text">Cẩm nang du lịch</span>
+            <svg class="mobile-nav-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="#b2b-partner" class="mobile-nav-link" onclick="handleMobileNavClick('#b2b-partner')">
+            <span class="mobile-nav-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            </span>
+            <span class="mobile-nav-text">Đối tác Doanh nghiệp / Đại lý</span>
+            <svg class="mobile-nav-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </li>
+      </ul>
+
+      <!-- Settings in Drawer -->
+      <div class="mobile-drawer-section-title" style="margin-top: 20px;">Tùy Chọn Cá Nhân</div>
+      <div class="mobile-drawer-settings-card">
+        <div class="mobile-drawer-setting-row">
+          <span class="setting-row-left">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+            <span>Ngôn ngữ</span>
+          </span>
+          <span class="setting-row-val">Tiếng Việt 🇻🇳</span>
+        </div>
+        <div class="mobile-drawer-setting-row">
+          <span class="setting-row-left">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg>
+            <span>Đơn vị tiền tệ</span>
+          </span>
+          <span class="setting-row-val">₫ VND</span>
+        </div>
+      </div>
+
+      <!-- Action Buttons in Drawer -->
+      <div class="mobile-drawer-actions">
+        <a href="#destinations" class="mobile-drawer-cta" onclick="handleMobileNavClick('#destinations')">
+          Khám phá eSIM ngay →
+        </a>
+        <div class="mobile-drawer-store-row">
+          <a href="javascript:void(0)" onclick="openAppQrModal('iOS'); closeMobileNav();" class="mobile-drawer-store-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.63-.76 1.06-1.81.94-2.87-.91.04-2.02.61-2.67 1.37-.58.67-.98 1.74-.84 2.78 1.02.08 2.05-.52 2.57-1.28z"/></svg>
+            <span>App Store</span>
+          </a>
+          <a href="javascript:void(0)" onclick="openAppQrModal('Android'); closeMobileNav();" class="mobile-drawer-store-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M3.609 1.814L13.792 12 3.61 22.186a2.02 2.02 0 0 1-.61-.318c-.37-.282-.6-.723-.6-1.198V3.33c0-.475.23-.916.6-1.198.18-.137.393-.245.609-.318zm11.606 11.61l2.408 2.408-11.75 6.78 9.342-9.188zm0-2.848L5.873 1.394l11.75 6.78-2.408 2.408zm1.424 1.424l3.18-1.837a1.47 1.47 0 0 1 1.481 0l.01.006c.45.26.72.742.72 1.265 0 .523-.27 1.005-.72 1.265l-.01.006-3.18 1.837-2.91-2.91 1.429-1.632z"/></svg>
+            <span>Google Play</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Modal Package Details -->
   <div class="country-modal-overlay" id="countryModal" onclick="closeCountryModalOnBg(event)">
     <div class="country-modal-card">
@@ -5282,6 +5689,57 @@
         }
       }
     }, { passive: true });
+
+    /* ==================================================== */
+    /* MOBILE NAVIGATION DRAWER CONTROLLER                  */
+    /* ==================================================== */
+    function toggleMobileNav() {
+      const drawer = document.getElementById('mobileNavDrawer');
+      const backdrop = document.getElementById('mobileNavBackdrop');
+      const isOpen = drawer && drawer.classList.contains('active');
+      if (isOpen) {
+        closeMobileNav();
+      } else {
+        openMobileNav();
+      }
+    }
+
+    function openMobileNav() {
+      const drawer = document.getElementById('mobileNavDrawer');
+      const backdrop = document.getElementById('mobileNavBackdrop');
+      if (drawer && backdrop) {
+        drawer.classList.add('active');
+        backdrop.classList.add('active');
+        drawer.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeMobileNav() {
+      const drawer = document.getElementById('mobileNavDrawer');
+      const backdrop = document.getElementById('mobileNavBackdrop');
+      if (drawer && backdrop) {
+        drawer.classList.remove('active');
+        backdrop.classList.remove('active');
+        drawer.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function handleMobileNavClick(hash) {
+      closeMobileNav();
+      if (!hash) return;
+      const target = document.querySelector(hash);
+      if (target) {
+        setTimeout(() => {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 220);
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeMobileNav();
+    });
 
     /* ==================================================== */
     /* SAFEGUARD: INTERCEPT NON-NAVIGATING PLACEHOLDER LINKS */
