@@ -1,1245 +1,804 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chính Sách Bảo Mật Thông Tin | TabiGo eSIM Du Lịch</title>
-  <meta name="description" content="Chính sách bảo vệ dữ liệu cá nhân, xử lý thông tin eKYC và quyền riêng tư của khách hàng sử dụng dịch vụ TabiGo. Cam kết không thương mại hóa dữ liệu.">
-  <link rel="canonical" href="https://tabigo.vn/privacy.html">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
-  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chính Sách Bảo Mật Thông Tin — TabiGo</title>
+
+  <!-- Favicon & App Icons -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%2300C8FF'/%3E%3Cstop offset='50%25' stop-color='%2300A8FF'/%3E%3Cstop offset='100%25' stop-color='%230066CC'/%3E%3C/linearGradient%3E%3ClinearGradient id='orbit' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%23FFFFFF' stop-opacity='0.95'/%3E%3Cstop offset='100%25' stop-color='%23FFFFFF' stop-opacity='0.3'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23bg)'/%3E%3Ccircle cx='32' cy='32' r='19' fill='%230080FF' opacity='0.4'/%3E%3Ccircle cx='32' cy='32' r='18' fill='none' stroke='%23FFFFFF' stroke-width='2.5' opacity='0.9'/%3E%3Cellipse cx='32' cy='32' rx='9' ry='18' fill='none' stroke='%23FFFFFF' stroke-width='1.8' opacity='0.75'/%3E%3Cline x1='14' y1='32' x2='50' y2='32' stroke='%23FFFFFF' stroke-width='1.8' opacity='0.75'/%3E%3Cellipse cx='32' cy='32' rx='26' ry='9' fill='none' stroke='url(%23orbit)' stroke-width='2.2' transform='rotate(-30 32 32)'/%3E%3Ccircle cx='51' cy='21' r='3.5' fill='%23FFAA00'/%3E%3Ccircle cx='51' cy='21' r='1.5' fill='%23FFEAA7'/%3E%3C/svg%3E" />
+  <link rel="icon" type="image/png" sizes="48x48" href="./assets/images/tabigo_favicon.png" />
+  <link rel="shortcut icon" href="./assets/images/tabigo_favicon.png" />
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
   <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
     :root {
-      --bg-cream: #F5EFE6;
-      --card-white: #FFFFFF;
-      --primary: #F05123;
-      --primary-hover: #D94115;
-      --navy: #0B192C;
-      --text-dark: #1E293B;
-      --text-muted: #64748B;
-      --border-color: #E2E8F0;
+      --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --bg-page: #F5EFE6;
+      --bg-card: #FFFFFF;
+      --orange: #F05123;
+      --orange-hover: #D63F13;
+      --tabi-navy: #00478F;
+      --tabi-sky: #00A8FF;
+      --text-main: #0F172A;
+      --text-muted: #334155;
+      --text-light: #64748B;
+      --border: #E2E8F0;
       --border-card: #EAE3D6;
-      --badge-bg: #FEF3EE;
-      --badge-blue: #E0F2FE;
-      --blue-accent: #0284C7;
-      --font-heading: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --max-w: 1200px;
     }
 
     body {
-      font-family: var(--font-body);
-      background-color: var(--bg-cream);
-      color: var(--text-dark);
-      line-height: 1.7;
+      font-family: var(--font-family);
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.65;
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ==================================================== */
-    /* TOP NAVIGATION HEADER                                */
-    /* ==================================================== */
-    .legal-header {
+    .bg-decorations {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+      opacity: 0.5;
+    }
+    .shape-blob-1 {
+      position: absolute;
+      top: -120px;
+      right: -80px;
+      width: 480px;
+      height: 480px;
+      background: radial-gradient(circle, rgba(240, 81, 35, 0.08) 0%, rgba(245, 239, 230, 0) 70%);
+      border-radius: 50%;
+    }
+    .shape-blob-2 {
+      position: absolute;
+      top: 40%;
+      left: -150px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(0, 168, 255, 0.08) 0%, rgba(245, 239, 230, 0) 70%);
+      border-radius: 50%;
+    }
+
+    .site-wrapper {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Header */
+    header {
+      background: rgba(245, 239, 230, 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(245, 239, 230, 0.94);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(226, 232, 240, 0.8);
-      padding: 12px 24px;
-      transition: all 0.2s ease;
     }
-
-    .legal-header-container {
-      max-width: 1240px;
+    .header-inner {
+      max-width: var(--max-w);
       margin: 0 auto;
+      padding: 14px 24px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
     }
-
-    /* Brand Logo */
     .brand-logo {
-      display: inline-flex;
+      display: flex;
       align-items: center;
-      gap: 9px;
+      gap: 12px;
       text-decoration: none;
     }
-
     .brand-icon-box {
-      width: 38px;
-      height: 38px;
+      width: 40px;
+      height: 40px;
       display: flex;
       align-items: center;
       justify-content: center;
-      filter: drop-shadow(0 4px 10px rgba(0, 163, 224, 0.22));
-      flex-shrink: 0;
     }
-
-    .brand-icon-box svg {
-      width: 100%;
-      height: 100%;
-    }
-
     .brand-text-row {
-      display: inline-flex;
-      align-items: baseline;
-      font-family: var(--font-heading);
-      letter-spacing: -0.4px;
-    }
-
-    .brand-tabi {
-      font-size: 26px;
-      font-weight: 800;
-      color: #0F172A;
-    }
-
-    .brand-go {
-      font-size: 26px;
-      font-weight: 800;
-      color: var(--primary);
-      position: relative;
-      display: inline-flex;
-      align-items: center;
-    }
-
-    .brand-plane-accent {
-      width: 13px;
-      height: 13px;
-      margin-left: 2px;
-      transform: rotate(45deg);
-      color: var(--primary);
-    }
-
-    /* Header Nav items */
-    .legal-nav-actions {
       display: flex;
       align-items: center;
-      gap: 16px;
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: -0.6px;
+      line-height: 1;
     }
-
-    .btn-back-home {
-      display: inline-flex;
+    .brand-tabi { color: #111827; }
+    .brand-go { color: var(--orange); position: relative; display: inline-flex; align-items: center; }
+    .brand-plane-accent {
+      width: 17px;
+      height: 17px;
+      margin-left: 3px;
+      color: var(--orange);
+      transform: rotate(-10deg);
+    }
+    .header-nav-links {
+      display: flex;
       align-items: center;
-      gap: 6px;
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--text-dark);
-      text-decoration: none;
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.7);
-      border: 1px solid var(--border-card);
-      transition: all 0.15s ease;
+      gap: 24px;
     }
-
-    .btn-back-home:hover {
-      background: #FFFFFF;
-      color: var(--primary);
-      border-color: #FDBA74;
-    }
-
-    .legal-header-link {
+    .header-nav-link {
       font-size: 14px;
       font-weight: 600;
       color: var(--text-muted);
       text-decoration: none;
-      transition: color 0.15s ease;
+      transition: color 0.15s;
     }
-
-    .legal-header-link:hover {
-      color: var(--primary);
+    .header-nav-link:hover,
+    .header-nav-link.active {
+      color: var(--orange);
     }
-
-    .legal-header-hotline {
+    .btn-header-cta {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
+      background: var(--orange);
+      color: #FFFFFF;
       font-size: 13.5px;
       font-weight: 700;
-      color: #0284C7;
-      background: #E0F2FE;
-      padding: 6px 14px;
+      padding: 9px 18px;
       border-radius: 999px;
       text-decoration: none;
-      transition: all 0.15s ease;
+      transition: transform 0.15s, background-color 0.15s, box-shadow 0.15s;
+      box-shadow: 0 4px 12px rgba(240, 81, 35, 0.25);
     }
-
-    .legal-header-hotline:hover {
-      background: #BAE6FD;
-      color: #0369A1;
-    }
-
-    .btn-buy-esim {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 14px;
-      font-weight: 700;
-      color: #FFFFFF;
-      background: var(--primary);
-      padding: 9px 20px;
-      border-radius: 999px;
-      text-decoration: none;
-      box-shadow: 0 4px 14px rgba(240, 81, 35, 0.28);
-      transition: all 0.15s ease;
-    }
-
-    .btn-buy-esim:hover {
-      background: var(--primary-hover);
+    .btn-header-cta:hover {
+      background: var(--orange-hover);
       transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(240, 81, 35, 0.32);
     }
 
-    /* ==================================================== */
-    /* HERO BANNER SECTION                                  */
-    /* ==================================================== */
+    /* Page Hero Banner */
     .legal-hero {
-      max-width: 1240px;
-      margin: 32px auto 24px;
-      padding: 0 24px;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 48px 24px 32px;
+      text-align: center;
     }
-
-    .legal-hero-card {
-      background: linear-gradient(135deg, #0B192C 0%, #1E293B 100%);
-      border-radius: 28px;
-      padding: 44px 48px;
-      color: #FFFFFF;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 20px 45px rgba(11, 25, 44, 0.15);
-    }
-
-    .legal-hero-card::before {
-      content: '';
-      position: absolute;
-      top: -40px;
-      right: -40px;
-      width: 260px;
-      height: 260px;
-      background: radial-gradient(circle, rgba(2, 132, 199, 0.3) 0%, rgba(2, 132, 199, 0) 70%);
-      border-radius: 50%;
-      pointer-events: none;
-    }
-
-    .legal-breadcrumb {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 12.5px;
-      color: #94A3B8;
-      margin-bottom: 16px;
-    }
-
-    .legal-breadcrumb a {
-      color: #CBD5E1;
-      text-decoration: none;
-      transition: color 0.15s ease;
-    }
-
-    .legal-breadcrumb a:hover {
-      color: #FFFFFF;
-    }
-
-    .legal-hero-badge {
+    .legal-badge-pill {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: rgba(56, 189, 248, 0.18);
-      border: 1px solid rgba(56, 189, 248, 0.35);
-      color: #7DD3FC;
-      font-size: 12px;
-      font-weight: 700;
-      padding: 5px 12px;
+      background: rgba(0, 168, 255, 0.12);
+      color: #0284C7;
+      padding: 6px 14px;
       border-radius: 999px;
-      margin-bottom: 16px;
+      font-size: 12.5px;
+      font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.5px;
+      margin-bottom: 16px;
     }
-
-    .legal-hero-title {
-      font-family: var(--font-heading);
-      font-size: 34px;
+    .legal-title {
+      font-size: 36px;
       font-weight: 800;
+      color: #0F172A;
       letter-spacing: -0.8px;
+      margin-bottom: 12px;
       line-height: 1.25;
-      margin-bottom: 14px;
     }
-
-    .legal-hero-sub {
-      font-size: 15.5px;
-      color: #CBD5E1;
-      max-width: 780px;
-      line-height: 1.6;
-      margin-bottom: 24px;
+    .legal-subtitle {
+      font-size: 16px;
+      color: var(--text-light);
+      max-width: 760px;
+      margin: 0 auto 20px;
     }
-
-    .legal-stats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 12px;
-      padding-top: 20px;
-      border-top: 1px solid rgba(255, 255, 255, 0.12);
-    }
-
-    .legal-stat-item {
+    .legal-meta-row {
       display: flex;
+      justify-content: center;
       align-items: center;
-      gap: 10px;
+      gap: 20px;
       font-size: 13px;
-      color: #E2E8F0;
+      color: #64748B;
+      flex-wrap: wrap;
+    }
+    .legal-meta-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
     }
 
-    .legal-stat-item svg {
-      width: 18px;
-      height: 18px;
-      color: #38BDF8;
-      flex-shrink: 0;
-    }
-
-    /* ==================================================== */
-    /* TWO COLUMN LAYOUT (SIDEBAR TOC + MAIN ARTICLE)       */
-    /* ==================================================== */
-    .legal-main-container {
-      max-width: 1240px;
+    /* Layout: 2 Columns (Sticky Sidebar + Content) */
+    .legal-container {
+      max-width: var(--max-w);
       margin: 0 auto 60px;
       padding: 0 24px;
       display: grid;
-      grid-template-columns: 310px 1fr;
-      gap: 32px;
-      align-items: start;
+      grid-template-columns: 290px 1fr;
+      gap: 36px;
+      align-items: flex-start;
     }
 
     /* Sticky Sidebar Table of Contents */
     .legal-sidebar {
       position: sticky;
-      top: 80px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .toc-card {
-      background: var(--card-white);
-      border-radius: 20px;
+      top: 86px;
+      background: #FFFFFF;
       border: 1px solid var(--border-card);
-      padding: 22px 20px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+      border-radius: var(--radius-lg);
+      padding: 22px 18px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
     }
-
     .toc-title {
-      font-family: var(--font-heading);
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 800;
-      color: var(--navy);
+      color: #475569;
       text-transform: uppercase;
-      letter-spacing: 0.6px;
+      letter-spacing: 0.8px;
       margin-bottom: 14px;
       padding-bottom: 10px;
       border-bottom: 1px solid #F1F5F9;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      gap: 8px;
     }
-
     .toc-list {
       list-style: none;
       display: flex;
       flex-direction: column;
       gap: 4px;
     }
-
     .toc-link {
       display: flex;
       align-items: center;
       gap: 10px;
-      padding: 9px 12px;
-      border-radius: 12px;
-      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: var(--radius-sm);
       color: #475569;
+      text-decoration: none;
       font-size: 13.5px;
       font-weight: 600;
-      line-height: 1.4;
       transition: all 0.15s ease;
+      line-height: 1.35;
     }
-
     .toc-link:hover {
-      background: #F8FAFC;
-      color: var(--blue-accent);
-      transform: translateX(3px);
+      background: #F0F9FF;
+      color: #0284C7;
     }
-
     .toc-link.active {
-      background: var(--badge-blue);
-      color: var(--blue-accent);
+      background: #E0F2FE;
+      color: #0284C7;
       font-weight: 700;
-      box-shadow: inset 3px 0 0 var(--blue-accent);
     }
-
-    .toc-icon {
-      font-size: 15px;
-      flex-shrink: 0;
-    }
-
-    /* Switcher card */
-    .toc-switch-card {
-      background: #FAF8F5;
-      border: 1px dashed #D6C7B2;
-      border-radius: 18px;
-      padding: 18px 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .toc-switch-card strong {
-      font-size: 13.5px;
-      color: var(--navy);
-    }
-
-    .toc-switch-card p {
-      font-size: 12.5px;
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
-
-    .btn-switch-terms {
+    .toc-num {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      border-radius: 6px;
+      background: #F1F5F9;
+      font-size: 11.5px;
+      color: #64748B;
+      flex-shrink: 0;
+    }
+    .toc-link.active .toc-num {
+      background: #0284C7;
+      color: #FFFFFF;
+    }
+
+    .sidebar-help-box {
+      margin-top: 20px;
+      padding: 16px;
+      background: #FAF7F2;
+      border: 1px solid #EAE3D6;
+      border-radius: var(--radius-md);
+      font-size: 12.5px;
+      color: #475569;
+    }
+    .sidebar-help-box strong {
+      display: block;
+      color: #0F172A;
+      margin-bottom: 6px;
       font-size: 13px;
+    }
+    .sidebar-help-box a {
+      color: var(--orange);
       font-weight: 700;
-      color: var(--primary);
       text-decoration: none;
-      margin-top: 4px;
-      transition: all 0.15s ease;
     }
 
-    .btn-switch-terms:hover {
-      color: var(--primary-hover);
-      text-decoration: underline;
-    }
-
-    /* Support Card in Sidebar */
-    .toc-support-card {
-      background: var(--card-white);
-      border-radius: 18px;
-      border: 1px solid var(--border-card);
-      padding: 18px 20px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
-    }
-
-    .toc-support-card h5 {
-      font-size: 13px;
-      font-weight: 800;
-      color: var(--navy);
-      margin-bottom: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .toc-support-item {
+    /* Content Area */
+    .legal-content-wrap {
       display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 13px;
-      color: #334155;
-      margin-bottom: 8px;
-      text-decoration: none;
+      flex-direction: column;
+      gap: 28px;
     }
 
-    .toc-support-item:last-child {
-      margin-bottom: 0;
-    }
-
-    .toc-support-item svg {
-      width: 15px;
-      height: 15px;
-      color: var(--blue-accent);
-    }
-
-    /* ==================================================== */
-    /* MAIN ARTICLE CONTENT                                 */
-    /* ==================================================== */
-    .legal-content-card {
-      background: var(--card-white);
-      border-radius: 28px;
+    .legal-card {
+      background: #FFFFFF;
       border: 1px solid var(--border-card);
-      padding: 44px 50px;
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
-    }
-
-    .policy-section {
-      margin-bottom: 48px;
+      border-radius: var(--radius-lg);
+      padding: 32px 36px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
       scroll-margin-top: 100px;
     }
-
-    .policy-section:last-of-type {
-      margin-bottom: 32px;
-    }
-
-    .policy-section-header {
+    .card-header-row {
       display: flex;
       align-items: center;
       gap: 14px;
       margin-bottom: 20px;
       padding-bottom: 14px;
-      border-bottom: 2px solid #F1F5F9;
+      border-bottom: 1px solid #F1F5F9;
     }
-
-    .policy-badge-num {
+    .card-badge-num {
       width: 36px;
       height: 36px;
-      border-radius: 12px;
-      background: var(--badge-blue);
-      color: var(--blue-accent);
-      font-weight: 800;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #38BDF8 0%, #0284C7 100%);
+      color: #FFFFFF;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 16px;
+      font-weight: 800;
       flex-shrink: 0;
-      box-shadow: 0 2px 8px rgba(2, 132, 199, 0.15);
+      box-shadow: 0 4px 10px rgba(2, 132, 199, 0.25);
     }
-
-    .policy-section-header h2 {
-      font-family: var(--font-heading);
+    .card-title {
       font-size: 22px;
       font-weight: 800;
-      color: var(--navy);
+      color: #0F172A;
       letter-spacing: -0.4px;
-      margin: 0;
     }
 
-    .policy-body {
-      font-size: 15px;
+    .legal-body {
       color: #334155;
+      font-size: 14.5px;
       line-height: 1.75;
     }
-
-    .policy-body p {
+    .legal-body p {
+      margin-bottom: 14px;
+    }
+    .legal-body h4 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #0F172A;
+      margin: 20px 0 10px;
+    }
+    .legal-body ul, .legal-body ol {
+      margin-left: 20px;
       margin-bottom: 16px;
     }
-
-    .policy-body ul, .policy-body ol {
-      margin-bottom: 18px;
-      padding-left: 22px;
-    }
-
-    .policy-body li {
+    .legal-body li {
       margin-bottom: 8px;
     }
 
-    .policy-body strong {
-      color: #0F172A;
-    }
-
-    /* Highlight Info Cards */
-    .info-card {
-      background: #F8FAFC;
-      border-left: 4px solid var(--blue-accent);
-      padding: 16px 20px;
-      border-radius: 8px 14px 14px 8px;
-      margin: 20px 0;
-      font-size: 14px;
-      line-height: 1.6;
-    }
-
-    .info-card.success {
-      border-left-color: #10B981;
-      background: #ECFDF5;
-      color: #065F46;
-    }
-
-    .info-card.warning {
-      border-left-color: #F59E0B;
-      background: #FFFBEB;
-      color: #92400E;
-    }
-
-    /* Legal Contact Box */
-    .legal-contact-card {
-      background: #FAF8F5;
-      border: 1.5px dashed #D6C7B2;
-      border-radius: 20px;
-      padding: 26px 30px;
-      margin-top: 36px;
-    }
-
-    .legal-contact-card h4 {
-      font-family: var(--font-heading);
-      font-size: 16px;
-      font-weight: 800;
-      color: var(--navy);
-      margin-bottom: 14px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .legal-contact-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-    }
-
-    .legal-contact-col {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
+    .alert-box {
+      background: #F0F9FF;
+      border-left: 4px solid #0284C7;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 14px 18px;
+      margin: 18px 0;
       font-size: 13.5px;
-      color: #334155;
+      color: #0369A1;
+    }
+    .alert-box strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 14px;
     }
 
-    .legal-contact-col strong {
-      color: var(--navy);
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .legal-contact-col a {
-      color: var(--blue-accent);
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    /* ==================================================== */
-    /* FOOTER                                               */
-    /* ==================================================== */
+    /* Footer */
     footer {
-      background: var(--bg-cream);
-      border-top: 1px solid var(--border-card);
-      padding: 60px 24px 36px;
-      margin-top: 40px;
-    }
-
-    .footer-container {
-      max-width: 1240px;
-      margin: 0 auto;
-    }
-
-    .footer-top-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 40px;
-      padding-bottom: 40px;
-      border-bottom: 1px solid var(--border-card);
-    }
-
-    .footer-brand-col {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-
-    .footer-brand-slogan {
-      font-size: 14px;
-      color: var(--text-muted);
-      max-width: 320px;
-      line-height: 1.6;
-    }
-
-    .footer-col-title {
-      font-size: 14px;
-      font-weight: 800;
-      color: var(--navy);
-      text-transform: uppercase;
-      letter-spacing: 0.6px;
-      margin-bottom: 16px;
-    }
-
-    .footer-links-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .footer-links-list a {
-      font-size: 14px;
-      color: #475569;
-      text-decoration: none;
-      transition: color 0.15s ease;
-    }
-
-    .footer-links-list a:hover {
-      color: var(--primary);
-    }
-
-    .footer-bottom-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 16px;
-      padding-top: 28px;
-    }
-
-    .footer-bottom-left {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .footer-copyright {
-      font-size: 13.5px;
-      color: var(--text-muted);
-    }
-
-    .footer-legal-links {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .footer-legal-links a {
+      background: rgba(0, 0, 0, 0.02);
+      border-top: 1px solid rgba(0, 0, 0, 0.06);
+      padding: 40px 24px 48px;
       font-size: 13px;
       color: #64748B;
-      text-decoration: none;
-      transition: color 0.15s ease;
     }
-
-    .footer-legal-links a:hover {
-      color: var(--navy);
+    .footer-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
     }
-
-    /* Floating Zalo Button */
-    .floating-zalo-fab {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      z-index: 99;
-      width: 54px;
-      height: 54px;
-      border-radius: 50%;
-      background: #0068FF;
+    .footer-left {
       display: flex;
       align-items: center;
-      justify-content: center;
-      box-shadow: 0 8px 24px rgba(0, 104, 255, 0.4);
-      transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      gap: 16px;
+    }
+    .footer-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      color: #64748B;
       text-decoration: none;
+      transition: color 0.15s;
+    }
+    .footer-links a:hover {
+      color: var(--orange);
     }
 
-    .floating-zalo-fab:hover {
-      transform: scale(1.08);
-    }
-
-    .floating-zalo-fab svg {
-      width: 32px;
-      height: 32px;
-      fill: #FFFFFF;
-    }
-
-    /* Responsive */
-    @media (max-width: 992px) {
-      .legal-main-container {
+    @media (max-width: 960px) {
+      .legal-container {
         grid-template-columns: 1fr;
       }
       .legal-sidebar {
         position: static;
-      }
-      .toc-card {
-        border-radius: 18px;
+        margin-bottom: 8px;
       }
       .toc-list {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, 1fr);
         gap: 6px;
       }
-      .footer-top-grid {
-        grid-template-columns: 1fr 1fr;
+      .header-nav-links {
+        display: none;
       }
     }
 
     @media (max-width: 640px) {
-      .legal-header {
-        padding: 10px 16px;
-      }
-      .legal-header-hotline, .legal-header-link {
-        display: none;
-      }
       .legal-hero {
-        margin: 16px auto;
+        padding: 32px 16px 20px;
+      }
+      .legal-title {
+        font-size: 26px;
+      }
+      .legal-subtitle {
+        font-size: 14.5px;
+      }
+      .legal-container {
         padding: 0 16px;
-      }
-      .legal-hero-card {
-        padding: 28px 20px;
-        border-radius: 20px;
-      }
-      .legal-hero-title {
-        font-size: 24px;
-      }
-      .legal-main-container {
-        padding: 0 16px;
-        gap: 20px;
-      }
-      .legal-content-card {
-        padding: 24px 18px;
-        border-radius: 20px;
-      }
-      .policy-section-header h2 {
-        font-size: 18px;
       }
       .toc-list {
         grid-template-columns: 1fr;
       }
-      .footer-top-grid {
-        grid-template-columns: 1fr;
+      .legal-card {
+        padding: 22px 20px;
       }
-      .footer-bottom-row {
+      .card-title {
+        font-size: 19px;
+      }
+      .footer-inner {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
+        text-align: center;
       }
     }
-  
-    .policy-intro-card {
-      background: #FAF8F5;
-      border: 1px solid var(--border-card);
-      border-radius: 16px;
-      padding: 24px;
-      margin-bottom: 36px;
-    }
-    .policy-intro-card p {
-      margin-bottom: 12px;
-      font-size: 15px;
-      line-height: 1.7;
-      color: #334155;
-    }
-    .policy-intro-card p:last-child {
-      margin-bottom: 0;
-    }
-    .subsection-title {
-      font-family: var(--font-heading);
-      font-size: 17px;
-      font-weight: 700;
-      color: var(--navy);
-      margin: 28px 0 14px;
-      padding-left: 12px;
-      border-left: 3.5px solid var(--blue-accent);
-    }
-    .principles-list {
-      list-style: none !important;
-      padding: 0 !important;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-bottom: 18px;
-    }
-    .principles-list li {
-      background: #F8FAFC;
-      border: 1px solid #E2E8F0;
-      border-radius: 12px;
-      padding: 14px 18px;
-      font-size: 14.5px;
-      line-height: 1.65;
-      color: #334155;
-      margin-bottom: 0 !important;
-    }
-    .principles-list li strong {
-      color: var(--navy);
-    }
-    
   </style>
 </head>
 <body>
 
-  <!-- Top Sticky Header -->
-  <header class="legal-header">
-    <div class="legal-header-container">
-      <a href="index.html" class="brand-logo" title="Quay về trang chủ TabiGo">
-        <div class="brand-icon-box">
-          <svg viewBox="0 0 100 100" fill="none">
-            <circle cx="50" cy="50" r="32" fill="url(#navGlobeGrad)" />
-            <defs>
-              <radialGradient id="navGlobeGrad" cx="38%" cy="35%" r="65%">
-                <stop offset="0%" stop-color="#E1F7FF" />
-                <stop offset="45%" stop-color="#38BDF8" />
-                <stop offset="100%" stop-color="#0284C7" />
-              </radialGradient>
-              <linearGradient id="navPlaneGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#FFAE00" />
-                <stop offset="100%" stop-color="#FF6B00" />
-              </linearGradient>
-            </defs>
-            <path d="M42 32c3-2 8-1 10 2 2 3 0 7-3 8-4 1-5 4-4 7s4 5 7 4 5-3 8-1c3 2 4 6 2 8-2 2-7 1-9-1-3-2-6-1-8 2-2 3-5 5-8 4-4-2-6-7-4-11 1-3 0-6-2-8-2-2-1-6 2-7 3-1 7-2 9-3z" fill="#FFFFFF" fill-opacity="0.85" />
-            <path d="M55 58c3 1 6 4 5 7s-4 4-6 3-3-3-2-5c0-2 1-4 3-5z" fill="#FFFFFF" fill-opacity="0.85" />
-            <ellipse cx="50" cy="50" rx="42" ry="17" stroke="#00A3E0" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="5 3" transform="rotate(-28 50 50)" />
-            <g transform="translate(62, 17) rotate(22)">
-              <polygon points="12,0 0,16 6,10 12,0" fill="url(#navPlaneGrad)" />
-              <polygon points="12,0 6,10 16,8 12,0" fill="#FFAA00" />
-              <polygon points="6,10 7,16 9,12 6,10" fill="#E65100" />
-            </g>
-            <path d="M68 64 A 20 20 0 0 1 81 77" stroke="#00A3E0" stroke-width="2.8" stroke-linecap="round" />
-            <path d="M73 60 A 26 26 0 0 1 88 75" stroke="#00A3E0" stroke-width="2.8" stroke-linecap="round" />
-          </svg>
-        </div>
-        <div class="brand-text-row">
-          <span class="brand-tabi">Tabi</span><span class="brand-go">Go<svg class="brand-plane-accent" viewBox="0 0 24 24" fill="currentColor"><path d="m21.426 2.574-19 9a1 1 0 0 0 .044 1.832l6.877 2.457 2.457 6.877a1 1 0 0 0 1.832.044l9-19a1 1 0 0 0-1.21-1.21z"/></svg></span>
-        </div>
-      </a>
+  <!-- Ambient Background Blobs -->
+  <div class="bg-decorations">
+    <div class="shape-blob-1"></div>
+    <div class="shape-blob-2"></div>
+  </div>
 
-      <div class="legal-nav-actions">
-        <a href="index.html" class="btn-back-home">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
-          <span>Trang chủ</span>
-        </a>
-        <a href="terms.html" class="legal-header-link">Điều khoản sử dụng</a>
-        <a href="tel:0794058999" class="legal-header-hotline">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <span>Hotline: 0794.058.999</span>
-        </a>
-        <a href="index.html#popular-destinations" class="btn-buy-esim">
-          <span>Mua eSIM</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-    </div>
-  </header>
+  <div class="site-wrapper">
 
-  <!-- Hero Header -->
-  <section class="legal-hero">
-    <div class="legal-hero-card">
-      <div class="legal-breadcrumb">
-        <a href="index.html">Trang chủ</a>
-        <span>/</span>
-        <span>Pháp lý</span>
-        <span>/</span>
-        <span>Chính sách bảo mật</span>
-      </div>
-      <div class="legal-hero-badge">Bảo mật chuẩn quốc tế • Cập nhật 2026</div>
-      <h1 class="legal-hero-title">Chính Sách Bảo Mật Thông Tin Cá Nhân</h1>
-      <p class="legal-hero-sub">
-        TabiGo tôn trọng tuyệt đối quyền riêng tư của bạn. Chúng tôi cam kết bảo vệ dữ liệu cá nhân theo các tiêu chuẩn mã hóa bảo mật cao nhất và cam kết không thương mại hóa dữ liệu khách hàng.
-      </p>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Main Content Area -->
-  <main class="legal-main-container">
-    <!-- Sticky Table of Contents Sidebar -->
-    <aside class="legal-sidebar">
-      <div class="toc-card">
-        <div class="toc-title">
-          <span>Mục lục bảo mật</span>
-          <span style="font-size: 11px; color: var(--blue-accent); font-weight: 800;">7 Mục</span>
-        </div>
-        <ul class="toc-list" id="tocList">
-          <li><a href="#privacy-principles" class="toc-link active"><span class="toc-icon">🛡️</span> 1. Nguyên tắc chính</a></li>
-          <li><a href="#privacy-collection" class="toc-link"><span class="toc-icon">📥</span> 2. Thông tin thu thập</a></li>
-          <li><a href="#privacy-usage" class="toc-link"><span class="toc-icon">⚙️</span> 3. Mục đích sử dụng</a></li>
-          <li><a href="#privacy-rights" class="toc-link"><span class="toc-icon">👤</span> 4. Quyền của cá nhân</a></li>
-          <li><a href="#privacy-ekyc" class="toc-link"><span class="toc-icon">🪪</span> 5. Thông tin eKYC</a></li>
-          <li><a href="#privacy-disclosure" class="toc-link"><span class="toc-icon">⚖️</span> 6. Tiết lộ thông tin</a></li>
-          <li><a href="#privacy-changes" class="toc-link"><span class="toc-icon">📝</span> 7. Thay đổi chính sách</a></li>
-        </ul>
-      </div>
-
-      <div class="toc-switch-card">
-        <strong>📜 Điều Khoản Sử Dụng</strong>
-        <p>Tra cứu 8 chính sách dịch vụ: Giao hàng, bảo hành kết nối, thanh toán, đổi trả hoàn tiền.</p>
-        <a href="terms.html" class="btn-switch-terms">
-          <span>Xem Điều khoản sử dụng</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-
-      <div class="toc-support-card">
-        <h5>Ban Quản Trị Bảo Mật Dữ Liệu</h5>
-        <a href="tel:0794058999" class="toc-support-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <span>Hotline: <strong>0794.058.999</strong></span>
-        </a>
-        <a href="mailto:support@tabigo.vn" class="toc-support-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          <span>Email: <strong>support@tabigo.vn</strong></span>
-        </a>
-      </div>
-    </aside>
-
-    <!-- Main Legal Document Body -->
-    <article class="legal-content-card">
-      
-      <!-- Giới thiệu chung -->
-      <div class="policy-intro-card">
-        <p><strong>TabiGo (tabigo.vn) hiểu rõ tầm quan trọng của quyền riêng tư đối với bạn. Chính sách bảo mật này giải thích các thông tin cá nhân mà chúng tôi thu thập và cách chúng tôi sử dụng những thông tin đó. TabiGo có thể thay đổi chính sách bảo mật này bất cứ lúc nào theo quyết định riêng. Khi bạn đăng ký tài khoản hoặc sử dụng, truy cập bất kỳ trang web, ứng dụng, sản phẩm, phần mềm, công cụ, nguồn cấp dữ liệu và/hoặc dịch vụ nào của TabiGo (sau đây gọi chung là “Dịch vụ”), bạn đồng ý và chấp nhận các điều khoản trong chính sách này. Vui lòng đọc kỹ nội dung chính sách.</strong></p>
-        <p>Nếu bạn có bất kỳ mối quan ngại nào về quyền riêng tư hoặc việc sử dụng dữ liệu mà chúng tôi chưa giải quyết thỏa đáng, hãy liên hệ trực tiếp với bộ phận hỗ trợ của chúng tôi.</p>
-        <p>TabiGo cam kết bảo vệ quyền riêng tư của bạn. Chính sách bảo mật này giải thích chi tiết cách chúng tôi thu thập, sử dụng, tiết lộ, lưu trữ và bảo vệ thông tin cá nhân của bạn.</p>
-      </div>
-
-      <!-- 1. Một số nguyên tắc chính tại TabiGo -->
-      <section class="policy-section" id="privacy-principles">
-        <div class="policy-section-header">
-          <span class="policy-badge-num">1</span>
-          <h2>Một số nguyên tắc chính tại TabiGo</h2>
-        </div>
-        <div class="policy-body">
-          <ul class="principles-list">
-            <li><strong>Mục đích rõ ràng:</strong> Bên kiểm soát phải thông báo cụ thể và minh bạch với khách hàng về việc thu thập và sử dụng dữ liệu cá nhân của họ.</li>
-            <li><strong>Dữ liệu liên quan:</strong> Chỉ được thu thập những dữ liệu thực sự cần thiết cho mục đích xử lý, tuân thủ nguyên tắc giảm thiểu việc thu thập thông tin.</li>
-            <li><strong>Thời gian lưu giữ:</strong> Dữ liệu cá nhân chỉ được lưu giữ trong khoảng thời gian cần thiết để đạt được mục đích đã xác định; sau thời gian này, dữ liệu phải được xóa bỏ.</li>
-            <li><strong>Quyền của cá nhân:</strong> Cá nhân có quyền đối với dữ liệu cá nhân của mình do bên kiểm soát nắm giữ, bao gồm quyền truy cập, chỉnh sửa hoặc yêu cầu xóa dữ liệu.</li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- 2. Chúng tôi thu thập thông tin gì? -->
-      <section class="policy-section" id="privacy-collection">
-        <div class="policy-section-header">
-          <span class="policy-badge-num">2</span>
-          <h2>Chúng tôi thu thập thông tin gì?</h2>
-        </div>
-        <div class="policy-body">
-          <h3 class="subsection-title">2.1. Thông tin cá nhân</h3>
-          <p>Chúng tôi có thể thu thập thông tin nhận dạng cá nhân khi bạn chủ động cung cấp. Chẳng hạn như khi đăng ký nhận bản tin, tạo tài khoản, yêu cầu thông tin qua trang liên hệ hay trả lời khảo sát hoặc bảng câu hỏi. Dữ liệu này có thể bao gồm tên, email, số điện thoại và các thông tin khác theo quy định của pháp luật.</p>
-          <p>Chính sách này không áp dụng cho các biện pháp bảo mật của bên thứ ba mà chúng tôi không kiểm soát, như trang web, dịch vụ, hoặc ứng dụng bên thứ ba liên kết. Ví dụ, nếu sử dụng API Facebook, bạn sẽ tuân theo các điều khoản và chính sách của họ. Chúng tôi không chịu trách nhiệm về nội dung hoặc bảo mật của các bên này và khuyến khích bạn xem xét kỹ các chính sách quyền riêng tư của họ.</p>
-          <p>Thông tin nhận dạng cá nhân được sử dụng để cung cấp, cải thiện dịch vụ, hỗ trợ khách hàng, nghiên cứu, phân tích và cá nhân hóa nội dung theo sở thích của bạn. Thông tin đã ẩn danh không được xem là dữ liệu cá nhân.</p>
-          <p>Bạn có thể từ chối cung cấp thông tin cá nhân, nhưng điều này có thể hạn chế khả năng truy cập một số dịch vụ. Khi cung cấp thông tin, bạn đồng ý với việc sử dụng dữ liệu theo chính sách này và có quyền rút lại sự đồng ý bất kỳ lúc nào. Nếu không đồng ý, vui lòng không sử dụng Dịch vụ của chúng tôi.</p>
-
-          <h3 class="subsection-title">2.2. Dữ liệu cá nhân nhạy cảm</h3>
-          <p>Chúng tôi yêu cầu bạn không gửi hoặc tiết lộ bất kỳ dữ liệu cá nhân nhạy cảm nào, chẳng hạn như số an sinh xã hội, thông tin về chủng tộc, dân tộc, quan điểm chính trị, tôn giáo, tình trạng sức khỏe, dữ liệu sinh trắc học, đặc điểm di truyền, tiền án hình sự hoặc việc tham gia công đoàn, thông qua các dịch vụ hoặc trực tiếp cho chúng tôi.</p>
-          <p>Nếu bạn gửi hoặc tiết lộ dữ liệu cá nhân nhạy cảm qua các dịch vụ, điều đó đồng nghĩa bạn đồng ý cho chúng tôi xử lý và sử dụng dữ liệu đó theo chính sách này. Nếu không đồng ý, vui lòng không cung cấp các thông tin đó. Lưu ý rằng ngay cả khi bạn gửi dữ liệu nhạy cảm, chúng tôi sẽ không lưu trữ chúng trên hệ thống của mình.</p>
-
-          <h3 class="subsection-title">2.3. Thông tin không thể nhận dạng cá nhân</h3>
-          <p>Chúng tôi có thể thu thập và tổng hợp các thông tin không thể nhận dạng cá nhân, tức là những thông tin không thể xác định danh tính của bạn, kể cả khi kết hợp với dữ liệu khác từ bên thứ ba. Những thông tin này có thể bao gồm: trang web giới thiệu bạn đến chúng tôi, địa chỉ IP, loại và ngôn ngữ trình duyệt, loại thiết bị, vị trí địa lý, thời gian và thời lượng truy cập.</p>
-          <p>Chúng tôi cũng thu thập thông tin điều hướng như nội dung hoặc trang bạn đã xem, liên kết bạn nhấp vào và các hành động thực hiện trong quá trình sử dụng dịch vụ. Thông tin này được sử dụng để phân tích hành vi người dùng, giúp cải thiện và tối ưu hóa dịch vụ của chúng tôi.</p>
-
-          <h3 class="subsection-title" id="privacy-cookie">2.4. Cookie, Pixel và bộ nhớ cục bộ</h3>
-          <p>Chúng tôi có thể thu thập thông tin thông qua cookie, là các tệp dữ liệu nhỏ được lưu trên ổ cứng máy tính hoặc thiết bị di động của bạn. Cookie có thể là cookie phiên (tự động hết hạn khi bạn đóng trình duyệt) hoặc cookie liên tục (lưu lại cho đến khi bạn xóa). Các cookie này giúp mang lại trải nghiệm cá nhân hóa và tương tác tốt hơn khi bạn sử dụng dịch vụ.</p>
-          <p><strong>Chúng tôi sử dụng hai loại cookie chính:</strong></p>
-          <ul>
-            <li><strong>Cookie của bên thứ nhất:</strong> Do chúng tôi cung cấp trực tiếp, dùng để nhận diện máy tính hoặc thiết bị của bạn khi bạn truy cập lại dịch vụ.</li>
-            <li><strong>Cookie của bên thứ ba:</strong> Do các nhà cung cấp dịch vụ bên ngoài cài đặt trên các trang web hoặc ứng dụng. Những cookie này có thể được sử dụng để nhận diện máy tính hoặc thiết bị của bạn khi truy cập các trang web khác.</li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- 3. Chúng tôi làm gì với thông tin chúng tôi thu thập? -->
-      <section class="policy-section" id="privacy-usage">
-        <div class="policy-section-header">
-          <span class="policy-badge-num">3</span>
-          <h2>Chúng tôi làm gì với thông tin chúng tôi thu thập?</h2>
-        </div>
-        <div class="policy-body">
-          <p>TabiGo cam kết không chia sẻ thông tin cá nhân của bạn với bất kỳ bên thứ ba nào, trừ khi được nêu rõ trong chính sách quyền riêng tư này. Chúng tôi sử dụng thông tin nhận dạng cá nhân của bạn cho các mục đích sau:</p>
-          <ul>
-            <li>Vận hành, duy trì và cải thiện dịch vụ.</li>
-            <li>Quản lý tài khoản và liên lạc với bạn về tài khoản.</li>
-            <li>Hỗ trợ các chương trình khuyến mãi bạn tham gia.</li>
-            <li>Trả lời câu hỏi, bình luận và cung cấp dịch vụ khách hàng.</li>
-            <li>Gửi thông báo kỹ thuật, cập nhật và cảnh báo bảo mật.</li>
-            <li>Gửi email tiếp thị, nếu có sự đồng ý của bạn. Bạn có thể từ chối nhận các email này bất cứ lúc nào.</li>
-          </ul>
-          <p>Chúng tôi cũng có thể chia sẻ thông tin với các nhà cung cấp dịch vụ để hỗ trợ vận hành, tiếp thị, xử lý thanh toán hoặc các mục đích khác. Các nhà cung cấp này bị yêu cầu bảo mật thông tin và chỉ sử dụng chúng để thực hiện các nhiệm vụ được giao.</p>
-          <p><strong>Ngoài ra, thông tin của bạn có thể được sử dụng để:</strong></p>
-          <ul>
-            <li>Tuân thủ các yêu cầu pháp lý.</li>
-            <li>Đảm bảo an toàn và quyền lợi của bạn, chúng tôi hoặc bên thứ ba.</li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- 4. Quyền của bạn đối với thông tin cá nhân -->
-      <section class="policy-section" id="privacy-rights">
-        <div class="policy-section-header">
-          <span class="policy-badge-num">4</span>
-          <h2>Quyền của bạn đối với thông tin cá nhân</h2>
-        </div>
-        <div class="policy-body">
-          <p><strong>Bạn có thể:</strong></p>
-          <ul>
-            <li>Từ chối nhận thông tin tiếp thị hoặc bất kỳ hoạt động xử lý dữ liệu không cần thiết nào.</li>
-            <li>Truy cập, cập nhật hoặc chỉnh sửa thông tin của bạn bất cứ lúc nào thông qua tài khoản hoặc liên hệ trực tiếp với chúng tôi.</li>
-            <li>Yêu cầu xóa thông tin nếu thông tin không còn phù hợp hoặc không chính xác.</li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- 5. Thông tin eKYC -->
-      <section class="policy-section" id="privacy-ekyc">
-        <div class="policy-section-header">
-          <span class="policy-badge-num">5</span>
-          <h2>Thông tin eKYC</h2>
-        </div>
-        <div class="policy-body">
-          <p>Trong quá trình xác minh danh tính, chúng tôi có thể yêu cầu bạn cung cấp ảnh hộ chiếu, giấy phép lái xe hoặc căn cước công dân, cùng với ảnh cá nhân. Thông tin này sẽ chỉ được sử dụng khi cần thiết và có thể được chia sẻ với các nhà cung cấp dịch vụ eSIM yêu cầu eKYC.</p>
-          <p>Nếu bạn có bất kỳ câu hỏi nào về thông tin cá nhân và cách chúng tôi sử dụng, vui lòng liên hệ bộ phận hỗ trợ của chúng tôi.</p>
-        </div>
-      </section>
-
-      <!-- 6. Nguyên tắc tiết lộ thông tin tại TabiGo -->
-      <section class="policy-section" id="privacy-disclosure">
-        <div class="policy-section-header">
-          <span class="policy-badge-num">6</span>
-          <h2>Nguyên tắc tiết lộ thông tin tại TabiGo</h2>
-        </div>
-        <div class="policy-body">
-          <p>TabiGo cam kết không tiết lộ thông tin nhận dạng cá nhân của bạn, trừ khi xảy ra một trong các trường hợp sau:</p>
-          <ul>
-            <li>Bạn đã đồng ý, bao gồm cả khi bạn chấp nhận Chính sách quyền riêng tư này.</li>
-            <li>Chúng tôi xác định rằng việc tiết lộ là bắt buộc theo các yêu cầu pháp lý, bao gồm các đạo luật, quy định, lệnh hành chính hoặc các quy định pháp lý khác.</li>
-            <li>Thông tin cần được tiết lộ để sửa chữa thông tin sai lệch, gây hiểu nhầm hoặc giải quyết các hành vi gian lận, vi phạm pháp luật mà chúng tôi phát hiện.</li>
-            <li>Khi việc tiết lộ thông tin là cần thiết để cung cấp sản phẩm hoặc dịch vụ mà bạn yêu cầu.</li>
-            <li>Việc tiết lộ thông tin xảy ra trong trường hợp bán, sáp nhập, chuyển nhượng, hoặc các giao dịch tài sản liên quan đến TabiGo.</li>
-          </ul>
-          <p>Ngoài ra, TabiGo có thể chia sẻ thông tin không nhận dạng cá nhân (dưới dạng tổng hợp) với các đối tác quảng cáo hoặc các bên liên quan khác.</p>
-        </div>
-      </section>
-
-      <!-- 7. Quyền thay đổi chính sách bảo mật -->
-      <section class="policy-section" id="privacy-changes">
-        <div class="policy-section-header">
-          <span class="policy-badge-num">7</span>
-          <h2>Quyền thay đổi chính sách bảo mật</h2>
-        </div>
-        <div class="policy-body">
-          <p>Chúng tôi có quyền thay đổi các điều khoản trong chính sách quyền riêng tư này bất cứ lúc nào. Khi có sự thay đổi, chúng tôi sẽ cập nhật ngày sửa đổi gần đây nhất ở đầu chính sách. Nếu có thay đổi quan trọng về tuyên bố này hoặc cách thức chúng tôi sử dụng thông tin cá nhân của bạn, chúng tôi sẽ thông báo cho bạn bằng cách đăng thông báo rõ ràng tại đây, trên trang chủ của chúng tôi, hoặc qua email. Chúng tôi khuyến khích bạn kiểm tra lại chính sách này mỗi khi truy cập vào trang web hoặc ứng dụng của chúng tôi.</p>
-        </div>
-      </section>
-
-    </article>
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    <div class="footer-container">
-      <div class="footer-top-grid">
-        <div class="footer-brand-col">
-          <a href="index.html" class="brand-logo" title="TabiGo - eSIM Du Lịch Toàn Cầu">
-            <div class="brand-icon-box" style="width: 32px; height: 32px;">
-              <svg viewBox="0 0 100 100" fill="none">
-                <circle cx="50" cy="50" r="32" fill="url(#footerGlobeGrad)" />
-                <defs>
-                  <radialGradient id="footerGlobeGrad" cx="38%" cy="35%" r="65%">
-                    <stop offset="0%" stop-color="#E1F7FF" />
-                    <stop offset="45%" stop-color="#38BDF8" />
-                    <stop offset="100%" stop-color="#0284C7" />
-                  </radialGradient>
-                  <linearGradient id="footerPlaneGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="#FFAE00" />
-                    <stop offset="100%" stop-color="#FF6B00" />
-                  </linearGradient>
-                </defs>
-                <path d="M42 32c3-2 8-1 10 2 2 3 0 7-3 8-4 1-5 4-4 7s4 5 7 4 5-3 8-1c3 2 4 6 2 8-2 2-7 1-9-1-3-2-6-1-8 2-2 3-5 5-8 4-4-2-6-7-4-11 1-3 0-6-2-8-2-2-1-6 2-7 3-1 7-2 9-3z" fill="#FFFFFF" fill-opacity="0.85" />
-                <path d="M55 58c3 1 6 4 5 7s-4 4-6 3-3-3-2-5c0-2 1-4 3-5z" fill="#FFFFFF" fill-opacity="0.85" />
-                <ellipse cx="50" cy="50" rx="42" ry="17" stroke="#00A3E0" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="5 3" transform="rotate(-28 50 50)" />
-                <g transform="translate(62, 17) rotate(22)">
-                  <polygon points="12,0 0,16 6,10 12,0" fill="url(#footerPlaneGrad)" />
-                  <polygon points="12,0 6,10 16,8 12,0" fill="#FFAA00" />
-                  <polygon points="6,10 7,16 9,12 6,10" fill="#E65100" />
-                </g>
-                <path d="M68 64 A 20 20 0 0 1 81 77" stroke="#00A3E0" stroke-width="2.8" stroke-linecap="round" />
-                <path d="M73 60 A 26 26 0 0 1 88 75" stroke="#00A3E0" stroke-width="2.8" stroke-linecap="round" />
-              </svg>
-            </div>
-            <div class="brand-text-row">
-              <span class="brand-tabi" style="font-size: 22px;">Tabi</span><span class="brand-go" style="font-size: 22px;">Go<svg class="brand-plane-accent" style="width: 11px; height: 11px;" viewBox="0 0 24 24" fill="currentColor"><path d="m21.426 2.574-19 9a1 1 0 0 0 .044 1.832l6.877 2.457 2.457 6.877a1 1 0 0 0 1.832.044l9-19a1 1 0 0 0-1.21-1.21z"/></svg></span>
-            </div>
-          </a>
-          <p class="footer-brand-slogan">Đồng hành cùng mọi chuyến đi của bạn với kết nối eSIM Internet tốc độ cao tại 150+ quốc gia.</p>
-        </div>
-
-        <div>
-          <div class="footer-col-title">Gói cước eSIM</div>
-          <ul class="footer-links-list">
-            <li><a href="index.html#popular-destinations">Cửa hàng eSIM</a></li>
-            <li><a href="index.html#popular-destinations">eSIM Toàn cầu</a></li>
-            <li><a href="index.html#popular-destinations">eSIM Khu vực</a></li>
-            <li><a href="index.html#popular-destinations">eSIM Quốc gia</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <div class="footer-col-title">Hỗ trợ CSKH 24/7</div>
-          <ul class="footer-links-list">
-            <li><a href="tel:0794058999">Hotline: 0794.058.999</a></li>
-            <li><a href="https://zalo.me/0794058999" target="_blank" rel="noopener noreferrer">Zalo CSKH: 0794.058.999</a></li>
-            <li><a href="mailto:support@tabigo.vn">support@tabigo.vn</a></li>
-            <li><a href="index.html#faq">Câu hỏi thường gặp (FAQ)</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <div class="footer-col-title">Pháp lý & Điều khoản</div>
-          <ul class="footer-links-list">
-            <li><a href="terms.html">Điều khoản sử dụng</a></li>
-            <li><a href="privacy.html" style="color: var(--blue-accent); font-weight: 700;">Chính sách bảo mật</a></li>
-            <li><a href="privacy.html#privacy-cookie">Chính sách Cookie</a></li>
-            <li><a href="privacy.html#privacy-rights">Quyền của người dùng</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-bottom-row">
-        <div class="footer-bottom-left">
-          <span class="footer-copyright">©2026 TABI GO (3M Intel / ZEYFI). Nền tảng kết nối eSIM du lịch quốc tế.</span>
-          <div class="footer-bocongthuong" title="Đã đăng ký Bộ Công Thương">
-            <svg width="112" height="30" viewBox="0 0 160 46" fill="none">
-              <rect width="160" height="46" rx="5" fill="#BB1E24"/>
-              <circle cx="23" cy="23" r="14" fill="#991B1B" stroke="#FDE047" stroke-width="1.2"/>
-              <polygon points="23,13 25.5,19.5 32.5,20 27,24 29,31 23,27 17,31 19,24 13.5,20 20.5,19.5" fill="#FDE047"/>
-              <text x="44" y="20" fill="#FFFFFF" font-size="10" font-weight="800" font-family="'Inter', sans-serif" letter-spacing="0.5">ĐÃ ĐĂNG KÝ</text>
-              <text x="44" y="34" fill="#FDE047" font-size="9" font-weight="700" font-family="'Inter', sans-serif" letter-spacing="0.3">BỘ CÔNG THƯƠNG</text>
+    <!-- Header -->
+    <header>
+      <div class="header-inner">
+        <a href="index.html" class="brand-logo" title="TabiGo - Về Trang Chủ">
+          <div class="brand-icon-box">
+            <svg viewBox="0 0 100 100" fill="none">
+              <defs>
+                <radialGradient id="hdrGlobeGrad" cx="38%" cy="35%" r="65%">
+                  <stop offset="0%" stop-color="#E1F7FF" />
+                  <stop offset="45%" stop-color="#38BDF8" />
+                  <stop offset="100%" stop-color="#0284C7" />
+                </radialGradient>
+                <linearGradient id="hdrPlaneGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#FFAE00" />
+                  <stop offset="100%" stop-color="#FF6B00" />
+                </linearGradient>
+              </defs>
+              <circle cx="50" cy="50" r="32" fill="url(#hdrGlobeGrad)" />
+              <path d="M42 32c3-2 8-1 10 2 2 3 0 7-3 8-4 1-5 4-4 7s4 5 7 4 5-3 8-1c3 2 4 6 2 8-2 2-7 1-9-1-3-2-6-1-8 2-2 3-5 5-8 4-4-2-6-7-4-11 1-3 0-6-2-8-2-2-1-6 2-7 3-1 7-2 9-3z" fill="#FFFFFF" fill-opacity="0.85" />
+              <path d="M55 58c3 1 6 4 5 7s-4 4-6 3-3-3-2-5c0-2 1-4 3-5z" fill="#FFFFFF" fill-opacity="0.85" />
+              <ellipse cx="50" cy="50" rx="42" ry="17" stroke="#00A3E0" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="5 3" transform="rotate(-28 50 50)" />
+              <g transform="translate(62, 17) rotate(22)">
+                <polygon points="12,0 0,16 6,10 12,0" fill="url(#hdrPlaneGrad)" />
+                <polygon points="12,0 6,10 16,8 12,0" fill="#FFAA00" />
+                <polygon points="6,10 7,16 9,12 6,10" fill="#E65100" />
+              </g>
+              <path d="M68 64 A 20 20 0 0 1 81 77" stroke="#00A3E0" stroke-width="2.8" stroke-linecap="round" />
+              <path d="M73 60 A 26 26 0 0 1 88 75" stroke="#00A3E0" stroke-width="2.8" stroke-linecap="round" />
             </svg>
           </div>
+          <div class="brand-text-row">
+            <span class="brand-tabi">Tabi</span><span class="brand-go">Go<svg class="brand-plane-accent" viewBox="0 0 24 24" fill="currentColor"><path d="m21.426 2.574-19 9a1 1 0 0 0 .044 1.832l6.877 2.457 2.457 6.877a1 1 0 0 0 1.832.044l9-19a1 1 0 0 0-1.21-1.21z"/></svg></span>
+          </div>
+        </a>
+
+        <div class="header-nav-links">
+          <a href="index.html" class="header-nav-link">Trang chủ</a>
+          <a href="terms.html" class="header-nav-link">Điều khoản dịch vụ</a>
+          <a href="privacy.html" class="header-nav-link active">Chính sách bảo mật</a>
         </div>
 
-        <div class="footer-legal-links">
-          <a href="terms.html">Điều khoản sử dụng</a>
-          <a href="privacy.html">Chính sách bảo mật</a>
-          <a href="privacy.html#privacy-collect">Quy định eKYC</a>
-          <a href="privacy.html#privacy-cookie">Quản lý cookie</a>
-          <a href="terms.html#policy-terms">Tuyên bố về khả năng truy cập</a>
+        <a href="index.html#destinations" class="btn-header-cta">
+          <span>Khám phá eSIM</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+      </div>
+    </header>
+
+    <!-- Page Hero Banner -->
+    <section class="legal-hero">
+      <div class="legal-badge-pill">Bảo Vệ Dữ Liệu Cá Nhân & Quyền Riêng Tư</div>
+      <h1 class="legal-title">Chính Sách Bảo Mật Thông Tin</h1>
+      <p class="legal-subtitle">
+        TabiGo tôn trọng và cam kết bảo vệ dữ liệu cá nhân của bạn theo tiêu chuẩn quốc tế và quy định tại Nghị định 13/2023/NĐ-CP của Chính phủ Việt Nam.
+      </p>
+      <div class="legal-meta-row">
+        <div class="legal-meta-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          <span>Hiệu lực cập nhật: Tháng 11/2026</span>
+        </div>
+        <div class="legal-meta-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          <span>Mã hóa SSL 256-bit</span>
+        </div>
+        <div class="legal-meta-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          <span>privacy@tabigo.vn</span>
         </div>
       </div>
+    </section>
+
+    <!-- Main 2-Column Container -->
+    <div class="legal-container">
+
+      <!-- Sticky Sidebar Table of Contents -->
+      <aside class="legal-sidebar">
+        <div class="toc-title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+          <span>Mục Lục Bảo Mật</span>
+        </div>
+        <ul class="toc-list" id="tocList">
+          <li><a href="#nguyen-tac" class="toc-link active"><span class="toc-num">1</span><span>Nguyên tắc bảo vệ dữ liệu</span></a></li>
+          <li><a href="#thong-tin-thu-thap" class="toc-link"><span class="toc-num">2</span><span>Thông tin thu thập</span></a></li>
+          <li><a href="#du-lieu-ekyc" class="toc-link"><span class="toc-num">3</span><span>Xác minh eKYC quốc tế</span></a></li>
+          <li><a href="#du-lieu-nhay-cam" class="toc-link"><span class="toc-num">4</span><span>Không lưu dữ liệu nhạy cảm</span></a></li>
+          <li><a href="#cookie" class="toc-link"><span class="toc-num">5</span><span>Cookie & Bộ nhớ cục bộ</span></a></li>
+          <li><a href="#muc-dich" class="toc-link"><span class="toc-num">6</span><span>Mục đích sử dụng dữ liệu</span></a></li>
+          <li><a href="#quyen-cua-ban" class="toc-link"><span class="toc-num">7</span><span>Quyền của người dùng</span></a></li>
+          <li><a href="#tiet-lo-thong-tin" class="toc-link"><span class="toc-num">8</span><span>Chia sẻ & Tiết lộ dữ liệu</span></a></li>
+          <li><a href="#lien-he" class="toc-link"><span class="toc-num">9</span><span>Liên hệ bộ phận bảo mật</span></a></li>
+        </ul>
+
+        <div class="sidebar-help-box">
+          <strong>Bảo mật thông tin:</strong>
+          TabiGo cam kết không bán hoặc chia sẻ danh bạ/email của bạn cho bất kỳ đơn vị quảng cáo nào.
+        </div>
+      </aside>
+
+      <!-- Content Area with Privacy Sections -->
+      <main class="legal-content-wrap">
+
+        <!-- 1. Nguyên tắc cốt lõi -->
+        <article class="legal-card" id="nguyen-tac">
+          <div class="card-header-row">
+            <span class="card-badge-num">1</span>
+            <h2 class="card-title">Nguyên Tắc Bảo Vệ Quyền Riêng Tư Tại TabiGo</h2>
+          </div>
+          <div class="legal-body">
+            <p><strong>TabiGo</strong> (thuộc hệ sinh thái công nghệ 3M Intel) hiểu rõ tầm quan trọng sống còn của sự riêng tư và bảo mật dữ liệu khách hàng. Mọi quy trình xử lý thông tin trên website <em>tabigo.vn</em> và ứng dụng TabiGo đều tuân thủ 4 nguyên tắc bất di bất dịch:</p>
+            <ul>
+              <li><strong>Mục đích rõ ràng & minh bạch:</strong> Khách hàng luôn được thông báo cụ thể về lý do thông tin được thu thập trước khi đồng ý chia sẻ.</li>
+              <li><strong>Tối thiểu hóa dữ liệu (Data Minimization):</strong> Chúng tôi chỉ yêu cầu các trường thông tin tối thiểu cần thiết để phục vụ việc cấp phát và bảo hành eSIM.</li>
+              <li><strong>Thời hạn lưu trữ an toàn:</strong> Dữ liệu chỉ được lưu giữ trong khoảng thời gian quy định nhằm phục vụ bảo hành và kế toán hóa đơn; sau thời gian này, dữ liệu sẽ được ẩn danh hoặc xóa bỏ hoàn toàn.</li>
+              <li><strong>Tôn trọng quyền của chủ thể dữ liệu:</strong> Người dùng có toàn quyền tra cứu, cập nhật hoặc yêu cầu xóa hồ sơ dữ liệu cá nhân của mình bất kỳ lúc nào.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 2. Thông tin thu thập -->
+        <article class="legal-card" id="thong-tin-thu-thap">
+          <div class="card-header-row">
+            <span class="card-badge-num">2</span>
+            <h2 class="card-title">Thông Tin Chúng Tôi Thu Thập</h2>
+          </div>
+          <div class="legal-body">
+            <h4>1. Thông tin do bạn chủ động cung cấp</h4>
+            <p>Khi bạn thực hiện đặt mua gói cước eSIM, đăng ký tài khoản hoặc liên hệ bộ phận hỗ trợ kỹ thuật, chúng tôi thu thập các thông tin bao gồm:</p>
+            <ul>
+              <li><strong>Họ và tên:</strong> Để định danh người mua hàng và xuất hóa đơn điện tử.</li>
+              <li><strong>Địa chỉ Email:</strong> Địa chỉ bắt buộc để tiếp nhận mã QR cài đặt eSIM và tài liệu hướng dẫn kích hoạt.</li>
+              <li><strong>Số điện thoại liên hệ:</strong> Dùng cho bộ phận CSKH hỗ trợ kỹ thuật tức thời qua Zalo/Hotline khi phát sinh sự cố kết nối.</li>
+            </ul>
+
+            <h4>2. Thông tin kỹ thuật không định danh</h4>
+            <p>Khi truy cập dịch vụ, hệ thống tự động ghi nhận một số thông số nhằm tối ưu hóa trải nghiệm hiển thị:</p>
+            <ul>
+              <li>Địa chỉ IP, vị trí địa lý đại khái (cấp độ quốc gia/thành phố).</li>
+              <li>Loại thiết bị (model máy iPhone, Samsung, Xiaomi...) để tự động hiển thị hướng dẫn cài đặt phù hợp với cấu hình thiết bị của bạn.</li>
+              <li>Thời gian truy cập, thời lượng phiên và lịch sử điều hướng trang.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 3. Quy định về xác minh eKYC -->
+        <article class="legal-card" id="du-lieu-ekyc">
+          <div class="card-header-row">
+            <span class="card-badge-num">3</span>
+            <h2 class="card-title">Quy Định Về Xác Thực Danh Tính (eKYC Quốc Tế)</h2>
+          </div>
+          <div class="legal-body">
+            <p>Phần lớn các gói cước dữ liệu du lịch của TabiGo là SIM data thuần túy <strong>không bắt buộc định danh</strong>.</p>
+            <p>Tuy nhiên, đối với một số quốc gia đặc thù (như Singapore, Thái Lan, Nhật Bản, Đài Loan... theo luật an ninh viễn thông bắt buộc của chính quyền sở tại), nhà mạng bản địa yêu cầu khách du lịch phải thực hiện đăng ký thông tin hộ chiếu (eKYC).</p>
+            <div class="alert-box">
+              <strong>🔒 Cam kết an toàn eKYC từ TabiGo:</strong>
+              Hình ảnh giấy tờ tùy thân của quý khách được mã hóa trực tiếp đầu cuối và chuyển tiếp qua kênh truyền bảo mật độc quyền tới cổng xác thực của nhà mạng viễn thông được cấp phép. <strong>TabiGo tuyệt đối không lưu trữ bản sao giấy tờ tùy thân của bạn trên các máy chủ công cộng</strong>.
+            </div>
+          </div>
+        </article>
+
+        <!-- 4. Không lưu dữ liệu nhạy cảm -->
+        <article class="legal-card" id="du-lieu-nhay-cam">
+          <div class="card-header-row">
+            <span class="card-badge-num">4</span>
+            <h2 class="card-title">Cam Kết Không Thu Thập Dữ Liệu Nhạy Cảm</h2>
+          </div>
+          <div class="legal-body">
+            <p>TabiGo <strong>không bao giờ yêu cầu</strong> bạn cung cấp và kiên quyết không thu thập các nhóm dữ liệu cá nhân nhạy cảm, bao gồm:</p>
+            <ul>
+              <li>Số an sinh xã hội, số tài khoản ngân hàng cá nhân, mã PIN, mã CVV/CVC thẻ thanh toán.</li>
+              <li>Thông tin về chủng tộc, quan điểm chính trị, tôn giáo, tín ngưỡng.</li>
+              <li>Tình trạng sức khỏe, hồ sơ y tế, dữ liệu di truyền hoặc tiền án tiền sự.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 5. Cookie & Bộ nhớ cục bộ -->
+        <article class="legal-card" id="cookie">
+          <div class="card-header-row">
+            <span class="card-badge-num">5</span>
+            <h2 class="card-title">Chính Sách Cookie & Bộ Nhớ Cục Bộ (Local Storage)</h2>
+          </div>
+          <div class="legal-body">
+            <p>Cookie là các tệp dữ liệu văn bản nhỏ được lưu trên trình duyệt của bạn nhằm giúp trải nghiệm lướt web mượt mà hơn:</p>
+            <ul>
+              <li><strong>Cookie thiết yếu:</strong> Duy trì phiên đăng nhập, giỏ hàng đang chọn và thiết lập tiền tệ hiển thị (VND / USD).</li>
+              <li><strong>Cookie phân tích:</strong> Đo lường lưu lượng truy cập và tốc độ tải trang để chúng tôi nâng cấp hiệu năng máy chủ.</li>
+            </ul>
+            <p>Bạn có toàn quyền vô hiệu hóa hoặc xóa sạch cookie bất kỳ lúc nào thông qua phần Cài đặt quyền riêng tư trên trình duyệt Safari, Chrome hoặc Firefox.</p>
+          </div>
+        </article>
+
+        <!-- 6. Mục đích sử dụng dữ liệu -->
+        <article class="legal-card" id="muc-dich">
+          <div class="card-header-row">
+            <span class="card-badge-num">6</span>
+            <h2 class="card-title">Mục Đích Sử Dụng Thông Tin</h2>
+          </div>
+          <div class="legal-body">
+            <p>TabiGo sử dụng thông tin của bạn vào các mục đích chính đáng sau:</p>
+            <ol>
+              <li>Khởi tạo, phát hành và gửi mã hồ sơ eSIM kỹ thuật số vào hòm thư điện tử của bạn.</li>
+              <li>Cung cấp dịch vụ chăm sóc khách hàng và hỗ trợ kỹ thuật viên người Việt giải quyết sự cố 24/7 trong chuyến đi.</li>
+              <li>Tích lũy điểm thưởng Tabi Xu sau mỗi hành trình để đổi dữ liệu miễn phí cho các chuyến đi kế tiếp.</li>
+              <li>Gửi thông báo kỹ thuật quan trọng (cảnh báo bảo mật, thông báo hạ cánh, thay đổi APN của nhà mạng đối tác).</li>
+            </ol>
+            <div class="alert-box">
+              <strong>🚫 Cam kết KHÔNG Spam quảng cáo rác:</strong>
+              TabiGo không bao giờ bán, cho thuê hoặc chia sẻ danh bạ/email của bạn cho các đơn vị tiếp thị bên thứ ba. Bạn có thể từ chối nhận email bản tin bất kỳ lúc nào chỉ bằng 1 cú click vào liên kết "Hủy đăng ký" ở chân mỗi email.
+            </div>
+          </div>
+        </article>
+
+        <!-- 7. Quyền của người dùng -->
+        <article class="legal-card" id="quyen-cua-ban">
+          <div class="card-header-row">
+            <span class="card-badge-num">7</span>
+            <h2 class="card-title">Quyền Của Bạn Đối Với Dữ Liệu Cá Nhân</h2>
+          </div>
+          <div class="legal-body">
+            <p>Theo quy định của pháp luật hiện hành, bạn có đầy đủ các quyền sau:</p>
+            <ul>
+              <li><strong>Quyền được biết & tra cứu:</strong> Được quyền yêu cầu TabiGo cung cấp thông tin chi tiết về các dữ liệu cá nhân đang được lưu trữ.</li>
+              <li><strong>Quyền chỉnh sửa:</strong> Được cập nhật, bổ sung hoặc sửa đổi thông tin email/số điện thoại không chính xác.</li>
+              <li><strong>Quyền yêu cầu xóa bỏ (Right to be Forgotten):</strong> Bạn có quyền yêu cầu xóa vĩnh viễn tài khoản và toàn bộ lịch sử dữ liệu khỏi hệ thống máy chủ TabiGo khi không còn nhu cầu sử dụng.</li>
+            </ul>
+            <p>Để thực hiện các quyền trên, bạn chỉ cần gửi thư yêu cầu về địa chỉ email: <strong>support@tabigo.vn</strong>.</p>
+          </div>
+        </article>
+
+        <!-- 8. Chia sẻ & Tiết lộ dữ liệu -->
+        <article class="legal-card" id="tiet-lo-thong-tin">
+          <div class="card-header-row">
+            <span class="card-badge-num">8</span>
+            <h2 class="card-title">Nguyên Tắc Bảo Mật & Chia Sẻ Dữ Liệu</h2>
+          </div>
+          <div class="legal-body">
+            <p>TabiGo cam kết bảo mật tuyệt đối thông tin nhận dạng cá nhân. Dữ liệu chỉ được chia sẻ trong các tình huống ngoại lệ bắt buộc sau:</p>
+            <ul>
+              <li><strong>Với nhà mạng viễn thông đối tác:</strong> Chuyển tiếp các thông số kỹ thuật cần thiết để kích hoạt profile eSIM trên hạ tầng mạng viễn thông quốc tế.</li>
+              <li><strong>Với cổng thanh toán trực tuyến:</strong> Chuyển tiếp thông tin giao dịch phục vụ việc xác thực thanh toán tiền tệ an toàn.</li>
+              <li><strong>Theo yêu cầu pháp lý:</strong> Khi có văn bản yêu cầu chính thức từ cơ quan bảo vệ pháp luật có thẩm quyền của Nhà nước Việt Nam.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 9. Liên hệ bộ phận bảo mật -->
+        <article class="legal-card" id="lien-he">
+          <div class="card-header-row">
+            <span class="card-badge-num">9</span>
+            <h2 class="card-title">Kênh Tiếp Nhận & Giải Đáp Về Bảo Mật</h2>
+          </div>
+          <div class="legal-body">
+            <p>Nếu bạn có bất kỳ câu hỏi, quan ngại hoặc khiếu nại nào liên quan đến chính sách quyền riêng tư và bảo vệ dữ liệu cá nhân tại TabiGo, xin vui lòng liên hệ:</p>
+            <ul>
+              <li><strong>Phụ trách bảo mật:</strong> Bộ phận Tuân Thủ & Bảo Vệ Dữ Liệu Khách Hàng — TabiGo</li>
+              <li><strong>Email:</strong> <a href="mailto:support@tabigo.vn" style="color:var(--orange); font-weight:700;">support@tabigo.vn</a> / <a href="mailto:congty3mintel@gmail.com" style="color:var(--orange); font-weight:700;">congty3mintel@gmail.com</a></li>
+              <li><strong>Hotline CSKH:</strong> <a href="tel:0794058999" style="color:var(--orange); font-weight:700;">0794.058.999</a></li>
+              <li><strong>Địa chỉ văn phòng:</strong> Tầng 15A, Tòa nhà Technopark Tower, Lô đất CCTP-16, Khu đô thị Gia Lâm, Xã Gia Lâm, TP Hà Nội, Việt Nam.</li>
+            </ul>
+          </div>
+        </article>
+
+      </main>
     </div>
-  </footer>
 
-  <!-- Floating Zalo CSKH Widget -->
-  <a href="https://zalo.me/0794058999" target="_blank" rel="noopener noreferrer" class="floating-zalo-fab" title="Chat Zalo CSKH TabiGo 24/7">
-    <svg viewBox="0 0 48 48">
-      <path d="M24 4C12.95 4 4 12.95 4 24c0 4.14 1.26 7.99 3.42 11.2L5 43l8.15-2.36C16.27 42.69 19.98 44 24 44c11.05 0 20-8.95 20-20S35.05 4 24 4z"/>
-      <path d="M14 18h20v3H14zm0 6h20v3H14zm0 6h13v3H14z" fill="#0068FF"/>
-    </svg>
-  </a>
+    <!-- Footer -->
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-left">
+          <span>©2026 TABI GO. Bản quyền thuộc về TabiGo (3M Intel).</span>
+        </div>
+        <div class="footer-links">
+          <a href="index.html">Trang chủ</a>
+          <a href="terms.html">Điều khoản sử dụng</a>
+          <a href="privacy.html">Chính sách bảo mật</a>
+          <a href="tel:0794058999">Hotline: 0794.058.999</a>
+        </div>
+      </div>
+    </footer>
 
-  <!-- ScrollSpy JS for Sticky TOC -->
+  </div>
+
+  <!-- ScrollSpy for Table of Contents -->
   <script>
-    const sections = document.querySelectorAll('.policy-section');
-    const tocLinks = document.querySelectorAll('.toc-link');
+    document.addEventListener('DOMContentLoaded', function () {
+      const links = document.querySelectorAll('.toc-link');
+      const sections = document.querySelectorAll('.legal-card');
 
-    window.addEventListener('scroll', () => {
-      let current = '';
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop - 140;
-        if (window.pageYOffset >= sectionTop) {
-          current = section.getAttribute('id');
-        }
-      });
+      function updateActiveToc() {
+        let current = '';
+        const scrollY = window.pageYOffset || document.documentElement.scrollTop;
 
-      tocLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-          link.classList.add('active');
-        }
-      });
+        sections.forEach(function (sec) {
+          const top = sec.offsetTop - 140;
+          if (scrollY >= top) {
+            current = sec.getAttribute('id');
+          }
+        });
+
+        links.forEach(function (link) {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === '#' + current) {
+            link.classList.add('active');
+          }
+        });
+      }
+
+      window.addEventListener('scroll', updateActiveToc, { passive: true });
+      updateActiveToc();
     });
   </script>
 </body>
 </html>
-
