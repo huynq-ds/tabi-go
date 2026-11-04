@@ -6,6 +6,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite --port 3334 --host",
+    "build": "vite build",
+    "preview": "vite preview",
     "serve": "npx serve -l 3334 .",
     "start": "npx serve -l 3334 ."
   },
