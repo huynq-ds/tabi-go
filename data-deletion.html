@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hướng Dẫn Xóa Dữ Liệu Người Dùng Facebook — TabiGo</title>
+
+  <!-- Favicon & App Icons -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%2300C8FF'/%3E%3Cstop offset='50%25' stop-color='%2300A8FF'/%3E%3Cstop offset='100%25' stop-color='%230066CC'/%3E%3C/linearGradient%3E%3ClinearGradient id='orbit' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%23FFFFFF' stop-opacity='0.95'/%3E%3Cstop offset='100%25' stop-color='%23FFFFFF' stop-opacity='0.3'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23bg)'/%3E%3Ccircle cx='32' cy='32' r='19' fill='%230080FF' opacity='0.4'/%3E%3Ccircle cx='32' cy='32' r='18' fill='none' stroke='%23FFFFFF' stroke-width='2.5' opacity='0.9'/%3E%3Cellipse cx='32' cy='32' rx='9' ry='18' fill='none' stroke='%23FFFFFF' stroke-width='1.8' opacity='0.75'/%3E%3Cline x1='14' y1='32' x2='50' y2='32' stroke='%23FFFFFF' stroke-width='1.8' opacity='0.75'/%3E%3Cellipse cx='32' cy='32' rx='26' ry='9' fill='none' stroke='url(%23orbit)' stroke-width='2.2' transform='rotate(-30 32 32)'/%3E%3Ccircle cx='51' cy='21' r='3.5' fill='%23FFAA00'/%3E%3Ccircle cx='51' cy='21' r='1.5' fill='%23FFEAA7'/%3E%3C/svg%3E" />
+  <link rel="icon" type="image/png" sizes="48x48" href="./assets/images/tabigo_favicon.png" />
+  <link rel="shortcut icon" href="./assets/images/tabigo_favicon.png" />
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --bg-page: #F5EFE6;
+      --bg-card: #FFFFFF;
+      --orange: #F05123;
+      --orange-hover: #D63F13;
+      --tabi-navy: #00478F;
+      --tabi-sky: #00A8FF;
+      --text-main: #0F172A;
+      --text-muted: #334155;
+      --text-light: #64748B;
+      --border: #E2E8F0;
+      --border-card: #EAE3D6;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --max-w: 1200px;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .bg-decorations {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+      opacity: 0.5;
+    }
+    .shape-blob-1 {
+      position: absolute;
+      top: -120px;
+      right: -80px;
+      width: 480px;
+      height: 480px;
+      background: radial-gradient(circle, rgba(240, 81, 35, 0.08) 0%, rgba(245, 239, 230, 0) 70%);
+      border-radius: 50%;
+    }
+    .shape-blob-2 {
+      position: absolute;
+      top: 40%;
+      left: -150px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(0, 168, 255, 0.08) 0%, rgba(245, 239, 230, 0) 70%);
+      border-radius: 50%;
+    }
+
+    .site-wrapper {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Header */
+    header {
+      background: rgba(245, 239, 230, 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+    .brand-icon-box {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .brand-text-row {
+      display: flex;
+      align-items: center;
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: -0.6px;
+      line-height: 1;
+    }
+    .brand-tabi { color: #0F172A; }
+    .brand-go {
+      color: var(--orange);
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+    }
+    .brand-plane-accent {
+      position: absolute;
+      top: -6px;
+      right: -13px;
+      width: 13px;
+      height: 13px;
+      color: var(--orange);
+    }
+    .header-nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .header-nav-link {
+      font-size: 14px;
+      font-weight: 600;
+      color: #475569;
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+    .header-nav-link:hover,
+    .header-nav-link.active {
+      color: var(--orange);
+    }
+    .btn-header-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      background: var(--orange);
+      color: #FFFFFF;
+      font-size: 13.5px;
+      font-weight: 700;
+      border-radius: 999px;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(240, 81, 35, 0.25);
+      transition: all 0.2s ease;
+    }
+    .btn-header-cta:hover {
+      background: var(--orange-hover);
+      box-shadow: 0 6px 16px rgba(240, 81, 35, 0.32);
+      transform: translateY(-1px);
+    }
+
+    /* Hero */
+    .legal-hero {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 48px 24px 32px;
+      text-align: center;
+    }
+    .legal-badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 16px;
+      background: rgba(0, 168, 255, 0.12);
+      color: #0284C7;
+      font-size: 12.5px;
+      font-weight: 700;
+      border-radius: 999px;
+      margin-bottom: 16px;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+    }
+    .legal-title {
+      font-size: clamp(26px, 4vw, 36px);
+      font-weight: 900;
+      color: #0F172A;
+      letter-spacing: -0.8px;
+      margin-bottom: 12px;
+      line-height: 1.25;
+    }
+    .legal-subtitle {
+      max-width: 760px;
+      margin: 0 auto 20px;
+      font-size: 15px;
+      color: #475569;
+      line-height: 1.6;
+    }
+    .legal-meta-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 13px;
+      color: #64748B;
+    }
+    .legal-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Layout */
+    .legal-container {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 24px 64px;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 36px;
+      align-items: start;
+    }
+
+    /* Sidebar */
+    .legal-sidebar {
+      position: sticky;
+      top: 86px;
+      background: #FFFFFF;
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    }
+    .toc-title {
+      font-size: 13px;
+      font-weight: 800;
+      color: #0F172A;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #F1F5F9;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .toc-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .toc-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #475569;
+      text-decoration: none;
+      border-radius: var(--radius-sm);
+      transition: all 0.15s ease;
+    }
+    .toc-link:hover {
+      background: #FAF7F2;
+      color: var(--orange);
+    }
+    .toc-link.active {
+      background: rgba(240, 81, 35, 0.08);
+      color: var(--orange);
+      font-weight: 700;
+    }
+    .toc-num {
+      width: 22px;
+      height: 22px;
+      border-radius: 6px;
+      background: #F1F5F9;
+      color: #475569;
+      font-size: 11px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .toc-link.active .toc-num {
+      background: var(--orange);
+      color: #FFFFFF;
+    }
+    .sidebar-help-box {
+      margin-top: 20px;
+      padding: 16px;
+      background: #FAF7F2;
+      border: 1px solid #EAE3D6;
+      border-radius: var(--radius-md);
+      font-size: 12.5px;
+      color: #475569;
+    }
+    .sidebar-help-box strong {
+      display: block;
+      color: #0F172A;
+      margin-bottom: 6px;
+      font-size: 13px;
+    }
+    .sidebar-help-box a {
+      color: var(--orange);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    /* Content Area */
+    .legal-content-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+    .legal-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-lg);
+      padding: 32px 36px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+      scroll-margin-top: 100px;
+    }
+    .card-header-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid #F1F5F9;
+    }
+    .card-badge-num {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #0284C7 0%, #00478F 100%);
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: 800;
+      flex-shrink: 0;
+      box-shadow: 0 4px 10px rgba(2, 132, 199, 0.25);
+    }
+    .card-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: #0F172A;
+      letter-spacing: -0.4px;
+    }
+    .legal-body {
+      font-size: 14.5px;
+      color: #334155;
+      line-height: 1.7;
+    }
+    .legal-body p { margin-bottom: 14px; }
+    .legal-body p:last-child { margin-bottom: 0; }
+    .legal-body h4 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #0F172A;
+      margin: 22px 0 10px;
+    }
+    .legal-body h4:first-child { margin-top: 0; }
+    .legal-body ul, .legal-body ol {
+      margin: 10px 0 16px 20px;
+    }
+    .legal-body li {
+      margin-bottom: 8px;
+    }
+    .step-box {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: var(--radius-md);
+      padding: 20px;
+      margin: 16px 0;
+    }
+    .step-badge {
+      display: inline-block;
+      padding: 4px 10px;
+      background: #00478F;
+      color: #FFFFFF;
+      font-size: 12px;
+      font-weight: 700;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+    .alert-box {
+      background: #EFF6FF;
+      border-left: 4px solid #0284C7;
+      padding: 16px 20px;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      margin: 18px 0;
+      font-size: 14px;
+      color: #1E3A8A;
+    }
+    .code-template {
+      background: #0F172A;
+      color: #F8FAFC;
+      padding: 16px 20px;
+      border-radius: var(--radius-sm);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 13px;
+      margin: 12px 0;
+      line-height: 1.6;
+      white-space: pre-wrap;
+    }
+
+    /* Footer */
+    footer {
+      background: #ECE5D8;
+      border-top: 1px solid #E2D9CA;
+      padding: 24px;
+      font-size: 13px;
+      color: #64748B;
+    }
+    .footer-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+    .footer-links a {
+      color: #475569;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.15s ease;
+    }
+    .footer-links a:hover {
+      color: var(--orange);
+    }
+
+    @media (max-width: 860px) {
+      .legal-container {
+        grid-template-columns: 1fr;
+      }
+      .legal-sidebar {
+        display: none;
+      }
+      .header-nav-links {
+        display: none;
+      }
+      .legal-card {
+        padding: 24px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Ambient Background Blobs -->
+  <div class="bg-decorations">
+    <div class="shape-blob-1"></div>
+    <div class="shape-blob-2"></div>
+  </div>
+
+  <div class="site-wrapper">
+
+    <!-- Header -->
+    <header>
+      <div class="header-inner">
+        <a href="index.html" class="brand-logo" title="TabiGo - Về Trang Chủ">
+          <div class="brand-icon-box">
+            <svg viewBox="0 0 100 100" fill="none">
+              <defs>
+                <radialGradient id="hdrGlobeGrad" cx="38%" cy="35%" r="65%">
+                  <stop offset="0%" stop-color="#E1F7FF" />
+                  <stop offset="45%" stop-color="#38BDF8" />
+                  <stop offset="100%" stop-color="#0284C7" />
+                </radialGradient>
+                <linearGradient id="hdrPlaneGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#FFAE00" />
+                  <stop offset="100%" stop-color="#FF6B00" />
+                </linearGradient>
+              </defs>
+              <circle cx="50" cy="50" r="32" fill="url(#hdrGlobeGrad)" />
+              <path d="M42 32c3-2 8-1 10 2 2 3 0 7-3 8-4 1-5 4-4 7s4 5 7 4 5-3 8-1c3 2 4 6 2 8-2 2-7 1-9-1-3-2-6-1-8 2-2 3-5 5-8 4-4-2-6-7-4-11 1-3 0-6-2-8-2-2-1-6 2-7 3-1 7-2 9-3z" fill="#FFFFFF" fill-opacity="0.85" />
+              <path d="M55 58c3 1 6 4 5 7s-4 4-6 3-3-3-2-5c0-2 1-4 3-5z" fill="#FFFFFF" fill-opacity="0.85" />
+              <ellipse cx="50" cy="50" rx="42" ry="17" stroke="#00A3E0" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="5 3" transform="rotate(-28 50 50)" />
+              <g transform="translate(62, 17) rotate(22)">
+                <polygon points="12,0 0,16 6,10 12,0" fill="url(#hdrPlaneGrad)" />
+                <polygon points="12,0 6,10 16,8 12,0" fill="#FFAA00" />
+                <polygon points="6,10 7,16 9,12 6,10" fill="#E65100" />
+              </g>
+              <path d="M68 64 A 20 20 0 0 1 81 77" stroke="#00A3E0" stroke-width="2.8" stroke-linecap="round" />
+              <path d="M73 60 A 26 26 0 0 1 88 75" stroke="#00A3E0" stroke-width="2.8" stroke-linecap="round" />
+            </svg>
+          </div>
+          <div class="brand-text-row">
+            <span class="brand-tabi">Tabi</span><span class="brand-go">Go<svg class="brand-plane-accent" viewBox="0 0 24 24" fill="currentColor"><path d="m21.426 2.574-19 9a1 1 0 0 0 .044 1.832l6.877 2.457 2.457 6.877a1 1 0 0 0 1.832.044l9-19a1 1 0 0 0-1.21-1.21z"/></svg></span>
+          </div>
+        </a>
+
+        <div class="header-nav-links">
+          <a href="index.html" class="header-nav-link">Trang chủ</a>
+          <a href="terms.html" class="header-nav-link">Điều khoản dịch vụ</a>
+          <a href="privacy.html" class="header-nav-link">Chính sách bảo mật</a>
+          <a href="data-deletion.html" class="header-nav-link active">Xóa dữ liệu</a>
+        </div>
+
+        <a href="index.html#destinations" class="btn-header-cta">
+          <span>Khám phá eSIM</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+      </div>
+    </header>
+
+    <!-- Page Hero Banner -->
+    <section class="legal-hero">
+      <div class="legal-badge-pill">Tuân Thủ Chính Sách Nền Tảng Meta / Facebook</div>
+      <h1 class="legal-title">Hướng Dẫn Xóa Dữ Liệu Người Dùng Facebook</h1>
+      <p class="legal-subtitle">
+        Facebook User Data Deletion Instructions — TabiGo cam kết tôn trọng quyền riêng tư và cung cấp cơ chế minh bạch cho phép người dùng xóa bỏ toàn bộ dữ liệu tài khoản liên kết với Facebook bất kỳ lúc nào.
+      </p>
+      <div class="legal-meta-row">
+        <div class="legal-meta-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          <span>Hiệu lực: Tháng 11/2026</span>
+        </div>
+        <div class="legal-meta-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          <span>Meta Platform Compliant</span>
+        </div>
+        <div class="legal-meta-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          <span>privacy@tabigo.vn</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main 2-Column Container -->
+    <div class="legal-container">
+
+      <!-- Sticky Sidebar Table of Contents -->
+      <aside class="legal-sidebar">
+        <div class="toc-title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+          <span>Mục Lục Hướng Dẫn</span>
+        </div>
+        <ul class="toc-list">
+          <li><a href="#tong-quan" class="toc-link active"><span class="toc-num">1</span><span>Tổng quan dữ liệu Facebook</span></a></li>
+          <li><a href="#cach-1-go-quyen" class="toc-link"><span class="toc-num">2</span><span>Cách 1: Gỡ quyền trên Facebook</span></a></li>
+          <li><a href="#cach-2-xoa-may-chu" class="toc-link"><span class="toc-num">3</span><span>Cách 2: Xóa vĩnh viễn dữ liệu</span></a></li>
+          <li><a href="#quy-trinh-cam-ket" class="toc-link"><span class="toc-num">4</span><span>Quy trình xử lý & Cam kết</span></a></li>
+          <li><a href="#lien-he-ho-tro" class="toc-link"><span class="toc-num">5</span><span>Kênh hỗ trợ bảo mật 24/7</span></a></li>
+        </ul>
+
+        <div class="sidebar-help-box">
+          <strong>Cần hỗ trợ xóa nhanh?</strong>
+          Đội ngũ kỹ thuật viên người Việt luôn sẵn sàng tiếp nhận yêu cầu qua Hotline/Zalo: <a href="tel:0794058999">0794.058.999</a> hoặc email <a href="mailto:privacy@tabigo.vn">privacy@tabigo.vn</a>.
+        </div>
+      </aside>
+
+      <!-- Content Area -->
+      <main class="legal-content-wrap">
+
+        <!-- 1. Tổng quan -->
+        <article class="legal-card" id="tong-quan">
+          <div class="card-header-row">
+            <span class="card-badge-num">1</span>
+            <h2 class="card-title">Tổng Quan Dữ Liệu Thu Thập Qua Facebook Login</h2>
+          </div>
+          <div class="legal-body">
+            <p>Ứng dụng <strong>TabiGo</strong> (App ID: <code>29583518604587618</code>) tích hợp tính năng <em>Đăng nhập bằng Facebook (Facebook Login)</em> nhằm mang lại trải nghiệm tạo tài khoản nhanh chóng, an toàn và thuận tiện nhất cho khách hàng khi mua gói cước eSIM du lịch quốc tế.</p>
+            <p>Khi bạn cấp quyền đăng nhập qua Facebook, TabiGo chỉ thu thập các thông tin cơ bản sau:</p>
+            <ul>
+              <li><strong>Họ và tên hiển thị (Public Name):</strong> Dùng để định danh và xưng hô trên hồ sơ khách hàng.</li>
+              <li><strong>Địa chỉ Email:</strong> Dùng để giao nhận mã QR eSIM, hóa đơn điện tử và hướng dẫn kích hoạt kết nối.</li>
+              <li><strong>ID người dùng Facebook (Facebook User ID):</strong> Chuỗi số định danh tài khoản duy nhất do Meta cấp để xác thực phiên làm việc.</li>
+              <li><strong>Ảnh đại diện công khai (Profile Picture):</strong> Dùng để hiển thị avatar người dùng trong ứng dụng TabiGo.</li>
+            </ul>
+            <div class="alert-box">
+              <strong>🔒 Cam kết bảo vệ dữ liệu:</strong> TabiGo <strong>không bao giờ</strong> yêu cầu quyền truy cập danh sách bạn bè, tin nhắn riêng tư hay quyền đăng bài viết lên bảng tin cá nhân Facebook của bạn. Chúng tôi tuyệt đối không bán hoặc chia sẻ thông tin này cho bất kỳ bên thứ ba quảng cáo nào.
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. Cách 1: Gỡ quyền trên Facebook -->
+        <article class="legal-card" id="cach-1-go-quyen">
+          <div class="card-header-row">
+            <span class="card-badge-num">2</span>
+            <h2 class="card-title">Cách 1: Tự Gỡ Quyền Truy Cập Ứng Dụng Trên Facebook</h2>
+          </div>
+          <div class="legal-body">
+            <p>Nếu bạn không muốn tiếp tục chia sẻ thông tin từ Facebook với TabiGo, bạn có thể tự thu hồi quyền truy cập bất cứ lúc nào trực tiếp trên giao diện Facebook theo các bước sau:</p>
+
+            <div class="step-box">
+              <span class="step-badge">Thao tác trên Máy tính (Desktop Browser)</span>
+              <ol>
+                <li>Đăng nhập tài khoản cá nhân tại <a href="https://www.facebook.com" target="_blank" rel="noopener" style="color:var(--orange); font-weight:700;">facebook.com</a>.</li>
+                <li>Nhấp vào ảnh đại diện cá nhân ở góc trên bên phải &rarr; Chọn <strong>Cài đặt & quyền riêng tư (Settings & Privacy)</strong> &rarr; Chọn <strong>Cài đặt (Settings)</strong>.</li>
+                <li>Tại thanh menu bên trái, cuộn xuống và chọn mục <strong>Ứng dụng và trang web (Apps and Websites)</strong>.</li>
+                <li>Tìm ứng dụng <strong>"Tabigo"</strong> hoặc <strong>"App Tabigo SignIn"</strong> trong danh sách các ứng dụng đang hoạt động.</li>
+                <li>Nhấp vào nút <strong>Gỡ (Remove)</strong> bên cạnh tên ứng dụng &rarr; Xác nhận việc gỡ bỏ.</li>
+              </ol>
+            </div>
+
+            <div class="step-box">
+              <span class="step-badge">Thao tác trên Ứng dụng Di Động (iOS & Android)</span>
+              <ol>
+                <li>Mở ứng dụng Facebook trên điện thoại của bạn.</li>
+                <li>Chạm vào biểu tượng Menu (3 dấu gạch ngang) &rarr; Cuộn xuống chọn <strong>Cài đặt & quyền riêng tư</strong> &rarr; Chọn <strong>Cài đặt</strong>.</li>
+                <li>Cuộn tới phần <em>Quyền (Permissions)</em> &rarr; Chọn <strong>Ứng dụng và trang web (Apps and Websites)</strong>.</li>
+                <li>Tìm kiếm ứng dụng <strong>Tabigo</strong> &rarr; Chạm vào tên ứng dụng và chọn <strong>Gỡ (Remove)</strong>.</li>
+              </ol>
+            </div>
+            <p>Ngay sau khi gỡ bỏ, Facebook sẽ ngay lập tức ngừng gửi bất kỳ dữ liệu cá nhân nào tới TabiGo.</p>
+          </div>
+        </article>
+
+        <!-- 3. Cách 2: Yêu cầu xóa vĩnh viễn trên máy chủ TabiGo -->
+        <article class="legal-card" id="cach-2-xoa-may-chu">
+          <div class="card-header-row">
+            <span class="card-badge-num">3</span>
+            <h2 class="card-title">Cách 2: Gửi Yêu Cầu Xóa Vĩnh Viễn Dữ Liệu Khỏi Máy Chủ TabiGo</h2>
+          </div>
+          <div class="legal-body">
+            <p>Theo Điều 16 Nghị định 13/2023/NĐ-CP và Điều khoản nền tảng Meta (Meta Platform Terms), bạn có quyền yêu cầu TabiGo <strong>xóa bỏ vĩnh viễn và không thể khôi phục</strong> toàn bộ dữ liệu tài khoản, liên kết Facebook UID và lịch sử tương tác trên máy chủ của chúng tôi.</p>
+            
+            <h4>Hướng dẫn gửi yêu cầu:</h4>
+            <p>Vui lòng gửi email từ chính địa chỉ email mà bạn đã sử dụng để đăng nhập Facebook tới địa chỉ hộp thư bảo mật:</p>
+            <p><a href="mailto:privacy@tabigo.vn" style="color:var(--orange); font-size:16px; font-weight:800;">privacy@tabigo.vn</a> (hoặc <a href="mailto:support@tabigo.vn" style="color:var(--orange); font-weight:700;">support@tabigo.vn</a>)</p>
+
+            <div class="code-template">Tiêu đề: [Yêu cầu xóa dữ liệu Facebook] - [Họ và tên của bạn]
+
+Nội dung:
+- Họ và tên: [Nguyễn Văn A]
+- Email đăng nhập Facebook: [email@example.com]
+- Facebook User ID (nếu có): [ dãy số UID ]
+- Nội dung yêu cầu: Tôi yêu cầu TabiGo xóa vĩnh viễn toàn bộ dữ liệu cá nhân, thông tin tài khoản và lịch sử giao dịch liên kết với tài khoản Facebook nêu trên khỏi hệ thống của TabiGo.</div>
+
+            <p>Sau khi tiếp nhận yêu cầu, hệ thống TabiGo sẽ tiến hành xử lý trong vòng <strong>24 đến 48 giờ làm việc</strong> và gửi email phản hồi chính thức cho bạn kèm <strong>Mã số xác nhận xóa dữ liệu (Data Deletion Confirmation Code)</strong>.</p>
+          </div>
+        </article>
+
+        <!-- 4. Quy trình cam kết -->
+        <article class="legal-card" id="quy-trinh-cam-ket">
+          <div class="card-header-row">
+            <span class="card-badge-num">4</span>
+            <h2 class="card-title">Quy Trình Xử Lý & Cam Kết Của TabiGo</h2>
+          </div>
+          <div class="legal-body">
+            <p>Quy trình xóa dữ liệu người dùng tại TabiGo được thực hiện khép kín qua 3 bước nghiêm ngặt:</p>
+            <ul>
+              <li><strong>Bước 1: Tiếp nhận & Xác thực:</strong> Hệ thống đối chiếu địa chỉ email yêu cầu với Facebook User ID tương ứng trong cơ sở dữ liệu để đảm bảo chính chủ yêu cầu.</li>
+              <li><strong>Bước 2: Xóa dữ liệu vĩnh viễn:</strong> Tiến hành xóa toàn bộ thông tin định danh cá nhân (Họ tên, Email, Avatar, Facebook UID) trên cơ sở dữ liệu hoạt động chính và các bản sao lưu (backup) theo chu kỳ định kỳ.</li>
+              <li><strong>Bước 3: Thông báo hoàn tất:</strong> Cung cấp mã xác nhận yêu cầu xóa dữ liệu duy nhất để bạn có thể kiểm tra và tra cứu bất kỳ lúc nào.</li>
+            </ul>
+            <div class="alert-box">
+              <strong>Lưu ý về hóa đơn tài chính:</strong> Các thông tin liên quan đến hóa đơn thanh toán thuế hoặc nghĩa vụ kiểm toán bắt buộc theo Luật Kế toán Việt Nam sẽ được lưu giữ theo thời hạn luật định và được bảo vệ theo chế độ lưu trữ cô lập, không dùng cho bất kỳ mục đích nào khác.
+            </div>
+          </div>
+        </article>
+
+        <!-- 5. Kênh hỗ trợ -->
+        <article class="legal-card" id="lien-he-ho-tro">
+          <div class="card-header-row">
+            <span class="card-badge-num">5</span>
+            <h2 class="card-title">Kênh Tiếp Nhận & Hỗ Trợ Bảo Mật 24/7</h2>
+          </div>
+          <div class="legal-body">
+            <p>Mọi thắc mắc liên quan đến quy trình xóa dữ liệu người dùng hoặc kiểm tra trạng thái yêu cầu của bạn, xin vui lòng liên hệ:</p>
+            <ul>
+              <li><strong>Đơn vị chủ quản:</strong> Công ty TNHH Đầu tư và Phát triển Công nghệ 3M Intel — Dự án TabiGo</li>
+              <li><strong>Hộp thư bảo mật:</strong> <a href="mailto:privacy@tabigo.vn" style="color:var(--orange); font-weight:700;">privacy@tabigo.vn</a></li>
+              <li><strong>Email CSKH:</strong> <a href="mailto:support@tabigo.vn" style="color:var(--orange); font-weight:700;">support@tabigo.vn</a></li>
+              <li><strong>Hotline CSKH / Zalo 24/7:</strong> <a href="tel:0794058999" style="color:var(--orange); font-weight:700;">0794.058.999</a></li>
+              <li><strong>Văn phòng đại diện:</strong> Tầng 15A, Tòa nhà Technopark Tower, Lô đất CCTP-16, Khu đô thị Gia Lâm, Xã Gia Lâm, TP Hà Nội, Việt Nam.</li>
+            </ul>
+          </div>
+        </article>
+
+      </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-left">
+          <span>©2026 TABI GO. Bản quyền thuộc về TabiGo (3M Intel).</span>
+        </div>
+        <div class="footer-links">
+          <a href="index.html">Trang chủ</a>
+          <a href="terms.html">Điều khoản sử dụng</a>
+          <a href="privacy.html">Chính sách bảo mật</a>
+          <a href="data-deletion.html">Xóa dữ liệu Facebook</a>
+          <a href="tel:0794058999">Hotline: 0794.058.999</a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- ScrollSpy for Table of Contents -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const links = document.querySelectorAll('.toc-link');
+      const sections = document.querySelectorAll('.legal-card');
+
+      function updateActiveToc() {
+        let current = '';
+        const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+
+        sections.forEach(function (sec) {
+          const top = sec.offsetTop - 140;
+          if (scrollY >= top) {
+            current = sec.getAttribute('id');
+          }
+        });
+
+        links.forEach(function (link) {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === '#' + current) {
+            link.classList.add('active');
+          }
+        });
+      }
+
+      window.addEventListener('scroll', updateActiveToc, { passive: true });
+      updateActiveToc();
+    });
+  </script>
+</body>
+</html>

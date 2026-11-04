@@ -12,7 +12,9 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html'),
         terms: resolve(__dirname, 'terms.html'),
         privacy: resolve(__dirname, 'privacy.html'),
+        dataDeletion: resolve(__dirname, 'data-deletion.html'),
       },
     },
   },
 });
+
