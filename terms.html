@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   <title>Điều Khoản Sử Dụng & Chính Sách Dịch Vụ — TabiGo</title>
 
   <!-- Favicon & App Icons -->
@@ -10,38 +10,55 @@
   <link rel="icon" type="image/png" sizes="48x48" href="./assets/images/tabigo_favicon.png" />
   <link rel="shortcut icon" href="./assets/images/tabigo_favicon.png" />
 
-  <!-- Google Fonts: Inter -->
+  <!-- Google Fonts: Inter & Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-heading: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       --bg-page: #F5EFE6;
       --bg-card: #FFFFFF;
       --orange: #F05123;
       --orange-hover: #D63F13;
-      --tabi-navy: #00478F;
-      --tabi-sky: #00A8FF;
-      --text-main: #0F172A;
-      --text-muted: #334155;
+      --orange-light: #FFF2ED;
+      --tabi-navy: #0F172A;
+      --tabi-sky: #0284C7;
+      --tabi-sky-light: #F0F9FF;
+      --text-main: #1E293B;
+      --text-muted: #475569;
       --text-light: #64748B;
       --border: #E2E8F0;
       --border-card: #EAE3D6;
       --radius-sm: 8px;
       --radius-md: 14px;
       --radius-lg: 20px;
-      --max-w: 1200px;
+      --radius-xl: 26px;
+      --max-w: 1220px;
+      --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.03);
+      --shadow-md: 0 8px 24px -4px rgba(15, 23, 42, 0.05);
+      --shadow-lg: 0 16px 36px -8px rgba(15, 23, 42, 0.07);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    html, body {
+      max-width: 100vw;
+      overflow-x: hidden;
+      width: 100%;
     }
 
     body {
-      font-family: var(--font-family);
+      font-family: var(--font-body);
       background-color: var(--bg-page);
       color: var(--text-main);
-      line-height: 1.65;
+      line-height: 1.68;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -55,24 +72,24 @@
       pointer-events: none;
       z-index: 0;
       overflow: hidden;
-      opacity: 0.5;
+      opacity: 0.6;
     }
     .shape-blob-1 {
       position: absolute;
-      top: -120px;
+      top: -100px;
       right: -80px;
-      width: 480px;
-      height: 480px;
-      background: radial-gradient(circle, rgba(240, 81, 35, 0.08) 0%, rgba(245, 239, 230, 0) 70%);
+      width: 520px;
+      height: 520px;
+      background: radial-gradient(circle, rgba(240, 81, 35, 0.09) 0%, rgba(245, 239, 230, 0) 70%);
       border-radius: 50%;
     }
     .shape-blob-2 {
       position: absolute;
-      top: 40%;
-      left: -150px;
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, rgba(0, 168, 255, 0.08) 0%, rgba(245, 239, 230, 0) 70%);
+      top: 35%;
+      left: -120px;
+      width: 550px;
+      height: 550px;
+      background: radial-gradient(circle, rgba(2, 132, 199, 0.08) 0%, rgba(245, 239, 230, 0) 70%);
       border-radius: 50%;
     }
 
@@ -83,13 +100,14 @@
 
     /* Header */
     header {
-      background: rgba(245, 239, 230, 0.94);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      background: rgba(245, 239, 230, 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
       border-bottom: 1px solid rgba(0, 0, 0, 0.06);
       position: sticky;
       top: 0;
       z-index: 100;
+      transition: background 0.2s, box-shadow 0.2s;
     }
     .header-inner {
       max-width: var(--max-w);
@@ -98,16 +116,18 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 16px;
     }
     .brand-logo {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       text-decoration: none;
+      flex-shrink: 0;
     }
     .brand-icon-box {
-      width: 40px;
-      height: 40px;
+      width: 38px;
+      height: 38px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -115,6 +135,7 @@
     .brand-text-row {
       display: flex;
       align-items: center;
+      font-family: var(--font-heading);
       font-size: 26px;
       font-weight: 800;
       letter-spacing: -0.6px;
@@ -132,18 +153,36 @@
     .header-nav-links {
       display: flex;
       align-items: center;
-      gap: 24px;
+      gap: 26px;
     }
     .header-nav-link {
-      font-size: 14px;
+      font-size: 14.5px;
       font-weight: 600;
       color: var(--text-muted);
       text-decoration: none;
       transition: color 0.15s;
+      position: relative;
     }
-    .header-nav-link:hover,
+    .header-nav-link:hover {
+      color: var(--orange);
+    }
     .header-nav-link.active {
       color: var(--orange);
+    }
+    .header-nav-link.active::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--orange);
+      border-radius: 2px;
+    }
+    .header-right-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
     .btn-header-cta {
       display: inline-flex;
@@ -157,71 +196,166 @@
       border-radius: 999px;
       text-decoration: none;
       transition: transform 0.15s, background-color 0.15s, box-shadow 0.15s;
-      box-shadow: 0 4px 12px rgba(240, 81, 35, 0.25);
+      box-shadow: 0 4px 12px rgba(240, 81, 35, 0.22);
+      white-space: nowrap;
     }
     .btn-header-cta:hover {
       background: var(--orange-hover);
       transform: translateY(-1px);
-      box-shadow: 0 6px 16px rgba(240, 81, 35, 0.32);
+      box-shadow: 0 6px 16px rgba(240, 81, 35, 0.3);
     }
 
     /* Page Hero Banner */
     .legal-hero {
       max-width: var(--max-w);
       margin: 0 auto;
-      padding: 48px 24px 32px;
-      text-align: center;
+      padding: 44px 24px 32px;
     }
-    .legal-badge-pill {
+    .hero-breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-light);
+      margin-bottom: 18px;
+    }
+    .hero-breadcrumb a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .hero-breadcrumb a:hover {
+      color: var(--orange);
+    }
+    .hero-breadcrumb svg {
+      width: 14px;
+      height: 14px;
+      stroke: #94A3B8;
+    }
+
+    .hero-card-banner {
+      background: #FFFFFF;
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-xl);
+      padding: 40px 44px;
+      box-shadow: var(--shadow-md);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-card-banner::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, #FF6B00 0%, var(--orange) 50%, #0284C7 100%);
+    }
+    .hero-badge-pill {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      background: rgba(240, 81, 35, 0.1);
+      gap: 8px;
+      background: var(--orange-light);
       color: var(--orange);
       padding: 6px 14px;
       border-radius: 999px;
       font-size: 12.5px;
       font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.3px;
       margin-bottom: 16px;
     }
+    .hero-badge-pill svg {
+      width: 15px;
+      height: 15px;
+    }
     .legal-title {
-      font-size: 36px;
+      font-family: var(--font-heading);
+      font-size: 38px;
       font-weight: 800;
-      color: #0F172A;
-      letter-spacing: -0.8px;
-      margin-bottom: 12px;
+      color: var(--tabi-navy);
+      letter-spacing: -0.9px;
+      margin-bottom: 14px;
       line-height: 1.25;
     }
     .legal-subtitle {
-      font-size: 16px;
-      color: var(--text-light);
-      max-width: 760px;
-      margin: 0 auto 20px;
+      font-size: 16.5px;
+      color: var(--text-muted);
+      max-width: 860px;
+      margin-bottom: 24px;
+      line-height: 1.65;
     }
-    .legal-meta-row {
+    .hero-meta-grid {
       display: flex;
-      justify-content: center;
       align-items: center;
-      gap: 20px;
-      font-size: 13px;
-      color: #64748B;
+      gap: 24px;
       flex-wrap: wrap;
+      padding-top: 20px;
+      border-top: 1px solid #F1F5F9;
     }
-    .legal-meta-item {
+    .hero-meta-item {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
+      font-size: 13.5px;
+      font-weight: 500;
+      color: #475569;
+    }
+    .hero-meta-item svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--orange);
+      flex-shrink: 0;
+    }
+
+    /* Key Takeaway Highlights (Tóm tắt nhanh) */
+    .highlights-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .highlight-card {
+      background: #FAF7F2;
+      border: 1px solid #EAE3D6;
+      border-radius: var(--radius-md);
+      padding: 16px 18px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .highlight-icon-box {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: #FFFFFF;
+      border: 1px solid #EAE3D6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--orange);
+    }
+    .highlight-content h5 {
+      font-family: var(--font-heading);
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--tabi-navy);
+      margin-bottom: 3px;
+    }
+    .highlight-content p {
+      font-size: 12px;
+      color: var(--text-light);
+      line-height: 1.45;
     }
 
     /* Layout: 2 Columns (Sticky Sidebar + Content) */
     .legal-container {
       max-width: var(--max-w);
-      margin: 0 auto 60px;
+      margin: 32px auto 60px;
       padding: 0 24px;
       display: grid;
-      grid-template-columns: 290px 1fr;
+      grid-template-columns: 310px 1fr;
       gap: 36px;
       align-items: flex-start;
     }
@@ -234,16 +368,46 @@
       border: 1px solid var(--border-card);
       border-radius: var(--radius-lg);
       padding: 22px 18px;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+      box-shadow: var(--shadow-sm);
+    }
+    .sidebar-search-box {
+      margin-bottom: 14px;
+      position: relative;
+    }
+    .sidebar-search-input {
+      width: 100%;
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 10px;
+      padding: 8px 12px 8px 34px;
+      font-size: 13px;
+      color: var(--text-main);
+      outline: none;
+      transition: border-color 0.15s, background-color 0.15s;
+    }
+    .sidebar-search-input:focus {
+      border-color: var(--orange);
+      background: #FFFFFF;
+    }
+    .sidebar-search-icon {
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
+      width: 15px;
+      height: 15px;
+      stroke: #94A3B8;
+      pointer-events: none;
     }
     .toc-title {
-      font-size: 13px;
+      font-family: var(--font-heading);
+      font-size: 12px;
       font-weight: 800;
-      color: #475569;
+      color: #64748B;
       text-transform: uppercase;
       letter-spacing: 0.8px;
-      margin-bottom: 14px;
-      padding-bottom: 10px;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
       border-bottom: 1px solid #F1F5F9;
       display: flex;
       align-items: center;
@@ -254,66 +418,126 @@
       display: flex;
       flex-direction: column;
       gap: 4px;
+      max-height: calc(100vh - 340px);
+      overflow-y: auto;
+      padding-right: 4px;
+    }
+    .toc-list::-webkit-scrollbar {
+      width: 4px;
+    }
+    .toc-list::-webkit-scrollbar-thumb {
+      background: #E2E8F0;
+      border-radius: 4px;
     }
     .toc-link {
       display: flex;
       align-items: center;
       gap: 10px;
-      padding: 8px 12px;
-      border-radius: var(--radius-sm);
+      padding: 9px 12px;
+      border-radius: 10px;
+      font-size: 13.5px;
+      font-weight: 500;
       color: #475569;
       text-decoration: none;
-      font-size: 13.5px;
-      font-weight: 600;
-      transition: all 0.15s ease;
-      line-height: 1.35;
-    }
-    .toc-link:hover {
-      background: #FFF7ED;
-      color: var(--orange);
-    }
-    .toc-link.active {
-      background: #FFF0EB;
-      color: var(--orange);
-      font-weight: 700;
+      transition: all 0.15s;
     }
     .toc-num {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
       width: 22px;
       height: 22px;
       border-radius: 6px;
       background: #F1F5F9;
-      font-size: 11.5px;
       color: #64748B;
+      font-size: 11px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       flex-shrink: 0;
+      transition: all 0.15s;
+    }
+    .toc-link:hover {
+      background: #FAF7F2;
+      color: var(--orange);
+    }
+    .toc-link:hover .toc-num {
+      background: var(--orange-light);
+      color: var(--orange);
+    }
+    .toc-link.active {
+      background: var(--orange-light);
+      color: var(--orange);
+      font-weight: 700;
     }
     .toc-link.active .toc-num {
       background: var(--orange);
       color: #FFFFFF;
     }
 
-    /* Sidebar quick action box */
+    /* Sidebar quick contact box */
     .sidebar-help-box {
-      margin-top: 20px;
+      margin-top: 18px;
       padding: 16px;
-      background: #FAF7F2;
+      background: linear-gradient(135deg, #FAF7F2 0%, #FFF8F4 100%);
       border: 1px solid #EAE3D6;
       border-radius: var(--radius-md);
-      font-size: 12.5px;
-      color: #475569;
     }
-    .sidebar-help-box strong {
-      display: block;
-      color: #0F172A;
-      margin-bottom: 6px;
+    .sidebar-help-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-heading);
       font-size: 13px;
-    }
-    .sidebar-help-box a {
-      color: var(--orange);
       font-weight: 700;
+      color: var(--tabi-navy);
+      margin-bottom: 6px;
+    }
+    .sidebar-help-desc {
+      font-size: 12px;
+      color: var(--text-light);
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+    .sidebar-help-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .sidebar-btn-zalo {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background: #0068FF;
+      color: #FFFFFF;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 7px 12px;
+      border-radius: 8px;
       text-decoration: none;
+      transition: opacity 0.15s;
+    }
+    .sidebar-btn-zalo:hover {
+      opacity: 0.9;
+    }
+    .sidebar-btn-email {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      color: #334155;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+    .sidebar-btn-email:hover {
+      background: #F8FAFC;
+      color: var(--orange);
+      border-color: var(--orange);
     }
 
     /* Content Area */
@@ -326,99 +550,238 @@
     .legal-card {
       background: #FFFFFF;
       border: 1px solid var(--border-card);
-      border-radius: var(--radius-lg);
-      padding: 32px 36px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+      border-radius: var(--radius-xl);
+      padding: 34px 38px;
+      box-shadow: var(--shadow-sm);
       scroll-margin-top: 100px;
+      transition: border-color 0.2s, box-shadow 0.2s;
     }
+    .legal-card:hover {
+      box-shadow: var(--shadow-md);
+      border-color: #E2D9C8;
+    }
+
     .card-header-row {
       display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 20px;
-      padding-bottom: 14px;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 22px;
+      padding-bottom: 16px;
       border-bottom: 1px solid #F1F5F9;
     }
     .card-badge-num {
-      width: 36px;
-      height: 36px;
-      border-radius: 10px;
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
       background: linear-gradient(135deg, #FF6B00 0%, var(--orange) 100%);
       color: #FFFFFF;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 16px;
+      font-family: var(--font-heading);
+      font-size: 17px;
       font-weight: 800;
       flex-shrink: 0;
-      box-shadow: 0 4px 10px rgba(240, 81, 35, 0.25);
+      box-shadow: 0 4px 12px rgba(240, 81, 35, 0.25);
+    }
+    .card-header-titles {
+      flex: 1;
+    }
+    .card-category-tag {
+      font-size: 11.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: var(--orange);
+      margin-bottom: 3px;
     }
     .card-title {
-      font-size: 22px;
+      font-family: var(--font-heading);
+      font-size: 23px;
       font-weight: 800;
-      color: #0F172A;
+      color: var(--tabi-navy);
       letter-spacing: -0.4px;
+      line-height: 1.3;
     }
 
+    /* Legal Body Typography */
     .legal-body {
-      color: #334155;
       font-size: 14.5px;
-      line-height: 1.75;
+      color: #334155;
+      line-height: 1.72;
     }
     .legal-body p {
       margin-bottom: 14px;
     }
-    .legal-body h4 {
+    .legal-body p:last-child {
+      margin-bottom: 0;
+    }
+    .legal-body strong {
+      color: var(--tabi-navy);
+      font-weight: 600;
+    }
+
+    /* Section Subheadings */
+    .legal-h3 {
+      font-family: var(--font-heading);
       font-size: 16px;
       font-weight: 700;
-      color: #0F172A;
-      margin: 20px 0 10px;
+      color: var(--tabi-navy);
+      margin: 22px 0 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
-    .legal-body ul, .legal-body ol {
-      margin-left: 20px;
-      margin-bottom: 16px;
+    .legal-h3 svg {
+      width: 17px;
+      height: 17px;
+      color: var(--orange);
     }
-    .legal-body li {
+
+    /* Visual Steps Row (Timeline) */
+    .steps-timeline {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 18px 0;
+    }
+    .step-timeline-item {
+      background: #FAF7F2;
+      border: 1px solid #EAE3D6;
+      border-radius: var(--radius-md);
+      padding: 16px;
+      position: relative;
+    }
+    .step-timeline-num {
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      background: var(--orange);
+      color: #FFFFFF;
+      font-size: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       margin-bottom: 8px;
     }
-
-    /* Highlight Notice Boxes */
-    .alert-box {
-      background: #FFF8F5;
-      border-left: 4px solid var(--orange);
-      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-      padding: 14px 18px;
-      margin: 18px 0;
+    .step-timeline-title {
+      font-family: var(--font-heading);
       font-size: 13.5px;
-      color: #7C2D12;
-    }
-    .alert-box strong {
-      display: block;
+      font-weight: 700;
+      color: var(--tabi-navy);
       margin-bottom: 4px;
-      font-size: 14px;
     }
-    .alert-box-info {
-      background: #F0F9FF;
-      border-left-color: #0284C7;
-      color: #075985;
+    .step-timeline-desc {
+      font-size: 12px;
+      color: #64748B;
+      line-height: 1.45;
     }
 
-    /* Data Table inside policies */
+    /* Feature Grid 2x2 */
+    .features-2x2-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin: 18px 0;
+    }
+    .feature-tile {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: var(--radius-md);
+      padding: 16px 18px;
+    }
+    .feature-tile-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+    .feature-tile-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: var(--orange-light);
+      color: var(--orange);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .feature-tile-icon svg {
+      width: 15px;
+      height: 15px;
+    }
+    .feature-tile-title {
+      font-family: var(--font-heading);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--tabi-navy);
+    }
+    .feature-tile-desc {
+      font-size: 13px;
+      color: #475569;
+      line-height: 1.5;
+    }
+
+    /* Alert / Callout Boxes */
+    .callout-box {
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      margin: 18px 0;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      line-height: 1.6;
+      font-size: 13.5px;
+    }
+    .callout-box svg {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .callout-box.info {
+      background: #F0F9FF;
+      border: 1px solid #BAE6FD;
+      color: #0369A1;
+    }
+    .callout-box.info svg {
+      stroke: #0284C7;
+    }
+    .callout-box.warning {
+      background: #FFFBEB;
+      border: 1px solid #FDE68A;
+      color: #92400E;
+    }
+    .callout-box.warning svg {
+      stroke: #D97706;
+    }
+    .callout-box.success {
+      background: #F0FDF4;
+      border: 1px solid #BBF7D0;
+      color: #166534;
+    }
+    .callout-box.success svg {
+      stroke: #16A34A;
+    }
+
+    /* Table */
     .legal-table-wrap {
       overflow-x: auto;
       margin: 18px 0;
       border: 1px solid #E2E8F0;
-      border-radius: var(--radius-sm);
+      border-radius: var(--radius-md);
     }
     .legal-table {
       width: 100%;
       border-collapse: collapse;
       text-align: left;
-      font-size: 13.5px;
+      font-size: 13px;
     }
     .legal-table th {
       background: #F8FAFC;
-      color: #1E293B;
+      color: var(--tabi-navy);
       font-weight: 700;
       padding: 12px 16px;
       border-bottom: 1px solid #E2E8F0;
@@ -436,7 +799,7 @@
     footer {
       background: rgba(0, 0, 0, 0.02);
       border-top: 1px solid rgba(0, 0, 0, 0.06);
-      padding: 40px 24px 48px;
+      padding: 36px 24px 44px;
       font-size: 13px;
       color: #64748B;
     }
@@ -454,65 +817,230 @@
       align-items: center;
       gap: 16px;
     }
-    .footer-links {
+    .footer-copyright {
+      font-weight: 700;
+      color: #334155;
+    }
+    .footer-legal-links {
       display: flex;
       gap: 20px;
       flex-wrap: wrap;
     }
-    .footer-links a {
+    .footer-legal-links a {
       color: #64748B;
       text-decoration: none;
       transition: color 0.15s;
     }
-    .footer-links a:hover {
+    .footer-legal-links a:hover {
       color: var(--orange);
     }
 
-    /* Mobile Responsive */
-    @media (max-width: 960px) {
+    /* Mobile Quick Jump Floating Bar */
+    .mobile-jump-bar {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 28px);
+      max-width: 360px;
+      background: rgba(15, 23, 42, 0.96);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 999px;
+      padding: 10px 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      z-index: 999;
+      align-items: center;
+      justify-content: space-between;
+      color: #FFFFFF;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .mobile-jump-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+    .mobile-jump-bar svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--orange);
+    }
+    .mobile-jump-bar select {
+      background: transparent;
+      border: none;
+      color: #FFFFFF;
+      font-size: 12.5px;
+      font-weight: 600;
+      outline: none;
+      cursor: pointer;
+      max-width: 210px;
+      text-overflow: ellipsis;
+    }
+    .mobile-jump-bar select option {
+      background: #0F172A;
+      color: #FFFFFF;
+    }
+
+    /* Segmented Navigation Switcher in Hero */
+    .legal-tab-switcher {
+      display: flex;
+      width: 100%;
+      max-width: 480px;
+      background: rgba(0, 0, 0, 0.05);
+      padding: 4px;
+      border-radius: 999px;
+      gap: 4px;
+      margin-bottom: 20px;
+    }
+    .legal-tab-btn {
+      flex: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      color: var(--text-muted);
+      transition: all 0.15s;
+      white-space: nowrap;
+    }
+    .legal-tab-btn.active {
+      background: #FFFFFF;
+      color: var(--orange);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
+    .legal-tab-btn:hover:not(.active) {
+      color: var(--orange);
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .legal-container {
+        grid-template-columns: 270px 1fr;
+        gap: 24px;
+      }
+      .highlights-row {
+        grid-template-columns: 1fr;
+      }
+      .steps-timeline {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 860px) {
       .legal-container {
         grid-template-columns: 1fr;
       }
       .legal-sidebar {
-        position: static;
-        margin-bottom: 8px;
+        display: none;
       }
-      .toc-list {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 6px;
+      .mobile-jump-bar {
+        display: flex;
       }
       .header-nav-links {
         display: none;
       }
+      .features-2x2-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 640px) {
+      .header-inner {
+        padding: 10px 14px;
+      }
+      .brand-text-row {
+        font-size: 21px;
+      }
+      .brand-icon-box {
+        width: 30px;
+        height: 30px;
+      }
+      .btn-header-cta {
+        padding: 6px 12px;
+        font-size: 12px;
+        gap: 4px;
+      }
+      .btn-header-cta span {
+        display: none;
+      }
+      .btn-header-cta::before {
+        content: 'Mua eSIM';
+      }
+      .legal-tab-switcher {
+        border-radius: 12px;
+        flex-direction: column;
+        gap: 4px;
+      }
+      .legal-tab-btn {
+        border-radius: 8px;
+        padding: 8px 12px;
+        font-size: 12.5px;
+        justify-content: center;
+      }
       .legal-hero {
-        padding: 32px 16px 20px;
+        padding: 18px 12px 12px;
+      }
+      .hero-card-banner {
+        padding: 20px 14px;
+        border-radius: 16px;
+      }
+      .hero-badge-pill {
+        font-size: 10.5px;
+        padding: 4px 8px;
+        white-space: normal;
+        text-align: left;
+        line-height: 1.35;
+        max-width: 100%;
       }
       .legal-title {
-        font-size: 26px;
+        font-size: 22px;
+        letter-spacing: -0.4px;
+        line-height: 1.25;
+        word-break: break-word;
       }
       .legal-subtitle {
-        font-size: 14.5px;
+        font-size: 13.5px;
+        line-height: 1.5;
+      }
+      .hero-meta-grid {
+        gap: 8px;
+        flex-direction: column;
+        align-items: flex-start;
       }
       .legal-container {
-        padding: 0 16px;
-      }
-      .toc-list {
-        grid-template-columns: 1fr;
+        padding: 0 12px;
+        margin-top: 14px;
       }
       .legal-card {
-        padding: 22px 20px;
+        padding: 18px 14px;
+        border-radius: 16px;
       }
       .card-title {
-        font-size: 19px;
+        font-size: 17px;
+      }
+      .card-badge-num {
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+        border-radius: 8px;
       }
       .footer-inner {
         flex-direction: column;
         align-items: center;
         text-align: center;
+        gap: 16px;
+      }
+      .footer-legal-links {
+        justify-content: center;
+        gap: 12px;
       }
     }
   </style>
@@ -527,7 +1055,7 @@
 
   <div class="site-wrapper">
 
-    <!-- Header -->
+    <!-- Header Navigation -->
     <header>
       <div class="header-inner">
         <a href="index.html" class="brand-logo" title="TabiGo - Về Trang Chủ">
@@ -568,46 +1096,116 @@
           <a href="privacy.html" class="header-nav-link">Chính sách bảo mật</a>
         </div>
 
-        <a href="index.html#destinations" class="btn-header-cta">
-          <span>Khám phá eSIM</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-        </a>
+        <div class="header-right-actions">
+          <a href="index.html#destinations" class="btn-header-cta">
+            <span>Khám phá eSIM</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
       </div>
     </header>
 
     <!-- Page Hero Banner -->
     <section class="legal-hero">
-      <div class="legal-badge-pill">Tuân Thủ Pháp Lý & Bảo Vệ Khách Hàng</div>
-      <h1 class="legal-title">Điều Khoản Sử Dụng & Chính Sách Dịch Vụ</h1>
-      <p class="legal-subtitle">
-        Tập hợp 8 quy định và chính sách vận hành chính thức của TabiGo nhằm bảo vệ quyền lợi tối đa cho khách hàng khi sử dụng giải pháp eSIM du lịch quốc tế.
-      </p>
-      <div class="legal-meta-row">
-        <div class="legal-meta-item">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-          <span>Hiệu lực cập nhật: Tháng 11/2026</span>
+      <div class="hero-breadcrumb">
+        <a href="index.html">Trang chủ</a>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        <span>Điều khoản dịch vụ</span>
+      </div>
+
+      <div class="legal-tab-switcher">
+        <a href="terms.html" class="legal-tab-btn active">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+          <span>Điều Khoản Sử Dụng (8 Mục)</span>
+        </a>
+        <a href="privacy.html" class="legal-tab-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          <span>Chính Sách Bảo Mật</span>
+        </a>
+      </div>
+
+      <div class="hero-card-banner">
+        <div class="hero-badge-pill">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          <span>QUY CHUẨN VẬN HÀNH & BẢO VỆ NGƯỜI TIÊU DÙNG</span>
         </div>
-        <div class="legal-meta-item">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-          <span>Đã đăng ký Bộ Công Thương</span>
+
+        <h1 class="legal-title">Điều Khoản Sử Dụng & Chính Sách Dịch Vụ</h1>
+
+        <p class="legal-subtitle">
+          Tập hợp 8 quy định vận hành và chính sách dịch vụ chính thức của TabiGo nhằm bảo vệ quyền lợi tối đa cho khách hàng khi sử dụng giải pháp eSIM du lịch quốc tế tại hơn 150+ quốc gia.
+        </p>
+
+        <!-- Quick Trust Meta Items -->
+        <div class="hero-meta-grid">
+          <div class="hero-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <span>Hiệu lực cập nhật: Tháng 11/2026</span>
+          </div>
+          <div class="hero-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            <span>Đã đăng ký Bộ Công Thương</span>
+          </div>
+          <div class="hero-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <span>Hotline 24/7: 0794.058.999</span>
+          </div>
+          <div class="hero-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <span>Email: support@tabigo.vn</span>
+          </div>
         </div>
-        <div class="legal-meta-item">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-          <span>Hotline: 0794.058.999</span>
+
+        <!-- 3 Highlights / Key Pillars -->
+        <div class="highlights-row">
+          <div class="highlight-card">
+            <div class="highlight-icon-box">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </div>
+            <div class="highlight-content">
+              <h5>Giao Tức Thì 5–10 Phút</h5>
+              <p>Mã QR eSIM được gửi thẳng vào hộp thư email của bạn ngay sau khi thanh toán.</p>
+            </div>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-icon-box">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            <div class="highlight-content">
+              <h5>Bảo Hành Kết Nối 100%</h5>
+              <p>Hỗ trợ cấu hình APN hoặc đổi profile eSIM thay thế nếu mạng gặp sự cố.</p>
+            </div>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-icon-box">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>
+            </div>
+            <div class="highlight-content">
+              <h5>Chính Sách Hoàn Tiền</h5>
+              <p>Cam kết hoàn tiền 100% nếu phát sinh lỗi kỹ thuật do hệ thống viễn thông.</p>
+            </div>
+          </div>
         </div>
+
       </div>
     </section>
 
-    <!-- Main 2-Column Container -->
+    <!-- Main Container (Sidebar + Content) -->
     <div class="legal-container">
 
       <!-- Sticky Sidebar Table of Contents -->
       <aside class="legal-sidebar">
-        <div class="toc-title">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
-          <span>Mục Lục Điều Khoản</span>
+        <div class="sidebar-search-box">
+          <svg class="sidebar-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" id="termsSearch" class="sidebar-search-input" placeholder="Tìm kiếm nhanh điều khoản..." oninput="filterTerms(this.value)" />
         </div>
-        <ul class="toc-list" id="tocList">
+
+        <div class="toc-title">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+          <span>Mục Lục Điều Khoản (8 Phần)</span>
+        </div>
+
+        <ul class="toc-list" id="termsTocList">
           <li><a href="#giao-hang" class="toc-link active"><span class="toc-num">1</span><span>Chính sách giao hàng</span></a></li>
           <li><a href="#bao-hanh" class="toc-link"><span class="toc-num">2</span><span>Chính sách bảo hành</span></a></li>
           <li><a href="#van-chuyen" class="toc-link"><span class="toc-num">3</span><span>Vận chuyển, giao nhận</span></a></li>
@@ -618,10 +1216,21 @@
           <li><a href="#dieu-khoan-chung" class="toc-link"><span class="toc-num">8</span><span>Điều khoản chung</span></a></li>
         </ul>
 
+        <!-- Quick Help Box in Sidebar -->
         <div class="sidebar-help-box">
-          <strong>Cần hỗ trợ gấp?</strong>
-          Đội ngũ kỹ thuật viên người Việt luôn sẵn sàng 24/7/365 qua Hotline/Zalo:  
-          <a href="tel:0794058999">0794.058.999</a> hoặc email <a href="mailto:support@tabigo.vn">support@tabigo.vn</a>.
+          <div class="sidebar-help-header">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <span>Cần trợ giúp khẩn cấp?</span>
+          </div>
+          <p class="sidebar-help-desc">Đội ngũ kỹ thuật viên người Việt luôn sẵn sàng 24/7/365 qua Hotline và Zalo.</p>
+          <div class="sidebar-help-actions">
+            <a href="https://zalo.me/0794058999" target="_blank" rel="noopener" class="sidebar-btn-zalo">
+              <span>Chat Zalo: 0794.058.999</span>
+            </a>
+            <a href="mailto:support@tabigo.vn" class="sidebar-btn-email">
+              <span>support@tabigo.vn</span>
+            </a>
+          </div>
         </div>
       </aside>
 
@@ -632,51 +1241,50 @@
         <article class="legal-card" id="giao-hang">
           <div class="card-header-row">
             <span class="card-badge-num">1</span>
-            <h2 class="card-title">Chính Sách Giao Hàng</h2>
+            <div class="card-header-titles">
+              <div class="card-category-tag">Giao Nhận Kỹ Thuật Số</div>
+              <h2 class="card-title">Chính Sách Giao Hàng</h2>
+            </div>
           </div>
           <div class="legal-body">
-            <p>Tại <strong>TabiGo</strong>, chúng tôi cam kết cung cấp <strong>100% eSIM kỹ thuật số</strong>, phủ sóng hơn 150+ quốc gia và vùng lãnh thổ trên toàn thế giới, đáp ứng trọn vẹn nhu cầu kết nối Internet di động của bạn trước và trong suốt mỗi hành trình du lịch hoặc công tác.</p>
+            <p>Tại <strong>TabiGo</strong>, chúng tôi cam kết cung cấp <strong>100% eSIM kỹ thuật số</strong>, phủ sóng hơn 150+ quốc gia và vùng lãnh thổ trên toàn thế giới, đáp ứng trọn vẹn nhu cầu kết nối Internet di động của bạn trước và trong suốt mỗi hành trình.</p>
 
-            <h4>1. Hình thức giao hàng trực tuyến</h4>
-            <p>Ngay sau khi bạn hoàn tất thanh toán trên website hoặc ứng dụng TabiGo, mã eSIM kỹ thuật số sẽ được hệ thống khởi tạo tự động và gửi trực tuyến tới địa chỉ email bạn đã đăng ký. Thư điện tử bàn giao bao gồm:</p>
-            <ul>
-              <li><strong>Một mã QR định danh duy nhất:</strong> Dùng để quét và cài đặt cấu hình eSIM trực tiếp vào thiết bị điện thoại.</li>
+            <div class="legal-h3">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Quy trình bàn giao mã QR trực tuyến tức thì</span>
+            </div>
+            <p>Ngay sau khi bạn hoàn tất thanh toán trên website hoặc app TabiGo, hệ thống khởi tạo mã eSIM kỹ thuật số tự động gửi trực tuyến tới địa chỉ email của bạn gồm:</p>
+            <ul style="padding-left: 20px; margin-bottom: 14px; font-size: 13.5px; color: #475569;">
+              <li><strong>Mã QR định danh duy nhất:</strong> Dùng để quét và cài đặt cấu hình eSIM trực tiếp vào thiết bị điện thoại.</li>
               <li><strong>Mã kích hoạt thủ công (SM-DP+ Address & Activation Code):</strong> Dành cho trường hợp người dùng cần nhập tay.</li>
-              <li><strong>Hướng dẫn cài đặt chi tiết từng bước:</strong> Trực quan cho cả hai hệ điều hành iOS (Apple iPhone) và Android (Samsung, Google Pixel...).</li>
+              <li><strong>Tài liệu hướng dẫn trực quan:</strong> Chi tiết từng bước cho cả hai hệ điều hành iOS (iPhone) và Android (Samsung, Pixel...).</li>
             </ul>
 
-            <h4>2. Thời gian giao hàng</h4>
-            <ul>
-              <li><strong>Thông thường:</strong> Bạn sẽ nhận được email giao mã eSIM <strong>ngay lập tức trong vòng 5 – 10 phút</strong> sau khi thanh toán thành công.</li>
-              <li><strong>Trường hợp chậm nhất:</strong> Tối đa 30 phút (do độ trễ kiểm duyệt bảo mật cổng thanh toán hoặc hệ thống chuyển tiếp email).</li>
-            </ul>
-
-            <div class="alert-box">
-              <strong>📌 Mẹo nhỏ kiểm tra email:</strong>
-              Nếu sau khi thanh toán bạn chưa thấy email gửi mã eSIM từ TabiGo trong Hộp thư đến (Inbox), vui lòng kiểm tra thêm các mục: <em>Spam (Thư rác)</em> $\rightarrow$ <em>Quảng cáo (Promotions)</em> $\rightarrow$ <em>Tất cả thư mục (All Mail)</em>.
+            <div class="steps-timeline">
+              <div class="step-timeline-item">
+                <div class="step-timeline-num">1</div>
+                <div class="step-timeline-title">Thanh Toán Hoàn Tất</div>
+                <div class="step-timeline-desc">Cổng thanh toán xác thực đơn hàng thành công trong 1–3 giây.</div>
+              </div>
+              <div class="step-timeline-item">
+                <div class="step-timeline-num">2</div>
+                <div class="step-timeline-title">Hệ Thống Cấp Mã</div>
+                <div class="step-timeline-desc">Máy chủ kích hoạt profile eSIM từ đối tác viễn thông quốc tế.</div>
+              </div>
+              <div class="step-timeline-item">
+                <div class="step-timeline-num">3</div>
+                <div class="step-timeline-title">Gửi Email Tức Thì</div>
+                <div class="step-timeline-desc">Thư điện tử đến hộp thư của bạn trong vòng 5–10 phút (tối đa 30 phút).</div>
+              </div>
             </div>
 
-            <h4>3. Trách nhiệm của khách hàng</h4>
-            <p>Để đảm bảo nhận và cài đặt eSIM thành công, quý khách vui lòng:</p>
-            <ol>
-              <li>Cung cấp chính xác địa chỉ email còn hoạt động khi tiến hành đặt hàng.</li>
-              <li>Kiểm tra thiết bị của mình có hỗ trợ công nghệ eSIM và là phiên bản quốc tế (không bị khóa mạng bởi nhà mạng viễn thông).</li>
-            </ol>
-
-            <h4>4. Xử lý trường hợp chưa nhận được mã eSIM</h4>
-            <p>Nếu sau 15 – 30 phút kể từ thời điểm trừ tiền tài khoản mà bạn vẫn chưa nhận được email, vui lòng liên hệ ngay với chúng tôi:</p>
-            <ul>
-              <li>📧 Email hỗ trợ: <strong>support@tabigo.vn</strong> (Dự phòng: congty3mintel@gmail.com)</li>
-              <li>📞 Hotline / Zalo tiếp nhận: <strong>0794.058.999</strong></li>
-            </ul>
-            <p>Khi liên hệ, vui lòng cung cấp: Họ tên, Mã đơn hàng, Số điện thoại và Ảnh chụp xác nhận giao dịch thành công để được cấp lại mã tức thì.</p>
-
-            <h4>5. Lưu ý quan trọng</h4>
-            <ul>
-              <li>eSIM là sản phẩm kỹ thuật số 100%, <strong>không áp dụng hình thức chuyển phát bưu chính vật lý</strong>.</li>
-              <li>Bạn có thể quét cài đặt hồ sơ eSIM vào máy trước chuyến bay từ 1 – 2 ngày khi có WiFi ổn định tại nhà. <strong>Việc cài đặt trước hoàn toàn không làm hao hụt dung lượng hay trừ ngày sử dụng</strong>.</li>
-              <li>Thời hạn gói cước chỉ chính thức bắt đầu tính kể từ thời điểm điện thoại của bạn hạ cánh và kết nối thành công vào trạm sóng viễn thông tại quốc gia điểm đến.</li>
-            </ul>
+            <div class="callout-box info">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+              <div>
+                <strong>Lưu ý quan trọng về hộp thư:</strong><br />
+                Nếu sau 10 phút chưa thấy email, bạn vui lòng kiểm tra mục <em>Hộp thư rác (Spam / Junk)</em> hoặc liên hệ ngay Hotline/Zalo <strong>0794.058.999</strong> để được kỹ thuật viên hỗ trợ gửi lại mã ngay lập tức.
+              </div>
+            </div>
           </div>
         </article>
 
@@ -684,26 +1292,44 @@
         <article class="legal-card" id="bao-hanh">
           <div class="card-header-row">
             <span class="card-badge-num">2</span>
-            <h2 class="card-title">Chính Sách Bảo Hành Kết Nối</h2>
+            <div class="card-header-titles">
+              <div class="card-category-tag">Bảo Hành Dịch Vụ</div>
+              <h2 class="card-title">Chính Sách Bảo Hành Kết Nối</h2>
+            </div>
           </div>
           <div class="legal-body">
-            <p>Tại <strong>TabiGo</strong>, sự ổn định trong suốt chuyến đi của bạn là thước đo cao nhất. Chính sách bảo hành dịch vụ được thiết lập minh bạch và chuẩn mực nhằm bảo đảm quyền lợi tối đa cho khách hàng.</p>
+            <p>TabiGo cam kết mang đến trải nghiệm kết nối thông suốt với chính sách bảo hành rõ ràng, minh bạch nhằm đảm bảo quyền lợi tối đa cho khách hàng:</p>
 
-            <h4>1. Đối tượng và điều kiện áp dụng</h4>
-            <p>Áp dụng cho tất cả khách hàng đã mua sản phẩm gói cước eSIM tại website <em>tabigo.vn</em> hoặc ứng dụng di động TabiGo chính thức. Khách hàng chỉ cần cung cấp mã đơn hàng hoặc địa chỉ email mua hàng để được tra cứu hồ sơ bảo hành.</p>
+            <div class="features-2x2-grid">
+              <div class="feature-tile">
+                <div class="feature-tile-header">
+                  <div class="feature-tile-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  </div>
+                  <div class="feature-tile-title">Trường Hợp Được Bảo Hành</div>
+                </div>
+                <div class="feature-tile-desc">eSIM không kích hoạt được do lỗi hệ thống nhà mạng; không thể kết nối Internet sau khi đã cài đặt đúng hướng dẫn APN; hoặc mã QR bị lỗi không thể quét.</div>
+              </div>
 
-            <h4>2. Phạm vi bảo hành</h4>
-            <ul>
-              <li><strong>Được bảo hành:</strong> Lỗi kỹ thuật phát sinh từ phía TabiGo hoặc sự cố hạ tầng kết nối từ nhà mạng viễn thông đối tác quốc tế (không nhận sóng, lỗi xác thực APN, không kích hoạt được gói data dù làm đúng hướng dẫn).</li>
-              <li><strong>Không thuộc phạm vi bảo hành:</strong> Lỗi do người dùng tự ý bấm "Xóa eSIM" khỏi máy sau khi đã cài đặt; thiết bị của người dùng là máy khóa mạng (lock) hoặc máy cũ không hỗ trợ phần cứng eSIM; hư hỏng thiết bị vật lý do rơi vỡ, vô nước.</li>
-            </ul>
+              <div class="feature-tile">
+                <div class="feature-tile-header">
+                  <div class="feature-tile-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg>
+                  </div>
+                  <div class="feature-tile-title">Trường Hợp Không Bảo Hành</div>
+                </div>
+                <div class="feature-tile-desc">Thiết bị không hỗ trợ eSIM hoặc là máy khóa mạng (Carrier Lock); khách hàng tự ý xóa eSIM khỏi máy khi chưa liên hệ hỗ trợ; hoặc cài đặt sai quốc gia đăng ký.</div>
+              </div>
+            </div>
 
-            <h4>3. Quy trình tiếp nhận & xử lý bảo hành</h4>
-            <ol>
-              <li><strong>Bước 1 - Gửi yêu cầu:</strong> Liên hệ qua Hotline/Zalo <strong>0794.058.999</strong> hoặc Livechat trong ứng dụng TabiGo.</li>
-              <li><strong>Bước 2 - Xác minh kỹ thuật:</strong> Đội ngũ kỹ thuật viên người Việt tiếp nhận ảnh chụp màn hình cài đặt mạng và kiểm tra trạng thái kích hoạt trên hệ thống máy chủ quốc tế.</li>
-              <li><strong>Bước 3 - Xử lý khắc phục:</strong> Hướng dẫn cấu hình lại APN hoặc cấp phát ngay một mã hồ sơ eSIM mới thay thế nếu mã cũ bị lỗi trạm sóng. Thời gian xử lý trong vòng 15 phút – 2 giờ làm việc.</li>
-              <li><strong>Bước 4 - Hoàn tất:</strong> Kiểm tra xác nhận khách hàng đã có mạng Internet ổn định.</li>
+            <div class="legal-h3">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path></svg>
+              <span>Quy trình xử lý bảo hành kỹ thuật 3 bước</span>
+            </div>
+            <ol style="padding-left: 20px; font-size: 13.5px; color: #475569; margin-bottom: 14px;">
+              <li style="margin-bottom: 6px;"><strong>Bước 1 - Tiếp nhận:</strong> Khách hàng chụp ảnh màn hình báo lỗi gửi qua Zalo CSKH: <strong>0794.058.999</strong> hoặc email <code>support@tabigo.vn</code>.</li>
+              <li style="margin-bottom: 6px;"><strong>Bước 2 - Kiểm tra & Khắc phục:</strong> Kỹ thuật viên kiểm tra trạng thái profile eSIM và hỗ trợ reset cài đặt mạng từ xa trong 15–30 phút.</li>
+              <li style="margin-bottom: 6px;"><strong>Bước 3 - Cấp mã mới hoặc Hoàn tiền:</strong> Nếu lỗi do nhà mạng không thể khắc phục, TabiGo sẽ cấp đổi ngay mã eSIM mới tương đương hoặc hoàn tiền 100%.</li>
             </ol>
           </div>
         </article>
@@ -712,25 +1338,26 @@
         <article class="legal-card" id="van-chuyen">
           <div class="card-header-row">
             <span class="card-badge-num">3</span>
-            <h2 class="card-title">Thông Tin Vận Chuyển, Giao Nhận</h2>
+            <div class="card-header-titles">
+              <div class="card-category-tag">Phương Thức Giao Nhận</div>
+              <h2 class="card-title">Thông Tin Vận Chuyển, Giao Nhận</h2>
+            </div>
           </div>
           <div class="legal-body">
-            <p>Nhằm đem lại sự tiện lợi vượt trội cho các chuyến xuất ngoại, TabiGo triển khai hình thức giao nhận tức thời, không phụ thuộc vào thời gian bưu tá hay các điểm bán vật lý tại sân bay.</p>
-
-            <h4>1. Phương thức giao nhận</h4>
-            <p>TabiGo cung cấp dịch vụ viễn thông dựa trên chuẩn công nghệ eSIM quốc tế của Hiệp hội Di động Thế giới (GSMA). Phương thức giao nhận 100% qua không gian số:</p>
-            <ul>
-              <li>Mã QR được gửi trực tiếp tới email khách hàng ngay sau thanh toán.</li>
-              <li>Đồng thời, mã QR và thông số kích hoạt luôn được lưu trữ vĩnh viễn trong mục <em>"Quản lý eSIM của tôi"</em> trên hệ thống tài khoản website/app TabiGo để bạn có thể xem lại bất cứ khi nào.</li>
-            </ul>
-
-            <h4>2. Thời gian giao nhận</h4>
-            <p>Hệ thống máy chủ TabiGo xử lý đơn hàng tự động 24/7/365. Thời gian hoàn tất giao nhận hồ sơ eSIM thông thường là <strong>5 – 10 phút</strong> kể từ khi cổng thanh toán ghi nhận giao dịch thành công.</p>
-
-            <div class="alert-box alert-box-info">
-              <strong>💡 Hướng dẫn kiểm tra sau khi nhận mã:</strong>
-              Ngay khi nhận email, quý khách nên đối chiếu: (1) Tên quốc gia đã đặt, (2) Dung lượng gói cước (GB), (3) Số ngày sử dụng. Nếu phát hiện bất kỳ sai lệch nào, hãy thông báo ngay qua Zalo <strong>0794.058.999</strong> để được điều chỉnh trước giờ bay.
+            <p>Khác biệt hoàn toàn với thẻ SIM vật lý truyền thống, dịch vụ eSIM của TabiGo là sản phẩm công nghệ số 100%:</p>
+            <div class="callout-box success">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <div>
+                <strong>Không giao nhận vật lý — Không phát sinh chi phí vận chuyển:</strong><br />
+                Toàn bộ dữ liệu eSIM được phân phối điện tử qua Email. Bạn không cần chờ nhân viên giao hàng, không lo thất lạc thẻ SIM, không phải xếp hàng tại sân bay và giữ nguyên số điện thoại Việt Nam trong máy.
+              </div>
             </div>
+
+            <div class="legal-h3">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              <span>Thời điểm quét mã QR tối ưu</span>
+            </div>
+            <p>Bạn hoàn toàn có thể quét mã QR cài đặt trước tại Việt Nam (kết nối Wi-Fi tại nhà hoặc sân bay trước giờ khởi hành). Gói cước sẽ chỉ bắt đầu tính thời hạn sử dụng khi điện thoại của bạn bắt được sóng mạng viễn thông tại quốc gia điểm đến.</p>
           </div>
         </article>
 
@@ -738,122 +1365,126 @@
         <article class="legal-card" id="thanh-toan">
           <div class="card-header-row">
             <span class="card-badge-num">4</span>
-            <h2 class="card-title">Chính Sách Thanh Toán An Toàn</h2>
+            <div class="card-header-titles">
+              <div class="card-category-tag">Phương Thức Thanh Toán</div>
+              <h2 class="card-title">Chính Sách Thanh Toán & Bảo Mật Giao Dịch</h2>
+            </div>
           </div>
           <div class="legal-body">
-            <p>TabiGo xây dựng quy trình thanh toán minh bạch, tiện lợi và an toàn tuyệt đối cho du khách với nhiều cổng thanh toán tiêu chuẩn ngân hàng.</p>
+            <p>TabiGo hỗ trợ đa dạng phương thức thanh toán an toàn, minh bạch với tiêu chuẩn bảo mật chuẩn quốc tế:</p>
 
-            <h4>1. Các phương thức thanh toán chấp nhận</h4>
+            <div class="features-2x2-grid">
+              <div class="feature-tile">
+                <div class="feature-tile-header">
+                  <div class="feature-tile-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+                  </div>
+                  <div class="feature-tile-title">Cổng Thanh Toán Nội Địa</div>
+                </div>
+                <div class="feature-tile-desc">Hỗ trợ quét mã VNPAY-QR, chuyển khoản ngân hàng 247 qua VietQR và thẻ ATM nội địa tất cả các ngân hàng Việt Nam.</div>
+              </div>
+
+              <div class="feature-tile">
+                <div class="feature-tile-header">
+                  <div class="feature-tile-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                  </div>
+                  <div class="feature-tile-title">Thẻ Quốc Tế & Ví Điện Tử</div>
+                </div>
+                <div class="feature-tile-desc">Chấp nhận thanh toán bằng thẻ Visa, Mastercard, JCB, Apple Pay và Google Pay qua cổng OnePay bảo mật SSL 256-bit.</div>
+              </div>
+            </div>
+
+            <div class="callout-box info">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              <div>
+                <strong>Bảo mật thông tin thanh toán tuyệt đối:</strong><br />
+                TabiGo không bao giờ lưu trữ số thẻ tín dụng hay mã bảo mật CVV của bạn. Tất cả các giao dịch được mã hóa và chuyển tiếp trực tiếp sang cổng thanh toán đạt chứng chỉ bảo mật quốc tế PCI-DSS Cấp độ 1.
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 5. Tiếp nhận & giải quyết khiếu nại -->
+        <article class="legal-card" id="khieu-nai">
+          <div class="card-header-row">
+            <span class="card-badge-num">5</span>
+            <div class="card-header-titles">
+              <div class="card-category-tag">Chăm Sóc Khách Hàng</div>
+              <h2 class="card-title">Chính Sách Tiếp Nhận & Giải Quyết Khiếu Nại</h2>
+            </div>
+          </div>
+          <div class="legal-body">
+            <p>Sự hài lòng và trải nghiệm thông suốt của quý khách là ưu tiên hàng đầu tại TabiGo. Chúng tôi cam kết xử lý khiếu nại công bằng, nhanh chóng theo quy trình chuẩn:</p>
+
+            <div class="steps-timeline">
+              <div class="step-timeline-item">
+                <div class="step-timeline-num">1</div>
+                <div class="step-timeline-title">Tiếp Nhận Trong 15 Phút</div>
+                <div class="step-timeline-desc">Hotline / Zalo: <strong>0794.058.999</strong> hoặc Email: <code>support@tabigo.vn</code>.</div>
+              </div>
+              <div class="step-timeline-item">
+                <div class="step-timeline-num">2</div>
+                <div class="step-timeline-title">Xác Minh & Hỗ Trợ</div>
+                <div class="step-timeline-desc">Đội ngũ kỹ sư kiểm tra lịch sử kết nối với nhà mạng bản địa trong 2–4 giờ.</div>
+              </div>
+              <div class="step-timeline-item">
+                <div class="step-timeline-num">3</div>
+                <div class="step-timeline-title">Giải Quyết Dứt Điểm</div>
+                <div class="step-timeline-desc">Đổi gói cước mới hoặc bồi hoàn tài chính cho khách hàng trong vòng 24–48 giờ làm việc.</div>
+              </div>
+            </div>
+
+            <p style="font-size: 13.5px; color: #475569;">
+              <strong>Địa chỉ văn phòng tiếp nhận trực tiếp:</strong> Tầng 16, Tòa nhà TechnoPark Tower, Vinhomes Ocean Park, Gia Lâm, Hà Nội.
+            </p>
+          </div>
+        </article>
+
+        <!-- 6. Chính sách đổi trả & hoàn tiền -->
+        <article class="legal-card" id="hoan-tien">
+          <div class="card-header-row">
+            <span class="card-badge-num">6</span>
+            <div class="card-header-titles">
+              <div class="card-category-tag">Chính Sách Hoàn Tiền</div>
+              <h2 class="card-title">Chính Sách Đổi Trả & Hoàn Tiền</h2>
+            </div>
+          </div>
+          <div class="legal-body">
+            <p>TabiGo áp dụng chính sách hoàn tiền minh bạch nhằm bảo đảm quyền lợi tối đa cho khách hàng:</p>
+
             <div class="legal-table-wrap">
               <table class="legal-table">
                 <thead>
                   <tr>
-                    <th>Phương thức</th>
-                    <th>Chi tiết kênh hỗ trợ</th>
-                    <th>Ghi chú</th>
+                    <th>Trường Hợp Áp Dụng</th>
+                    <th>Tỷ Lệ Hoàn Tiền</th>
+                    <th>Thời Gian Xử Lý</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td><strong>Cổng VNPAY</strong></td>
-                    <td>Quét mã VietQR chuyển khoản liên ngân hàng 24/7, Thẻ ATM nội địa, Internet Banking.</td>
-                    <td>Xác nhận tức thì không tốn phí giao dịch.</td>
+                    <td><strong>Lỗi kỹ thuật không thể kết nối</strong> do phía TabiGo hoặc nhà mạng đối tác mà kỹ thuật viên không thể khắc phục.</td>
+                    <td><strong style="color: #16A34A;">Hoàn 100%</strong></td>
+                    <td>1–3 ngày làm việc</td>
                   </tr>
                   <tr>
-                    <td><strong>Cổng OnePay</strong></td>
-                    <td>Thẻ tín dụng / ghi nợ quốc tế: VISA, MasterCard, JCB, American Express.</td>
-                    <td>Bảo mật 3D-Secure mã hóa OTP.</td>
+                    <td><strong>Hủy đơn hàng trước giờ bay:</strong> Khách hàng chưa quét mã QR và gửi yêu cầu hủy trước ít nhất 24 giờ kể từ thời điểm mua.</td>
+                    <td><strong style="color: #16A34A;">Hoàn 100%</strong> (Trừ phí cổng thanh toán nếu có)</td>
+                    <td>3–5 ngày làm việc</td>
                   </tr>
                   <tr>
-                    <td><strong>Ví Điện Tử Toàn Cầu</strong></td>
-                    <td>Apple Pay, Google Pay, PayPal.</td>
-                    <td>Thanh toán 1 chạm tiện dụng trên điện thoại.</td>
-                  </tr>
-                  <tr>
-                    <td><strong>Ví Điểm Thưởng Tabi Xu</strong></td>
-                    <td>Khấu trừ trực tiếp từ số dư Tabi Xu tích lũy sau mỗi chuyến đi.</td>
-                    <td>Tiết kiệm lên tới 100% giá trị đơn hàng.</td>
+                    <td><strong>Không áp dụng hoàn tiền:</strong> Khách tự ý xóa eSIM khỏi máy; thiết bị là máy lock mạng; hoặc đã sử dụng trên 10% dung lượng data của gói.</td>
+                    <td><strong style="color: #DC2626;">Không hoàn tiền</strong></td>
+                    <td>-</td>
                   </tr>
                 </tbody>
               </table>
             </div>
 
-            <h4>2. Quy định thanh toán trước</h4>
-            <p>Do tính chất kỹ thuật của tài nguyên viễn thông quốc tế, tất cả các gói cước eSIM yêu cầu thanh toán trước 100% để máy chủ đối tác viễn thông cấp phát mã hồ sơ kích hoạt.</p>
-
-            <h4>3. Tiêu chuẩn bảo mật tài chính</h4>
-            <p>Toàn bộ phiên giao dịch được mã hóa theo giao thức chuẩn SSL/TLS 256-bit. <strong>TabiGo cam kết không lưu trữ thông tin thẻ ngân hàng hay mã bảo mật CVV của khách hàng</strong>. Mọi thao tác xử lý tiền tệ đều được điều hướng trực tiếp sang cổng thanh toán đạt chứng chỉ an ninh quốc tế PCI-DSS Level 1.</p>
-
-            <h4>4. Hóa đơn và biên nhận</h4>
-            <p>Hóa đơn điện tử hợp lệ sẽ được gửi tự động vào email của quý khách ngay sau khi thanh toán thành công.</p>
-          </div>
-        </article>
-
-        <!-- 5. Giải quyết khiếu nại -->
-        <article class="legal-card" id="khieu-nai">
-          <div class="card-header-row">
-            <span class="card-badge-num">5</span>
-            <h2 class="card-title">Chính Sách Tiếp Nhận & Giải Quyết Khiếu Nại</h2>
-          </div>
-          <div class="legal-body">
-            <p>Tại TabiGo, chúng tôi luôn trân trọng mọi phản hồi của quý khách và cam kết xử lý mọi vướng mắc một cách công bằng, minh bạch trên tinh thần hợp tác cao nhất.</p>
-
-            <h4>1. Nguyên tắc giải quyết khiếu nại</h4>
-            <ul>
-              <li>Mọi phản ánh của khách hàng đều được ghi nhận bằng mã tiếp nhận (Ticket ID) trong hệ thống quản lý chăm sóc khách hàng.</li>
-              <li>Ưu tiên hàng đầu là hỗ trợ khách hàng phục hồi kết nối Internet ngay tại nước sở tại để không làm gián đoạn lịch trình du lịch/công tác.</li>
-              <li>Nếu lỗi phát sinh do hệ thống TabiGo, chúng tôi cam kết bồi hoàn hoặc đền bù thỏa đáng theo đúng chính sách đã công bố.</li>
-            </ul>
-
-            <h4>2. Các kênh chính thức tiếp nhận phản ánh</h4>
-            <ul>
-              <li><strong>Hotline / Zalo:</strong> <a href="tel:0794058999" style="color:var(--orange); font-weight:700;">0794.058.999</a> (Trực tuyến 24/7 kể cả ngày Lễ, Tết).</li>
-              <li><strong>Email:</strong> <a href="mailto:support@tabigo.vn" style="color:var(--orange); font-weight:700;">support@tabigo.vn</a>.</li>
-              <li><strong>Trực tiếp tại trụ sở:</strong> Tầng 15A, Tòa nhà Technopark Tower, Gia Lâm, TP Hà Nội, Việt Nam.</li>
-            </ul>
-
-            <h4>3. Thời hạn giải quyết</h4>
-            <ul>
-              <li>Phản hồi ban đầu: Trong vòng <strong>15 – 30 phút</strong> qua kênh Hotline/Zalo.</li>
-              <li>Thời gian xử lý dứt điểm khiếu nại tài chính: Tối đa không quá <strong>05 ngày làm việc</strong> kể từ ngày tiếp nhận đầy đủ thông tin bằng chứng.</li>
-            </ul>
-          </div>
-        </article>
-
-        <!-- 6. Đổi trả, hoàn tiền -->
-        <article class="legal-card" id="hoan-tien">
-          <div class="card-header-row">
-            <span class="card-badge-num">6</span>
-            <h2 class="card-title">Chính Sách Đổi Trả & Hoàn Tiền</h2>
-          </div>
-          <div class="legal-body">
-            <p>TabiGo cam kết chính sách bảo hiểm kết nối: hỗ trợ đổi gói cước mới hoặc hoàn tiền nếu khách hàng gặp vấn đề lỗi kỹ thuật xuất phát từ hệ sinh thái TabiGo hoặc nhà mạng đối tác.</p>
-
-            <h4>1. Các trường hợp được hoàn tiền 100%</h4>
-            <ul>
-              <li><strong>Không thể kích hoạt kết nối sau khi đã hỗ trợ:</strong> Quý khách đã phối hợp với kỹ thuật viên TabiGo thiết lập cấu hình APN nhưng thiết bị vẫn không thể kết nối mạng tại nước sở tại do lỗi kỹ thuật của nhà cung cấp dịch vụ.</li>
-              <li><strong>Lỗi trạm sóng mạng diện rộng:</strong> Nhà mạng đối tác tại quốc gia đến gặp sự cố mạng kéo dài quá 24 giờ mà không thể khắc phục.</li>
-              <li><strong>Giao dịch thanh toán bị trừ tiền nhiều lần:</strong> Do lỗi nghẽn cổng ngân hàng, quý khách bị trừ tiền trùng lặp cho một đơn hàng.</li>
-            </ul>
-
-            <h4>2. Các trường hợp từ chối hoàn tiền</h4>
-            <div class="alert-box">
-              <strong>⚠️ Xin lưu ý TabiGo không hỗ trợ hoàn tiền trong các trường hợp sau:</strong>
-              <ul>
-                <li>Khách hàng đã tự ý bấm <em>"Xóa eSIM" (Delete / Remove Cellular Plan)</em> trên thiết bị của mình. (Theo tiêu chuẩn GSMA, eSIM bị xóa thủ công sẽ tự hủy hồ sơ và không thể khôi phục lại).</li>
-                <li>Thiết bị của khách hàng là máy khóa mạng (iPhone Lock, Android Lock) hoặc máy đời cũ không có phần cứng hỗ trợ eSIM do khách hàng không tra cứu danh sách tương thích trước khi đặt.</li>
-                <li>Gói cước eSIM đã hết thời hạn sử dụng quy định.</li>
-                <li>Sự cố bất khả kháng tại quốc gia đến như chiến tranh, thiên tai, thay đổi đột xuất chính sách quản lý viễn thông khẩn cấp của chính quyền nước sở tại.</li>
-                <li>Khách hàng gặp sự cố trong chuyến đi nhưng không chủ động liên hệ đội ngũ hỗ trợ TabiGo để khắc phục, đến khi về nước mới thông báo yêu cầu hoàn tiền.</li>
-              </ul>
-            </div>
-
-            <h4>3. Quy trình và thời hạn nhận tiền hoàn</h4>
-            <ol>
-              <li>Khách hàng gửi mã đơn hàng và ảnh chụp màn hình thông báo lỗi qua Zalo <strong>0794.058.999</strong> hoặc email <strong>support@tabigo.vn</strong>.</li>
-              <li>Bộ phận kỹ thuật và kế toán xác minh trong vòng 24 giờ.</li>
-              <li>Số tiền hoàn trả sẽ được chuyển khoản trực tiếp về tài khoản ngân hàng hoặc thẻ thanh toán ban đầu trong vòng <strong>3 – 7 ngày làm việc</strong>.</li>
-            </ol>
+            <p style="font-size: 13px; color: #64748B;">
+              Số tiền hoàn sẽ được chuyển trực tiếp về tài khoản ngân hàng hoặc thẻ thanh toán ban đầu mà quý khách đã sử dụng để giao dịch.
+            </p>
           </div>
         </article>
 
@@ -861,94 +1492,129 @@
         <article class="legal-card" id="kiem-hang">
           <div class="card-header-row">
             <span class="card-badge-num">7</span>
-            <h2 class="card-title">Chính Sách Kiểm Tra Đơn Hàng</h2>
+            <div class="card-header-titles">
+              <div class="card-category-tag">Kiểm Tra Đơn Hàng</div>
+              <h2 class="card-title">Chính Sách Kiểm Tra Đơn Hàng (Kiểm Hàng)</h2>
+            </div>
           </div>
           <div class="legal-body">
-            <p>Mỗi sản phẩm eSIM trước khi cấp phát đều được hệ thống tự động kiểm tra tính hợp lệ trên máy chủ GSMA. Khi nhận được thư xác nhận, quý khách có quyền và trách nhiệm kiểm tra chi tiết:</p>
+            <p>Do tính chất đặc thù của sản phẩm số (Digital Goods), quá trình kiểm hàng được thực hiện trực tuyến ngay sau khi bạn nhận được email:</p>
 
-            <h4>1. Các thông tin cần đối chiếu</h4>
-            <ul>
-              <li><strong>Quốc gia/khu vực áp dụng:</strong> Đảm bảo đúng nước bạn dự định đặt chân đến.</li>
-              <li><strong>Dung lượng data tốc độ cao:</strong> Đúng số GB theo gói đã chọn (hoặc gói không giới hạn).</li>
-              <li><strong>Số ngày hiệu lực:</strong> Khớp với độ dài kỳ nghỉ/chuyến công tác của bạn.</li>
+            <ul style="padding-left: 20px; font-size: 13.5px; color: #475569; margin-bottom: 14px;">
+              <li><strong>Kiểm tra thông tin gói cước:</strong> Xác nhận đúng quốc gia điểm đến, dung lượng data (GB) và số ngày hiệu lực được ghi trong email xác nhận.</li>
+              <li><strong>Kiểm tra khả năng nhận diện mã QR:</strong> Bạn mở camera hoặc cài đặt eSIM để quét thử mã QR. Nếu máy báo nhận diện hồ sơ thành công tức là profile eSIM hoàn toàn hợp lệ.</li>
             </ul>
 
-            <h4>2. Thao tác quét thử trước giờ bay</h4>
-            <p>Quý khách hoàn toàn có thể quét mã QR cài đặt trước tại nhà từ 1 – 2 ngày. Máy sẽ hiển thị hồ sơ eSIM trong mục Di Động (Cellular). Sau khi quét, bạn chỉ cần tắt công tắc dữ liệu của eSIM đi, khi nào máy bay hạ cánh mới bật lên sử dụng. Đây là cách tốt nhất để an tâm 100% trước khi xuất phát.</p>
+            <div class="callout-box warning">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+              <div>
+                Nếu phát hiện bất kỳ sai sót nào về dung lượng hoặc quốc gia đăng ký, quý khách vui lòng <strong>không kích hoạt gói cước</strong> và thông báo ngay cho TabiGo để được cấp lại gói cước chính xác.
+              </div>
+            </div>
           </div>
         </article>
 
-        <!-- 8. Điều khoản chung -->
+        <!-- 8. Điều khoản và điều kiện chung -->
         <article class="legal-card" id="dieu-khoan-chung">
           <div class="card-header-row">
             <span class="card-badge-num">8</span>
-            <h2 class="card-title">Điều Khoản & Điều Kiện Chung</h2>
+            <div class="card-header-titles">
+              <div class="card-category-tag">Khung Pháp Lý</div>
+              <h2 class="card-title">Điều Khoản & Điều Kiện Chung</h2>
+            </div>
           </div>
           <div class="legal-body">
-            <p>Các điều khoản và điều kiện chung này điều chỉnh mối quan hệ pháp lý giữa người sử dụng dịch vụ và nền tảng <strong>TabiGo</strong> (được phát triển và vận hành bởi <strong>Công ty TNHH 3M Intel / ZEYFI</strong>).</p>
-
-            <h4>1. Bản chất dịch vụ</h4>
-            <p>TabiGo là nền tảng công nghệ kết nối các giải pháp viễn thông chuyển vùng quốc tế, cung cấp quyền truy cập dữ liệu di động tốc độ cao tại 150+ quốc gia và vùng lãnh thổ thông qua giao thức thẻ SIM điện tử (eSIM).</p>
-
-            <h4>2. Quyền sở hữu trí tuệ</h4>
-            <p>Toàn bộ nhãn hiệu, logo biểu tượng TabiGo, hình ảnh giao diện, mã nguồn, nội dung văn bản và đồ họa trên website <em>tabigo.vn</em> đều thuộc quyền sở hữu trí tuệ của TabiGo. Mọi hành vi sao chép, trích xuất dữ liệu tự động hoặc tái sử dụng thương mại mà không có sự đồng ý bằng văn bản đều là vi phạm pháp luật.</p>
-
-            <h4>3. Giới hạn trách nhiệm</h4>
-            <p>TabiGo luôn nỗ lực hợp tác cùng các nhà mạng viễn thông hàng đầu (như SoftBank, Singtel, AIS, SK Telecom, Orange, Vodafone...). Tuy nhiên, chất lượng vùng phủ sóng thực tế tại từng thời điểm có thể chịu ảnh hưởng bởi địa hình cục bộ, hầm sâu, thời tiết xấu hoặc quy định bảo trì hạ tầng của nhà mạng địa phương.</p>
-
-            <h4>4. Luật áp dụng và giải quyết tranh chấp</h4>
-            <p>Mọi thỏa thuận và giao dịch trên nền tảng TabiGo được điều chỉnh và giải thích theo quy định của <strong>Pháp luật Nước Cộng Hòa Xã Hội Chủ Nghĩa Việt Nam</strong>. Trường hợp phát sinh tranh chấp không thể giải quyết qua thương lượng hòa giải, vụ việc sẽ được đưa ra phân xử tại Tòa án có thẩm quyền tại TP Hà Nội.</p>
+            <p>Toàn bộ các điều khoản sử dụng và quy định dịch vụ tại website <em>tabigo.vn</em> và ứng dụng TabiGo chịu sự điều chỉnh của <strong>Pháp luật nước Cộng hòa Xã hội Chủ nghĩa Việt Nam</strong>.</p>
+            <p>Khách hàng có trách nhiệm sử dụng dịch vụ Internet đúng mục đích, tuân thủ các quy định về an ninh mạng và pháp luật của cả Việt Nam lẫn quốc gia nơi quý khách đang lưu trú du lịch.</p>
+            <p>TabiGo có quyền cập nhật, bổ sung các điều khoản này phù hợp với chính sách pháp luật mới. Mọi sửa đổi quan trọng sẽ được thông báo công khai trên website trước ngày áp dụng.</p>
           </div>
         </article>
 
       </main>
+
+    </div>
+
+    <!-- Mobile Floating Quick Jump Bar -->
+    <div class="mobile-jump-bar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line></svg>
+      <span>Chuyển đến:</span>
+      <select onchange="if(this.value) { location.href = this.value; }">
+        <option value="#giao-hang">1. Chính sách giao hàng</option>
+        <option value="#bao-hanh">2. Chính sách bảo hành</option>
+        <option value="#van-chuyen">3. Vận chuyển, giao nhận</option>
+        <option value="#thanh-toan">4. Chính sách thanh toán</option>
+        <option value="#khieu-nai">5. Giải quyết khiếu nại</option>
+        <option value="#hoan-tien">6. Đổi trả, hoàn tiền</option>
+        <option value="#kiem-hang">7. Chính sách kiểm hàng</option>
+        <option value="#dieu-khoan-chung">8. Điều khoản chung</option>
+      </select>
     </div>
 
     <!-- Footer -->
     <footer>
       <div class="footer-inner">
         <div class="footer-left">
-          <span>©2026 TABI GO. Bản quyền thuộc về TabiGo (3M Intel).</span>
+          <span class="footer-copyright">©2026 TABI GO</span>
+          <svg width="112" height="30" viewBox="0 0 160 46" fill="none">
+            <rect width="160" height="46" rx="5" fill="#BB1E24"/>
+            <circle cx="23" cy="23" r="14" fill="#991B1B" stroke="#FDE047" stroke-width="1.2"/>
+            <polygon points="23,13 25.5,19.5 32.5,20 27,24 29,31 23,27 17,31 19,24 13.5,20 20.5,19.5" fill="#FDE047"/>
+            <text x="44" y="20" fill="#FFFFFF" font-size="10" font-weight="800" font-family="'Inter', sans-serif" letter-spacing="0.5">ĐÃ ĐĂNG KÝ</text>
+            <text x="44" y="34" fill="#FDE047" font-size="9" font-weight="700" font-family="'Inter', sans-serif" letter-spacing="0.3">BỘ CÔNG THƯƠNG</text>
+          </svg>
         </div>
-        <div class="footer-links">
-          <a href="index.html">Trang chủ</a>
-          <a href="terms.html">Điều khoản sử dụng</a>
+        <div class="footer-legal-links">
+          <a href="terms.html">Điều khoản dịch vụ</a>
           <a href="privacy.html">Chính sách bảo mật</a>
-          <a href="tel:0794058999">Hotline: 0794.058.999</a>
+          <a href="terms.html#dieu-khoan-chung">Trung tâm pháp lý</a>
+          <a href="privacy.html#cookie">Quản lý cookie</a>
+          <a href="index.html">Về trang chủ</a>
         </div>
       </div>
     </footer>
 
   </div>
 
-  <!-- ScrollSpy for Table of Contents -->
+  <!-- Interactive ScrollSpy & Live Filter Script -->
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const links = document.querySelectorAll('.toc-link');
+    // Live filter sidebar TOC items
+    function filterTerms(query) {
+      const q = query.toLowerCase().trim();
+      const items = document.querySelectorAll('#termsTocList li');
+      items.forEach(li => {
+        const text = li.innerText.toLowerCase();
+        li.style.display = text.includes(q) ? 'block' : 'none';
+      });
+    }
+
+    // ScrollSpy active link highlighting
+    document.addEventListener('DOMContentLoaded', () => {
       const sections = document.querySelectorAll('.legal-card');
+      const tocLinks = document.querySelectorAll('.toc-link');
 
-      function updateActiveToc() {
-        let current = '';
-        const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+      window.addEventListener('scroll', () => {
+        let currentSection = '';
+        const scrollPos = window.scrollY + 140;
 
-        sections.forEach(function (sec) {
-          const top = sec.offsetTop - 140;
-          if (scrollY >= top) {
-            current = sec.getAttribute('id');
+        sections.forEach(section => {
+          const top = section.offsetTop;
+          const height = section.offsetHeight;
+          if (scrollPos >= top && scrollPos < top + height) {
+            currentSection = section.getAttribute('id');
           }
         });
 
-        links.forEach(function (link) {
-          link.classList.remove('active');
-          if (link.getAttribute('href') === '#' + current) {
-            link.classList.add('active');
-          }
-        });
-      }
-
-      window.addEventListener('scroll', updateActiveToc, { passive: true });
-      updateActiveToc();
+        if (currentSection) {
+          tocLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + currentSection) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
     });
   </script>
+
 </body>
 </html>
